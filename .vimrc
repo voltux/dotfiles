@@ -60,6 +60,7 @@ Plugin 'junegunn/fzf'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+
 "-----------------General Settings---------------
 
 set nocompatible
