@@ -1,10 +1,10 @@
 call plug#begin()
 
-"Plug 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'vim-syntastic/syntastic'
+Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
@@ -39,9 +39,9 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 "Plug 'ap/vim-templates'
-"Plug 'derekwyatt/vim-scala'
-"Plug 'lervag/vimtex'
+Plug 'derekwyatt/vim-scala'
 
 call plug#end()
 
@@ -199,26 +199,41 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
 
-"syntastic
-let g:syntastic_error_symbol             = '✗'
-let g:syntastic_warning_symbol           = '⚠'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_python_python_exec       = '/usr/bin/python3'
-let g:syntastic_python_flake8_exec       = 'python3'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+""syntastic
+"let g:syntastic_error_symbol             = '✗'
+"let g:syntastic_warning_symbol           = '⚠'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_python_python_exec       = '/usr/bin/python3'
+""let g:syntastic_python_checkers           = ['flake8']
+"let g:syntastic_python_flake8_exec       = 'python3'
+""let g:syntastic_python_flake8_args       = ['-m', 'flake8']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+""let g:syntastic_quiet_messages = {
+        ""\ "!level":  "errors",
+        ""\ "type":    "style",
+        ""\ "regex":   '.*',
+        ""\ "file:p":  '.*' }
+
+autocmd! BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['flake8']
+" E501 is line length of 80 characters
+"let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
+"let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
+inoremap <expr><c-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr><c-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
 " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-let g:UltiSnipsExpandTrigger="<C-n>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:UltiSnipsExpandTrigger="<TAB>"
 
 "deoplete python
 let g:deoplete#sources#jedi#show_docstring = 1
