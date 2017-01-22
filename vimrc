@@ -1,1 +1,0 @@
-/home/voltus/.vimrc

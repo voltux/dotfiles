@@ -1,1 +1,0 @@
-/home/voltus/.config/nvim/init.vim
