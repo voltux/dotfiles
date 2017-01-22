@@ -4,7 +4,7 @@ Plug 'mileszs/ack.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
+Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
@@ -33,16 +33,19 @@ Plug 'mbbill/undotree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/octave.vim--'
-Plug 'derekwyatt/vim-scala'
 Plug 'jpalardy/vim-slime'
 Plug 'nvie/vim-flake8'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'maralla/completor.vim'
-Plug 'davidhalter/jedi-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
+"Plug 'ap/vim-templates'
+Plug 'derekwyatt/vim-scala'
+Plug 'metakirby5/codi.vim'
 
 call plug#end()
+
 "-----------------General Settings---------------
 
 set nocompatible
@@ -50,7 +53,6 @@ hi Normal ctermbg=none
 syntax enable
 syntax on
 set relativenumber
-filetype plugin indent on
 
 "colors
 set background=dark
@@ -138,23 +140,6 @@ nnoremap <leader>fr :%s/
 "Find a file
 nnoremap <leader>ff :FZF<CR>
 
-"gui settings
-"set guioptions-=T
-"set guioptions-=l
-"set guioptions-=L
-"set guioptions-=r
-"set guioptions-=R
-"set guioptions-=m
-"set guioptions-=M
-if has("gui_running")
-    set lines=999 columns=999
-    colorscheme molokai
-    "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Regular\ 15
-    set guifont=Monaco\ For\ Powerline\ Regular\ 10
-endif
-map <silent> <F11>
-            \    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
-
 "search settings
 "set nohlsearch          " do not highlight searched-for phrases
 "set incsearch           " ...but do highlight-as-I-type the search string
@@ -215,10 +200,60 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
 
+""syntastic
+"let g:syntastic_error_symbol             = '✗'
+"let g:syntastic_warning_symbol           = '⚠'
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_python_python_exec       = '/usr/bin/python3'
+""let g:syntastic_python_checkers           = ['flake8']
+"let g:syntastic_python_flake8_exec       = 'python3'
+""let g:syntastic_python_flake8_args       = ['-m', 'flake8']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+""let g:syntastic_quiet_messages = {
+        ""\ "!level":  "errors",
+        ""\ "type":    "style",
+        ""\ "regex":   '.*',
+        ""\ "file:p":  '.*' }
+
+autocmd! BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['flake8']
+" E501 is line length of 80 characters
+"let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
+"let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><c-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr><c-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+" let g:deoplete#disable_auto_complete = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:UltiSnipsExpandTrigger="<TAB>"
+
+"deoplete python
+let g:deoplete#sources#jedi#show_docstring = 1
+
+
+" omnifuncs
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+"let g:UltiSnipsExpandTrigger       = "<tab>"
+"let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "airline setup
 "let g:airline_powerline_fonts = 1
@@ -264,13 +299,3 @@ let g:slime_dont_ask_default = 1
 "Ack
 cnoreabbrev Ack Ack!
 nnoremap <leader>fa :Ack!<space>
-
-"Ale
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
-
-"Completor
-let g:completor_python_library = '/usr/lib/pyhon3/dist-packages'
-inoremap <expr> <Tab> pumvisible() ? "\<C-j>" : "\<Tab>"
-"inoremap <expr> <S-Tab> pumvisible() ? "\<C-k>" : "\<S-Tab>"
-"inoremap <expr> <cr> pumvisible() ? "\<C-h>\<cr>" : "\<cr>"

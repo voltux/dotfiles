@@ -97,6 +97,9 @@ alias mail=mutt
 alias net=w3m
 alias cl=clear
 alias octav='octave --no-gui'
+alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias nvin='nvim -u NONE'
+alias vin='vim -u NONE'
 
 #vi mode
 bindkey -v
@@ -112,3 +115,4 @@ zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$HOME/.bin:$PATH
