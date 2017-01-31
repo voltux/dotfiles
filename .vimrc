@@ -40,7 +40,6 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'maralla/completor.vim'
-Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 "-----------------General Settings---------------
@@ -216,9 +215,9 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
 let g:AutoPairsShortcutToggle = '<leader>)'
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+"let g:UltiSnipsExpandTrigger       = "<tab>"
+"let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+"let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "airline setup
 "let g:airline_powerline_fonts = 1
@@ -270,7 +269,7 @@ let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 
 "Completor
-let g:completor_python_library = '/usr/lib/pyhon3/dist-packages'
-inoremap <expr> <Tab> pumvisible() ? "\<C-j>" : "\<Tab>"
+let g:completor_python_library = '/usr/lib/pyhon3'
+"inoremap <expr> <Tab> pumvisible() ? "\<C-j>" : "\<Tab>"
 "inoremap <expr> <S-Tab> pumvisible() ? "\<C-k>" : "\<S-Tab>"
 "inoremap <expr> <cr> pumvisible() ? "\<C-h>\<cr>" : "\<cr>"

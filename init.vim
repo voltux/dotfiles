@@ -4,7 +4,7 @@ Plug 'mileszs/ack.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
@@ -18,11 +18,9 @@ Plug 'xolox/vim-pyref'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/vimproc.vim'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-unimpaired'
-Plug 'regedarek/ZoomWin'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
@@ -34,15 +32,22 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/octave.vim--'
 Plug 'jpalardy/vim-slime'
-Plug 'nvie/vim-flake8'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-clang'
-"Plug 'ap/vim-templates'
 Plug 'derekwyatt/vim-scala'
 Plug 'metakirby5/codi.vim'
+Plug 'w0rp/ale'
+Plug 'Shougo/denite.nvim'
+Plug 'Rip-Rip/clang_complete'
+"Plug 'kassio/neoterm'
+"Plug 'pgdouyon/vim-accio'
+"Plugin 'eugen0329/vim-esearch'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'euclio/vim-markdown-composer'
+
+
 
 call plug#end()
 
@@ -71,6 +76,8 @@ let mapleader = ","
 "view man pages in vim
 runtime! ftplugin/man.vim
 
+"textfiles
+autocmd BufNewFile,BufRead *.txt set textwidth=1000
 "-----------------System Key Bindings---------------------
 
 "set abbreviations for common typos
@@ -88,7 +95,7 @@ nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
 "copy paste between different programs/windows/tabs
-set clipboard=unnamed
+"set clipboard=unnamed
 
 "editor settings
 set ignorecase
@@ -111,6 +118,16 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
+"terminal mode
+:tnoremap <C-h> <C-\><C-n><C-w>h
+:tnoremap <C-j> <C-\><C-n><C-w>j
+:tnoremap <C-k> <C-\><C-n><C-w>k
+:tnoremap <C-l> <C-\><C-n><C-w>l
+:tnoremap <C-t> <C-\><C-n>
+:nnoremap <C-t> :terminal<CR>
+:tnoremap <Leader><ESC> <C-\><C-n>
+let g:terminal_scrollback_buffer_size = 100000
+
 "Basically you press * or # to search for the current selection
 vnoremap <silent> *  : call VisualSearch('f')<CR>
 vnoremap <silent> #  : call VisualSearch('b')<CR>
@@ -126,6 +143,10 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>v :vnew<cr>
 nnoremap <leader>h :new<cr>
+
+"Zoom opening new tab
+nnoremap <leader>z :tab split<CR>
+
 
 " Copy to system clipboard
 nnoremap <leader>y "+y
@@ -158,6 +179,10 @@ let g:tex_flavor='latex'
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
 nmap <leader>le :set keymap&<CR>
+nmap <leader>lcg :setlocal spell spelllang=el<CR>
+nmap <leader>lce :setlocal spell spelllang=en<CR>
+nmap <leader>lcf :setlocal spell spelllang=fr<CR>
+nmap <leader>ll :set nospell<CR>
 
 map! ;a à
 map! ;z â
@@ -200,29 +225,14 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
 
-""syntastic
-"let g:syntastic_error_symbol             = '✗'
-"let g:syntastic_warning_symbol           = '⚠'
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_python_python_exec       = '/usr/bin/python3'
-""let g:syntastic_python_checkers           = ['flake8']
-"let g:syntastic_python_flake8_exec       = 'python3'
-""let g:syntastic_python_flake8_args       = ['-m', 'flake8']
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-""let g:syntastic_quiet_messages = {
-        ""\ "!level":  "errors",
-        ""\ "type":    "style",
-        ""\ "regex":   '.*',
-        ""\ "file:p":  '.*' }
-
-autocmd! BufWritePost * Neomake
-let g:neomake_python_enabled_makers = ['flake8']
-" E501 is line length of 80 characters
-"let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
-"let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
+""Neomake
+"autocmd! BufWritePost * Neomake
+"let g:neomake_python_enabled_makers = ['flake8']
+"" E501 is line length of 80 characters
+""let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
+""let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
+"let g:neomake_error_sign='✗'
+"let g:neomake_warning_sign='⚠'
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
@@ -234,11 +244,11 @@ endif
 " let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
-let g:UltiSnipsExpandTrigger="<TAB>"
-
 "deoplete python
 let g:deoplete#sources#jedi#show_docstring = 1
 
+"deoplete clang
+let g:clang_library_path='/usr/lib/llvm-3.8/lib'
 
 " omnifuncs
 augroup omnifuncs
@@ -250,10 +260,10 @@ augroup omnifuncs
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
 
-" better key bindings for UltiSnipsExpandTrigger
-"let g:UltiSnipsExpandTrigger       = "<tab>"
-"let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
+"better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger       = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "airline setup
 "let g:airline_powerline_fonts = 1
@@ -269,9 +279,6 @@ let g:airline_right_alt_sep    = ''
 let g:airline_symbols.branch   = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr   = ''
-
-"ZoomWin
-nmap <leader>z <C-w>o
 
 "whitespace
 highlight ExtraWhitespace ctermbg=78
@@ -294,8 +301,18 @@ let g:slime_dont_ask_default = 1
 
 "Pyref
 :let g:pyref_mapping = 'K'
-":let g:pyref_python  = '/usr/share/doc/python3.5-doc/html/'
+:let g:pyref_python  = '/usr/share/doc/python3.5-doc/html/'
 
 "Ack
 cnoreabbrev Ack Ack!
 nnoremap <leader>fa :Ack!<space>
+
+"Ale
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+
+"Indent Guides
+"nmap <leader>ig :IndentGuidesToggle<CR>
+hi IndentGuidesOdd  ctermbg=darkgrey
+hi IndentGuidesEven ctermbg=lightgrey
+let g:indent_guides_guide_size = 1

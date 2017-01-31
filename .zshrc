@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/voltus/.oh-my-zsh
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -66,7 +67,7 @@ source $ZSH/oh-my-zsh.sh
  if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='vi'
  else
-   export EDITOR='vi'
+   export EDITOR='nvim'
  fi
 
 # Compilation flags
@@ -100,6 +101,8 @@ alias octav='octave --no-gui'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias nvin='nvim -u NONE'
 alias vin='vim -u NONE'
+alias bp='bpython3'
+alias F='| fzf'
 
 #vi mode
 bindkey -v
