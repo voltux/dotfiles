@@ -91,13 +91,14 @@ MAIL=/home/voltus/mail/voltus
 #voltus aliases
 alias la='ls -la'
 alias l='ls -lh'
-alias python=python3
-alias ipython=ipython3
+#alias python=python3
+#alias ipython=ipython3
 alias haskell=ghci
 alias mail=mutt
 alias net=w3m
 alias cl=clear
 alias octav='octave --no-gui'
+alias vimrc='vi ~/.vimrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias nvin='nvim -u NONE'
 alias vin='vim -u NONE'

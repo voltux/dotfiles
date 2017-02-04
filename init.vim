@@ -40,7 +40,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'metakirby5/codi.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/denite.nvim'
-Plug 'Rip-Rip/clang_complete'
+"Plug 'maralla/completor.vim'
 "Plug 'kassio/neoterm'
 "Plug 'pgdouyon/vim-accio'
 "Plugin 'eugen0329/vim-esearch'
@@ -316,3 +316,7 @@ let g:ale_sign_warning = '⚠'
 hi IndentGuidesOdd  ctermbg=darkgrey
 hi IndentGuidesEven ctermbg=lightgrey
 let g:indent_guides_guide_size = 1
+
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
+let g:deoplete#enable_at_startup = 1
