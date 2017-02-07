@@ -32,7 +32,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/octave.vim--'
 Plug 'jpalardy/vim-slime'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
@@ -40,6 +39,8 @@ Plug 'derekwyatt/vim-scala'
 Plug 'metakirby5/codi.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/denite.nvim'
+Plug 'airblade/vim-gitgutter'
+
 "Plug 'maralla/completor.vim'
 "Plug 'kassio/neoterm'
 "Plug 'pgdouyon/vim-accio'
@@ -158,8 +159,14 @@ nnoremap <leader>p "+p
 " Find and replace in the whole file
 nnoremap <leader>fr :%s/
 
-"Find a file
+"Find things with fzf
 nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fm :Maps<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>fh :Helptags<CR>
+nnoremap <leader>fg :GFiles?<CR>
+
 
 "search settings
 "set nohlsearch          " do not highlight searched-for phrases
@@ -208,7 +215,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-nmap <leader>n :NERDTreeTabsToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 
 "Tagbar Config
 nmap <leader>m :TagbarToggle<CR>
@@ -305,7 +312,7 @@ let g:slime_dont_ask_default = 1
 
 "Ack
 cnoreabbrev Ack Ack!
-nnoremap <leader>fa :Ack!<space>
+nnoremap <leader>fa :AckWindow <space>
 
 "Ale
 let g:ale_sign_error = '✗'
