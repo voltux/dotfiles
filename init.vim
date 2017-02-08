@@ -40,7 +40,6 @@ Plug 'metakirby5/codi.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/denite.nvim'
 Plug 'airblade/vim-gitgutter'
-
 "Plug 'maralla/completor.vim'
 "Plug 'kassio/neoterm'
 "Plug 'pgdouyon/vim-accio'
