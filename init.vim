@@ -35,7 +35,6 @@ Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'derekwyatt/vim-scala'
 Plug 'metakirby5/codi.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/denite.nvim'
