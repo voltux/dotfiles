@@ -42,7 +42,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'maralla/completor.vim'
 Plug 'davidhalter/jedi-vim'
 
-
 call plug#end()
 "-----------------General Settings---------------
 
@@ -136,8 +135,13 @@ nnoremap <leader>p "+p
 " Find and replace in the whole file
 nnoremap <leader>fr :%s/
 
-"Find a file
+"Find things with fzf
 nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fm :Maps<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>fh :Helptags<CR>
+nnoremap <leader>fg :GFiles?<CR>
 
 "gui settings
 "set guioptions-=T

@@ -104,6 +104,7 @@ alias nvin='nvim -u NONE'
 alias vin='vim -u NONE'
 alias bp='bpython3'
 alias F='| fzf'
+alias downvid='cclive'
 
 #vi mode
 bindkey -v
