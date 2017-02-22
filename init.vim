@@ -1,10 +1,8 @@
 call plug#begin()
 
-Plug 'mileszs/ack.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-"Plug 'neomake/neomake'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
@@ -40,6 +38,13 @@ Plug 'metakirby5/codi.vim'
 Plug 'w0rp/ale'
 Plug 'Shougo/denite.nvim'
 Plug 'airblade/vim-gitgutter'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'pelodelfuego/vim-swoop'
+Plug 'junegunn/gv.vim'
+"Plug 'neomake/neomake'
+"Plug 'mhinz/vim-startify'
+"Plug 'sheerun/vim-polyglot'
 "Plug 'maralla/completor.vim'
 "Plug 'kassio/neoterm'
 "Plug 'pgdouyon/vim-accio'
@@ -227,6 +232,7 @@ autocmd Filetype python nmap <F8> :w <CR> :!python %<CR>
 autocmd Filetype python vmap <F8> !python<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
+au! BufRead,BufNewFile *.pde setfiletype arduino
 
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
@@ -309,13 +315,11 @@ let g:slime_dont_ask_default = 1
 :let g:pyref_mapping = 'K'
 :let g:pyref_python  = '/usr/share/doc/python3.5-doc/html/'
 
-"Ack
-cnoreabbrev Ack Ack!
-nnoremap <leader>fa :AckWindow <space>
-
 "Ale
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
 
 "Indent Guides
 "nmap <leader>ig :IndentGuidesToggle<CR>

@@ -53,7 +53,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(common-aliases command-not-found debian dirhistory django history pip python git)
-source /home/voltus/.bin/tmuxinator.zsh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
