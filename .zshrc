@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(common-aliases command-not-found debian dirhistory django history pip python git)
+plugins=(tmux common-aliases command-not-found debian dirhistory django history pip python git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,6 +104,7 @@ alias vin='vim -u NONE'
 alias bp='bpython3'
 alias F='| fzf'
 alias downvid='cclive'
+alias td='tmux detach'
 
 #vi mode
 bindkey -v
@@ -120,3 +121,6 @@ export KEYTIMEOUT=1
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH=$HOME/.bin:$PATH
+
+#apt preference
+export apt_pref=apt
