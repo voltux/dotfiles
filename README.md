@@ -1,6 +1,6 @@
 Some of my configuration files
 
-Vim plugins loaded with vim-plug: https://github.com/junegunn/vim-plug
+Vim/Neovim plugins loaded with vim-plug: https://github.com/junegunn/vim-plug
 
 Tmux plugins installed via tpm: https://github.com/tmux-plugins/tpm
 
