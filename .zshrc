@@ -73,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # MAIL
-MAIL=/home/voltus/mail/voltus
+#MAIL=/home/voltus/mail/voltus
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
