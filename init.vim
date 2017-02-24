@@ -116,6 +116,7 @@ set expandtab
 set tags=./tags;/
 set textwidth=80
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
+set noshowmode
 
 "undo settings
 set undofile                " Save undo's after file closes
