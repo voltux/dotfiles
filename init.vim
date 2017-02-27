@@ -42,6 +42,9 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'junegunn/gv.vim'
+Plug 'jceb/vim-orgmode'
+Plug 'itchyny/calendar.vim'
+
 "Plug 'neomake/neomake'
 "Plug 'mhinz/vim-startify'
 "Plug 'sheerun/vim-polyglot'
@@ -171,6 +174,7 @@ nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>ft :Tags<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
+nnoremap <leader>f' :Marks<CR>
 
 
 "search settings
