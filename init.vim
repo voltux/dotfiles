@@ -53,9 +53,6 @@ Plug 'itchyny/calendar.vim'
 "Plug 'pgdouyon/vim-accio'
 "Plugin 'eugen0329/vim-esearch'
 "Plug 'airblade/vim-gitgutter'
-"Plug 'euclio/vim-markdown-composer'
-
-
 
 call plug#end()
 
