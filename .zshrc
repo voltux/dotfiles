@@ -124,3 +124,6 @@ export PATH=$HOME/.bin:$PATH
 
 #apt preference
 export apt_pref=apt
+
+# .NET telemetry opt out
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
