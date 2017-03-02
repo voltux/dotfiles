@@ -44,6 +44,8 @@ Plug 'pelodelfuego/vim-swoop'
 Plug 'junegunn/gv.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
+Plug 'brooth/far.vim'
+
 
 "Plug 'neomake/neomake'
 "Plug 'mhinz/vim-startify'
