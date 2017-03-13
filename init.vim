@@ -64,6 +64,7 @@ set nocompatible
 hi Normal ctermbg=none
 syntax enable
 syntax on
+set number
 set relativenumber
 
 "colors
