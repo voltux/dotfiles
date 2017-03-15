@@ -85,7 +85,7 @@ let mapleader = ","
 runtime! ftplugin/man.vim
 
 "textfiles
-autocmd BufNewFile,BufRead *.txt set textwidth=1000
+"autocmd BufNewFile,BufRead *.txt set textwidth=1000
 "-----------------System Key Bindings---------------------
 
 "set abbreviations for common typos
@@ -117,7 +117,6 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set tags=./tags;/
-set textwidth=80
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
 set noshowmode
 
