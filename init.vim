@@ -1,6 +1,7 @@
 call plug#begin()
 
-Plug 'JuliaEditorSupport/julia-vim'
+" Universal Plugins
+
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'godlygeek/tabular'
@@ -10,24 +11,24 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'xolox/vim-easytags'
 Plug 'tpope/vim-fugitive'
-Plug 'plasticboy/vim-markdown'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-pyref'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'xolox/vim-misc'
 Plug 'Shougo/vimproc.vim'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-unimpaired'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
+Plug 'jiangmiao/auto-pairs'
+Plug 'plasticboy/vim-markdown'
+Plug 'xolox/vim-pyref'
 Plug 'ternjs/tern_for_vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mbbill/undotree'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/octave.vim--'
 Plug 'jpalardy/vim-slime'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
@@ -39,20 +40,21 @@ Plug 'w0rp/ale'
 Plug 'Shougo/denite.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'pelodelfuego/vim-swoop'
 Plug 'junegunn/gv.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
 Plug 'brooth/far.vim'
 Plug 'hkupty/iron.nvim'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'kassio/neoterm'
 
 
+"Plug 'editorconfig/editorconfig-vim'
 "Plug 'neomake/neomake'
 "Plug 'mhinz/vim-startify'
 "Plug 'sheerun/vim-polyglot'
 "Plug 'maralla/completor.vim'
-"Plug 'kassio/neoterm'
 "Plug 'pgdouyon/vim-accio'
 "Plugin 'eugen0329/vim-esearch'
 "Plug 'airblade/vim-gitgutter'
@@ -69,7 +71,7 @@ set number
 set relativenumber
 
 "colors
-set background=dark
+"set background=dark
 colorscheme voltus
 
 "activate mouse
@@ -339,3 +341,19 @@ let g:deoplete#enable_at_startup = 1
 
 "Swoop
 let g:swoopUseDefaultKeyMap = 0
+
+"Neoterm
+let g:neoterm_position = 'horizontal'
+let g:neoterm_automap_keys = ',tt'
+
+nnoremap <silent> <f10> :TREPLSendFile<cr>
+nnoremap <silent> <f9> :TREPLSendLine<cr>
+vnoremap <silent> <f9> :TREPLSendSelection<cr>
+
+" Useful maps
+" hide/close terminal
+nnoremap <silent> ,th :call neoterm#close()<cr>
+" clear terminal
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+" kills the current job (send a <c-c>)
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
