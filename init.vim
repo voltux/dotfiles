@@ -230,6 +230,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 "Tagbar Config
 nmap <leader>m :TagbarToggle<CR>
+let g:tagbar_left = 1
 
 "Compiler shortcuts and bindings
 nnoremap <F8> <NOP>
@@ -268,6 +269,9 @@ let g:deoplete#sources#jedi#show_docstring = 1
 
 "deoplete clang
 let g:clang_library_path='/usr/lib/llvm-3.8/lib'
+
+"supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " omnifuncs
 augroup omnifuncs
