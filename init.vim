@@ -45,7 +45,6 @@ Plug 'junegunn/gv.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
 Plug 'brooth/far.vim'
-Plug 'hkupty/iron.nvim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kassio/neoterm'
 
@@ -180,8 +179,8 @@ nnoremap <leader>f' :Marks<CR>
 
 
 "search settings
-"set nohlsearch          " do not highlight searched-for phrases
-"set incsearch           " ...but do highlight-as-I-type the search string
+set nohlsearch          " do not highlight searched-for phrases
+set incsearch           " ...but do highlight-as-I-type the search string
 set gdefault            " this makes search/replace global by default"
 
 "folding zf to create fold, za to toggle
@@ -230,7 +229,6 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 "Tagbar Config
 nmap <leader>m :TagbarToggle<CR>
-let g:tagbar_left = 1
 
 "Compiler shortcuts and bindings
 nnoremap <F8> <NOP>
