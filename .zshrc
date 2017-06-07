@@ -105,6 +105,7 @@ alias bp='bpython3'
 alias F='| fzf'
 alias downvid='cclive'
 alias td='tmux detach'
+alias sl=ls
 
 #vi mode
 bindkey -v
