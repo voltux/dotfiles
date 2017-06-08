@@ -44,7 +44,6 @@ Plug 'pelodelfuego/vim-swoop'
 Plug 'junegunn/gv.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
-Plug 'brooth/far.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kassio/neoterm'
 
@@ -176,6 +175,11 @@ nnoremap <leader>ft :Tags<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
+nnoremap <leader>fe :call Swoop()<CR>
+vnoremap <leader>fe :call SwoopSelection()<CR>
+nnoremap <leader>fs :call SwoopMulti()<CR>
+vnoremap <leader>fs :call SwoopMultiSelection()<CR>
+
 
 
 "search settings
