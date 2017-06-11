@@ -67,6 +67,7 @@ syntax enable
 syntax on
 set number
 set relativenumber
+set cursorline
 
 "colors
 "set background=dark
