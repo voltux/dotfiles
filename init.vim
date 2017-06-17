@@ -26,7 +26,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'xolox/vim-pyref'
 Plug 'ternjs/tern_for_vim'
 Plug 'wesQ3/vim-windowswap'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mbbill/undotree'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/octave.vim--'
@@ -157,7 +156,6 @@ nnoremap <leader>h :new<cr>
 "Zoom opening new tab
 nnoremap <leader>z :tab split<CR>
 
-
 " Copy to system clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
@@ -180,8 +178,7 @@ nnoremap <leader>fe :call Swoop()<CR>
 vnoremap <leader>fe :call SwoopSelection()<CR>
 nnoremap <leader>fs :call SwoopMulti()<CR>
 vnoremap <leader>fs :call SwoopMultiSelection()<CR>
-
-
+nnoremap <leader>b  :Buffers<CR>
 
 "search settings
 set nohlsearch          " do not highlight searched-for phrases
@@ -309,10 +306,6 @@ let g:airline_symbols.linenr   = ''
 "whitespace
 highlight ExtraWhitespace ctermbg=78
 nmap <leader>wh :StripWhitespace<CR>
-
-"buffergator
-let g:buffergator_suppress_keymaps=1
-map <leader>b :BuffergatorToggle<CR>
 
 "easytags
 let g:easytags_async = 1
