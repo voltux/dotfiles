@@ -46,7 +46,6 @@ Plug 'itchyny/calendar.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kassio/neoterm'
 
-
 "Plug 'editorconfig/editorconfig-vim'
 "Plug 'neomake/neomake'
 "Plug 'mhinz/vim-startify'
@@ -55,6 +54,7 @@ Plug 'kassio/neoterm'
 "Plug 'pgdouyon/vim-accio'
 "Plugin 'eugen0329/vim-esearch'
 "Plug 'airblade/vim-gitgutter'
+"Plug 'sbdchd/neoformat'
 
 call plug#end()
 
