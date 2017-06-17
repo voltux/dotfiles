@@ -35,7 +35,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
 Plug 'jpalardy/vim-slime'
-"Plug 'nvie/vim-flake8'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
@@ -199,12 +198,8 @@ map! ;v ü
 
 "----------------------Plugin Configuration-------------------
 
-"Nerdtree configuration
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-autocmd StdinReadPre * let s:std_in=1
-
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-nmap <leader>n :NERDTreeTabsToggle<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 
 "Tagbar Config
 nmap <leader>m :TagbarToggle<CR>
