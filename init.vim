@@ -2,59 +2,69 @@ call plug#begin()
 
 " Universal Plugins
 
-Plug 'scrooloose/nerdcommenter'
+"Navigation
 Plug 'scrooloose/nerdtree'
-Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'xolox/vim-easytags'
-Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'xolox/vim-misc'
-Plug 'Shougo/vimproc.vim'
+Plug 'mbbill/undotree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'jpalardy/vim-slime'
+Plug 'wesQ3/vim-windowswap'
+Plug 'mhinz/vim-startify'
+
+"Editor
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Terminal
+Plug 'kassio/neoterm'
+
+"Autocompletion and syntax linters
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'jiangmiao/auto-pairs'
+Plug 'zchee/deoplete-jedi'
+Plug 'sbdchd/neoformat'
+
+"Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
+
+"Search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
+Plug 'pelodelfuego/vim-swoop'
+Plug 'eugen0329/vim-esearch'
+
+"Misc
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
+Plug 'Shougo/vimproc.vim'
+
+"Language specific
 Plug 'plasticboy/vim-markdown'
 Plug 'xolox/vim-pyref'
 Plug 'ternjs/tern_for_vim'
-Plug 'wesQ3/vim-windowswap'
-Plug 'mbbill/undotree'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-scripts/octave.vim--'
-Plug 'jpalardy/vim-slime'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
 Plug 'derekwyatt/vim-scala'
-Plug 'metakirby5/codi.vim'
-Plug 'w0rp/ale'
-Plug 'Shougo/denite.nvim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'pelodelfuego/vim-swoop'
-Plug 'junegunn/gv.vim'
+Plug 'JuliaEditorSupport/julia-vim'
+
+"Other
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'kassio/neoterm'
-
-"Plug 'editorconfig/editorconfig-vim'
+Plug 'metakirby5/codi.vim'
 "Plug 'neomake/neomake'
-"Plug 'mhinz/vim-startify'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'maralla/completor.vim'
-"Plug 'pgdouyon/vim-accio'
-"Plugin 'eugen0329/vim-esearch'
-"Plug 'airblade/vim-gitgutter'
-"Plug 'sbdchd/neoformat'
 
 call plug#end()
 
@@ -69,14 +79,12 @@ set relativenumber
 set cursorline
 
 "colors
-"set background=dark
 colorscheme voltus
 
 "activate mouse
 set mouse=a
 
-"Search down into subfolders
-"Provides tab completion for all related tasks
+"Search down into subfolders - Provides tab completion for all related tasks
 set path+=**
 
 "set leader key
@@ -85,8 +93,6 @@ let mapleader = ","
 "view man pages in vim
 runtime! ftplugin/man.vim
 
-"textfiles
-"autocmd BufNewFile,BufRead *.txt set textwidth=1000
 "-----------------System Key Bindings---------------------
 
 "set abbreviations for common typos
@@ -103,8 +109,8 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
-"copy paste between different programs/windows/tabs
-"set clipboard=unnamed
+" remap Ctrl+A because I am using it for tmux and thus do not need Ctrl+z
+nnoremap <C-z> <C-a>
 
 "editor settings
 set ignorecase
@@ -133,7 +139,6 @@ set undoreload=10000        " number of lines to save for undo
 :tnoremap <C-k> <C-\><C-n><C-w>k
 :tnoremap <C-l> <C-\><C-n><C-w>l
 :tnoremap <C-t> <C-\><C-n>
-:nnoremap <C-t> :terminal<CR>
 :tnoremap <Leader><ESC> <C-\><C-n>
 let g:terminal_scrollback_buffer_size = 100000
 
@@ -163,23 +168,6 @@ vnoremap <leader>y "+y
 " Paste from system clipboard
 nnoremap <leader>p "+p
 
-" Find and replace in the whole file
-nnoremap <leader>fr :%s/
-
-"Find things with fzf
-nnoremap <leader>ff :FZF<CR>
-nnoremap <leader>fm :Maps<CR>
-nnoremap <leader>fl :Lines<CR>
-nnoremap <leader>ft :Tags<CR>
-nnoremap <leader>fh :Helptags<CR>
-nnoremap <leader>fg :GFiles?<CR>
-nnoremap <leader>f' :Marks<CR>
-nnoremap <leader>fe :call Swoop()<CR>
-vnoremap <leader>fe :call SwoopSelection()<CR>
-nnoremap <leader>fs :call SwoopMulti()<CR>
-vnoremap <leader>fs :call SwoopMultiSelection()<CR>
-nnoremap <leader>b  :Buffers<CR>
-
 "search settings
 set nohlsearch          " do not highlight searched-for phrases
 set incsearch           " ...but do highlight-as-I-type the search string
@@ -193,6 +181,31 @@ hi Folded ctermbg=016
 
 "Recognizing latex files
 let g:tex_flavor='latex'
+
+"Search, find and replace things with fzf, swoop, esearch and other
+nnoremap <leader>fr :%s/
+nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fm :Maps<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>fh :Helptags<CR>
+nnoremap <leader>fg :GFiles?<CR>
+nnoremap <leader>f' :Marks<CR>
+nnoremap <leader>fe :call Swoop()<CR>
+vnoremap <leader>fe :call SwoopSelection()<CR>
+nnoremap <leader>fs :call SwoopMulti()<CR>
+vnoremap <leader>fs :call SwoopMultiSelection()<CR>
+nnoremap <leader>b  :Buffers<CR>
+
+"Compiler shortcuts and bindings
+nnoremap <F8> <NOP>
+autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
+autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
+autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
+autocmd Filetype python vmap <F8> !python<CR>
+autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
+autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
+au! BufRead,BufNewFile *.pde setfiletype arduino
 
 "----------------------Language Settings----------------------
 
@@ -222,37 +235,16 @@ map! ;v ü
 
 "----------------------Plugin Configuration-------------------
 
-"Nerdtree configuration
+"Nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
-
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 nmap <leader>n :NERDTreeToggle<CR>
 
-"Tagbar Config
+"Tagbar
 nmap <leader>m :TagbarToggle<CR>
-
-"Compiler shortcuts and bindings
-nnoremap <F8> <NOP>
-autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
-autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
-autocmd Filetype python nmap <F8> :w <CR> :!python %<CR>
-autocmd Filetype python vmap <F8> !python<CR>
-autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
-autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
-au! BufRead,BufNewFile *.pde setfiletype arduino
 
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
-
-""Neomake
-"autocmd! BufWritePost * Neomake
-"let g:neomake_python_enabled_makers = ['flake8']
-"" E501 is line length of 80 characters
-""let g:neomake_python_flake8_maker = { 'args': ['--ignore=E501'], }
-""let g:neomake_python_pep8_maker = { 'args': ['--max-line-length=105'], }
-"let g:neomake_error_sign='✗'
-"let g:neomake_warning_sign='⚠'
 
 "deoplete
 let g:deoplete#enable_at_startup = 1
@@ -261,11 +253,14 @@ inoremap <expr><c-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
 if !exists('g:deoplete#omni#input_patterns')
   let g:deoplete#omni#input_patterns = {}
 endif
-" let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+let g:deoplete#enable_at_startup = 1
+
 
 "deoplete python
 let g:deoplete#sources#jedi#show_docstring = 1
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 "deoplete clang
 let g:clang_library_path='/usr/lib/llvm-3.8/lib'
@@ -283,12 +278,12 @@ augroup omnifuncs
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 augroup end
 
-"better key bindings for UltiSnipsExpandTrigger
+"Ultisnips better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger       = "<tab>"
 let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
-"airline setup
+"Airline
 "let g:airline_powerline_fonts = 1
 let g:airline_theme='jellybeans'
 if !exists('g:airline_symbols')
@@ -303,11 +298,11 @@ let g:airline_symbols.branch   = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr   = ''
 
-"whitespace
+"Whitespace
 highlight ExtraWhitespace ctermbg=78
 nmap <leader>wh :StripWhitespace<CR>
 
-"easytags
+"Easytags
 let g:easytags_async = 1
 
 "Undotree
@@ -320,8 +315,7 @@ let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
 
 "Pyref
-:let g:pyref_mapping = 'K'
-:let g:pyref_python  = '/usr/share/doc/python3.5-doc/html/'
+let g:pyref_mapping = 'K'
 
 "Ale
 let g:ale_sign_error = '✗'
@@ -333,14 +327,9 @@ let g:ale_python_flake8_executable = 'flake8'
 let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
 
 "Indent Guides
-"nmap <leader>ig :IndentGuidesToggle<CR>
-hi IndentGuidesOdd  ctermbg=darkgrey
-hi IndentGuidesEven ctermbg=lightgrey
+hi IndentGuidesOdd  ctermbg=red
+hi IndentGuidesEven ctermbg=yellow
 let g:indent_guides_guide_size = 1
-
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
-let g:deoplete#enable_at_startup = 1
 
 "Swoop
 let g:swoopUseDefaultKeyMap = 0
@@ -348,15 +337,10 @@ let g:swoopUseDefaultKeyMap = 0
 "Neoterm
 let g:neoterm_position = 'horizontal'
 let g:neoterm_automap_keys = ',tt'
+nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
 
 nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSendLine<cr>
 vnoremap <silent> <f9> :TREPLSendSelection<cr>
-
-" Useful maps
-" hide/close terminal
-nnoremap <silent> ,th :call neoterm#close()<cr>
-" clear terminal
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-" kills the current job (send a <c-c>)
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
