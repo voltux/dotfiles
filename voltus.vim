@@ -1,4 +1,4 @@
-" Based on
+" Based on grb256
 runtime colors/ir_black.vim
 
 let g:colors_name = "voltus"
