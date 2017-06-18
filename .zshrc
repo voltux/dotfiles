@@ -99,6 +99,7 @@ alias cl=clear
 alias octav='octave --no-gui'
 alias vimrc='vi ~/.vimrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
+alias nyaovimrc='nyaovim ~/.config/nyaovim/nyaovimrc.html'
 alias nvin='nvim -u NONE'
 alias vin='vim -u NONE'
 alias bp='bpython3'
