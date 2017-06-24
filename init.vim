@@ -126,6 +126,8 @@ set expandtab
 set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
 set noshowmode
+set textwidth=120
+set title
 
 "undo settings
 set undofile                " Save undo's after file closes
@@ -220,12 +222,12 @@ map! ;a à
 map! ;z â
 map! ;b ä
 map! ;c ç
-map! ;w è
+map! ;w ê
 map! ;e é
 map! ;f ë
-map! ;r ê
-map! ;i ï
-map! ;j î
+map! ;r è
+map! ;i î
+map! ;j ï
 map! ;o ô
 map! ;p ö
 imap ;q «  »<Esc>hi
@@ -319,7 +321,7 @@ let g:pyref_mapping = 'K'
 
 "Ale
 let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
+let g:ale_sign_warning = '!'
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
 let g:ale_python_pylint_executable = 'pylint3'
