@@ -10,7 +10,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
-Plug 'mhinz/vim-startify'
+"Plug 'mhinz/vim-startify'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
@@ -65,6 +65,8 @@ Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
 Plug 'metakirby5/codi.vim'
 "Plug 'neomake/neomake'
+Plug 'flazz/vim-colorschemes'
+
 
 call plug#end()
 
@@ -244,6 +246,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 "Tagbar
 nmap <leader>m :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
@@ -286,19 +289,19 @@ let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "Airline
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme='jellybeans'
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
 " airline symbols
-let g:airline_left_sep         = ''
-let g:airline_left_alt_sep     = ''
-let g:airline_right_sep        = ''
-let g:airline_right_alt_sep    = ''
-let g:airline_symbols.branch   = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr   = ''
+"let g:airline_left_sep         = ''
+"let g:airline_left_alt_sep     = ''
+"let g:airline_right_sep        = ''
+"let g:airline_right_alt_sep    = ''
+"let g:airline_symbols.branch   = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr   = ''
 
 "Whitespace
 highlight ExtraWhitespace ctermbg=78
