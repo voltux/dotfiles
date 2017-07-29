@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux common-aliases command-not-found debian dirhistory django history pip python git)
+plugins=(tmux common-aliases)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -83,32 +83,22 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #voltus aliases
 alias la='ls -la'
-alias l='ls -lh'
-#alias python=python3
-#alias ipython=ipython3
 alias haskell=ghci
-alias mail=mutt
-alias net=w3m
 alias cl=clear
-alias octav='octave --no-gui'
-alias vimrc='vi ~/.vimrc'
+alias vimrc='vim ~/.vimrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
-alias nyaovimrc='nyaovim ~/.config/nyaovim/nyaovimrc.html'
-alias nvin='nvim -u NONE'
-alias vin='vim -u NONE'
-alias bp='bpython3'
+alias nvi='nvim -u NONE'
 alias F='| fzf'
-alias downvid='cclive'
-alias td='tmux detach'
 alias sl=ls
+alias net=w3m
+alias td='tmux detach'
+alias netconnect='nmtui'
 
 #vi mode
+set editing-mode vi
 bindkey -v
 
 function zle-line-init zle-keymap-select {
@@ -129,3 +119,8 @@ export apt_pref=apt
 
 # .NET telemetry opt out
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# set the mail environment variable
+MAIL=/var/spool/mail/voltus && export MAIL
+
+xset b off
