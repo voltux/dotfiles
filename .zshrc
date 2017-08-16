@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 
 #voltus aliases
 alias la='ls -la'
+alias sl=ls
 alias haskell=ghci
 alias cl=clear
 alias vimrc='vim ~/.vimrc'

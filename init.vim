@@ -81,6 +81,7 @@ set relativenumber
 set cursorline
 
 "colors
+set background=dark
 colorscheme voltus
 
 "activate mouse
