@@ -82,7 +82,7 @@ set cursorline
 
 "colors
 set background=dark
-colorscheme voltus
+colorscheme jelleybeans
 
 "activate mouse
 set mouse=a

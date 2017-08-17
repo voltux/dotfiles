@@ -55,7 +55,7 @@ filetype plugin indent on
 
 "colors
 set background=dark
-colorscheme solarized
+colorscheme jelleybeans
 
 "activate mouse
 set mouse=a
