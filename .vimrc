@@ -55,7 +55,7 @@ filetype plugin indent on
 
 "colors
 set background=dark
-colorscheme jelleybeans
+colorscheme voltus
 
 "activate mouse
 set mouse=a
