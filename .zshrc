@@ -85,7 +85,8 @@ source $ZSH/oh-my-zsh.sh
 #
 
 #voltus aliases
-alias la='ls -la'
+alias ll='ls -lh'
+alias la='ls -lha'
 alias sl=ls
 alias haskell=ghci
 alias cl=clear
@@ -96,7 +97,6 @@ alias F='| fzf'
 alias sl=ls
 alias net=w3m
 alias td='tmux detach'
-alias netconnect='nmtui'
 
 #vi mode
 set editing-mode vi
