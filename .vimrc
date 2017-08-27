@@ -145,21 +145,21 @@ nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 
 "gui settings
-"set guioptions-=T
-"set guioptions-=l
-"set guioptions-=L
-"set guioptions-=r
-"set guioptions-=R
-"set guioptions-=m
-"set guioptions-=M
+set guioptions-=T
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+set guioptions-=m
+set guioptions-=M
 if has("gui_running")
     set lines=999 columns=999
-    colorscheme molokai
-    "set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Regular\ 15
-    set guifont=Monaco\ For\ Powerline\ Regular\ 10
+    "colorscheme molokai
+    ""set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Regular\ 15
+    set guifont=Monaco\ 11
 endif
-map <silent> <F11>
-            \    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
+"map <silent> <F11>
+            "\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
 
 "search settings
 "set nohlsearch          " do not highlight searched-for phrases
