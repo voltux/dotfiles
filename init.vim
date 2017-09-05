@@ -265,8 +265,8 @@ let g:deoplete#enable_at_startup = 1
 
 "deoplete python
 let g:deoplete#sources#jedi#show_docstring = 1
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'
 
 "deoplete clang
 let g:clang_library_path='/usr/lib/llvm-3.8/lib'
