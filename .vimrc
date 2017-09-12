@@ -41,6 +41,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'maralla/completor.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 "-----------------General Settings---------------

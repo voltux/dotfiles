@@ -10,7 +10,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
-"Plug 'mhinz/vim-startify'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
