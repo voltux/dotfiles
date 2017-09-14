@@ -89,7 +89,6 @@ alias ll='ls -lh'
 alias la='ls -lha'
 alias sl=ls
 alias haskell=ghci
-alias cl=clear
 alias vimrc='vim ~/.vimrc'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias nvi='nvim -u NONE'
