@@ -121,3 +121,5 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 MAIL=/var/spool/mail/voltus && export MAIL
 
 xset b off
+
+setxkbmap -layout us -option caps:escape
