@@ -29,7 +29,7 @@ font pango:Monaco 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -117,6 +117,12 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# Run on startup for each workspace
+exec --no-startup-id i3-msg 'workspace 2:Firefox; exec firefox'
+exec --no-startup-id i3-msg 'workspace 3:Mail; exec thunderbird'
+exec --no-startup-id i3-msg 'workspace 1:Terminal; exec i3-sensible-terminal'
+exec --no-startup-id i3-msg 'exec synclient TouchpadOff=1'
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -172,7 +178,7 @@ exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
 bindsym $mod+Shift+F10 exec synclient TouchpadOff=1
 bindsym $mod+Shift+F11 exec synclient TouchpadOff=0
 
-set $Locker i3lock -i /usr/share/wallpapers/arch_against_others.png && sleep 1
+set $Locker i3lock -i /usr/share/wallpapers/arch_against_others_hd.png && sleep 1
 
 #System lock, logout, sudpend, hibernate, reboot, shutdown
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
