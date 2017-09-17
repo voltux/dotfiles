@@ -65,6 +65,7 @@ Plug 'itchyny/calendar.vim'
 Plug 'metakirby5/codi.vim'
 "Plug 'neomake/neomake'
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-speeddating'
 
 
 call plug#end()
