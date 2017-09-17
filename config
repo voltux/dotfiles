@@ -29,7 +29,7 @@ font pango:Monaco 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -42,10 +42,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -54,10 +54,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -66,10 +66,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+minus split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+equal split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -94,9 +94,9 @@ bindsym $mod+a focus parent
 # switch to workspace
 bindsym $mod+1 workspace "1:Terminal"
 bindsym $mod+2 workspace "2:Firefox"
-bindsym $mod+3 workspace "3:Music"
-bindsym $mod+4 workspace "4:Dev"
-bindsym $mod+5 workspace "5:Mail"
+bindsym $mod+3 workspace "3:Mail"
+bindsym $mod+4 workspace "4:Music"
+bindsym $mod+5 workspace "5:Dev"
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -108,9 +108,9 @@ bindsym Ctrl+Mod1+Right workspace next
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace "1:Terminal"
 bindsym $mod+Shift+2 move container to workspace "2:Firefox"
-bindsym $mod+Shift+3 move container to workspace "3:Music"
-bindsym $mod+Shift+4 move container to workspace "4:Dev"
-bindsym $mod+Shift+5 move container to workspace "5:Mail"
+bindsym $mod+Shift+3 move container to workspace "3:Mail"
+bindsym $mod+Shift+4 move container to workspace "4:Music"
+bindsym $mod+Shift+5 move container to workspace "5:Dev"
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -156,8 +156,6 @@ bar {
         status_command i3status
 }
 
-bindsym $mod+shift+x exec i3lock
-
 #Volume controls
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
@@ -174,7 +172,7 @@ exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
 bindsym $mod+Shift+F10 exec synclient TouchpadOff=1
 bindsym $mod+Shift+F11 exec synclient TouchpadOff=0
 
-set $Locker i3lock && sleep 1
+set $Locker i3lock -i /usr/share/wallpapers/arch_against_others.png && sleep 1
 
 #System lock, logout, sudpend, hibernate, reboot, shutdown
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -193,3 +191,5 @@ mode "$mode_system" {
 
 bindsym $mod+Pause mode "$mode_system"
 
+#numlock
+exec_always --no-startup-id numlockx on
