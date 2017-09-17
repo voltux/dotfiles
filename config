@@ -168,15 +168,16 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #Brightness controls
-bindsym $mod+Shift+F4 exec xbacklight -inc 20 # increase screen brightness
-bindsym $mod+Shift+F3 exec xbacklight -dec 20 # decrease screen brightness
+bindsym $mod+Shift+F4 exec xbacklight -inc 5 # increase screen brightness
+bindsym $mod+Shift+F3 exec xbacklight -dec 5 # decrease screen brightness
 
 #Wallpaper
 exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
 
 #Touchpad
-bindsym $mod+Shift+F10 exec synclient TouchpadOff=1
-bindsym $mod+Shift+F11 exec synclient TouchpadOff=0
+#bindsym $mod+Shift+F10 exec synclient TouchpadOff=1
+#bindsym $mod+Shift+F11 exec synclient TouchpadOff=0
+bindsym $mod+Shift+F10 exec synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ { off=int($3) } END { print !off }')
 
 set $Locker i3lock -i /usr/share/wallpapers/arch_against_others_hd.png && sleep 1
 
@@ -199,3 +200,6 @@ bindsym $mod+Pause mode "$mode_system"
 
 #numlock
 exec_always --no-startup-id numlockx on
+
+#network
+exec nm-applet
