@@ -18,6 +18,10 @@ font pango:Monaco 10
 new_window pixel 1
 new_float normal
 
+##gaps
+#gaps inner 5
+#gaps outer 5
+
 #Hide borders
 hide_edge_borders none
 
