@@ -14,6 +14,17 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Monaco 10
 
+#window settings
+new_window pixel 1
+new_float normal
+
+##gaps
+#gaps inner 5
+#gaps outer 5
+
+#Hide borders
+hide_edge_borders none
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -29,7 +40,7 @@ font pango:Monaco 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -39,7 +50,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
- bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
@@ -91,6 +102,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+#Sound
+#exec --no-startup-id volumeicon
+#exec --no-startup-id pulseaudio
+#exec --no-startup-id pa-applet
+
 # switch to workspace
 bindsym $mod+1 workspace "1:Terminal"
 bindsym $mod+2 workspace "2:Firefox"
@@ -120,8 +136,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Run on startup for each workspace
 exec --no-startup-id i3-msg 'workspace 2:Firefox; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3:Mail; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 1:Terminal; exec i3-sensible-terminal'
-exec --no-startup-id i3-msg 'exec synclient TouchpadOff=1'
+exec --no-startup-id i3-msg 'workspace 1:Terminal; exec terminator'
+#exec --no-startup-id i3-msg 'exec synclient TouchpadOff=1'
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -163,13 +179,13 @@ bar {
 }
 
 #Volume controls
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%- ; notify-send 'volume down'"
+bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+ ; notify-send 'volume up'"
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
 #Brightness controls
-bindsym $mod+Shift+F4 exec xbacklight -inc 5 # increase screen brightness
-bindsym $mod+Shift+F3 exec xbacklight -dec 5 # decrease screen brightness
+bindsym $mod+Shift+F4 exec "xbacklight -inc 5 ; notify-send 'brightness up'" # increase screen brightness
+bindsym $mod+Shift+F3 exec "xbacklight -dec 5 ; notify-send 'brightness down'" # decrease screen brightness
 
 #Wallpaper
 exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
@@ -184,7 +200,7 @@ set $Locker i3lock -i /usr/share/wallpapers/arch_against_others_hd.png && sleep 
 #System lock, logout, sudpend, hibernate, reboot, shutdown
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym l exec --no-startup-id $Locker, mode "default"r
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
@@ -202,6 +218,9 @@ bindsym $mod+Pause mode "$mode_system"
 exec_always --no-startup-id numlockx on
 
 #network
-exec --no-startup-id systemctl start NetworkManager.service
-exec --no-startup-id nm-applet
+exec no-startup-id nm-applet
 
+#compton transparency
+exec no-startup-id compton -b
+
+hide_edge_borders none
