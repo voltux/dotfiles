@@ -15,8 +15,8 @@ hi CursorLine     guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE
 hi Function       guifg=#FFD2A7     guibg=NONE        gui=NONE      ctermfg=yellow      ctermbg=NONE   cterm=NONE
 hi Visual         guifg=NONE        guibg=#262D51     gui=NONE      ctermfg=NONE        ctermbg=236    cterm=NONE
 
-hi Error            guifg=NONE        guibg=NONE        gui=undercurl ctermfg=NONE     ctermbg=NONE    cterm=NONE     guisp=#FF6C60 " undercurl color
-hi ErrorMsg         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=NONE    cterm=NONE
+hi Error            guifg=NONE        guibg=NONE        gui=undercurl ctermfg=lightblue     ctermbg=NONE    cterm=NONE     guisp=#FF6C60 " undercurl color
+hi ErrorMsg         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=lightblue       ctermbg=16    cterm=NONE
 hi WarningMsg       guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=16       ctermbg=NONE    cterm=NONE
 hi SpellBad         guifg=white       guibg=#FF6C60     gui=BOLD      ctermfg=lightgreen       ctermbg=NONE    cterm=NONE
 
