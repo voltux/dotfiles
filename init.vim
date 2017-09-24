@@ -333,11 +333,6 @@ let g:ale_python_pylint_executable = 'pylint3'
 let g:ale_python_flake8_executable = 'flake8'
 let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
 
-"Indent Guides
-hi IndentGuidesOdd  ctermbg=red
-hi IndentGuidesEven ctermbg=yellow
-let g:indent_guides_guide_size = 1
-
 "Swoop
 let g:swoopUseDefaultKeyMap = 0
 
