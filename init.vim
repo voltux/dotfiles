@@ -20,9 +20,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 
 "Terminal
 Plug 'kassio/neoterm'
