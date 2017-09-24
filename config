@@ -19,8 +19,8 @@ new_window pixel 1
 new_float normal
 
 ##gaps
-gaps inner 5
-gaps outer -7
+#gaps inner 5
+#gaps outer -7
 
 #Hide borders
 hide_edge_borders none
@@ -213,6 +213,12 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Pause mode "$mode_system"
+
+#Language
+bindsym Ctrl+1 exec setxkbmap us -option caps:escape
+bindsym Ctrl+2 exec setxkbmap fr -option caps:escape
+bindsym Ctrl+3 exec setxkbmap gr -option caps:escape
+
 
 #numlock
 exec_always --no-startup-id numlockx on
