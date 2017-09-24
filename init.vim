@@ -58,6 +58,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'chrisbra/csv.vim'
 
 "Other
 Plug 'jceb/vim-orgmode'
