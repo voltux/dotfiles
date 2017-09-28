@@ -137,7 +137,6 @@ bindsym $mod+Shift+0 move container to workspace 10
 exec --no-startup-id i3-msg 'workspace 1:Terminal; exec terminator'
 exec --no-startup-id i3-msg 'workspace 2:Firefox; exec firefox'
 exec --no-startup-id i3-msg 'workspace 3:Mail; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 4:Music; exec spotify'
 exec --no-startup-id i3-msg 'workspace 1:Terminal'
 #exec --no-startup-id i3-msg 'exec synclient TouchpadOff=1'
 
@@ -225,10 +224,10 @@ bindsym Ctrl+3 exec setxkbmap gr -option caps:escape
 #numlock
 exec_always --no-startup-id numlockx on
 
-#network
-exec no-startup-id nm-applet
-
 #compton transparency
 exec no-startup-id compton -b
+
+#redshift
+#exec no-startup-id redshift -l 454454:045048
 
 hide_edge_borders none
