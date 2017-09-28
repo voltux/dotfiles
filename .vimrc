@@ -30,7 +30,6 @@ Plug 'ternjs/tern_for_vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'mbbill/undotree'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
@@ -42,6 +41,7 @@ Plug 'maralla/completor.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'jceb/vim-orgmode'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 "-----------------General Settings---------------

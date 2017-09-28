@@ -20,9 +20,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 
 "Terminal
 Plug 'kassio/neoterm'
@@ -58,6 +58,7 @@ Plug 'ternjs/tern_for_vim'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'chrisbra/csv.vim'
 
 "Other
 Plug 'jceb/vim-orgmode'
@@ -331,11 +332,6 @@ let g:ale_set_highlights = 0
 let g:ale_python_pylint_executable = 'pylint3'
 let g:ale_python_flake8_executable = 'flake8'
 let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
-
-"Indent Guides
-hi IndentGuidesOdd  ctermbg=red
-hi IndentGuidesEven ctermbg=yellow
-let g:indent_guides_guide_size = 1
 
 "Swoop
 let g:swoopUseDefaultKeyMap = 0
