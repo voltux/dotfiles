@@ -44,7 +44,7 @@ Plug 'junegunn/gv.vim'
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'pelodelfuego/vim-swoop'
-Plug 'eugen0329/vim-esearch'
+"Plug 'eugen0329/vim-esearch'
 
 "Misc
 Plug 'xolox/vim-easytags'
@@ -160,9 +160,9 @@ nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
 
 " New vertical split, horizontal split, tab, and movement
-nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>v :vnew<cr>
-nnoremap <leader>h :new<cr>
+nnoremap <leader>st :tabnew<cr>
+nnoremap <leader>sv :vnew<cr>
+nnoremap <leader>sh :new<cr>
 
 "Zoom opening new tab
 nnoremap <leader>z :tab split<CR>
@@ -336,13 +336,13 @@ let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', '
 "Swoop
 let g:swoopUseDefaultKeyMap = 0
 
-"Neoterm
-let g:neoterm_position = 'horizontal'
-let g:neoterm_automap_keys = ',tt'
-nnoremap <silent> ,th :call neoterm#close()<cr>
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
+""Neoterm
+"let g:neoterm_position = 'horizontal'
+"let g:neoterm_automap_keys = ',tt'
+"nnoremap <silent> ,th :call neoterm#close()<cr>
+"nnoremap <silent> ,tl :call neoterm#clear()<cr>
+"nnoremap <silent> ,tc :call neoterm#kill()<cr>
 
-nnoremap <silent> <f10> :TREPLSendFile<cr>
-nnoremap <silent> <f9> :TREPLSendLine<cr>
-vnoremap <silent> <f9> :TREPLSendSelection<cr>
+"nnoremap <silent> <f10> :TREPLSendFile<cr>
+"nnoremap <silent> <f9> :TREPLSendLine<cr>
+"vnoremap <silent> <f9> :TREPLSendSelection<cr>
