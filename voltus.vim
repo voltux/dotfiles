@@ -3,7 +3,7 @@ runtime colors/ir_black.vim
 
 let g:colors_name = "voltus"
 
-hi pythonSpaceError ctermbg=cyan guibg=red
+hi pythonSpaceError ctermbg=lightblue guibg=red
 
 hi Comment ctermfg=darkgray
 
