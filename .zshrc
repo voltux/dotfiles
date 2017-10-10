@@ -95,7 +95,6 @@ alias nvi='nvim -u NONE'
 alias vin='vim -u ~/.vimrc.basic'
 alias F='| fzf'
 alias sl=ls
-alias net=w3m
 alias td='tmux detach'
 alias iconfig='nvim ~/.config/i3/config'
 alias muttrc='nvim ~/.muttrc'
