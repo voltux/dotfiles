@@ -42,6 +42,8 @@ Plug 'davidhalter/jedi-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'jceb/vim-orgmode'
 Plug 'Yggdroot/indentLine'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
 
 call plug#end()
 "-----------------General Settings---------------
