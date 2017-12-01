@@ -23,6 +23,8 @@ Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
 
 "Terminal
 Plug 'kassio/neoterm'
@@ -158,11 +160,6 @@ nnoremap <leader>s :w<cr>
 
 " Fast quit
 nnoremap <leader>q :q<cr>
-
-" New vertical split, horizontal split, tab, and movement
-nnoremap <leader>st :tabnew<cr>
-nnoremap <leader>sv :vnew<cr>
-nnoremap <leader>sh :new<cr>
 
 "Zoom opening new tab
 nnoremap <leader>z :tab split<CR>
@@ -346,3 +343,7 @@ let g:swoopUseDefaultKeyMap = 0
 "nnoremap <silent> <f10> :TREPLSendFile<cr>
 "nnoremap <silent> <f9> :TREPLSendLine<cr>
 "vnoremap <silent> <f9> :TREPLSendSelection<cr>
+"
+
+
+

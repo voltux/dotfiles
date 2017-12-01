@@ -122,11 +122,6 @@ nnoremap <leader>s :w<cr>
 " Fast quit
 nnoremap <leader>q :q<cr>
 
-" New vertical split, horizontal split, tab, and movement
-nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>v :vnew<cr>
-nnoremap <leader>h :new<cr>
-
 " Copy to system clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
