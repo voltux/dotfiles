@@ -37,11 +37,16 @@ Plug 'jpalardy/vim-slime'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
 Plug 'junegunn/fzf.vim'
-Plug 'maralla/completor.vim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'davidhalter/jedi-vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'jceb/vim-orgmode'
 Plug 'Yggdroot/indentLine'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'zchee/deoplete-jedi'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
 call plug#end()
 "-----------------General Settings---------------
@@ -171,6 +176,9 @@ hi Folded ctermbg=016
 "Recognizing latex files
 let g:tex_flavor='latex'
 
+"Filetypes
+au BufNewFile,BufRead *.pri setf idlang
+
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
@@ -267,12 +275,20 @@ nnoremap <leader>fa :Ack!<space>
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
 
-"Completor
-let g:completor_python_binary = '/usr/lib/python3'
-let g:completor_clang_binary = '/use/bin/clang'
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
-
 "jedi
 autocmd FileType python setlocal completeopt+=preview
+
+"deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><c-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr><c-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
+if !exists('g:deoplete#omni#input_patterns')
+  let g:deoplete#omni#input_patterns = {}
+endif
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+let g:deoplete#enable_at_startup = 1
+
+"deoplete python
+let g:deoplete#sources#jedi#show_docstring = 1
+let g:python_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python'

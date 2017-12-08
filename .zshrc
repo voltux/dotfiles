@@ -96,8 +96,9 @@ alias vin='vim -u ~/.vimrc.basic'
 alias F='| fzf'
 alias sl=ls
 alias td='tmux detach'
-alias iconfig='nvim ~/.config/i3/config'
-alias muttrc='nvim ~/.muttrc'
+alias iconfig='$EDITOR ~/.config/i3/config'
+alias muttrc='$EDITOR ~/.muttrc'
+alias tmuxrc='$EDITOR ~/.tmux.conf'
 
 #vi mode
 set editing-mode vi
