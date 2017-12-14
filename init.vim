@@ -210,6 +210,9 @@ autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
 au! BufRead,BufNewFile *.pde setfiletype arduino
 
+"Filetypes
+au BufNewFile,BufRead *.pri setf idlang
+
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>

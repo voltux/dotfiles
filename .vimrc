@@ -176,6 +176,9 @@ hi Folded ctermbg=016
 "Recognizing latex files
 let g:tex_flavor='latex'
 
+"Filetypes
+au BufNewFile,BufRead *.pri setf idlang
+
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
