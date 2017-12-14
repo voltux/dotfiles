@@ -227,6 +227,10 @@ exec_always --no-startup-id numlockx on
 #compton transparency
 exec no-startup-id compton -b
 
+# two finger tap for right click and three for middle
+exec_always --no-startup-id synclient TapButton2=3
+exec_always --no-startup-id synclient TapButton3=2
+
 #redshift
 #exec no-startup-id redshift -l 454454:045048
 
