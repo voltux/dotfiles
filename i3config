@@ -19,7 +19,7 @@ new_window pixel 1
 new_float normal
 
 ##gaps
-#gaps inner 5
+gaps inner 5
 #gaps outer -7
 
 #Hide borders
