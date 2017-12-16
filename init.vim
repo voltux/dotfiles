@@ -151,9 +151,7 @@ set undoreload=10000        " number of lines to save for undo
 let g:terminal_scrollback_buffer_size = 100000
 
 "Basically you press * or # to search for the current selection
-vnoremap <silent> *  : call VisualSearch('f')<CR>
-vnoremap <silent> #  : call VisualSearch('b')<CR>
-vnoremap <silent> gv : call VisualSearch('gv')<CR>
+vnoremap <silent> * y/<C-R>"<CR>
 
 " Fast save
 nnoremap <leader>s :w<cr>
