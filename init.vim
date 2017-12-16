@@ -326,12 +326,15 @@ let g:pyref_mapping = 'K'
 
 "Ale
 let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '!'
+let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 0
-let g:ale_python_pylint_executable = 'pylint3'
-let g:ale_python_flake8_executable = 'flake8'
+let g:ale_python_autopep8_use_global = 1
 let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
+
+"Syntastic
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
 
 "Swoop
 let g:swoopUseDefaultKeyMap = 0

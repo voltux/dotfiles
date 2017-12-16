@@ -27,7 +27,5 @@ highlight DiffAdd term=reverse cterm=bold ctermbg=lightgreen ctermfg=16
 highlight DiffChange term=reverse cterm=bold ctermbg=lightblue ctermfg=16
 highlight DiffText term=reverse cterm=bold ctermbg=lightgray ctermfg=16
 highlight DiffDelete term=reverse cterm=bold ctermbg=lightred ctermfg=16
-"hi ALEWarningSign ctermbg=red
-"hi ALEErrorSign ctermbg=red
 
 highlight PmenuSel ctermfg=16 ctermbg=156
