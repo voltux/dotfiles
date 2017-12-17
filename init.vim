@@ -38,6 +38,7 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
+"Plug 'neomake/neomake'
 
 "Git
 Plug 'tpope/vim-fugitive'
@@ -67,7 +68,6 @@ Plug 'chrisbra/csv.vim'
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
 Plug 'metakirby5/codi.vim'
-"Plug 'neomake/neomake'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-speeddating'
 
