@@ -10,6 +10,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
+Plug 'jeetsukumaran/vim-buffergator'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
@@ -192,11 +193,12 @@ nnoremap <leader>ft :Tags<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
+nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fe :call Swoop()<CR>
 vnoremap <leader>fe :call SwoopSelection()<CR>
 nnoremap <leader>fs :call SwoopMulti()<CR>
 vnoremap <leader>fs :call SwoopMultiSelection()<CR>
-nnoremap <leader>b  :Buffers<CR>
+nnoremap <leader>b  :BuffergatorToggle<CR>
 
 "Compiler shortcuts and bindings
 nnoremap <F8> <NOP>
@@ -337,17 +339,16 @@ let g:syntastic_warning_symbol = '⚠'
 "Swoop
 let g:swoopUseDefaultKeyMap = 0
 
+"IndentLine
+nnoremap <leader>ig :indentLinesToggle<CR>
+
 ""Neoterm
-"let g:neoterm_position = 'horizontal'
-"let g:neoterm_automap_keys = ',tt'
-"nnoremap <silent> ,th :call neoterm#close()<cr>
-"nnoremap <silent> ,tl :call neoterm#clear()<cr>
-"nnoremap <silent> ,tc :call neoterm#kill()<cr>
+let g:neoterm_position = 'horizontal'
+nnoremap <silent> <leader>tt :Tnew <CR>
+nnoremap <silent> ,th :call neoterm#close()<cr>
+nnoremap <silent> ,tl :call neoterm#clear()<cr>
+nnoremap <silent> ,tc :call neoterm#kill()<cr>
 
-"nnoremap <silent> <f10> :TREPLSendFile<cr>
-"nnoremap <silent> <f9> :TREPLSendLine<cr>
-"vnoremap <silent> <f9> :TREPLSendSelection<cr>
-"
-
-
-
+nnoremap <silent> <f10> :TREPLSendFile<cr>
+nnoremap <silent> <f9> :TREPLSendLine<cr>
+vnoremap <silent> <f9> :TREPLSendSelection<cr>
