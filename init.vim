@@ -340,7 +340,7 @@ let g:syntastic_warning_symbol = '⚠'
 let g:swoopUseDefaultKeyMap = 0
 
 "IndentLine
-nnoremap <leader>ig :indentLinesToggle<CR>
+nnoremap <leader>ig :IndentLinesToggle<CR>
 
 ""Neoterm
 let g:neoterm_position = 'horizontal'
