@@ -63,6 +63,7 @@ Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'chrisbra/csv.vim'
+Plug 'neovimhaskell/haskell-vim'
 
 "Other
 Plug 'jceb/vim-orgmode'
