@@ -26,6 +26,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
+Plug 'michaeljsmith/vim-indent-object'
 
 "Terminal
 Plug 'kassio/neoterm'
