@@ -274,6 +274,10 @@ nnoremap <leader>fa :Ack!<space>
 "Ale
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚠'
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+let g:ale_python_autopep8_use_global = 1
+let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
 
 "jedi
 autocmd FileType python setlocal completeopt+=preview
