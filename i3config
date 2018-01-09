@@ -185,8 +185,8 @@ bindsym XF86AudioLowerVolume "exec pactl set-sink-volume 0 -5% ; exec notify-sen
 bindsym XF86AudioMute "exec pactl set-sink-mute 0 toggle ; exec notify-send Mute/Unmute" # mute sound
 
 #Brightness controls
-bindsym $mod+Shift+F4 "exec xbacklight -inc 5 ; exec notify-send 'Brightness up'"
-bindsym $mod+Shift+F3 "exec xbacklight -dec 5 ; exec notify-send 'Brightness down'"
+bindsym $mod+Shift+F4 "exec light -A 5 ; exec notify-send 'Brightness up'"
+bindsym $mod+Shift+F3 "exec light -U 5 ; exec notify-send 'Brightness down'"
 
 #Wallpaper
 exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
