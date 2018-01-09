@@ -234,7 +234,7 @@ exec_always --no-startup-id synclient TapButton3=2
 #redshift
 #exec no-startup-id redshift -l 454454:045048
 
-exec --no-startup-id dunst &
+exec_always --no-startup-id dunst &
 exec --no-startup-id nm-applet &
 
 hide_edge_borders none
