@@ -220,6 +220,9 @@ bindsym Ctrl+1 exec "setxkbmap us -option caps:escape ; exec notify-send 'Keymap
 bindsym Ctrl+2 exec "setxkbmap fr -option caps:escape ; exec notify-send 'Keymap FR'"
 bindsym Ctrl+3 exec "setxkbmap gr -option caps:escape ; exec notify-send 'Keymap EL'"
 
+#Moving workspaces between screens
+bindsym Shift+$mod+bracketright move workspace to output right
+bindsym Shift+$mod+bracketleft move workspace to output left
 
 #numlock
 exec_always --no-startup-id numlockx on
