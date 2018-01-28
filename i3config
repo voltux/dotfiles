@@ -15,7 +15,7 @@ set $mod Mod4
 font pango:Monaco 10
 
 #window settings
-new_window pixel 1
+new_window pixel 4
 new_float normal
 
 ##gaps
