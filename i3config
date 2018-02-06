@@ -213,6 +213,9 @@ bindsym Ctrl+3 exec "setxkbmap gr -option caps:escape ; exec notify-send 'Keymap
 bindsym Shift+$mod+bracketright move workspace to output right
 bindsym Shift+$mod+bracketleft move workspace to output left
 
+#Toggle status bar
+bindsym $mod+b bar mode toggle
+
 #numlock
 exec_always --no-startup-id numlockx on
 
