@@ -189,7 +189,7 @@ let g:tex_flavor='latex'
 
 "Search, find and replace things with fzf, swoop, esearch and other
 nnoremap <leader>fr :%s/
-nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>/ :FZF<CR>
 nnoremap <leader>fm :Maps<CR>
 nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>ft :Tags<CR>
