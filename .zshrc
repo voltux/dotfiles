@@ -5,6 +5,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# Generic environment variables
+export WALLPAPER="/usr/share/wallpapers/arch_against_others.png"
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -99,6 +102,7 @@ alias td='tmux detach'
 alias iconfig='$EDITOR ~/.config/i3/config'
 alias muttrc='$EDITOR ~/.muttrc'
 alias tmuxrc='$EDITOR ~/.tmux.conf'
+alias setwallpaper='feh --bg-scale $WALLPAPER'
 
 #vi mode
 set editing-mode vi
