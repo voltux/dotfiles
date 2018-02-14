@@ -131,10 +131,6 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # Run on startup for each workspace
-exec --no-startup-id i3-msg 'workspace 2:Firefox; exec firefox'
-exec --no-startup-id i3-msg 'workspace 3:Mail; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 4:Music; exec spotify'
-exec --no-startup-id i3-msg 'workspace 1:Terminal; exec terminator'
 exec --no-startup-id yakuake
 #exec --no-startup-id i3-msg 'exec synclient TouchpadOff=1'
 
