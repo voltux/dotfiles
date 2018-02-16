@@ -28,9 +28,6 @@ bindsym $mod+Shift+i gaps inner current minus 5
 #Hide borders
 hide_edge_borders none
 
-#Disable window bars entirely
-for_window [class="^.*"] border pixel 0
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
