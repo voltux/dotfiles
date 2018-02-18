@@ -171,13 +171,16 @@ bar {
 }
 
 #Volume controls
-bindsym XF86AudioRaiseVolume "exec pactl set-sink-volume 0 +5% ; exec notify-send 'Volume up'" #increase sound volume
-bindsym XF86AudioLowerVolume "exec pactl set-sink-volume 0 -5% ; exec notify-send 'Volume down'"  #decrease sound volume
-bindsym XF86AudioMute "exec pactl set-sink-mute 0 toggle ; exec notify-send Mute/Unmute" # mute sound
+#bindsym XF86AudioRaiseVolume "exec pactl set-sink-volume 0 +5% ; exec notify-send 'Volume up'" #increase sound volume
+#bindsym XF86AudioLowerVolume "exec pactl set-sink-volume 0 -5% ; exec notify-send 'Volume down'"  #decrease sound volume
+#bindsym XF86AudioMute "exec pactl set-sink-mute 0 toggle ; exec notify-send Mute/Unmute" # mute sound
+bindsym $mod+F9 "exec pactl set-sink-volume 0 +5% ; exec notify-send 'Volume up'" #increase sound volume
+bindsym $mod+F8 "exec pactl set-sink-volume 0 -5% ; exec notify-send 'Volume down'"  #decrease sound volume
+bindsym $mod+F7 "exec pactl set-sink-mute 0 toggle ; exec notify-send Mute/Unmute" # mute sound
 
 #Brightness controls
-bindsym $mod+Shift+F4 "exec light -A 5 ; exec notify-send 'Brightness up'"
-bindsym $mod+Shift+F3 "exec light -U 5 ; exec notify-send 'Brightness down'"
+bindsym $mod+F4 "exec light -A 5 ; exec notify-send 'Brightness up'"
+bindsym $mod+F3 "exec light -U 5 ; exec notify-send 'Brightness down'"
 
 #Wallpaper
 exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
@@ -185,7 +188,7 @@ exec feh --bg-scale /usr/share/wallpapers/arch_against_others.png
 #Touchpad
 #bindsym $mod+Shift+F10 exec synclient TouchpadOff=1
 #bindsym $mod+Shift+F11 exec synclient TouchpadOff=0
-bindsym $mod+Shift+F10 "exec synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ { off=int($3) } END { print !off }') ; exec notify-send 'Touchpad toggled'"
+bindsym $mod+F10 "exec synclient TouchpadOff=$(synclient | awk '/TouchpadOff/ { off=int($3) } END { print !off }') ; exec notify-send 'Touchpad toggled'"
 
 set $Locker i3lock -i /usr/share/wallpapers/arch_against_others_hd.png && sleep 1
 
