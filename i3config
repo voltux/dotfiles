@@ -254,4 +254,5 @@ exec_always --no-startup-id synclient TapButton3=2
 
 exec_always --no-startup-id dunst &
 exec --no-startup-id nm-applet &
+exec_always --no-startup-id volumeicon &
 
