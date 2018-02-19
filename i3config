@@ -102,8 +102,8 @@ bindsym $mod+Tab exec rofi -show window
 #exec --no-startup-id pa-applet
 
 # switch to workspace
-bindsym $mod+1 workspace "1:Terminal"
-bindsym $mod+2 workspace "2:Firefox"
+bindsym $mod+1 workspace "1:Term"
+bindsym $mod+2 workspace "2:Web"
 bindsym $mod+3 workspace "3:Mail"
 bindsym $mod+4 workspace "4:Music"
 bindsym $mod+5 workspace "5:Dev"
@@ -116,8 +116,8 @@ bindsym $mod+n workspace prev
 bindsym $mod+m workspace next
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace "1:Terminal"
-bindsym $mod+Shift+2 move container to workspace "2:Firefox"
+bindsym $mod+Shift+1 move container to workspace "1:Term"
+bindsym $mod+Shift+2 move container to workspace "2:Web"
 bindsym $mod+Shift+3 move container to workspace "3:Mail"
 bindsym $mod+Shift+4 move container to workspace "4:Music"
 bindsym $mod+Shift+5 move container to workspace "5:Dev"
@@ -254,5 +254,5 @@ exec_always --no-startup-id synclient TapButton3=2
 
 exec_always --no-startup-id dunst &
 exec --no-startup-id nm-applet &
-exec_always --no-startup-id volumeicon &
+exec --no-startup-id volumeicon &
 
