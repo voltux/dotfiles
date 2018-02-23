@@ -8,7 +8,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
-set $browser firefox
+set $browser qutebrowser
 set $terminal terminator
 set $wallpaper /usr/share/wallpaper/arch_against_others.png
 # Font for window titles. Will also be used by the bar unless a different font
@@ -256,3 +256,6 @@ exec_always --no-startup-id dunst &
 exec --no-startup-id nm-applet &
 exec --no-startup-id volumeicon &
 
+#gimp window management
+for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
+for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
