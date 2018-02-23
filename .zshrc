@@ -103,6 +103,7 @@ alias iconfig='$EDITOR ~/.config/i3/config'
 alias muttrc='$EDITOR ~/.muttrc'
 alias tmuxrc='$EDITOR ~/.tmux.conf'
 alias setwallpaper='feh --bg-scale $WALLPAPER'
+alias sduo=sudo
 
 #vi mode
 set editing-mode vi
