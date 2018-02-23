@@ -119,9 +119,6 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
-" remap Ctrl+A because I am using it for tmux and thus do not need Ctrl+z
-nnoremap <C-z> <C-a>
-
 "editor settings
 set ignorecase
 set smartcase
@@ -153,6 +150,10 @@ set undoreload=10000        " number of lines to save for undo
 :tnoremap <C-t> <C-\><C-n>
 :tnoremap <Leader><ESC> <C-\><C-n>
 let g:terminal_scrollback_buffer_size = 100000
+
+"remap space to page forward and ctrl space to page backward
+nnoremap <space> <C-f>
+nnoremap <leader><Space> <C-b>
 
 "Basically you press * or # to search for the current selection
 vnoremap <silent> * y/<C-R>"<CR>
