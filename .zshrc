@@ -88,6 +88,7 @@ source $ZSH/oh-my-zsh.sh
 #
 
 #voltus aliases
+alias l='ls -lh'
 alias ll='ls -lh'
 alias la='ls -lha'
 alias sl=ls
