@@ -7,6 +7,16 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Generic environment variables
 export WALLPAPER="/usr/share/wallpapers/arch_against_others.png"
+export BROWSER="/usr/bin/qutebrowser"
+
+#colors for less
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;34m'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -134,14 +144,3 @@ xset b off
 #keyboard layout
 setxkbmap -layout us -option caps:escape
 
-#colors for less
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;34m'
-
-#browser variable
-export BROWSER=/usr/bin/qutebrowser
