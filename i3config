@@ -231,6 +231,7 @@ bindsym $mod+x mode "$mode_display"
 bindsym Ctrl+1 exec "setxkbmap us -option caps:escape ; exec notify-send 'Keymap US'"
 bindsym Ctrl+2 exec "setxkbmap fr -option caps:escape ; exec notify-send 'Keymap FR'"
 bindsym Ctrl+3 exec "setxkbmap gr -option caps:escape ; exec notify-send 'Keymap EL'"
+bindsym Ctrl+4 exec "setxkbmap gb -option caps:escape ; exec notify-send 'Keymap UK'"
 
 #Moving workspaces between screens
 bindsym Shift+$mod+bracketright move workspace to output right
