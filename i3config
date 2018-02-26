@@ -237,6 +237,13 @@ bindsym Ctrl+4 exec "setxkbmap gb -option caps:escape ; exec notify-send 'Keymap
 bindsym Shift+$mod+bracketright move workspace to output right
 bindsym Shift+$mod+bracketleft move workspace to output left
 
+# screenshot whole screen
+bindsym Print exec scrot ~/Pictures/Screenshots/`date +%d-%m-%Y_%H:%M:%S`.png
+# screenshot window
+bindsym $mod+Print exec scrot -u ~/Pictures/ScreenShoots/`date +%d-%m-%Y_%H:%M:%S`.png
+# screenshot rectangle
+bindsym $mod+Shift+Print exec scrot -s ~/Pictures/ScreenShoots/`date +%d-%m-%Y_%H:%M:%S`.png
+
 #Toggle status bar
 bindsym $mod+b bar mode toggle
 
