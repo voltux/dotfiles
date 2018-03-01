@@ -396,8 +396,3 @@ exec_always --no-startup-id numlockx on
 exec notify-send "System Up"
 
 bindsym $mod+Tab exec rofi -show window
-
-#Run on startup
-#exec --no-startup-id i3-msg 'workspace $ws2; exec firefox'
-#exec --no-startup-id i3-msg 'workspace $ws3; exec thunderbird'
-#exec --no-startup-id i3-msg 'workspace $ws1; exec terminator'
