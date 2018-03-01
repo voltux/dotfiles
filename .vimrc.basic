@@ -1,0 +1,15 @@
+set nocompatible
+filetype on
+filetype plugin indent on
+syntax on
+syntax enable
+set number
+set relativenumber
+set ruler
+set smartindent
+set shiftwidth=4
+set tabstop=4
+set smarttab
+set ignorecase
+set smartcase
+set cursorline
