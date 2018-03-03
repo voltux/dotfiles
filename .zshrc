@@ -106,6 +106,7 @@ alias sl=ls
 alias haskell=ghci
 alias vimrc='vim ~/.vimrc'
 alias vi='vim -u ~/.vimrc.basic'
+alias gvi='gvim -u ~/.vimrc.basic'
 alias nvimrc='nvim ~/.config/nvim/init.vim'
 alias nvi='nvim -u ~/.vimrc.basic'
 alias vin='vim -u ~/.vimrc.basic'
