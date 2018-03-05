@@ -358,3 +358,9 @@ nnoremap <silent> <f10> :TREPLSendFile<cr>
 nnoremap <silent> <f9> :TREPLSendLine<cr>
 vnoremap <silent> <f9> :TREPLSendSelection<cr>
 
+"Remember folds
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent! loadview
+augroup END
