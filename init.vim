@@ -87,6 +87,10 @@ set number
 set relativenumber
 set cursorline
 
+"default places for opening splits
+set splitbelow
+set splitright
+
 "colors
 set background=dark
 colorscheme voltus
@@ -324,7 +328,7 @@ nnoremap <leader>u :UndotreeToggle<cr>
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
-let g:slime_python_ipython = 1
+"let g:slime_python_ipython = 1
 
 "Pyref
 let g:pyref_mapping = 'K'
