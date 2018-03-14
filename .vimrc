@@ -155,7 +155,7 @@ set guioptions-=m
 set guioptions-=M
 if has("gui_running")
     set lines=999 columns=999
-    "colorscheme molokai
+    colorscheme Tomorrow
     set guifont=Monaco\ 11
 endif
 "map <silent> <F11>
@@ -228,6 +228,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 "airline setup
 let g:airline_powerline_fonts = 1
 let g:airline_theme='jellybeans'
+if has("gui_running")
+let g:airline_theme='tomorrow'
+endif
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
