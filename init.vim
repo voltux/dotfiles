@@ -352,7 +352,6 @@ let g:swoopUseDefaultKeyMap = 0
 nnoremap <leader>ig :IndentLinesToggle<CR>
 
 ""Neoterm
-let g:neoterm_position = 'horizontal'
 nnoremap <silent> <leader>tt :Tnew <CR>
 nnoremap <silent> ,th :call neoterm#close()<cr>
 nnoremap <silent> ,tl :call neoterm#clear()<cr>
