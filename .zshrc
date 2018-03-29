@@ -147,3 +147,6 @@ xset b off
 #keyboard layout
 setxkbmap -layout us -option caps:escape
 
+# fzf
+source ~/.fzf.zsh
+
