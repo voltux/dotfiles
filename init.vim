@@ -101,6 +101,11 @@ set mouse=a
 "Search down into subfolders - Provides tab completion for all related tasks
 set path+=**
 
+"Centralize backup and swap directories
+set backup
+set backupdir=~/.config/nvim/backup
+set directory=~/.config/nvim/tmp
+
 "set leader key
 let mapleader = ","
 
