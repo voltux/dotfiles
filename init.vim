@@ -328,10 +328,11 @@ nnoremap <leader>u :UndotreeToggle<cr>
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
-"let g:slime_python_ipython = 1
+let g:slime_python_ipython = 1
 
 "Pyref
 let g:pyref_mapping = 'K'
+let g:python_highlight_all = 1
 
 "Ale
 let g:ale_sign_error = '✗'
