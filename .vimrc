@@ -70,6 +70,11 @@ set mouse=a
 "Provides tab completion for all related tasks
 set path+=**
 
+"Centralize backup and swap directories
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
 "set leader key
 let mapleader = ","
 
