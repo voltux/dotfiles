@@ -71,9 +71,9 @@ set mouse=a
 set path+=**
 
 "Centralize backup and swap directories
-set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+"set backup
+"set backupdir=~/.vim/backup
+"set directory=~/.vim/tmp
 
 "set leader key
 let mapleader = ","
