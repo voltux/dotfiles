@@ -102,9 +102,9 @@ set mouse=a
 set path+=**
 
 "Centralize backup and swap directories
-set backup
-set backupdir=~/.config/nvim/backup
-set directory=~/.config/nvim/tmp
+"set backup
+"set backupdir=~/.config/nvim/backup
+"set directory=~/.config/nvim/tmp
 
 "set leader key
 let mapleader = ","
