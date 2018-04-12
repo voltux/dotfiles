@@ -157,6 +157,7 @@ set undoreload=10000        " number of lines to save for undo
 :tnoremap <C-k> <C-\><C-n><C-w>k
 :tnoremap <C-l> <C-\><C-n><C-w>l
 :tnoremap <C-t> <C-\><C-n>
+:tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 :tnoremap <Leader><ESC> <C-\><C-n>
 let g:terminal_scrollback_buffer_size = 100000
 
@@ -199,7 +200,7 @@ let g:tex_flavor='latex'
 
 "Search, find and replace things with fzf, swoop, esearch and other
 nnoremap <leader>fr :%s/
-nnoremap <leader>/ :FZF<CR>
+nnoremap <leader>/  :FZF<CR>
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fm :Maps<CR>
 nnoremap <leader>fl :Lines<CR>
@@ -217,11 +218,11 @@ nnoremap <leader>b  :BuffergatorToggle<CR>
 "Compiler shortcuts and bindings
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
-autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
-autocmd Filetype python nmap <F8> :w <CR> :!python %<CR>
-autocmd Filetype python vmap <F8> !python<CR>
-autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
-autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
+autocmd Filetype c,cpp       nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
+autocmd Filetype python      nmap <F8> :w <CR> :!python %<CR> ''
+autocmd Filetype python 	 vmap <F8> !python<CR>
+autocmd Filetype julia       nmap <F8> :w <CR> :!julia % <CR>
+autocmd Filetype haskell     nmap <F8> :w <CR> :!ghc -o %< % <CR>
 au! BufRead,BufNewFile *.pde setfiletype arduino
 
 "Filetypes
@@ -229,12 +230,12 @@ au BufNewFile,BufRead *.pri setf idlang
 
 "----------------------Language Settings----------------------
 
-nmap <leader>lg :set keymap=greek_utf-8<CR>
-nmap <leader>le :set keymap&<CR>
+nmap <leader>lg  :set keymap=greek_utf-8<CR>
+nmap <leader>le  :set keymap&<CR>
 nmap <leader>lcg :setlocal spell spelllang=el<CR>
 nmap <leader>lce :setlocal spell spelllang=en<CR>
 nmap <leader>lcf :setlocal spell spelllang=fr<CR>
-nmap <leader>ll :set nospell<CR>
+nmap <leader>ll  :set nospell<CR>
 
 map! ;a à
 map! ;z â
@@ -277,11 +278,10 @@ endif
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:deoplete#enable_at_startup = 1
 
-
 "deoplete python
 let g:deoplete#sources#jedi#show_docstring = 1
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python'
+let g:python_host_prog                     = '/usr/bin/python2'
+let g:python3_host_prog                    = '/usr/bin/python'
 
 "deoplete clang
 let g:clang_library_path='/usr/lib/llvm-3.8/lib'
@@ -330,22 +330,22 @@ let g:easytags_async = 1
 nnoremap <leader>u :UndotreeToggle<cr>
 
 "Slime
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_target           = "tmux"
+let g:slime_default_config   = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
-let g:slime_python_ipython = 1
+let g:slime_python_ipython   = 1
 
 "Pyref
-let g:pyref_mapping = 'K'
+let g:pyref_mapping        = 'K'
 let g:python_highlight_all = 1
 
 "Ale
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
+let g:ale_sign_error                 = '✗'
+let g:ale_sign_warning               = '⚠'
+let g:ale_sign_column_always         = 1
+let g:ale_set_highlights             = 0
 let g:ale_python_autopep8_use_global = 1
-let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
+let g:ale_virtualenv_dir_names       = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
 
 "Syntastic
 let g:syntastic_error_symbol = '✗'
@@ -359,13 +359,12 @@ nnoremap <leader>ig :IndentLinesToggle<CR>
 
 ""Neoterm
 nnoremap <silent> <leader>tt :Tnew <CR>
-nnoremap <silent> ,th :call neoterm#close()<cr>
-nnoremap <silent> ,tl :call neoterm#clear()<cr>
-nnoremap <silent> ,tc :call neoterm#kill()<cr>
-
-nnoremap <silent> <f10> :TREPLSendFile<cr>
-nnoremap <silent> <f9> :TREPLSendLine<cr>
-vnoremap <silent> <f9> :TREPLSendSelection<cr>
+nnoremap <silent> ,th        :call neoterm#close()<cr>
+nnoremap <silent> ,tl        :call neoterm#clear()<cr>
+nnoremap <silent> ,tc        :call neoterm#kill()<cr>
+nnoremap <silent> <f10>      :TREPLSendFile<cr>
+nnoremap <silent> <f9>       :TREPLSendLine<cr>
+vnoremap <silent> <f9>       :TREPLSendSelection<cr>
 
 "Remember folds
 augroup remember_folds
