@@ -57,6 +57,7 @@ syntax enable
 syntax on
 set number
 set relativenumber
+set cursorline
 filetype plugin indent on
 
 "colors
