@@ -162,7 +162,7 @@ set guioptions-=M
 if has("gui_running")
     set lines=999 columns=999
     colorscheme Tomorrow
-    set guifont=Monaco\ 11
+    set guifont=Monaco\ 10
 endif
 "map <silent> <F11>
             "\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
