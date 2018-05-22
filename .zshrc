@@ -119,6 +119,9 @@ alias tmuxrc='$EDITOR ~/.tmux.conf'
 alias setwallpaper='feh --bg-scale $WALLPAPER'
 alias sduo=sudo
 
+# custom script to update path environment variable
+source $HOME/Scripts/bin/update_path
+
 #vi mode
 set editing-mode vi
 bindkey -v
@@ -133,8 +136,8 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 
+# fzf scripts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$HOME/.bin:$PATH
 
 # .NET telemetry opt out
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -152,3 +155,4 @@ source ~/.fzf.zsh
 
 # terminal
 export TERMINAL=terminator
+export TERMCMD=terminator
