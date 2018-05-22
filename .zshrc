@@ -150,3 +150,5 @@ setxkbmap -layout us -option caps:escape
 # fzf
 source ~/.fzf.zsh
 
+# terminal
+export TERMINAL=terminator
