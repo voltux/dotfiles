@@ -138,6 +138,9 @@ export KEYTIMEOUT=1
 
 # fzf scripts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [[ $PATH != *"$HOME/.bin"* ]]; then
+    export PATH="$PATH:$HOME/.bin"
+fi
 
 # .NET telemetry opt out
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
