@@ -120,7 +120,7 @@ alias setwallpaper='feh --bg-scale $WALLPAPER'
 alias sduo=sudo
 
 # custom script to update path environment variable
-source $HOME/Scripts/bin/update_path
+[ -f $HOME/Scripts/bin/update_path ] && source $HOME/Scripts/bin/update_path
 
 #vi mode
 set editing-mode vi
