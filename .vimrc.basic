@@ -3,6 +3,7 @@ filetype on
 filetype plugin indent on
 syntax on
 syntax enable
+set background=dark
 set number
 set relativenumber
 set ruler
