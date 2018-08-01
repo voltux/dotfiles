@@ -219,7 +219,7 @@ nnoremap <leader>b  :BuffergatorToggle<CR>
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
 autocmd Filetype c,cpp       nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
-autocmd Filetype python      nmap <F8> :w <CR> :!python %<CR> ''
+autocmd Filetype python      nmap <F8> :w <CR> :!python % <CR>
 autocmd Filetype python 	 vmap <F8> !python<CR>
 autocmd Filetype julia       nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell     nmap <F8> :w <CR> :!ghc -o %< % <CR>
