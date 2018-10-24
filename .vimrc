@@ -161,7 +161,8 @@ set guioptions-=m
 set guioptions-=M
 if has("gui_running")
     set lines=999 columns=999
-    colorscheme Tomorrow
+    set background=dark
+    colorscheme Tomorrow-Night
     set guifont=Monaco\ 10
 endif
 "map <silent> <F11>
