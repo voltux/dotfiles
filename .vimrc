@@ -185,6 +185,12 @@ let g:tex_flavor='latex'
 "Filetypes
 au BufNewFile,BufRead *.pri setf idlang
 
+"Resize
+nnoremap <S-Up> :resize +2 <CR>
+nnoremap <S-Down> :resize -2 <CR>
+nnoremap <S-Right> :vertical resize +2 <CR>
+nnoremap <S-Left> :vertical resize -2 <CR>
+
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
