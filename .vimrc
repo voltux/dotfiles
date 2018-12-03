@@ -47,6 +47,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'zchee/deoplete-jedi'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'mboughaba/i3config.vim'
 
 call plug#end()
 "-----------------General Settings---------------

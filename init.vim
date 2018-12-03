@@ -28,6 +28,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'mboughaba/i3config.vim'
 
 "Terminal
 Plug 'kassio/neoterm'
