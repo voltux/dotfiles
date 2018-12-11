@@ -61,6 +61,10 @@ set relativenumber
 set cursorline
 filetype plugin indent on
 
+"default places for opening splits
+set splitbelow
+set splitright
+
 "colors
 set background=dark
 colorscheme voltus
@@ -114,8 +118,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set tags=./tags;/
-set textwidth=80
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
+set textwidth=120
+set noshowmode
+set title
 
 "undo settings
 set undofile                " Save undo's after file closes
@@ -123,16 +129,14 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
+"remap space to page forward and ctrl space to page backward
+nnoremap <space> <C-f>
+nnoremap <leader><Space> <C-b>
+
 "Basically you press * or # to search for the current selection
 vnoremap <silent> *  : call VisualSearch('f')<CR>
 vnoremap <silent> #  : call VisualSearch('b')<CR>
 vnoremap <silent> gv : call VisualSearch('gv')<CR>
-
-" Fast saving
-nnoremap <leader>s :w<cr>
-
-" Fast quit
-nnoremap <leader>q :q<cr>
 
 " Copy to system clipboard
 nnoremap <leader>y "+y
@@ -145,12 +149,22 @@ nnoremap <leader>p "+p
 nnoremap <leader>fr :%s/
 
 "Find things with fzf
+nnoremap <leader>fr :%s/
+nnoremap <leader>fp :Colors<CR>
 nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fm :Maps<CR>
 nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>ft :Tags<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
+nnoremap <leader>f' :Marks<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fe :call Swoop()<CR>
+vnoremap <leader>fe :call SwoopSelection()<CR>
+nnoremap <leader>fs :call SwoopMulti()<CR>
+vnoremap <leader>fs :call SwoopMultiSelection()<CR>
+nnoremap <leader>b  :BuffergatorToggle<CR>
 
 "gui settings
 set guioptions-=T
@@ -196,6 +210,10 @@ nnoremap <S-Left> :vertical resize -2 <CR>
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
 nmap <leader>le :set keymap&<CR>
+nmap <leader>lcg :setlocal spell spelllang=el<CR>
+nmap <leader>lce :setlocal spell spelllang=en<CR>
+nmap <leader>lcf :setlocal spell spelllang=fr<CR>
+nmap <leader>ll  :set nospell<CR>
 
 map! ;a à
 map! ;z â

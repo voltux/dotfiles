@@ -129,6 +129,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
+"copy paste between different programs/windows/tabs
+set clipboard=unnamed
+
 "editor settings
 set ignorecase
 set smartcase
@@ -169,12 +172,6 @@ nnoremap <leader><Space> <C-b>
 "Basically you press * or # to search for the current selection
 vnoremap <silent> * y/<C-R>"<CR>
 
-" Fast save
-nnoremap <leader>s :w<cr>
-
-" Fast quit
-nnoremap <leader>q :q<cr>
-
 "Zoom opening new tab
 nnoremap <leader>z :tab split<CR>
 
@@ -186,7 +183,8 @@ vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 "search settings
-set nohlsearch          " do not highlight searched-for phrases
+"set nohlsearch          " do not highlight searched-for phrases
+nnoremap <leader>/ :noh<CR>
 set incsearch           " ...but do highlight-as-I-type the search string
 set gdefault            " this makes search/replace global by default"
 
@@ -199,9 +197,10 @@ hi Folded ctermbg=016
 "Recognizing latex files
 let g:tex_flavor='latex'
 
-"Search, find and replace things with fzf, swoop, esearch and other
+"Search, find and replace things with fzf, swoop and other
 nnoremap <leader>fr :%s/
-nnoremap <leader>/  :FZF<CR>
+nnoremap <leader>fp :Colors<CR>
+nnoremap <leader>ff :FZF<CR>
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fm :Maps<CR>
 nnoremap <leader>fl :Lines<CR>
