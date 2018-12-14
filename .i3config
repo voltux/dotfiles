@@ -5,7 +5,7 @@
 set $mod Mod4
 
 # Set "environment" variables
-set $browser qutebrowser
+set $browser firefox
 set $terminal terminator
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -21,6 +21,8 @@ hide_edge_borders none
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
+gaps inner 7
+gaps outer 2
 
 # Mode gaps
 # Press $mod+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
@@ -62,6 +64,12 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
         bindsym q      mode "default"
 }
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+0 move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+0 scratchpad show
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -373,4 +381,3 @@ exec_always --no-startup-id dunst &
 exec --no-startup-id nm-applet &
 exec --no-startup-id volumeicon &
 exec --no-startup-id terminator
-
