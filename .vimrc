@@ -1,55 +1,69 @@
 call plug#begin()
 
-Plug 'mileszs/ack.vim'
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'scrooloose/nerdcommenter'
+"Navigation
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
-Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'jpalardy/vim-slime'
+Plug 'wesQ3/vim-windowswap'
+Plug 'Shougo/unite.vim'
+Plug 'regedarek/ZoomWin'
+Plug 'easymotion/vim-easymotion'
+Plug 'kshenoy/vim-signature'
+Plug 'junegunn/vim-peekaboo'
+
+"Commands
+Plug 'tpope/vim-eunuch'
+
+"Editor
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'xolox/vim-easytags'
-Plug 'tpope/vim-fugitive'
-Plug 'plasticboy/vim-markdown'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-pyref'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/vimproc.vim'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-unimpaired'
-Plug 'regedarek/ZoomWin'
-Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'ternjs/tern_for_vim'
-Plug 'wesQ3/vim-windowswap'
-Plug 'jeetsukumaran/vim-buffergator'
-Plug 'mbbill/undotree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-scripts/octave.vim--'
-Plug 'derekwyatt/vim-scala'
-Plug 'jpalardy/vim-slime'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-Plug 'junegunn/fzf.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'davidhalter/jedi-vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'jceb/vim-orgmode'
 Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'zchee/deoplete-jedi'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'mboughaba/i3config.vim'
+Plug 'flazz/vim-colorschemes'
+
+"Autocompletion
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
+Plug 'ajh17/VimCompletesMe'
+
+"Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+"Search
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
+
+"Misc
+Plug 'xolox/vim-misc'
+Plug 'Shougo/vimproc.vim'
+Plug 'xolox/vim-easytags'
+
+"Language specific
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'vim-scripts/octave.vim--'
+Plug 'derekwyatt/vim-scala'
+Plug 'jceb/vim-orgmode'
+Plug 'chrisbra/csv.vim'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
+
 "-----------------General Settings---------------
 
 set nocompatible
@@ -59,6 +73,7 @@ syntax on
 set number
 set relativenumber
 set cursorline
+set wildignorecase
 filetype plugin indent on
 
 "default places for opening splits
@@ -66,7 +81,6 @@ set splitbelow
 set splitright
 
 "colors
-set background=dark
 colorscheme voltus
 
 "activate mouse
@@ -129,10 +143,6 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
-"remap space to page forward and ctrl space to page backward
-nnoremap <space> <C-f>
-nnoremap <leader><Space> <C-b>
-
 "Basically you press * or # to search for the current selection
 vnoremap <silent> *  : call VisualSearch('f')<CR>
 vnoremap <silent> #  : call VisualSearch('b')<CR>
@@ -160,11 +170,7 @@ nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
 nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fe :call Swoop()<CR>
-vnoremap <leader>fe :call SwoopSelection()<CR>
-nnoremap <leader>fs :call SwoopMulti()<CR>
-vnoremap <leader>fs :call SwoopMultiSelection()<CR>
-nnoremap <leader>b  :BuffergatorToggle<CR>
+nnoremap <leader>b  :Unite buffer<CR>
 
 "gui settings
 set guioptions-=T
@@ -186,7 +192,9 @@ endif
 "search settings
 "set nohlsearch          " do not highlight searched-for phrases
 "set incsearch           " ...but do highlight-as-I-type the search string
+set hlsearch
 set gdefault            " this makes search/replace global by default"
+nnoremap <leader>/ :nohl<CR>
 
 "folding zf to create fold, za to toggle
 set nofoldenable
@@ -219,10 +227,10 @@ map! ;a à
 map! ;z â
 map! ;b ä
 map! ;c ç
-map! ;w è
+map! ;w ê
 map! ;e é
 map! ;f ë
-map! ;r ê
+map! ;r è
 map! ;i ï
 map! ;j î
 map! ;o ô
@@ -234,13 +242,13 @@ map! ;v ü
 
 "----------------------Plugin Configuration-------------------
 
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"Nerdtree
 nmap <leader>n :NERDTreeToggle<CR>
 
-"Tagbar Config
+"Tagbar
 nmap <leader>m :TagbarToggle<CR>
 
-"Compiler shortcuts and bindings
+"Run shortcuts and bindings
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
 autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
@@ -249,7 +257,7 @@ autocmd Filetype python vmap <F8> !python<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
 
-"Auto-pairs shortcuts
+"Auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>)'
 
 " better key bindings for UltiSnipsExpandTrigger
@@ -257,36 +265,36 @@ let g:UltiSnipsExpandTrigger       = "<tab>"
 let g:UltiSnipsJumpForwardTrigger  = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
-"airline setup
+"Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='jellybeans'
+let g:airline_theme = "dracula"
 if has("gui_running")
-let g:airline_theme='tomorrow'
+    set lines=999 columns=999
+    set background=dark
+    colorscheme gruvbox
+    let g:airline_theme="tomorrow"
+    set guifont=Monaco\ for\ Powerline\ 10
 endif
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
-" airline symbols
-"let g:airline_left_sep         = ''
-"let g:airline_left_alt_sep     = ''
-"let g:airline_right_sep        = ''
-"let g:airline_right_alt_sep    = ''
-"let g:airline_symbols.branch   = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr   = ''
+ "airline symbols
+let g:airline_left_sep         = ''
+let g:airline_left_alt_sep     = ''
+let g:airline_right_sep        = ''
+let g:airline_right_alt_sep    = ''
+let g:airline_symbols.branch   = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr   = ''
 
 "ZoomWin
 nmap <leader>z <C-w>o
 
-"whitespace
+"Whitespace
 highlight ExtraWhitespace ctermbg=78
 nmap <leader>wh :StripWhitespace<CR>
 
-"buffergator
-let g:buffergator_suppress_keymaps=1
-map <leader>b :BuffergatorToggle<CR>
-
-"easytags
+"Easytags
 let g:easytags_async = 1
 
 "Undotree
@@ -297,41 +305,7 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
 
-"Pyref
-:let g:pyref_mapping = 'K'
-":let g:pyref_python  = '/usr/share/doc/python3.5-doc/html/'
-
-"Ack
-cnoreabbrev Ack Ack!
-nnoremap <leader>fa :Ack!<space>
-
-"Ale
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
-let g:ale_python_autopep8_use_global = 1
-let g:ale_virtualenv_dir_names = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
-
-"jedi
-autocmd FileType python setlocal completeopt+=preview
-
-"deoplete
-let g:deoplete#enable_at_startup = 1
-inoremap <expr><c-j>  pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr><c-k>  pumvisible() ? "\<C-p>" : "\<C-k>"
-if !exists('g:deoplete#omni#input_patterns')
-  let g:deoplete#omni#input_patterns = {}
-endif
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-let g:deoplete#enable_at_startup = 1
-
-"deoplete python
-let g:deoplete#sources#jedi#show_docstring = 1
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python'
-
-"Remomber folds
+"Remember folds
 augroup remember_folds
   autocmd!
   autocmd BufWinLeave *.* mkview
