@@ -42,8 +42,8 @@ Plug 'ervandew/supertab'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
@@ -85,6 +85,9 @@ colorscheme voltus
 
 "activate mouse
 set mouse=a
+
+"keywordprg, how will 'K' react (default is man)
+set kp=
 
 "Search down into subfolders
 "Provides tab completion for all related tasks
@@ -191,7 +194,7 @@ endif
 
 "search settings
 "set nohlsearch          " do not highlight searched-for phrases
-"set incsearch           " ...but do highlight-as-I-type the search string
+set incsearch           " ...but do highlight-as-I-type the search string
 set hlsearch
 set gdefault            " this makes search/replace global by default"
 nnoremap <leader>/ :nohl<CR>
