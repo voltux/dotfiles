@@ -61,6 +61,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'jceb/vim-orgmode'
 Plug 'chrisbra/csv.vim'
 Plug 'mattn/emmet-vim'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
@@ -72,7 +73,6 @@ syntax enable
 syntax on
 set number
 set relativenumber
-set cursorline
 set wildignorecase
 filetype plugin indent on
 
@@ -136,7 +136,6 @@ set shiftwidth=4
 set expandtab
 set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
-set textwidth=120
 set noshowmode
 set title
 
@@ -186,8 +185,9 @@ set guioptions-=M
 if has("gui_running")
     set lines=999 columns=999
     set background=dark
-    colorscheme Tomorrow-Night
-    set guifont=Monaco\ 10
+    colorscheme gruvbox
+    let g:airline_theme="molokai"
+    set guifont=Monaco\ for\ Powerline\ 9
 endif
 "map <silent> <F11>
             "\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
@@ -255,10 +255,10 @@ nmap <leader>m :TagbarToggle<CR>
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
 autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
-autocmd Filetype python nmap <F8> :w <CR> :!python %<CR>
-autocmd Filetype python vmap <F8> !python<CR>
+autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
+autocmd Filetype python vmap <F8> !python3<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
-autocmd Filetype haskell nmap <F8> :w <CR> :!ghc -o %< % <CR>
+autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
 
 "Auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>)'
@@ -270,17 +270,14 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = "dracula"
-if has("gui_running")
-    set lines=999 columns=999
-    set background=dark
-    colorscheme gruvbox
-    let g:airline_theme="tomorrow"
-    set guifont=Monaco\ for\ Powerline\ 10
-endif
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
-    endif
+endif
+if has("gui_running")
+    let g:airline_theme="molokai"
+else
+    let g:airline_theme = "dracula"
+endif
  "airline symbols
 let g:airline_left_sep         = ''
 let g:airline_left_alt_sep     = ''
