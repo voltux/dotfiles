@@ -76,6 +76,9 @@ set relativenumber
 set wildignorecase
 filetype plugin indent on
 
+"show commands as they are typed
+set showcmd
+
 "default places for opening splits
 set splitbelow
 set splitright
