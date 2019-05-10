@@ -81,6 +81,8 @@ set splitbelow
 set splitright
 
 "colors
+set background=dark
+set cursorline
 colorscheme voltus
 
 "activate mouse
