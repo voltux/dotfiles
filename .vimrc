@@ -259,7 +259,7 @@ nmap <leader>m :TagbarToggle<CR>
 "Run shortcuts and bindings
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
-autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ % -o %< && ./%< <CR>
+autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ -std=c++11 % -o %< && ./%< <CR>
 autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
 autocmd Filetype python vmap <F8> !python3<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
