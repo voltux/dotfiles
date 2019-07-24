@@ -20,6 +20,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
@@ -34,6 +35,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'vim-scripts/DrawIt'
 
 "Autocompletion
 Plug 'SirVer/ultisnips'
@@ -43,7 +45,7 @@ Plug 'ajh17/VimCompletesMe'
 
 "Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
@@ -62,6 +64,7 @@ Plug 'jceb/vim-orgmode'
 Plug 'chrisbra/csv.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'xolox/vim-pyref'
 
 call plug#end()
 
@@ -104,7 +107,7 @@ set path+=**
 "set directory=~/.vim/tmp
 
 "set leader key
-let mapleader = ","
+let mapleader = "\<Space>"
 
 "view man pages in vim
 runtime! ftplugin/man.vim
@@ -217,10 +220,10 @@ let g:tex_flavor='latex'
 au BufNewFile,BufRead *.pri setf idlang
 
 "Resize
-nnoremap <S-Up> :resize +2 <CR>
-nnoremap <S-Down> :resize -2 <CR>
-nnoremap <S-Right> :vertical resize +2 <CR>
-nnoremap <S-Left> :vertical resize -2 <CR>
+nnoremap <leader><Up> :resize +10 <CR>
+nnoremap <leader><Down> :resize -10 <CR>
+nnoremap <leader><Right> :vertical resize +10 <CR>
+nnoremap <leader><Left> :vertical resize -10 <CR>
 
 "----------------------Language Settings----------------------
 
@@ -255,6 +258,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 "Tagbar
 nmap <leader>m :TagbarToggle<CR>
+let g:tagbar_autofocus=1
 
 "Run shortcuts and bindings
 nnoremap <F8> <NOP>
@@ -309,6 +313,9 @@ nnoremap <leader>u :UndotreeToggle<cr>
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
+
+"Pyref
+let g:pyref_mapping = 'K'
 
 "Remember folds
 augroup remember_folds
