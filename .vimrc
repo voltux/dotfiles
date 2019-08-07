@@ -146,6 +146,7 @@ set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
 set noshowmode
 set title
+set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
 
 "undo settings
 set undofile                " Save undo's after file closes
@@ -242,8 +243,8 @@ map! ;w ê
 map! ;e é
 map! ;f ë
 map! ;r è
-map! ;i ï
-map! ;j î
+map! ;i î
+map! ;j ï
 map! ;o ô
 map! ;p ö
 imap ;q «  »<Esc>hi
