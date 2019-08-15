@@ -10,7 +10,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
-Plug 'jeetsukumaran/vim-buffergator'
+Plug 'Shougo/unite.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'kshenoy/vim-signature'
+Plug 'junegunn/vim-peekaboo'
+
+"Commands
+Plug 'tpope/vim-eunuch'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
@@ -29,6 +35,7 @@ Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
+Plug 'vim-scripts/DrawIt'
 
 "Terminal
 Plug 'kassio/neoterm'
@@ -41,7 +48,6 @@ Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'zchee/deoplete-jedi'
 Plug 'sbdchd/neoformat'
-"Plug 'neomake/neomake'
 
 "Git
 Plug 'tpope/vim-fugitive'
@@ -50,23 +56,21 @@ Plug 'junegunn/gv.vim'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
-Plug 'pelodelfuego/vim-swoop'
-"Plug 'eugen0329/vim-esearch'
 
 "Misc
-Plug 'xolox/vim-easytags'
 Plug 'xolox/vim-misc'
 Plug 'Shougo/vimproc.vim'
+Plug 'xolox/vim-easytags'
 
 "Language specific
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'xolox/vim-pyref'
-Plug 'ternjs/tern_for_vim'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'chrisbra/csv.vim'
+Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'xolox/vim-pyref'
 
 "Other
 Plug 'jceb/vim-orgmode'
