@@ -71,6 +71,7 @@ call plug#end()
 "-----------------General Settings---------------
 
 set nocompatible
+set encoding=utf-8
 hi Normal ctermbg=none
 syntax enable
 syntax on
@@ -286,7 +287,7 @@ endif
 if has("gui_running")
     let g:airline_theme="molokai"
 else
-    let g:airline_theme = "dracula"
+    let g:airline_theme = "jellybeans"
 endif
  "airline symbols
 let g:airline_left_sep         = ''
