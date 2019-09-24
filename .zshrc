@@ -66,7 +66,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(tmux common-aliases git vi-mode archlinux)
+plugins=(tmux common-aliases git vi-mode archlinux docker)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -118,6 +118,12 @@ alias muttrc='$EDITOR ~/.muttrc'
 alias tmuxrc='$EDITOR ~/.tmux.conf'
 alias setwallpaper='feh --bg-scale $WALLPAPER'
 alias sduo=sudo
+alias svd="svn diff --diff-cmd colordiff"
+alias svst="svn status"
+alias svi="svn info"
+alias svco="svn checkout"
+alias svu="svn update"
+alias svc="svn commit -m"
 
 # custom script to update path environment variable
 [ -f $HOME/Scripts/bin/update_path ] && source $HOME/Scripts/bin/update_path
@@ -135,6 +141,12 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
+
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 # fzf scripts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
