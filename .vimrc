@@ -28,7 +28,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
@@ -36,16 +35,17 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/DrawIt'
+Plug 'dhruvasagar/vim-table-mode'
 
 "Autocompletion
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
+"Plug 'mhinz/vim-signify'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
@@ -61,8 +61,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
 Plug 'jceb/vim-orgmode'
-Plug 'chrisbra/csv.vim'
-Plug 'mattn/emmet-vim'
+"Plug 'chrisbra/csv.vim'
+"Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'xolox/vim-pyref'
 
@@ -128,8 +128,22 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
+" move between tabs
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tabfirst<cr>
+nnoremap H gT
+nnoremap L gt
+
 "copy paste between different programs/windows/tabs
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 "editor settings
 set ignorecase
@@ -147,6 +161,7 @@ set hidden "hides unsaved files open in buffers instead of closing them, undo po
 set noshowmode
 set title
 set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
+"set synmaxcol=120 stop syntax highlighting after 120 col because vim gets slow
 
 "undo settings
 set undofile                " Save undo's after file closes
@@ -182,6 +197,10 @@ nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>b  :Unite buffer<CR>
+
+"new splits
+nnoremap <leader>vv :vnew<CR>
+nnoremap <leader>vs :new<CR>
 
 "gui settings
 set guioptions-=T
@@ -226,6 +245,7 @@ nnoremap <leader><Down> :resize -10 <CR>
 nnoremap <leader><Right> :vertical resize +10 <CR>
 nnoremap <leader><Left> :vertical resize -10 <CR>
 
+
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
@@ -235,22 +255,22 @@ nmap <leader>lce :setlocal spell spelllang=en<CR>
 nmap <leader>lcf :setlocal spell spelllang=fr<CR>
 nmap <leader>ll  :set nospell<CR>
 
-map! ;a à
-map! ;z â
-map! ;b ä
-map! ;c ç
-map! ;w ê
-map! ;e é
-map! ;f ë
-map! ;r è
-map! ;i î
-map! ;j ï
-map! ;o ô
-map! ;p ö
-imap ;q «  »<Esc>hi
-map! ;t ù
-map! ;u û
-map! ;v ü
+inoremap ;a à
+inoremap ;z â
+inoremap ;b ä
+inoremap ;c ç
+inoremap ;w ê
+inoremap ;e é
+inoremap ;f ë
+inoremap ;r è
+inoremap ;i î
+inoremap ;j ï
+inoremap ;o ô
+inoremap ;p ö
+inoremap ;q «  »<Esc>hi
+inoremap ;u ù
+inoremap ;y û
+inoremap ;t ü
 
 "----------------------Plugin Configuration-------------------
 
@@ -283,11 +303,10 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
-if has("gui_running")
-    let g:airline_theme="molokai"
-else
-    let g:airline_theme = "dracula"
+if !has("gui_running")
+    let g:airline_theme = "jellybeans"
 endif
+
  "airline symbols
 let g:airline_left_sep         = ''
 let g:airline_left_alt_sep     = ''
@@ -318,6 +337,9 @@ let g:slime_python_ipython = 1
 
 "Pyref
 let g:pyref_mapping = 'K'
+
+"Tabular
+vmap <leader>t :Tabularize/
 
 "Remember folds
 augroup remember_folds
