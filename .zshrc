@@ -7,7 +7,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Generic environment variables
 export WALLPAPER="/usr/share/wallpapers/arch_against_others.png"
-export BROWSER="/usr/bin/qutebrowser"
+export BROWSER="/usr/bin/firefox"
 export TERMINAL="terminator"
 
 #colors for less
