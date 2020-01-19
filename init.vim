@@ -111,7 +111,7 @@ set path+=**
 "set directory=~/.config/nvim/tmp
 
 "set leader key
-let mapleader = ","
+let mapleader = " "
 
 "view man pages in vim
 runtime! ftplugin/man.vim
