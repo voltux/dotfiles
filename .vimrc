@@ -36,6 +36,7 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/DrawIt'
+Plug 'dense-analysis/ale'
 
 "Autocompletion
 Plug 'SirVer/ultisnips'
