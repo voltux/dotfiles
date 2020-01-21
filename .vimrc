@@ -1,3 +1,6 @@
+"Set vimruntime to newer version of vim installed locally
+let $VIMRUNTIME='/home/iarapis/.local/usr/local/share/vim/vim82'
+
 call plug#begin()
 
 "Navigation
@@ -31,6 +34,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
+Plug 'Julian/vim-textobj-variable-segment'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
@@ -41,6 +45,8 @@ Plug 'dhruvasagar/vim-table-mode'
 "Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
+"Plug 'neoclide/coc.nvim'
+Plug 'dense-analysis/ale'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
@@ -89,7 +95,7 @@ set splitright
 "colors
 set background=dark
 set cursorline
-colorscheme voltus
+colorscheme gruvbox
 
 "activate mouse
 set mouse=a
@@ -285,7 +291,7 @@ let g:tagbar_autofocus=1
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
 autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ -std=c++11 % -o %< && ./%< <CR>
-autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
+autocmd Filetype python nmap <F8> :w <CR> :! /home/iarapis/opt/Python36/bin/python3 %<CR>
 autocmd Filetype python vmap <F8> !python3<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
@@ -320,7 +326,7 @@ let g:airline_symbols.linenr   = ''
 nmap <leader>z <C-w>o
 
 "Whitespace
-highlight ExtraWhitespace ctermbg=78
+highlight ExtraWhitespace ctermbg=4
 nmap <leader>wh :StripWhitespace<CR>
 
 "Easytags
@@ -347,3 +353,44 @@ augroup remember_folds
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* loadview
 augroup END
+
+let g:ale_sign_error                 = '✗'
+let g:ale_sign_warning               = '⚠'
+let g:ale_sign_column_always         = 1
+let g:ale_set_highlights             = 0
+let g:ale_python_autopep8_use_global = 1
+let g:ale_virtualenv_dir_names       = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
+let g:ale_python_pyflakes_executable = 'pyflakes3'
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
+
+"Diff saved with current version
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
+"Diff with checkout from SVN
+function! s:DiffWithSVNCheckedOut()
+  let filetype=&ft
+  diffthis
+  vnew | exe "%!svn cat " . expand("#:p")
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSVN call s:DiffWithSVNCheckedOut()
+
+"Diff with git
+function! s:DiffWithGITCheckedOut()
+  let filetype=&ft
+  diffthis
+  vnew | exe "%!git diff " . expand("#:p") . "| patch -p 1 -Rs -o /dev/stdout"
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+  diffthis
+endfunction
+com! DiffGIT call s:DiffWithGITCheckedOut()
+
