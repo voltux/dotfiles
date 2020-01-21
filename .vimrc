@@ -1,6 +1,3 @@
-"Set vimruntime to newer version of vim installed locally
-let $VIMRUNTIME='/home/iarapis/.local/usr/local/share/vim/vim82'
-
 call plug#begin()
 
 "Navigation
@@ -31,27 +28,24 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
-Plug 'Julian/vim-textobj-variable-segment'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/DrawIt'
-Plug 'dhruvasagar/vim-table-mode'
 
 "Autocompletion
-"Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-"Plug 'neoclide/coc.nvim'
-Plug 'dense-analysis/ale'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
 Plug 'tpope/vim-fugitive'
-"Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-signify'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
@@ -67,8 +61,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-scripts/octave.vim--'
 Plug 'derekwyatt/vim-scala'
 Plug 'jceb/vim-orgmode'
-"Plug 'chrisbra/csv.vim'
-"Plug 'mattn/emmet-vim'
+Plug 'chrisbra/csv.vim'
+Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'xolox/vim-pyref'
 
@@ -95,7 +89,7 @@ set splitright
 "colors
 set background=dark
 set cursorline
-colorscheme gruvbox
+colorscheme voltus
 
 "activate mouse
 set mouse=a
@@ -133,20 +127,6 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
-
-" move between tabs
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 :tabfirst<cr>
-nnoremap H gT
-nnoremap L gt
 
 "copy paste between different programs/windows/tabs
 set clipboard=unnamedplus
@@ -291,7 +271,7 @@ let g:tagbar_autofocus=1
 nnoremap <F8> <NOP>
 autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
 autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ -std=c++11 % -o %< && ./%< <CR>
-autocmd Filetype python nmap <F8> :w <CR> :! /home/iarapis/opt/Python36/bin/python3 %<CR>
+autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
 autocmd Filetype python vmap <F8> !python3<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
