@@ -36,9 +36,11 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-scripts/DrawIt'
+Plug 'dense-analysis/ale'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'Julian/vim-textobj-variable-segment'
 
 "Autocompletion
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
 Plug 'ajh17/VimCompletesMe'
@@ -128,6 +130,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
+"change current dir to current file pwd
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
 "copy paste between different programs/windows/tabs
 set clipboard=unnamedplus
 
@@ -196,11 +201,12 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=m
 set guioptions-=M
+
+let g:airline_theme="jellybeans"
 if has("gui_running")
     set lines=999 columns=999
     set background=dark
     colorscheme gruvbox
-    let g:airline_theme="molokai"
     set guifont=Monaco\ for\ Powerline\ 9
 endif
 "map <silent> <F11>
@@ -289,11 +295,8 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
-if !has("gui_running")
-    let g:airline_theme = "jellybeans"
-endif
 
- "airline symbols
+"airline symbols
 let g:airline_left_sep         = ''
 let g:airline_left_alt_sep     = ''
 let g:airline_right_sep        = ''
