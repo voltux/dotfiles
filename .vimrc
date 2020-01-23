@@ -9,12 +9,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim'
 Plug 'regedarek/ZoomWin'
-Plug 'easymotion/vim-easymotion'
-Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-peekaboo'
-
-"Commands
-Plug 'tpope/vim-eunuch'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
@@ -33,11 +28,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'mboughaba/i3config.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'vim-scripts/DrawIt'
-Plug 'dense-analysis/ale'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'Julian/vim-textobj-variable-segment'
 
 "Autocompletion
@@ -45,26 +36,9 @@ Plug 'ajh17/VimCompletesMe'
 
 "Git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
-
-"Misc
-Plug 'xolox/vim-misc'
-Plug 'Shougo/vimproc.vim'
-Plug 'xolox/vim-easytags'
-
-"Language specific
-Plug 'JuliaEditorSupport/julia-vim'
-Plug 'plasticboy/vim-markdown'
-Plug 'vim-scripts/octave.vim--'
-Plug 'derekwyatt/vim-scala'
-Plug 'jceb/vim-orgmode'
-Plug 'chrisbra/csv.vim'
-Plug 'mattn/emmet-vim'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'xolox/vim-pyref'
 
 call plug#end()
 
@@ -102,16 +76,8 @@ set kp=
 "Provides tab completion for all related tasks
 set path+=**
 
-"Centralize backup and swap directories
-"set backup
-"set backupdir=~/.vim/backup
-"set directory=~/.vim/tmp
-
 "set leader key
 let mapleader = "\<Space>"
-
-"view man pages in vim
-runtime! ftplugin/man.vim
 
 "-----------------System Key Bindings---------------------
 
@@ -143,15 +109,20 @@ set autoread
 set pastetoggle=<F7>
 set mousemodel=popup_setpos
 set smartindent
+set smarttab
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set tags=./tags;/
+"set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
-set noshowmode
 set title
+set noshowmode
 set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
-"set synmaxcol=120 stop syntax highlighting after 120 col because vim gets slow
+
+"search settings
+set nohlsearch          " do not highlight searched-for phrases
+set incsearch           " ...but do highlight-as-I-type the search string
+set gdefault            " this makes search/replace global by default"
 
 "undo settings
 set undofile                " Save undo's after file closes
@@ -174,46 +145,35 @@ nnoremap <leader>p "+p
 " Find and replace in the whole file
 nnoremap <leader>fr :%s/
 
-"new splits
-nnoremap <leader>vv :vnew<CR>
-nnoremap <leader>vs :new<CR>
-
-"gui settings
-set guioptions-=T
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-set guioptions-=m
-set guioptions-=M
-
-let g:airline_theme="jellybeans"
-if has("gui_running")
-    set lines=999 columns=999
-    set background=dark
-    colorscheme gruvbox
-    set guifont=Monaco\ for\ Powerline\ 9
-endif
-"map <silent> <F11>
-            "\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
-
-"search settings
-set nohlsearch          " do not highlight searched-for phrases
-set incsearch           " ...but do highlight-as-I-type the search string
-set gdefault            " this makes search/replace global by default"
-nnoremap <leader>/ :nohl<CR>
-
 "folding zf to create fold, za to toggle
 set nofoldenable
 set foldmethod=manual
 set foldlevelstart=20
 hi Folded ctermbg=016
 
+"new splits
+nnoremap <leader>vv :vnew<CR>
+nnoremap <leader>vs :new<CR>
+
+"gui settings
+"if has("gui_running")
+    "set guioptions-=T
+    "set guioptions-=l
+    "set guioptions-=L
+    "set guioptions-=r
+    "set guioptions-=R
+    "set guioptions-=m
+    "set guioptions-=M
+    "set lines=999 columns=999
+    "colorscheme gruvbox
+    "set guifont=Monaco\ for\ Powerline\ 9
+"endif
+
 "Recognizing latex files
-let g:tex_flavor='latex'
+"let g:tex_flavor='latex'
 
 "Filetypes
-au BufNewFile,BufRead *.pri setf idlang
+"au BufNewFile,BufRead *.pri setf idlang
 
 "Resize
 nnoremap <leader><Up> :resize +10 <CR>
@@ -284,18 +244,12 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
 "Auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>)'
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger       = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
-
 "Airline
+let g:airline_theme="base16_atelierforest"
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
 endif
-
-"airline symbols
 let g:airline_left_sep         = ''
 let g:airline_left_alt_sep     = ''
 let g:airline_right_sep        = ''
@@ -311,9 +265,6 @@ nmap <leader>z <C-w>o
 highlight ExtraWhitespace ctermbg=4
 nmap <leader>wh :StripWhitespace<CR>
 
-"Easytags
-let g:easytags_async = 1
-
 "Undotree
 nnoremap <leader>u :UndotreeToggle<cr>
 
@@ -323,56 +274,6 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
 
-"Pyref
-let g:pyref_mapping = 'K'
-
 "Tabular
 vmap <leader>t :Tabularize/
-
-"Remember folds
-augroup remember_folds
-  autocmd!
-  autocmd BufWinLeave *.* mkview
-  autocmd BufWinEnter *.* loadview
-augroup END
-
-let g:ale_sign_error                 = '✗'
-let g:ale_sign_warning               = '⚠'
-let g:ale_sign_column_always         = 1
-let g:ale_set_highlights             = 0
-let g:ale_python_autopep8_use_global = 1
-let g:ale_virtualenv_dir_names       = ['.env', 'env', 've-py3', 've', 'virtualenv', 'venv', 'venv_python_trisomies']
-let g:ale_python_pyflakes_executable = 'pyflakes3'
-nmap <silent> <leader>aj :ALENext<cr>
-nmap <silent> <leader>ak :ALEPrevious<cr>
-
-"Diff saved with current version
-function! s:DiffWithSaved()
-  let filetype=&ft
-  diffthis
-  vnew | r # | normal! 1Gdd
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSaved call s:DiffWithSaved()
-
-"Diff with checkout from SVN
-function! s:DiffWithSVNCheckedOut()
-  let filetype=&ft
-  diffthis
-  vnew | exe "%!svn cat " . expand("#:p")
-  diffthis
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-endfunction
-com! DiffSVN call s:DiffWithSVNCheckedOut()
-
-"Diff with git
-function! s:DiffWithGITCheckedOut()
-  let filetype=&ft
-  diffthis
-  vnew | exe "%!git diff " . expand("#:p") . "| patch -p 1 -Rs -o /dev/stdout"
-  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
-  diffthis
-endfunction
-com! DiffGIT call s:DiffWithGITCheckedOut()
 
