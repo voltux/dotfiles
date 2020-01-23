@@ -41,8 +41,6 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'Julian/vim-textobj-variable-segment'
 
 "Autocompletion
-Plug 'honza/vim-snippets'
-Plug 'ervandew/supertab'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
