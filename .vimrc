@@ -73,12 +73,13 @@ call plug#end()
 "-----------------General Settings---------------
 
 set nocompatible
-hi Normal ctermbg=none
 syntax enable
 syntax on
 set number
 set relativenumber
+set wildmenu
 set wildignorecase
+filetype plugin on
 filetype plugin indent on
 
 "show commands as they are typed
@@ -91,7 +92,7 @@ set splitright
 "colors
 set background=dark
 set cursorline
-colorscheme voltus
+"colorscheme voltus
 
 "activate mouse
 set mouse=a
@@ -175,20 +176,6 @@ nnoremap <leader>p "+p
 " Find and replace in the whole file
 nnoremap <leader>fr :%s/
 
-"Find things with fzf
-nnoremap <leader>fr :%s/
-nnoremap <leader>fp :Colors<CR>
-nnoremap <leader>ff :FZF<CR>
-nnoremap <leader>fc :Commands<CR>
-nnoremap <leader>fm :Maps<CR>
-nnoremap <leader>fl :Lines<CR>
-nnoremap <leader>ft :Tags<CR>
-nnoremap <leader>fh :Helptags<CR>
-nnoremap <leader>fg :GFiles?<CR>
-nnoremap <leader>f' :Marks<CR>
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>b  :Unite buffer<CR>
-
 "new splits
 nnoremap <leader>vv :vnew<CR>
 nnoremap <leader>vs :new<CR>
@@ -213,9 +200,8 @@ endif
             "\    :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR> "make gvim fullscreen
 
 "search settings
-"set nohlsearch          " do not highlight searched-for phrases
+set nohlsearch          " do not highlight searched-for phrases
 set incsearch           " ...but do highlight-as-I-type the search string
-set hlsearch
 set gdefault            " this makes search/replace global by default"
 nnoremap <leader>/ :nohl<CR>
 
@@ -265,6 +251,21 @@ inoremap ;y û
 inoremap ;t ü
 
 "----------------------Plugin Configuration-------------------
+
+"Find things with fzf
+nnoremap <leader>fr :%s/
+nnoremap <leader>fp :Colors<CR>
+nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>fc :Commands<CR>
+nnoremap <leader>fm :Maps<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>ft :Tags<CR>
+nnoremap <leader>fh :Helptags<CR>
+nnoremap <leader>fg :GFiles?<CR>
+nnoremap <leader>f' :Marks<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>b  :Unite buffer<CR>
+
 
 "Nerdtree
 nmap <leader>n :NERDTreeToggle<CR>
