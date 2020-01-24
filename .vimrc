@@ -149,7 +149,7 @@ nnoremap <leader>fr :%s/
 
 "folding zf to create fold, za to toggle
 set nofoldenable
-set foldmethod=manual
+set foldmethod=indent
 set foldlevelstart=20
 hi Folded ctermbg=016
 
