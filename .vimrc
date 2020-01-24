@@ -35,6 +35,7 @@ Plug 'Julian/vim-textobj-variable-segment'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 "Search
@@ -113,7 +114,7 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 set expandtab
-"set tags=./tags;/
+set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
 set title
 set noshowmode
@@ -217,6 +218,7 @@ nnoremap <leader>ff :FZF<CR>
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fm :Maps<CR>
 nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fw :BLines<CR>
 nnoremap <leader>ft :Tags<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
