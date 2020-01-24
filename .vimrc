@@ -46,6 +46,7 @@ call plug#end()
 "-----------------General Settings---------------
 
 set nocompatible
+set backspace=indent,eol,start
 syntax enable
 syntax on
 set number
@@ -110,10 +111,10 @@ set autoread
 set pastetoggle=<F7>
 set mousemodel=popup_setpos
 set smartindent
+set expandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
-set expandtab
 set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
 set title
