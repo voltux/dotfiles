@@ -55,6 +55,7 @@ set wildmenu
 set wildignorecase
 filetype plugin on
 filetype plugin indent on
+set visualbell
 
 "show commands as they are typed
 set showcmd
@@ -248,7 +249,7 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
 let g:AutoPairsShortcutToggle = '<leader>)'
 
 "Airline
-let g:airline_theme="base16_atelierforest"
+let g:airline_theme="jellybeans"
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
