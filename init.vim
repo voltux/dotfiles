@@ -41,7 +41,7 @@ Plug 'vim-scripts/DrawIt'
 Plug 'kassio/neoterm'
 
 "Autocompletion and syntax linters
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
