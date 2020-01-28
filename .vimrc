@@ -55,7 +55,6 @@ set wildmenu
 set wildignorecase
 filetype plugin on
 filetype plugin indent on
-set visualbell
 
 "show commands as they are typed
 set showcmd
@@ -159,24 +158,24 @@ nnoremap <leader>vv :vnew<CR>
 nnoremap <leader>vs :new<CR>
 
 "gui settings
-"if has("gui_running")
-    "set guioptions-=T
-    "set guioptions-=l
-    "set guioptions-=L
-    "set guioptions-=r
-    "set guioptions-=R
-    "set guioptions-=m
-    "set guioptions-=M
-    "set lines=999 columns=999
-    "colorscheme gruvbox
-    "set guifont=Monaco\ for\ Powerline\ 9
-"endif
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=R
+    set guioptions-=m
+    set guioptions-=M
+    set lines=999 columns=999
+    colorscheme gruvbox
+    set guifont=Monaco\ for\ Powerline\ 9
+endif
 
 "Recognizing latex files
-"let g:tex_flavor='latex'
+let g:tex_flavor='latex'
 
 "Filetypes
-"au BufNewFile,BufRead *.pri setf idlang
+au BufNewFile,BufRead *.pri setf idlang
 
 "Resize
 nnoremap <leader><Up> :resize +10 <CR>
