@@ -53,7 +53,6 @@ set number
 set relativenumber
 set wildmenu
 set wildignorecase
-filetype plugin on
 filetype plugin indent on
 
 "show commands as they are typed
