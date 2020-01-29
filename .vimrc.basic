@@ -1,16 +1,142 @@
+"-----------------General Settings---------------
+
 set nocompatible
-filetype on
-filetype plugin indent on
-syntax on
 syntax enable
-set background=dark
+syntax on
 set number
 set relativenumber
-set ruler
-set smartindent
-set shiftwidth=4
-set tabstop=4
-set smarttab
+set wildmenu
+set wildignorecase
+set wildignore+=.pyc,.swp
+filetype plugin indent on
+
+"no error bells
+set noerrorbells
+
+"show commands as they are typed
+set showcmd
+
+"default places for opening splits
+set splitbelow
+set splitright
+
+"colors
+set background=dark
+set cursorline
+
+"activate mouse
+set mouse=a
+
+"keywordprg, how will 'K' react (default is man)
+set kp=
+
+"Search down into subfolders
+"Provides tab completion for all related tasks
+set path+=**
+
+"set leader key
+let mapleader = "\<Space>"
+
+"-----------------System Key Bindings---------------------
+
+"set abbreviations for common typos
+cnoreabbrev   Q    q
+cnoreabbrev   W    w
+cnoreabbrev   Wq   wq
+cnoreabbrev   wQ   wq
+cnoreabbrev   WQ   wq
+cnoreabbrev   Qa   qa
+
+"move between splits
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+
+"change current dir to current file pwd
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+"copy paste between different programs/windows/tabs
+set clipboard=unnamedplus
+
+"editor settings
 set ignorecase
 set smartcase
-set cursorline
+set history=1000
+set autoread
+set confirm
+set formatoptions+=j
+set noswapfile
+set pastetoggle=<F7>
+set mousemodel=popup_setpos
+set smartindent
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set hidden "hides unsaved files open in buffers instead of closing them, undo possible
+set title
+set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
+
+"search settings
+set nohlsearch          " do not highlight searched-for phrases
+set incsearch           " ...but do highlight-as-I-type the search string
+set gdefault            " this makes search/replace global by default"
+
+"Basically you press * or # to search for the current selection
+vnoremap <silent> *  : call VisualSearch('f')<CR>
+vnoremap <silent> #  : call VisualSearch('b')<CR>
+vnoremap <silent> gv : call VisualSearch('gv')<CR>
+
+" Copy to system clipboard
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+
+" Paste from system clipboard
+nnoremap <leader>p "+p
+
+" Find and replace in the whole file
+nnoremap <leader>fr :%s/
+
+"folding zf to create fold, za to toggle
+set nofoldenable
+set foldmethod=manual
+set foldlevelstart=20
+hi Folded ctermbg=016
+
+"new splits
+nnoremap <leader>vv :vnew<CR>
+nnoremap <leader>vs :new<CR>
+
+"Resize
+nnoremap <leader><Up> :resize +10 <CR>
+nnoremap <leader><Down> :resize -10 <CR>
+nnoremap <leader><Right> :vertical resize +10 <CR>
+nnoremap <leader><Left> :vertical resize -10 <CR>
+
+" netrw
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:nwtrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=25
+nnoremap <leader>n :Vex<CR>
+
+"----------------------Language Settings----------------------
+
+inoremap ;a à
+inoremap ;z â
+inoremap ;b ä
+inoremap ;c ç
+inoremap ;w ê
+inoremap ;e é
+inoremap ;f ë
+inoremap ;r è
+inoremap ;i î
+inoremap ;j ï
+inoremap ;o ô
+inoremap ;p ö
+inoremap ;q «  »<Esc>hi
+inoremap ;u ù
+inoremap ;y û
+inoremap ;t ü
