@@ -286,3 +286,5 @@ let g:slime_python_ipython = 1
 "Tabular
 vmap <leader>t :Tabularize/
 
+"IndentLines
+nnoremap <leader>i :IndentLinesToggle<CR>
