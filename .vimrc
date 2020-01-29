@@ -53,7 +53,11 @@ set number
 set relativenumber
 set wildmenu
 set wildignorecase
+set wildignore+=.pyc,.swp
 filetype plugin indent on
+
+"no error bells
+set noerrorbells
 
 "show commands as they are typed
 set showcmd
@@ -107,6 +111,9 @@ set ignorecase
 set smartcase
 set history=1000
 set autoread
+set confirm
+set formatoptions+=j
+set noswapfile
 set pastetoggle=<F7>
 set mousemodel=popup_setpos
 set smartindent
