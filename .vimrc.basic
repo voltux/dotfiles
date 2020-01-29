@@ -1,8 +1,8 @@
 "-----------------General Settings---------------
 
 set nocompatible
+set backspace=indent,eol,start
 syntax enable
-syntax on
 set number
 set relativenumber
 set wildmenu
@@ -70,10 +70,11 @@ set noswapfile
 set pastetoggle=<F7>
 set mousemodel=popup_setpos
 set smartindent
+set expandtab
 set smarttab
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set tags=./tags;/
 set hidden "hides unsaved files open in buffers instead of closing them, undo possible
 set title
 set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
@@ -82,6 +83,12 @@ set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
 set nohlsearch          " do not highlight searched-for phrases
 set incsearch           " ...but do highlight-as-I-type the search string
 set gdefault            " this makes search/replace global by default"
+
+"undo settings
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
 
 "Basically you press * or # to search for the current selection
 vnoremap <silent> *  : call VisualSearch('f')<CR>
@@ -100,13 +107,20 @@ nnoremap <leader>fr :%s/
 
 "folding zf to create fold, za to toggle
 set nofoldenable
-set foldmethod=manual
-set foldlevelstart=20
+set foldmethod=indent
+set foldlevelstart=10
+set foldnestmax=10
 hi Folded ctermbg=016
 
 "new splits
 nnoremap <leader>vv :vnew<CR>
 nnoremap <leader>vs :new<CR>
+
+"Recognizing latex files
+let g:tex_flavor='latex'
+
+"Filetypes
+au BufNewFile,BufRead *.pri setf idlang
 
 "Resize
 nnoremap <leader><Up> :resize +10 <CR>
@@ -114,15 +128,15 @@ nnoremap <leader><Down> :resize -10 <CR>
 nnoremap <leader><Right> :vertical resize +10 <CR>
 nnoremap <leader><Left> :vertical resize -10 <CR>
 
-" netrw
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:nwtrw_browse_split=4
-let g:netrw_altv=1
-let g:netrw_winsize=25
-nnoremap <leader>n :Vex<CR>
 
 "----------------------Language Settings----------------------
+
+nmap <leader>lg :set keymap=greek_utf-8<CR>
+nmap <leader>le :set keymap&<CR>
+nmap <leader>lcg :setlocal spell spelllang=el<CR>
+nmap <leader>lce :setlocal spell spelllang=en<CR>
+nmap <leader>lcf :setlocal spell spelllang=fr<CR>
+nmap <leader>ll  :set nospell<CR>
 
 inoremap ;a à
 inoremap ;z â

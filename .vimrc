@@ -155,7 +155,8 @@ nnoremap <leader>fr :%s/
 "folding zf to create fold, za to toggle
 set nofoldenable
 set foldmethod=indent
-set foldlevelstart=20
+set foldlevelstart=10
+set foldnestmax=10
 hi Folded ctermbg=016
 
 "new splits
