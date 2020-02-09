@@ -48,6 +48,7 @@ call plug#end()
 set nocompatible
 set backspace=indent,eol,start
 syntax enable
+syntax on
 set number
 set relativenumber
 set wildmenu
@@ -68,7 +69,7 @@ set splitright
 "colors
 set background=dark
 set cursorline
-"colorscheme voltus
+colorscheme gruvbox
 
 "activate mouse
 set mouse=a

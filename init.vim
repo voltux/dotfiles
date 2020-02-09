@@ -7,8 +7,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'jpalardy/vim-slime'
+Plug 'tmux-plugins/vim-tmux' Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim'
 Plug 'easymotion/vim-easymotion'
@@ -97,7 +96,7 @@ set splitright
 
 "colors
 set background=dark
-colorscheme voltus
+colorscheme gruvbox
 
 "activate mouse
 set mouse=a
@@ -186,7 +185,7 @@ vnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 "search settings
-"set nohlsearch          " do not highlight searched-for phrases
+set nohlsearch          " do not highlight searched-for phrases
 nnoremap <leader>/ :noh<CR>
 set incsearch           " ...but do highlight-as-I-type the search string
 set gdefault            " this makes search/replace global by default"
