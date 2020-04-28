@@ -28,7 +28,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
 Plug 'Julian/vim-textobj-variable-segment'
 
 "Autocompletion
@@ -174,8 +174,7 @@ if has("gui_running")
     set guioptions-=m
     set guioptions-=M
     set lines=999 columns=999
-    colorscheme gruvbox
-    set guifont=Monaco\ for\ Powerline\ 9
+    set guifont=Monaco\ for\ Powerline\ 10
 endif
 
 "Recognizing latex files
@@ -232,6 +231,7 @@ nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
 nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fi :Rg 
 nnoremap <leader>b  :Unite buffer<CR>
 
 
@@ -254,20 +254,6 @@ autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
 "Auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>)'
 
-"Airline
-let g:airline_theme="jellybeans"
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-endif
-let g:airline_left_sep         = ''
-let g:airline_left_alt_sep     = ''
-let g:airline_right_sep        = ''
-let g:airline_right_alt_sep    = ''
-let g:airline_symbols.branch   = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr   = ''
-
 "ZoomWin
 nmap <leader>z <C-w>o
 
@@ -289,3 +275,6 @@ vmap <leader>t :Tabularize/
 
 "IndentLines
 nnoremap <leader>i :IndentLinesToggle<CR>
+
+"Airline
+let g:airline_powerline_fonts = 1
