@@ -29,7 +29,7 @@ ZSH_THEME="voltus"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-#HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -41,7 +41,7 @@ ZSH_THEME="voltus"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+ DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 #ENABLE_CORRECTION="true"
@@ -57,7 +57,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -77,11 +77,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
-   export EDITOR='nvim'
- fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -154,20 +150,7 @@ if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
 fi
 
-# .NET telemetry opt out
-export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
-# set the mail environment variable
-MAIL=/var/spool/mail/voltus && export MAIL
-
 xset b off
 
-#keyboard layout
-setxkbmap -layout us -option caps:escape
+source ~/.zsh_alias
 
-# fzf
-source ~/.fzf.zsh
-
-# terminal
-export TERMINAL=terminator
-export TERMCMD=terminator
