@@ -10,6 +10,7 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim'
 Plug 'regedarek/ZoomWin'
 Plug 'junegunn/vim-peekaboo'
+Plug 'blindFS/vim-taskwarrior'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
@@ -271,6 +272,9 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
+
+"Taskwarrior
+nnoremap <leader>t :TW <CR>
 
 "Tabular
 vmap <leader>t :Tabularize/
