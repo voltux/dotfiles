@@ -8,6 +8,7 @@ fzf
 vifm
 ripgrep
 xclip
+tig
 
 # Git
 st (suckless terminal)
