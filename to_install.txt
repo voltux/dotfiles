@@ -9,6 +9,7 @@ vifm
 ripgrep
 xclip
 tig
+taskwarrior
 
 # Git
 st (suckless terminal)
