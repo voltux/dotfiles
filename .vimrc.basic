@@ -128,6 +128,9 @@ nnoremap <leader><Down> :resize -10 <CR>
 nnoremap <leader><Right> :vertical resize +10 <CR>
 nnoremap <leader><Left> :vertical resize -10 <CR>
 
+"Man pages in vim
+runtime! ftplugin/man.vim
+
 
 "----------------------Language Settings----------------------
 
@@ -154,3 +157,4 @@ inoremap ;q «  »<Esc>hi
 inoremap ;u ù
 inoremap ;y û
 inoremap ;t ü
+

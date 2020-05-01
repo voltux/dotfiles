@@ -43,6 +43,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'juneg
 
 call plug#end()
 
+runtime! ftplugin/man.vim
+
 "-----------------General Settings---------------
 
 set nocompatible
