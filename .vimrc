@@ -274,7 +274,8 @@ let g:slime_dont_ask_default = 1
 let g:slime_python_ipython = 1
 
 "Taskwarrior
-nnoremap <leader>t :TW <CR>
+nnoremap <leader>tt :TW <CR>
+nnoremap <leader>tr :TWReportInfo <CR>
 
 "Tabular
 vmap <leader>t :Tabularize/
