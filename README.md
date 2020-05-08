@@ -1,13 +1,13 @@
-h2. Configuration files intended to be installed with stow
+## Configuration files intended to be installed with stow
 
-h3. 
+### Prerequisites
 
 Vim/Neovim plugins loaded with vim-plug: https://github.com/junegunn/vim-plug
 Tmux plugins installed via tpm: https://github.com/tmux-plugins/tpm
 Zsh configuration framework: https://github.com/robbyrussell/oh-my-zsh
 
-h3. Installation
+### Installation
 
-Example for installing vim and tmux configurations: 
+Example for installing vim and tmux configurations via stow: 
 
 stow -t ~ vim tmux
