@@ -1,18 +1,16 @@
 call plug#begin()
 
-" Universal Plugins
-
 "Navigation
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux' Plug 'jpalardy/vim-slime'
+Plug 'jpalardy/vim-slime'
 Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-peekaboo'
+Plug 'blindFS/vim-taskwarrior'
 
 "Commands
 Plug 'tpope/vim-eunuch'
@@ -21,20 +19,19 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'mboughaba/i3config.vim'
-Plug 'vim-scripts/DrawIt'
+Plug 'morhetz/gruvbox'
 
 "Terminal
 Plug 'kassio/neoterm'
@@ -44,12 +41,11 @@ Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-Plug 'sbdchd/neoformat'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
 
 "Search
