@@ -10,6 +10,7 @@ ripgrep
 xclip
 tig
 taskwarrior
+stow
 
 # Git
 st (suckless terminal)
