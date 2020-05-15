@@ -41,6 +41,10 @@ Plug 'tpope/vim-fugitive'
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 
+"Syntax
+Plug 'amiorin/vim-textile'
+
+
 call plug#end()
 
 runtime! ftplugin/man.vim
