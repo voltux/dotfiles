@@ -12,6 +12,9 @@ Plug 'regedarek/ZoomWin'
 Plug 'junegunn/vim-peekaboo'
 Plug 'blindFS/vim-taskwarrior'
 
+"Commands
+Plug 'tpope/vim-eunuch'
+
 "Editor
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
@@ -43,7 +46,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'juneg
 
 "Syntax
 Plug 'amiorin/vim-textile'
-
 
 call plug#end()
 
