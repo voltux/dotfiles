@@ -30,11 +30,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
+Plug 'Julian/vim-textobj-variable-segment'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'morhetz/gruvbox'
-
-"Terminal
-Plug 'kassio/neoterm'
 
 "Autocompletion and syntax linters
 Plug 'dense-analysis/ale'
@@ -65,20 +62,19 @@ Plug 'chrisbra/csv.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'xolox/vim-pyref'
+Plug 'amiorin/vim-textile'
 
 "Other
 Plug 'jceb/vim-orgmode'
 Plug 'itchyny/calendar.vim'
 Plug 'metakirby5/codi.vim'
-Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-speeddating'
-
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 "-----------------General Settings---------------
 
-set nocompatible
 hi Normal ctermbg=none
 syntax enable
 syntax on
@@ -94,16 +90,14 @@ set splitright
 set background=dark
 colorscheme gruvbox
 
+"no error bells
+set noerrorbells
+
 "activate mouse
 set mouse=a
 
 "Search down into subfolders - Provides tab completion for all related tasks
 set path+=**
-
-"Centralize backup and swap directories
-"set backup
-"set backupdir=~/.config/nvim/backup
-"set directory=~/.config/nvim/tmp
 
 "set leader key
 let mapleader = " "
@@ -196,22 +190,21 @@ hi Folded ctermbg=016
 let g:tex_flavor='latex'
 
 "Search, find and replace things with fzf, swoop and other
+"Find things with fzf
 nnoremap <leader>fr :%s/
 nnoremap <leader>fp :Colors<CR>
 nnoremap <leader>ff :FZF<CR>
 nnoremap <leader>fc :Commands<CR>
 nnoremap <leader>fm :Maps<CR>
 nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fw :BLines<CR>
 nnoremap <leader>ft :Tags<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
 nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fe :call Swoop()<CR>
-vnoremap <leader>fe :call SwoopSelection()<CR>
-nnoremap <leader>fs :call SwoopMulti()<CR>
-vnoremap <leader>fs :call SwoopMultiSelection()<CR>
-nnoremap <leader>b  :BuffergatorToggle<CR>
+nnoremap <leader>fi :Rg 
+nnoremap <leader>b  :Unite buffer<CR>
 
 "Compiler shortcuts and bindings
 nnoremap <F8> <NOP>
@@ -310,18 +303,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<S-tab>"
 
 "Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='jellybeans'
 if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
-" airline symbols
-"let g:airline_left_sep         = ''
-"let g:airline_left_alt_sep     = ''
-"let g:airline_right_sep        = ''
-"let g:airline_right_alt_sep    = ''
-"let g:airline_symbols.branch   = ''
-"let g:airline_symbols.readonly = ''
-"let g:airline_symbols.linenr   = ''
 
 "Whitespace
 highlight ExtraWhitespace ctermbg=78
@@ -361,14 +345,9 @@ let g:swoopUseDefaultKeyMap = 0
 "IndentLine
 nnoremap <leader>ig :IndentLinesToggle<CR>
 
-""Neoterm
-nnoremap <silent> <leader>tt :Tnew <CR>
-nnoremap <silent> ,th        :call neoterm#close()<cr>
-nnoremap <silent> ,tl        :call neoterm#clear()<cr>
-nnoremap <silent> ,tc        :call neoterm#kill()<cr>
-nnoremap <silent> <f10>      :TREPLSendFile<cr>
-nnoremap <silent> <f9>       :TREPLSendLine<cr>
-vnoremap <silent> <f9>       :TREPLSendSelection<cr>
+"Taskwarrior
+nnoremap <leader>tt :TW <CR>
+nnoremap <leader>tr :TWReportInfo <CR>
 
 "Remember folds
 augroup remember_folds
