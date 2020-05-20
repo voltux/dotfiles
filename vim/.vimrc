@@ -6,7 +6,6 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
-Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim'
 Plug 'regedarek/ZoomWin'
 Plug 'junegunn/vim-peekaboo'
@@ -227,20 +226,27 @@ inoremap ;t ü
 "----------------------Plugin Configuration-------------------
 
 "Find things with fzf
-nnoremap <leader>fr :%s/
-nnoremap <leader>fp :Colors<CR>
-nnoremap <leader>ff :FZF<CR>
-nnoremap <leader>fc :Commands<CR>
-nnoremap <leader>fm :Maps<CR>
-nnoremap <leader>fl :Lines<CR>
-nnoremap <leader>fw :BLines<CR>
-nnoremap <leader>ft :Tags<CR>
-nnoremap <leader>fh :Helptags<CR>
-nnoremap <leader>fg :GFiles?<CR>
-nnoremap <leader>f' :Marks<CR>
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fi :Rg 
-nnoremap <leader>b  :Unite buffer<CR>
+nnoremap <leader>fa  :Rg 
+nnoremap <leader>fb  :Buffers<CR>
+nnoremap <leader>fcb :BCommits<CR>
+nnoremap <leader>fcc :Commits<CR>
+nnoremap <leader>fco :Commands<CR>
+nnoremap <leader>ff  :FZF<CR>
+nnoremap <leader>fgg :GFiles<CR>
+nnoremap <leader>fgc :GFiles?<CR>
+nnoremap <leader>fhh :History<CR>
+nnoremap <leader>fhc :History:<CR>
+nnoremap <leader>fhs :History/<CR>
+nnoremap <leader>fht :Helptags<CR>
+nnoremap <leader>fi  :BLines<CR>
+nnoremap <leader>fl  :Lines<CR>
+nnoremap <leader>fm  :Maps<CR>
+nnoremap <leader>fp  :Colors<CR>
+nnoremap <leader>fr  :%s/
+nnoremap <leader>ft  :Tags<CR>
+nnoremap <leader>fw  :Windows<CR>
+nnoremap <leader>f'  :Marks<CR>
+nnoremap <leader>b   :Unite buffer<CR>
 
 
 "Nerdtree
