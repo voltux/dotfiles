@@ -6,11 +6,9 @@ Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
-Plug 'wesQ3/vim-windowswap'
 Plug 'Shougo/unite.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/vim-peekaboo'
-Plug 'blindFS/vim-taskwarrior'
 
 "Commands
 Plug 'tpope/vim-eunuch'
@@ -34,41 +32,32 @@ Plug 'Julian/vim-textobj-variable-segment'
 Plug 'michaeljsmith/vim-indent-object'
 
 "Autocompletion and syntax linters
-Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'ervandew/supertab'
-Plug 'ajh17/VimCompletesMe'
+Plug 'neoclide/coc.nvim',  {'branch': 'release'}
 
 "Git
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-Plug 'junegunn/gv.vim'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 
 "Misc
-Plug 'xolox/vim-misc'
 Plug 'Shougo/vimproc.vim'
-Plug 'xolox/vim-easytags'
 
 "Language specific
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'vim-scripts/octave.vim--'
-Plug 'derekwyatt/vim-scala'
-Plug 'chrisbra/csv.vim'
 Plug 'mattn/emmet-vim'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'xolox/vim-pyref'
 Plug 'amiorin/vim-textile'
 
 "Other
-Plug 'jceb/vim-orgmode'
-Plug 'itchyny/calendar.vim'
 Plug 'metakirby5/codi.vim'
-Plug 'tpope/vim-speeddating'
+Plug 'blindFS/vim-taskwarrior'
+
+"Colorscheme
 Plug 'morhetz/gruvbox'
 
 call plug#end()
@@ -140,6 +129,11 @@ set hidden "hides unsaved files open in buffers instead of closing them, undo po
 set noshowmode
 set textwidth=120
 set title
+set nobackup
+set nowritebackup
+set updatetime=300
+set shortmess+=c " Don't pass messages to |ins-completion-menu|.
+set signcolumn=yes
 
 "undo settings
 set undofile                " Save undo's after file closes
@@ -203,7 +197,7 @@ nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>f' :Marks<CR>
 nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fi :Rg 
+nnoremap <leader>fi :Rg <CR>
 nnoremap <leader>b  :Unite buffer<CR>
 
 "Compiler shortcuts and bindings
@@ -323,10 +317,6 @@ let g:slime_default_config   = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
 let g:slime_python_ipython   = 1
 
-"Pyref
-let g:pyref_mapping        = 'K'
-let g:python_highlight_all = 1
-
 "Ale
 let g:ale_sign_error                 = '✗'
 let g:ale_sign_warning               = '⚠'
@@ -355,3 +345,32 @@ augroup remember_folds
   autocmd BufWinLeave *.* mkview
   autocmd BufWinEnter *.* silent! loadview
 augroup END
+
+"coc
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
