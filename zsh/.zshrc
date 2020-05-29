@@ -134,6 +134,7 @@ function zle-line-init zle-keymap-select {
     zle reset-prompt
 }
 
+# little zsh nucances
 zle -N zle-line-init
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
@@ -150,7 +151,16 @@ if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
 fi
 
-xset b off
-
+# load aliases
 source ~/.zsh_alias
+
+# random things to run so that I like the system I'm working on
+# repeating keystrokes faster
+xset r rate 300 50
+
+# map caps lock to escape
+setxkbmap -option caps:escape
+
+# set xorg beep off
+xset b off
 
