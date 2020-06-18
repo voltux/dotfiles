@@ -226,7 +226,7 @@ inoremap ;t ü
 "----------------------Plugin Configuration-------------------
 
 "Find things with fzf
-nnoremap <leader>fa  :Rg 
+nnoremap <leader>fa  :Rg<CR>
 nnoremap <leader>fb  :Buffers<CR>
 nnoremap <leader>fcb :BCommits<CR>
 nnoremap <leader>fcc :Commits<CR>
