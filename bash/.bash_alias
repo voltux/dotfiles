@@ -1,3 +1,7 @@
+#misc
+alias qtcreator="/home/iarapis/opt/qtcreator-3.2.1/bin/qtcreator &"
+alias qtlinguist="/opt/salome/8.2.0/Salome-V8_2_0-c9/"
+
 #ls
 alias ll="ls -l"
 alias la="ls -la"
