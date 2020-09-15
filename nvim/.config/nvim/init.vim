@@ -40,6 +40,7 @@ Plug 'neoclide/coc.nvim',  {'branch': 'release'}
 "Git
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-rhubarb'
 
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
