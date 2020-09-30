@@ -119,7 +119,6 @@ set ignorecase
 set smartcase
 set history=1000
 set autoread
-set confirm
 set formatoptions+=j
 set noswapfile
 set pastetoggle=<F7>
