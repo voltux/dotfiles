@@ -34,6 +34,8 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
 
 "Autocompletion
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'ajh17/VimCompletesMe'
 
 "Git
