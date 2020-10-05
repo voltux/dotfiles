@@ -77,6 +77,7 @@ set splitbelow
 set splitright
 
 "colors
+set t_Co=256
 set background=dark
 set cursorline
 colorscheme gruvbox
@@ -183,7 +184,7 @@ if has("gui_running")
     set guioptions-=m
     set guioptions-=M
     set lines=999 columns=999
-    set guifont=Monaco\ for\ Powerline\ 10
+    set guifont=Monaco\ for\ Powerline\ 9
 endif
 
 "Recognizing latex files

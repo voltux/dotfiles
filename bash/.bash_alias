@@ -12,6 +12,7 @@ alias vin="vim -u NONE"
 alias vi="vim -u /home/iarapis/.vimrc.basic"
 
 #tmux
+alias tmux='TERM=screen-256color tmux'
 alias ta='tmux attach -t'
 alias tad='tmux attach -d -t'
 alias ts='tmux new-session -s'
