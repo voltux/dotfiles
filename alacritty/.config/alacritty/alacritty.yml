@@ -21,15 +21,16 @@ font:
   bold_italic:
     family: Monego
     style: Bold Italic
-
-  # Point size
-  size: 10
+  size: 9
   offset:
     x: 0
     y: 0
   glyph_offset:
     x: 0
     y: 0
+
+mouse:
+  hide_when_typing: true
 
 ## Colors (Gruvbox dark)
 colors:
