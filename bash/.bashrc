@@ -92,8 +92,8 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.bash_alias ]; then
+    . ~/.bash_alias
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -111,7 +111,11 @@ fi
 set -o vi
 
 # prompt color
-PS1="\[\033[31m\]\t\[\033[m\]-\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\$(parse_git_branch)\[\033[m\]\$ "
 
 # environment variables
 export EDITOR="gvim"
