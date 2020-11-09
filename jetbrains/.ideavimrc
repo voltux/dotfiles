@@ -1,0 +1,17 @@
+set digraph
+set history=1000
+set ignorecase
+set smartcase
+set incsearch
+set relativenumber
+set showmode
+set undolevels=10000
+
+set ideajoin
+
+set surround
+set multiple-cursors
+set commentary
+set ReplaceWithRegister
+set exchange
+
