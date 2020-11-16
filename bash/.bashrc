@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -115,10 +114,10 @@ parse_git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\$(parse_git_branch)\[\033[m\]\$ "
+PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h \[\033[33;1m\]\w\$(parse_git_branch)\[\033[m\]\$ "
 
 # environment variables
-export EDITOR="gvim"
+export EDITOR="vim"
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
