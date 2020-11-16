@@ -3,6 +3,7 @@ set history=1000
 set ignorecase
 set smartcase
 set incsearch
+set number
 set relativenumber
 set showmode
 set undolevels=10000
