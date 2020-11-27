@@ -1,4 +1,3 @@
-set digraph
 set history=1000
 set ignorecase
 set smartcase
