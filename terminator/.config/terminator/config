@@ -16,7 +16,7 @@
     use_system_font = False
     icon_bell = False
     show_titlebar = False
-    font = Monaco for Powerline 9
+    font = Monaco for Powerline 10
     allow_bold = False
 [layouts]
   [[default]]
