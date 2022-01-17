@@ -35,7 +35,6 @@ Plug 'morhetz/gruvbox'
 "Autocompletion
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'dense-analysis/ale'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
