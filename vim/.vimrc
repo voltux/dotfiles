@@ -9,7 +9,6 @@ Plug 'jpalardy/vim-slime'
 Plug 'Shougo/unite.vim'
 Plug 'regedarek/ZoomWin'
 Plug 'junegunn/vim-peekaboo'
-Plug 'blindFS/vim-taskwarrior'
 
 "Commands
 Plug 'tpope/vim-eunuch'
@@ -34,7 +33,15 @@ Plug 'michaeljsmith/vim-indent-object'
 Plug 'morhetz/gruvbox'
 
 "Autocompletion
-Plug 'ajh17/VimCompletesMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'dense-analysis/ale'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 
 "Git
 Plug 'mhinz/vim-signify'
@@ -297,3 +304,15 @@ nnoremap <leader>i :IndentLinesToggle<CR>
 
 "Airline
 let g:airline_powerline_fonts = 1
+
+"Lsp Setup
+nnoremap <leader>dd :LspDefinition<cr>
+nnoremap <leader>dn :LspNextDiagnostic<cr>
+nnoremap <leader>dp :LspPreviousDiagnostic<cr>
+nnoremap <leader>de :LspReferences<cr>
+nnoremap <leader>dr :LspRename<cr>
+nnoremap <leader>ds :LspStopServer<cr>
+nnoremap <leader>dp :LspPeekDefinition<cr>
+nnoremap <leader>da :LspCodeAction<cr>
+nnoremap <leader>dh :LspHover<cr>
+nnoremap <leader>df :LspDocumentFormat<cr>
