@@ -56,11 +56,15 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
 # fzf scripts
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
 fi
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # show hidden files in fzf search by default
+
 
 # repeating keystrokes faster
 xset r rate 300 50
@@ -71,3 +75,5 @@ setxkbmap -option caps:escape
 # set xorg beep off
 xset b off
 
+# alias & additional configuration
+[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
