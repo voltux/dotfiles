@@ -316,3 +316,5 @@ nnoremap <leader>dp :LspPeekDefinition<cr>
 nnoremap <leader>da :LspCodeAction<cr>
 nnoremap <leader>dh :LspHover<cr>
 nnoremap <leader>df :LspDocumentFormat<cr>
+
+let g:lsp_settings_filetype_perl = 'pls'
