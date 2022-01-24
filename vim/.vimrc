@@ -119,6 +119,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 "copy paste between different programs/windows/tabs
+set nopaste "don't start in paste mode
 set clipboard=unnamedplus
 
 "editor settings
