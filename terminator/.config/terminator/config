@@ -4,7 +4,7 @@
   title_hide_sizetext = True
   always_split_with_profile = True
   borderless = True
-  tab_position = hidden
+  /*tab_position = hidden*/
   inactive_color_offset = 0.79
 [keybindings]
 [profiles]
