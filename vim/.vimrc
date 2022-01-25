@@ -115,6 +115,10 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
+"move inside menus
+inoremap <C-j> <C-n>
+inoremap <C-k> <C-p>
+
 "change current dir to current file pwd
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
