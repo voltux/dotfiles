@@ -313,12 +313,11 @@ let g:airline_powerline_fonts = 1
 nnoremap <leader>dd :LspDefinition<cr>
 nnoremap <leader>dn :LspNextDiagnostic<cr>
 nnoremap <leader>dp :LspPreviousDiagnostic<cr>
-nnoremap <leader>de :LspReferences<cr>
+nnoremap <leader>de :LspDocumentDiagnostics<cr>
 nnoremap <leader>dr :LspRename<cr>
 nnoremap <leader>ds :LspStopServer<cr>
-nnoremap <leader>dp :LspPeekDefinition<cr>
+nnoremap <leader>dv :LspPeekDefinition<cr>
 nnoremap <leader>da :LspCodeAction<cr>
 nnoremap <leader>dh :LspHover<cr>
 nnoremap <leader>df :LspDocumentFormat<cr>
 
-let g:lsp_settings_filetype_perl = 'pls'
