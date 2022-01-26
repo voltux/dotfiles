@@ -65,15 +65,5 @@ if [[ $PATH != *"$HOME/.bin"* ]]; then
 fi
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # show hidden files in fzf search by default
 
-
-# repeating keystrokes faster
-xset r rate 300 50
-
-# map caps lock to escape
-setxkbmap -option caps:escape
-
-# set xorg beep off
-xset b off
-
 # alias & additional configuration
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
