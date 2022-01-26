@@ -306,9 +306,6 @@ vmap <leader>t :Tabularize/
 "IndentLines
 nnoremap <leader>i :IndentLinesToggle<CR>
 
-"Airline
-let g:airline_powerline_fonts = 1
-
 "Lsp Setup
 nnoremap <leader>dd :LspDefinition<cr>
 nnoremap <leader>dn :LspNextDiagnostic<cr>
@@ -320,4 +317,7 @@ nnoremap <leader>dv :LspPeekDefinition<cr>
 nnoremap <leader>da :LspCodeAction<cr>
 nnoremap <leader>dh :LspHover<cr>
 nnoremap <leader>df :LspDocumentFormat<cr>
+
+"Airline
+let g:airline_powerline_fonts = 1
 
