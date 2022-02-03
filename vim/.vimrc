@@ -15,11 +15,11 @@ Plug 'tpope/vim-eunuch'
 
 "Editor
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdcommenter'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
@@ -40,7 +40,6 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-
 
 "Git
 Plug 'mhinz/vim-signify'
@@ -208,7 +207,6 @@ nnoremap <leader><Down> :resize -10 <CR>
 nnoremap <leader><Right> :vertical resize +10 <CR>
 nnoremap <leader><Left> :vertical resize -10 <CR>
 
-
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
@@ -237,9 +235,28 @@ inoremap ;t ü
 
 "----------------------Plugin Configuration-------------------
 
+" Function to delete buffers directly from FZF
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bd' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BuffersDelete call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
+
 "Find things with fzf
 nnoremap <leader>fa  :Rg<CR>
 nnoremap <leader>fb  :Buffers<CR>
+nnoremap <leader>fd  :BuffersDelete<CR>
 nnoremap <leader>fcb :BCommits<CR>
 nnoremap <leader>fcc :Commits<CR>
 nnoremap <leader>fco :Commands<CR>
@@ -259,7 +276,6 @@ nnoremap <leader>ft  :Tags<CR>
 nnoremap <leader>fw  :Windows<CR>
 nnoremap <leader>f'  :Marks<CR>
 nnoremap <leader>b   :Unite buffer<CR>
-
 
 "Nerdtree
 nmap <leader>n :NERDTreeToggle<CR>
