@@ -63,6 +63,9 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
 fi
+if [[ $PATH != *"$HOME/bin"* ]]; then
+    export PATH="$PATH:$HOME/bin"
+fi
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # show hidden files in fzf search by default
 
 # alias & additional configuration
