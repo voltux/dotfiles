@@ -335,6 +335,3 @@ nnoremap <leader>ch :LspHover<cr>
 nnoremap <leader>cf :LspDocumentFormat<cr>
 nnoremap <leader>cc :pclose<cr>
 
-"Airline
-let g:airline_powerline_fonts = 1
-
