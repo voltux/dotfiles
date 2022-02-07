@@ -292,6 +292,7 @@ autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
 autocmd Filetype python vmap <F8> !python3<CR>
 autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
 autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
+autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
 
 "Auto-pairs
 let g:AutoPairsShortcutToggle = '<leader>)'
