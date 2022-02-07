@@ -323,16 +323,16 @@ vmap <leader>t :Tabularize/
 nnoremap <leader>i :IndentLinesToggle<CR>
 
 "Lsp Setup
-nnoremap <leader>dd :LspDefinition<cr>
-nnoremap <leader>dn :LspNextDiagnostic<cr>
-nnoremap <leader>dp :LspPreviousDiagnostic<cr>
-nnoremap <leader>de :LspDocumentDiagnostics<cr>
-nnoremap <leader>dr :LspRename<cr>
-nnoremap <leader>ds :LspStopServer<cr>
-nnoremap <leader>dv :LspPeekDefinition<cr>
-nnoremap <leader>da :LspCodeAction<cr>
-nnoremap <leader>dh :LspHover<cr>
-nnoremap <leader>df :LspDocumentFormat<cr>
+nnoremap <leader>cd :LspDefinition<cr>
+nnoremap <leader>cn :LspNextDiagnostic<cr>
+nnoremap <leader>cp :LspPreviousDiagnostic<cr>
+nnoremap <leader>ce :LspDocumentDiagnostics<cr>
+nnoremap <leader>cr :LspRename<cr>
+nnoremap <leader>cv :LspPeekDefinition<cr>
+nnoremap <leader>ca :LspCodeAction<cr>
+nnoremap <leader>ch :LspHover<cr>
+nnoremap <leader>cf :LspDocumentFormat<cr>
+nnoremap <leader>cc :pclose<cr>
 
 "Airline
 let g:airline_powerline_fonts = 1
