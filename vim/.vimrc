@@ -14,6 +14,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-eunuch'
 
 "Editor
+Plug 'luochen1990/rainbow'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -322,6 +323,9 @@ vmap <leader>t :Tabularize/
 
 "IndentLines
 nnoremap <leader>i :IndentLinesToggle<CR>
+
+" Rainbow
+let g:rainbow_active = 1
 
 "Lsp Setup
 nnoremap <leader>cd :LspDefinition<cr>
