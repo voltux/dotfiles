@@ -9,6 +9,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'Shougo/unite.vim'
 Plug 'regedarek/ZoomWin'
 Plug 'junegunn/vim-peekaboo'
+Plug 'wesQ3/vim-windowswap'
 
 "Commands
 Plug 'tpope/vim-eunuch'
