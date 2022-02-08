@@ -12,7 +12,7 @@
     icon_bell = False
     background_color = "#282828"
     cursor_color = "#ebdbb2"
-    font = DejaVu Sans Mono 10
+    font = Monaco for Powerline 10
     foreground_color = "#ebdbb2"
     show_titlebar = False
     scrollbar_position = hidden
