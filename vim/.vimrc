@@ -60,13 +60,12 @@ runtime! ftplugin/man.vim
 
 set nocompatible
 set backspace=indent,eol,start
-syntax enable
-syntax on
 set number
 set relativenumber
 set wildmenu
 set wildignorecase
 set wildignore+=.pyc,.swp
+syntax on
 filetype plugin indent on
 
 "no error bells
@@ -311,14 +310,9 @@ nnoremap <leader>u :UndotreeToggle<cr>
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
-let g:slime_python_ipython = 1
-
-"Taskwarrior
-nnoremap <leader>tt :TW <CR>
-nnoremap <leader>tr :TWReportInfo <CR>
 
 "Tabular
-vmap <leader>t :Tabularize/
+vmap <leader>tt :Tabularize/
 
 " Rainbow
 let g:rainbow_active = 1
