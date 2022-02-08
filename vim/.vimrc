@@ -25,7 +25,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
@@ -320,9 +319,6 @@ nnoremap <leader>tr :TWReportInfo <CR>
 
 "Tabular
 vmap <leader>t :Tabularize/
-
-"IndentLines
-nnoremap <leader>i :IndentLinesToggle<CR>
 
 " Rainbow
 let g:rainbow_active = 1
