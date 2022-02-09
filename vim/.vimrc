@@ -319,9 +319,9 @@ vmap <leader>tt :Tabularize/
 let g:rainbow_active = 1
 
 "Lsp Setup
+nnoremap ]d :LspNextDiagnostic<cr>
+nnoremap [d :LspPreviousDiagnostic<cr>
 nnoremap <leader>cd :LspDefinition<cr>
-nnoremap <leader>cn :LspNextDiagnostic<cr>
-nnoremap <leader>cp :LspPreviousDiagnostic<cr>
 nnoremap <leader>ce :LspDocumentDiagnostics<cr>
 nnoremap <leader>cr :LspRename<cr>
 nnoremap <leader>cv :LspPeekDefinition<cr>
