@@ -34,8 +34,6 @@ local on_attach = function(client, bufnr)
   end
 end
 
-require'lspconfig'.pyright.setup{}
-
 local servers = {'pyright'}
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
@@ -48,4 +46,6 @@ require'nvim-treesitter.configs'.setup {
       enable = true
   },
 }
+
+require'lspconfig'.pyright.setup{}
 
