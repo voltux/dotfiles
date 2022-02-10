@@ -50,8 +50,9 @@ Plug 'tpope/vim-rhubarb'
 "Search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 
-"Syntax
+"Language specific
 Plug 'amiorin/vim-textile'
+Plug 'fatih/vim-go'
 
 call plug#end()
 
