@@ -270,12 +270,12 @@ nnoremap <leader>fhs :History/<CR>
 nnoremap <leader>fht :Helptags<CR>
 nnoremap <leader>fi  :BLines<CR>
 nnoremap <leader>fl  :Lines<CR>
-nnoremap <leader>fm  :Maps<CR>
+nnoremap <leader>fk  :Maps<CR>
 nnoremap <leader>fp  :Colors<CR>
 nnoremap <leader>fr  :%s/
 nnoremap <leader>ft  :Tags<CR>
 nnoremap <leader>fw  :Windows<CR>
-nnoremap <leader>f'  :Marks<CR>
+nnoremap <leader>fm  :Marks<CR>
 nnoremap <leader>b   :Unite buffer<CR>
 
 "Nerdtree
