@@ -2,7 +2,7 @@ call plug#begin()
 
 "Navigation
 Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 Plug 'mbbill/undotree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
