@@ -315,8 +315,25 @@ let g:slime_dont_ask_default = 1
 "Tabular
 vmap <leader>tt :Tabularize/
 
-" Rainbow
+"Rainbow
 let g:rainbow_active = 1
+
+"Airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.colnr = ':'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = ' | '
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'PASTE'
+let g:airline_symbols.spell = 'SPELL'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'wh'
+let g:airline#extensions#wordcount#formatter#default#fmt = '%s |'
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 "Lsp Setup
 nnoremap ]e :LspNextDiagnostic<cr>
@@ -330,4 +347,3 @@ nnoremap <leader>ca :LspCodeAction<cr>
 nnoremap <leader>ch :LspHover<cr>
 nnoremap <leader>cf :LspDocumentFormat<cr>
 nnoremap <leader>cc :pclose<cr>
-
