@@ -322,6 +322,7 @@ let g:rainbow_active = 1
 nnoremap ]e :LspNextDiagnostic<cr>
 nnoremap [e :LspPreviousDiagnostic<cr>
 nnoremap <leader>cd :LspDefinition<cr>
+nnoremap <leader>cg :LspDeclaration<cr>
 nnoremap <leader>ce :LspDocumentDiagnostics<cr>
 nnoremap <leader>cr :LspRename<cr>
 nnoremap <leader>cv :LspPeekDefinition<cr>
