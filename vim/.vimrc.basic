@@ -2,12 +2,12 @@
 
 set nocompatible
 set backspace=indent,eol,start
-syntax enable
 set number
 set relativenumber
 set wildmenu
 set wildignorecase
 set wildignore+=.pyc,.swp
+syntax enable
 filetype plugin indent on
 
 "no error bells
@@ -16,13 +16,14 @@ set noerrorbells
 "show commands as they are typed
 set showcmd
 
+"colors
+set background=dark
+colorscheme gruvbox
+set cursorline
+
 "default places for opening splits
 set splitbelow
 set splitright
-
-"colors
-set background=dark
-set cursorline
 
 "activate mouse
 set mouse=a
@@ -36,6 +37,9 @@ set path+=**
 
 "set leader key
 let mapleader = "\<Space>"
+
+"Always show statusline
+set laststatus=2
 
 "-----------------System Key Bindings---------------------
 
@@ -57,6 +61,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 "copy paste between different programs/windows/tabs
+set nopaste "just in case it is activated by default
 set clipboard=unnamedplus
 
 "editor settings
@@ -131,7 +136,6 @@ nnoremap <leader><Left> :vertical resize -10 <CR>
 "Man pages in vim
 runtime! ftplugin/man.vim
 
-
 "----------------------Language Settings----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
@@ -158,3 +162,27 @@ inoremap ;u ù
 inoremap ;y û
 inoremap ;t ü
 
+" Setup status line
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=
