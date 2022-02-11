@@ -5,6 +5,7 @@ window:
     x: 2
     y: 2
   decorations: none
+  opacity: 1.0
 scrolling:
   history: 10000
   multiplier: 3
@@ -21,7 +22,7 @@ font:
   bold_italic:
     family: Monego
     style: Bold Italic
-  size: 9
+  size: 8
   offset:
     x: 0
     y: 0
@@ -63,7 +64,6 @@ colors:
     cyan:    '0x8ec07c'
     white:   '0xebdbb2'
 
-background_opacity: 1.0
 cursor:
   style: Block
 live_config_reload: true
