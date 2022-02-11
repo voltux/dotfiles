@@ -117,10 +117,6 @@ set foldlevelstart=10
 set foldnestmax=10
 hi Folded ctermbg=016
 
-"new splits
-nnoremap <leader>vv :vnew<CR>
-nnoremap <leader>vs :new<CR>
-
 "Recognizing latex files
 let g:tex_flavor='latex'
 
