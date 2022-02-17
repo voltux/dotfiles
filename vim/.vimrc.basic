@@ -17,8 +17,11 @@ set noerrorbells
 set showcmd
 
 "colors
+set t_Co=256
 set background=dark
-colorscheme gruvbox
+if filereadable(expand("$HOME/.vim/colors/gruvbox.vim"))
+    colorscheme gruvbox
+endif
 set cursorline
 
 "default places for opening splits
