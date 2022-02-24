@@ -9,7 +9,7 @@ DISABLE_AUTO_TITLE="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="dd/mm/yyyy"
-plugins=(tmux common-aliases git vi-mode archlinux docker colored-man-pages kubectl zsh-z)
+plugins=(tmux common-aliases git vi-mode archlinux docker colored-man-pages kubectl ubuntu zsh-z)
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
