@@ -86,9 +86,6 @@ set background=dark
 set cursorline
 colorscheme gruvbox
 
-"activate mouse
-set mouse=a
-
 "keywordprg, how will 'K' react (default is man)
 set kp=
 
