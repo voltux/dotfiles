@@ -73,6 +73,9 @@ filetype plugin indent on
 "no error bells
 set noerrorbells
 
+"signcolumn on (gives me a headache always going on and off)
+set signcolumn=yes
+
 "show commands as they are typed
 set showcmd
 
@@ -121,7 +124,6 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 "copy paste between different programs/windows/tabs
 set nopaste "don't start in paste mode
-set clipboard=unnamedplus
 
 "editor settings
 set ignorecase
