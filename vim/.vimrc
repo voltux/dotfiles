@@ -332,7 +332,9 @@ let g:airline_symbols.spell = 'SPELL'
 let g:airline_symbols.notexists = 'Ɇ'
 let g:airline_symbols.whitespace = 'wh'
 let g:airline#extensions#wordcount#formatter#default#fmt = '%s |'
-let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline_powerline_fonts = 1
 
 "Lsp Setup
 nnoremap ]e :LspNextDiagnostic<cr>
