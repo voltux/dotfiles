@@ -53,6 +53,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'juneg
 "Language specific
 Plug 'amiorin/vim-textile'
 Plug 'fatih/vim-go'
+Plug 'vim-python/python-syntax'
 
 call plug#end()
 
@@ -341,6 +342,9 @@ let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|sta
 
 "vim-go
 let g:go_fmt_fail_silently = 1
+
+"python-syntax
+let g:python_highlight_all = 1
 
 "Lsp Setup
 nnoremap ]e :LspNextDiagnostic<cr>
