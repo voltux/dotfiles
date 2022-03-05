@@ -1,3 +1,4 @@
+local ret_status="%(?:%{$fg_bold[cyan]%}➜ :%{$fg_bold[red]%}➜ )"
 local user_host="%{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[green]%}%M "
 local current_dir="%{$fg[yellow]%}%~ %{$reset_color%}"
 local vcs_branch='$(git_prompt_info)$(hg_prompt_info)'
