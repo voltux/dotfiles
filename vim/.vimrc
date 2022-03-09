@@ -254,6 +254,9 @@ command! BuffersDelete call fzf#run(fzf#wrap({
   \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
 \ }))
 
+" Command to remove filename from searching inside files with ripgrep
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+
 "Find things with fzf
 nnoremap <leader>fa  :Rg<CR>
 nnoremap <leader>fb  :Buffers<CR>
