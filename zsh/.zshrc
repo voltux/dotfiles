@@ -66,7 +66,7 @@ fi
 if [[ $PATH != *"$HOME/bin"* ]]; then
     export PATH="$PATH:$HOME/bin"
 fi
-export FZF_DEFAULT_COMMAND='rg --hidden -l ""' # show hidden files in fzf search by default
+export FZF_DEFAULT_COMMAND='rg -l ""' # show hidden files in fzf search by default
 
 # alias & additional configuration
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
