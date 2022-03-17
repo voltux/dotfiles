@@ -269,9 +269,28 @@ let g:slime_default_config   = {"socket_name": "default", "target_pane": "1"}
 let g:slime_dont_ask_default = 1
 let g:slime_python_ipython   = 0
 
-
 "Rainbow brackets
 let g:rainbow_active = 1
+
+"Airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.colnr = ':'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = ' | '
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'PASTE'
+let g:airline_symbols.spell = 'SPELL'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'wh'
+let g:airline#extensions#wordcount#formatter#default#fmt = '%s |'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
 
 "python3 config
 let g:python3_host_prog = '/usr/bin/python3'
