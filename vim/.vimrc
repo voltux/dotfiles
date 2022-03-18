@@ -100,6 +100,7 @@ set foldnestmax=10 "maximum nested folds
 hi Folded ctermbg=016
 runtime! ftplugin/man.vim "man pages in vim
 set cursorline "show cursorline
+set signcolumn=yes "always show signcolumn
 
 "colors
 set t_Co=256
