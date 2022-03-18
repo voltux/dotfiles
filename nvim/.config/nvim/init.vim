@@ -55,6 +55,7 @@ Plug 'nvim-lua/plenary.nvim' "telescope prerequisite
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
 
 call plug#end()
 
