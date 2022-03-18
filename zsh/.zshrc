@@ -15,22 +15,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-# some custom aliases to override potential changes
-alias l='ls -lh'
-alias ll='ls -lh'
-alias la='ls -lha'
-alias sl=ls
-alias vimrc='vim ~/.vimrc'
-alias vi='vim -u ~/.vimrc.basic'
-alias gvi='gvim -u ~/.vimrc.basic'
-alias nvimrc='nvim ~/.config/nvim/init.vim'
-alias nvi='nvim -u ~/.vimrc.basic'
-alias vin='vim -u NONE'
-alias F='| fzf'
-alias td='tmux detach'
-alias tmuxrc='$EDITOR ~/.tmux.conf'
-alias sduo=sudo
-
 # custom script to update path environment variable
 [ -f $HOME/Scripts/bin/update_path ] && source $HOME/Scripts/bin/update_path
 
