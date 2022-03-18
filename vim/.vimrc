@@ -236,8 +236,8 @@ if (has_plugin_manager)
     nnoremap <leader>fcc :Commits<CR>
     nnoremap <leader>fco :Commands<CR>
     nnoremap <leader>ff  :FZF<CR>
-    nnoremap <leader>fgg :GFiles<CR>
-    nnoremap <leader>fgc :GFiles?<CR>
+    nnoremap <leader>fg  :GFiles<CR>
+    nnoremap <leader>fG  :GFiles?<CR>
     nnoremap <leader>fhh :History<CR>
     nnoremap <leader>fhc :History:<CR>
     nnoremap <leader>fhs :History/<CR>
