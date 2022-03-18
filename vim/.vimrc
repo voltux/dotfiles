@@ -1,106 +1,118 @@
-call plug#begin()
+let has_plugin_manager = filereadable(expand("$HOME/.vim/autoload/plug.vim"))
 
-"Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'preservim/tagbar'
-Plug 'mbbill/undotree'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
-Plug 'Shougo/unite.vim'
-Plug 'regedarek/ZoomWin'
-Plug 'junegunn/vim-peekaboo'
-Plug 'wesQ3/vim-windowswap'
+if (has_plugin_manager)
 
-"Commands
-Plug 'tpope/vim-eunuch'
+    call plug#begin()
 
-"Editor
-Plug 'luochen1990/rainbow'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
-Plug 'vim-airline/vim-airline'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-entire'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'morhetz/gruvbox'
+    Plug 'scrooloose/nerdtree' "file explorer
+    Plug 'preservim/tagbar' "tag explorer
+    Plug 'mbbill/undotree' "undo tree explorer
+    Plug 'christoomey/vim-tmux-navigator' "navigate seemlessly between vim windows and tmux panes
+    Plug 'jpalardy/vim-slime' "send text from vim to another tmux pane
+    Plug 'regedarek/ZoomWin' "zoom on a specific vim window
+    Plug 'junegunn/vim-peekaboo' "registers explorer
+    Plug 'wesQ3/vim-windowswap' "swap easily the placement of two windows
+    Plug 'tpope/vim-eunuch' "run a set of common unix commands from vim
+    Plug 'luochen1990/rainbow' "multi colored brackets
+    Plug 'tpope/vim-unimpaired' "useful pairings for easier next/previous navigation for text/lists
+    Plug 'tpope/vim-commentary' "quickly comment/uncomment, syntax aware
+    Plug 'tpope/vim-repeat' "make the dot operator behave as expected for more complex tasks
+    Plug 'tpope/vim-surround' "quiskly (un)surround a text object with parentheses, brackets...
+    Plug 'wellle/targets.vim' "add useful text objects
+    Plug 'jiangmiao/auto-pairs' "autoclose parentheses
+    Plug 'ntpeters/vim-better-whitespace' "remove unnecessary whitespace
+    Plug 'terryma/vim-multiple-cursors' "modify multiple instances of the same word in file
+    Plug 'godlygeek/tabular' "align things nicely
+    Plug 'vim-airline/vim-airline' "configurable status bar
+    Plug 'kana/vim-textobj-user' "create custom text objects
+    Plug 'kana/vim-textobj-line' "line text object
+    Plug 'kana/vim-textobj-entire' "entire buffer text object
+    Plug 'Julian/vim-textobj-variable-segment' "variable segment text object (between underscores or camelCase)
+    Plug 'michaeljsmith/vim-indent-object' "indent text object
+    Plug 'morhetz/gruvbox' "best coloscheme ever invented (objectively)
+    Plug 'SirVer/ultisnips' "snippet triggerer
+    Plug 'honza/vim-snippets' "collection of snippets
+    Plug 'prabirshrestha/vim-lsp' "language server protocol implementation for vim
+    Plug 'mattn/vim-lsp-settings' "easily configure language server protocol
+    Plug 'thomasfaingnaert/vim-lsp-ultisnips' "language server protocol snippets
+    Plug 'prabirshrestha/asyncomplete.vim' "asynchronous general autocompletion engine
+    Plug 'prabirshrestha/asyncomplete-lsp.vim' "asynchronous language server protocol autocompletion engine
+    Plug 'mhinz/vim-signify' "sign column to indicate modifications from version control system
+    Plug 'tpope/vim-fugitive' "A Git wrapper so awesome, it should be illegal
+    Plug 'tpope/vim-rhubarb' "fugitive extension for github
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim' "find things
+    Plug 'amiorin/vim-textile' "textile syntax highlighting
+    Plug 'fatih/vim-go' "make vim behave like a go IDE
+    Plug 'vim-python/python-syntax' "enhanced python syntax highlighting
 
-"Autocompletion
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'thomasfaingnaert/vim-lsp-ultisnips'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    call plug#end()
 
-"Git
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
+endif
 
-"Search
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
+"-----------------General---------------
 
-"Language specific
-Plug 'amiorin/vim-textile'
-Plug 'fatih/vim-go'
-Plug 'vim-python/python-syntax'
-
-call plug#end()
-
-runtime! ftplugin/man.vim
-
-"-----------------General Settings---------------
-
-set nocompatible
-set backspace=indent,eol,start
-set number
-set relativenumber
-set wildmenu
-set wildignorecase
-set wildignore+=.pyc,.swp
-syntax on
-filetype plugin indent on
-
-"no error bells
-set noerrorbells
-
-"signcolumn on (gives me a headache always going on and off)
-set signcolumn=yes
-
-"show commands as they are typed
-set showcmd
-
-"default places for opening splits
-set splitbelow
-set splitright
+set nocompatible "sane defaults
+set backspace=indent,eol,start "sane backspace behaviour
+set number "show line number
+set relativenumber "show line number relative to current
+set wildmenu "show menu for options in command mode
+set wildignorecase "ignore case for wildmenu in command mode
+set wildignore+=.pyc,.swp "ignore certain filetypes in wildmenu
+syntax enable "syntax highlighting
+filetype plugin indent on "filetype aware behaviour
+set noerrorbells "no error bells
+set showcmd "show commands as they are typed
+set splitbelow "default split below
+set splitright "default split right
+set kp= "keywordprg, how will 'K' react (default is man)
+set path+=** "search down into subfolders, provides tab completion for all related tasks
+set nopaste "just in case set paste is activated by default
+set laststatus=2 "Always show statusline
+set ignorecase "ignore case on search
+set smartcase "but do not ignore it if I ask specifically for uppercase
+set history=1000 "undo levels
+set autoread "refresh file if it changes on disc
+set confirm "ask me if I try to leave the editor with an unsaved modified file in a buffer
+set formatoptions+=j "when joining lines join comments
+set noswapfile "don't create swapfiles
+set pastetoggle=<F7>
+set mousemodel=popup_setpos "move mouse to click point
+set smartindent "do smart autoindenting when changing lines
+set expandtab "change tab to spaces
+set smarttab "insert correct amount of spaces in begging of line
+set tabstop=4 "number of spaces for a tab
+set shiftwidth=4 "number of spaces for autoindent
+set tags=./tags;/ "use only local tags
+set hidden "hides unsaved files open in buffers instead of closing them, undo possible
+set title "set title of window to title of file
+set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
+set nohlsearch "do not highlight searched-for phrases
+set incsearch "but do highlight-as-I-type the search string
+set gdefault "this makes search/replace global by default"
+set undofile "save undos after file closes
+set undodir=$HOME/.vim/undo "where to save undo histories
+set undolevels=1000 "how many undos
+set undoreload=10000 "number of lines to save for undo
+set nofoldenable "all folds should be open when opening a file
+set foldmethod=indent
+set foldlevelstart=10 "start editing with all folds open when opening a new buffer
+set foldnestmax=10 "maximum nested folds
+hi Folded ctermbg=016
+runtime! ftplugin/man.vim "man pages in vim
+set cursorline "show cursorline
 
 "colors
 set t_Co=256
 set background=dark
-set cursorline
-colorscheme gruvbox
-
-"keywordprg, how will 'K' react (default is man)
-set kp=
-
-"Search down into subfolders
-"Provides tab completion for all related tasks
-set path+=**
+if filereadable(expand("$HOME/.vim/colors/gruvbox.vim"))
+    colorscheme gruvbox
+    set cursorline
+endif
 
 "set leader key
 let mapleader = "\<Space>"
 
-"-----------------System Key Bindings---------------------
+"-----------------Key Bindings---------------------
 
 "set abbreviations for common typos
 cnoreabbrev   Q    q
@@ -126,37 +138,6 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 "copy paste between different programs/windows/tabs
 set nopaste "don't start in paste mode
 
-"editor settings
-set ignorecase
-set smartcase
-set history=1000
-set autoread
-set formatoptions+=j
-set noswapfile
-set pastetoggle=<F7>
-set mousemodel=popup_setpos
-set smartindent
-set expandtab
-set smarttab
-set tabstop=4
-set shiftwidth=4
-set tags=./tags;/
-set hidden "hides unsaved files open in buffers instead of closing them, undo possible
-set title
-set noshowmode
-set ttimeoutlen=0 "timeout time for Esc to pass to normal mode -> instantaneous
-
-"search settings
-set nohlsearch          " do not highlight searched-for phrases
-set incsearch           " ...but do highlight-as-I-type the search string
-set gdefault            " this makes search/replace global by default"
-
-"undo settings
-set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
-
 "Basically you press * or # to search for the current selection
 vnoremap <silent> *  : call VisualSearch('f')<CR>
 vnoremap <silent> #  : call VisualSearch('b')<CR>
@@ -171,17 +152,6 @@ nnoremap <leader>p "+p
 
 " Find and replace in the whole file
 nnoremap <leader>fr :%s/
-
-"folding zf to create fold, za to toggle
-set nofoldenable
-set foldmethod=indent
-set foldlevelstart=10
-set foldnestmax=10
-hi Folded ctermbg=016
-
-"new splits
-nnoremap <leader>vv :vnew<CR>
-nnoremap <leader>vs :new<CR>
 
 "gui settings
 if has("gui_running")
@@ -208,7 +178,7 @@ nnoremap <leader><Down> :resize -10 <CR>
 nnoremap <leader><Right> :vertical resize +10 <CR>
 nnoremap <leader><Left> :vertical resize -10 <CR>
 
-"----------------------Language Settings----------------------
+"----------------------Language----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
 nmap <leader>le :set keymap&<CR>
@@ -234,130 +204,156 @@ inoremap ;u ù
 inoremap ;y û
 inoremap ;t ü
 
-"----------------------Plugin Configuration-------------------
+"----------------------Plugins or not-------------------
+if (has_plugin_manager)
+    " Function to delete buffers directly from FZF
+    function! s:list_buffers()
+      redir => list
+      silent ls
+      redir END
+      return split(list, "\n")
+    endfunction
 
-" Function to delete buffers directly from FZF
-function! s:list_buffers()
-  redir => list
-  silent ls
-  redir END
-  return split(list, "\n")
-endfunction
+    function! s:delete_buffers(lines)
+      execute 'bd' join(map(a:lines, {_, line -> split(line)[0]}))
+    endfunction
 
-function! s:delete_buffers(lines)
-  execute 'bd' join(map(a:lines, {_, line -> split(line)[0]}))
-endfunction
+    command! BuffersDelete call fzf#run(fzf#wrap({
+      \ 'source': s:list_buffers(),
+      \ 'sink*': { lines -> s:delete_buffers(lines) },
+      \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+    \ }))
 
-command! BuffersDelete call fzf#run(fzf#wrap({
-  \ 'source': s:list_buffers(),
-  \ 'sink*': { lines -> s:delete_buffers(lines) },
-  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
-\ }))
+    " Command to remove filename from searching inside files with ripgrep
+    command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
-" Command to remove filename from searching inside files with ripgrep
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+    "Find things with FZF
+    nnoremap <leader>fa  :Rg<CR>
+    nnoremap <leader>fb  :Buffers<CR>
+    nnoremap <leader>fd  :BuffersDelete<CR>
+    nnoremap <leader>fcb :BCommits<CR>
+    nnoremap <leader>fcc :Commits<CR>
+    nnoremap <leader>fco :Commands<CR>
+    nnoremap <leader>ff  :FZF<CR>
+    nnoremap <leader>fgg :GFiles<CR>
+    nnoremap <leader>fgc :GFiles?<CR>
+    nnoremap <leader>fhh :History<CR>
+    nnoremap <leader>fhc :History:<CR>
+    nnoremap <leader>fhs :History/<CR>
+    nnoremap <leader>fht :Helptags<CR>
+    nnoremap <leader>fi  :BLines<CR>
+    nnoremap <leader>fl  :Lines<CR>
+    nnoremap <leader>fk  :Maps<CR>
+    nnoremap <leader>fp  :Colors<CR>
+    nnoremap <leader>fr  :%s/
+    nnoremap <leader>ft  :Tags<CR>
+    nnoremap <leader>fw  :Windows<CR>
+    nnoremap <leader>fm  :Marks<CR>
+    nnoremap <leader>b   :Unite buffer<CR>
 
-"Find things with fzf
-nnoremap <leader>fa  :Rg<CR>
-nnoremap <leader>fb  :Buffers<CR>
-nnoremap <leader>fd  :BuffersDelete<CR>
-nnoremap <leader>fcb :BCommits<CR>
-nnoremap <leader>fcc :Commits<CR>
-nnoremap <leader>fco :Commands<CR>
-nnoremap <leader>ff  :FZF<CR>
-nnoremap <leader>fgg :GFiles<CR>
-nnoremap <leader>fgc :GFiles?<CR>
-nnoremap <leader>fhh :History<CR>
-nnoremap <leader>fhc :History:<CR>
-nnoremap <leader>fhs :History/<CR>
-nnoremap <leader>fht :Helptags<CR>
-nnoremap <leader>fi  :BLines<CR>
-nnoremap <leader>fl  :Lines<CR>
-nnoremap <leader>fk  :Maps<CR>
-nnoremap <leader>fp  :Colors<CR>
-nnoremap <leader>fr  :%s/
-nnoremap <leader>ft  :Tags<CR>
-nnoremap <leader>fw  :Windows<CR>
-nnoremap <leader>fm  :Marks<CR>
-nnoremap <leader>b   :Unite buffer<CR>
+    "Nerdtree
+    nmap <leader>n :NERDTreeToggle<CR>
 
-"Nerdtree
-nmap <leader>n :NERDTreeToggle<CR>
+    "Tagbar
+    nmap <leader>m :TagbarToggle<CR>
+    let g:tagbar_autofocus=1
 
-"Tagbar
-nmap <leader>m :TagbarToggle<CR>
-let g:tagbar_autofocus=1
+    "Run things easily
+    nnoremap <F8> <NOP>
+    autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
+    autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ -std=c++11 % -o %< && ./%< <CR>
+    autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
+    autocmd Filetype python vmap <F8> !python3<CR>
+    autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
+    autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
+    autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
+    autocmd Filetype perl nmap <F8> :w <CR> :!perl %<CR>
 
-"Run shortcuts and bindings
-nnoremap <F8> <NOP>
-autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
-autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ -std=c++11 % -o %< && ./%< <CR>
-autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
-autocmd Filetype python vmap <F8> !python3<CR>
-autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
-autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
-autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
-autocmd Filetype perl nmap <F8> :w <CR> :!perl %<CR>
+    "Auto-pairs
+    let g:AutoPairsShortcutToggle = '<leader>)'
 
-"Auto-pairs
-let g:AutoPairsShortcutToggle = '<leader>)'
+    "ZoomWin
+    nmap <leader>z <C-w>o
 
-"ZoomWin
-nmap <leader>z <C-w>o
+    "Whitespace
+    highlight ExtraWhitespace ctermbg=4
+    nmap <leader>wh :StripWhitespace<CR>
 
-"Whitespace
-highlight ExtraWhitespace ctermbg=4
-nmap <leader>wh :StripWhitespace<CR>
+    "Undotree
+    nnoremap <leader>u :UndotreeToggle<cr>
 
-"Undotree
-nnoremap <leader>u :UndotreeToggle<cr>
+    "Slime
+    let g:slime_target = "tmux"
+    let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+    let g:slime_dont_ask_default = 1
 
-"Slime
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-let g:slime_dont_ask_default = 1
+    "Tabular
+    vmap <leader>tt :Tabularize/
 
-"Tabular
-vmap <leader>tt :Tabularize/
+    "Rainbow
+    let g:rainbow_active = 1
 
-"Rainbow
-let g:rainbow_active = 1
+    "Airline
+    if !exists('g:airline_symbols')
+      let g:airline_symbols = {}
+    endif
 
-"Airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols.colnr = ':'
+    let g:airline_symbols.crypt = '🔒'
+    let g:airline_symbols.linenr = ' | '
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'PASTE'
+    let g:airline_symbols.spell = 'SPELL'
+    let g:airline_symbols.notexists = 'Ɇ'
+    let g:airline_symbols.whitespace = 'wh'
+    let g:airline#extensions#wordcount#formatter#default#fmt = '%s |'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#show_tab_nr = 1
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
+
+    "vim-go
+    let g:go_fmt_fail_silently = 1
+
+    "python-syntax
+    let g:python_highlight_all = 1
+
+    "Lsp Setup
+    nnoremap ]q :LspNextDiagnostic<cr>
+    nnoremap [q :LspPreviousDiagnostic<cr>
+    nnoremap <leader>cd :LspDefinition<cr>
+    nnoremap <leader>cg :LspDeclaration<cr>
+    nnoremap <leader>ce :LspDocumentDiagnostics<cr>
+    nnoremap <leader>cr :LspRename<cr>
+    nnoremap <leader>cv :LspPeekDefinition<cr>
+    nnoremap <leader>ca :LspCodeAction<cr>
+    nnoremap <leader>ch :LspHover<cr>
+    nnoremap <leader>cf :LspDocumentFormat<cr>
+    nnoremap <leader>cc :pclose<cr>
+else
+    "status line
+    function! GitBranch()
+      return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    endfunction
+
+    function! StatuslineGit()
+      let l:branchname = GitBranch()
+      return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+    endfunction
+
+    set statusline=
+    set statusline+=%#PmenuSel#
+    set statusline+=%{StatuslineGit()}
+    set statusline+=%#LineNr#
+    set statusline+=\ %f
+    set statusline+=%m
+    set statusline+=%=
+    set statusline+=%#CursorColumn#
+    set statusline+=\ %y
+    set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+    set statusline+=\[%{&fileformat}\]
+    set statusline+=\ %p%%
+    set statusline+=\ %l:%c
+    set statusline+=
 endif
-
-let g:airline_symbols.colnr = ':'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = ' | '
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'PASTE'
-let g:airline_symbols.spell = 'SPELL'
-let g:airline_symbols.notexists = 'Ɇ'
-let g:airline_symbols.whitespace = 'wh'
-let g:airline#extensions#wordcount#formatter#default#fmt = '%s |'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_tab_nr = 1
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
-
-"vim-go
-let g:go_fmt_fail_silently = 1
-
-"python-syntax
-let g:python_highlight_all = 1
-
-"Lsp Setup
-nnoremap ]e :LspNextDiagnostic<cr>
-nnoremap [e :LspPreviousDiagnostic<cr>
-nnoremap <leader>cd :LspDefinition<cr>
-nnoremap <leader>cg :LspDeclaration<cr>
-nnoremap <leader>ce :LspDocumentDiagnostics<cr>
-nnoremap <leader>cr :LspRename<cr>
-nnoremap <leader>cv :LspPeekDefinition<cr>
-nnoremap <leader>ca :LspCodeAction<cr>
-nnoremap <leader>ch :LspHover<cr>
-nnoremap <leader>cf :LspDocumentFormat<cr>
-nnoremap <leader>cc :pclose<cr>
