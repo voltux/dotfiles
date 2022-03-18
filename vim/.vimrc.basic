@@ -16,7 +16,6 @@ set splitright "default split right
 set kp= "keywordprg, how will 'K' react (default is man)
 set path+=** "search down into subfolders, provides tab completion for all related tasks
 set nopaste "just in case set paste is activated by default
-set laststatus=2 "Always show statusline
 set ignorecase "ignore case on search
 set smartcase "but do not ignore it if I ask specifically for uppercase
 set history=1000 "undo levels
@@ -48,36 +47,8 @@ set foldlevelstart=10 "start editing with all folds open when opening a new buff
 set foldnestmax=10 "maximum nested folds
 hi Folded ctermbg=016
 runtime! ftplugin/man.vim "man pages in vim
-set cursorline "show cursorline
-
-"colors
-set t_Co=256
-set background=dark
-
-"status line
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=
+set t_Co=256 "termcolors
+set background=dark "background color
 
 "leader
 let mapleader = "\<Space>"
@@ -113,45 +84,30 @@ vnoremap <leader>y "+y
 " Paste from system clipboard
 nnoremap <leader>p "+p
 
-" Find and replace in the whole file
-nnoremap <leader>fr :%s/
+"status line
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
 
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
 
-"Recognizing latex files
-let g:tex_flavor='latex'
+set laststatus=2 "Always show statusline
 
-"Filetypes
-au BufNewFile,BufRead *.pri setf idlang
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=
 
-"Resize
-nnoremap <leader><Up> :resize +10 <CR>
-nnoremap <leader><Down> :resize -10 <CR>
-nnoremap <leader><Right> :vertical resize +10 <CR>
-nnoremap <leader><Left> :vertical resize -10 <CR>
-
-
-"----------------------Language----------------------
-
-nmap <leader>lg :set keymap=greek_utf-8<CR>
-nmap <leader>le :set keymap&<CR>
-nmap <leader>lcg :setlocal spell spelllang=el<CR>
-nmap <leader>lce :setlocal spell spelllang=en<CR>
-nmap <leader>lcf :setlocal spell spelllang=fr<CR>
-nmap <leader>ll  :set nospell<CR>
-
-inoremap ;a à
-inoremap ;z â
-inoremap ;b ä
-inoremap ;c ç
-inoremap ;w ê
-inoremap ;e é
-inoremap ;f ë
-inoremap ;r è
-inoremap ;i î
-inoremap ;j ï
-inoremap ;o ô
-inoremap ;p ö
-inoremap ;q «  »<Esc>hi
-inoremap ;u ù
-inoremap ;y û
-inoremap ;t ü
