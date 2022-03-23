@@ -317,7 +317,7 @@ if (has_plugin_manager)
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#show_tab_nr = 1
     let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
+    let g:airline#extensions#tabline#ignore_bufadd_pat = 'defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
 
     "vim-go
     let g:go_fmt_fail_silently = 1
