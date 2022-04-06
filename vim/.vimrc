@@ -110,7 +110,7 @@ endif
 "colors
 set t_Co=256
 set background=dark
-if filereadable(expand("$HOME/.vim/colors/gruvbox.vim"))
+if has_plugin_manager || filereadable(expand("$HOME/.vim/colors/gruvbox.vim"))
     colorscheme gruvbox
     set cursorline
 endif
