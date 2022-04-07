@@ -44,6 +44,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
 
+# add fzf to path
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
@@ -51,7 +52,11 @@ fi
 if [[ $PATH != *"$HOME/bin"* ]]; then
     export PATH="$PATH:$HOME/bin"
 fi
-export FZF_DEFAULT_COMMAND='rg -l ""' # show hidden files in fzf search by default
+
+# check if rg is installed to modify default fzf mapping
+if command -v rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg -l ""' # show hidden files in fzf search by default
+fi
 
 # alias & additional configuration
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
