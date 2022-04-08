@@ -44,7 +44,6 @@ if (has_plugin_manager)
     Plug 'amiorin/vim-textile' "textile syntax highlighting
     Plug 'fatih/vim-go' "make vim behave like a go IDE
     Plug 'vim-python/python-syntax' "enhanced python syntax highlighting
-    Plug 'gillyb/stable-windows' "do not change windows content position when layout is changed
 
     call plug#end()
 
