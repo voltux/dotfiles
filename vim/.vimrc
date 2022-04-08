@@ -325,6 +325,9 @@ if (has_plugin_manager)
     "python-syntax
     let g:python_highlight_all = 1
 
+    "ultisnips
+    let g:UltiSnipsExpandTrigger = "<tab>"
+
     "Lsp Setup
     nnoremap ]q :LspNextDiagnostic<cr>
     nnoremap [q :LspPreviousDiagnostic<cr>
