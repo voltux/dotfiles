@@ -59,7 +59,7 @@ fi
 # check if rg is installed to modify default fzf mapping
 if command -v rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg -l ""' # show hidden files in fzf search by default
-    export FZF_DEFAULT_OPTS="--multi --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+    export FZF_DEFAULT_OPTS="--multi --border --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 fi
 
 # alias & additional configuration
