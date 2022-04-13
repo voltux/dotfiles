@@ -52,6 +52,9 @@ fi
 if [[ $PATH != *"$HOME/bin"* ]]; then
     export PATH="$PATH:$HOME/bin"
 fi
+if [[ $PATH != *"$HOME/.cargo/bin"* ]]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
 
 # check if rg is installed to modify default fzf mapping
 if command -v rg &> /dev/null; then
