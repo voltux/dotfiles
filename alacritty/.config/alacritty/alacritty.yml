@@ -14,15 +14,15 @@ font:
     family: Monaco for Powerline
     style: Regular
   bold:
-    family: Monego
+    family: Monaco for Powerline
     style: Bold
   italic:
-    family: Monego
+    family: Monaco for Powerline
     style: Italic
   bold_italic:
-    family: Monego
+    family: Monaco for Powerline
     style: Bold Italic
-  size: 8
+  size: 9
   offset:
     x: 0
     y: 0
