@@ -227,7 +227,7 @@ if (has_plugin_manager)
     command! BuffersDelete call fzf#run(fzf#wrap({
       \ 'source': s:list_buffers(),
       \ 'sink*': { lines -> s:delete_buffers(lines) },
-      \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+      \ 'options': '--multi --bind ctrl-a:select-all+accept'
     \ }))
 
     " Command to remove filename from searching inside files with ripgrep
