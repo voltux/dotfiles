@@ -5,7 +5,8 @@ if (has_plugin_manager)
     call plug#begin()
 
     Plug 'scrooloose/nerdtree' "file explorer
-    Plug 'preservim/tagbar' "tag explorer
+    Plug 'PhilRunninger/nerdtree-visual-selection' "open multiple nerdtree files with visual selection
+    Plug 'liuchengxu/vista.vim' "in file tag explorer (classes, methods, variables...)
     Plug 'mbbill/undotree' "undo tree explorer
     Plug 'christoomey/vim-tmux-navigator' "navigate seemlessly between vim windows and tmux panes
     Plug 'jpalardy/vim-slime' "send text from vim to another tmux pane
@@ -44,6 +45,11 @@ if (has_plugin_manager)
     Plug 'amiorin/vim-textile' "textile syntax highlighting
     Plug 'fatih/vim-go' "make vim behave like a go IDE
     Plug 'vim-python/python-syntax' "enhanced python syntax highlighting
+    Plug 'tommcdo/vim-exchange' "easy text exchange operator
+
+    if executable("vifm")
+        Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
+    endif
 
     call plug#end()
 
@@ -103,7 +109,7 @@ set cursorline "show cursorline
 set signcolumn=yes "always show signcolumn
 
 "default terminal shell
-if filereadable(expand("/usr/bin/zsh"))
+if executable("zsh")
     set shell=zsh
 endif
 
@@ -252,7 +258,7 @@ if (has_plugin_manager)
     nnoremap <leader>fk  :Maps<CR>
     nnoremap <leader>fp  :Colors<CR>
     nnoremap <leader>fr  :%s/
-    nnoremap <leader>ft  :Tags<CR>
+    nnoremap <leader>ft  :Vista finder<CR>
     nnoremap <leader>fw  :Windows<CR>
     nnoremap <leader>fm  :Marks<CR>
     nnoremap <leader>b   :Unite buffer<CR>
@@ -261,7 +267,7 @@ if (has_plugin_manager)
     nmap <leader>n :NERDTreeToggle<CR>
 
     "Tagbar
-    nmap <leader>m :TagbarToggle<CR>
+    nmap <leader>m :Vista!!<CR>
     let g:tagbar_autofocus=1
 
     "Run things easily
