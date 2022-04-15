@@ -12,6 +12,7 @@ if (has_plugin_manager)
     Plug 'jpalardy/vim-slime' "send text from vim to another tmux pane
     Plug 'regedarek/ZoomWin' "zoom on a specific vim window
     Plug 'junegunn/vim-peekaboo' "registers explorer
+    Plug 'junegunn/vim-easy-align' "easily align lines around any text object
     Plug 'wesQ3/vim-windowswap' "swap easily the placement of two windows
     Plug 'tpope/vim-eunuch' "run a set of common unix commands from vim
     Plug 'luochen1990/rainbow' "multi colored brackets
@@ -23,7 +24,6 @@ if (has_plugin_manager)
     Plug 'jiangmiao/auto-pairs' "autoclose parentheses
     Plug 'ntpeters/vim-better-whitespace' "remove unnecessary whitespace
     Plug 'terryma/vim-multiple-cursors' "modify multiple instances of the same word in file
-    Plug 'godlygeek/tabular' "align things nicely
     Plug 'vim-airline/vim-airline' "configurable status bar
     Plug 'kana/vim-textobj-user' "create custom text objects
     Plug 'kana/vim-textobj-line' "line text object
@@ -333,6 +333,10 @@ if (has_plugin_manager)
 
     "ultisnips
     let g:UltiSnipsExpandTrigger = "<tab>"
+
+    "vim-easy-align
+    nmap ga <Plug>(EasyAlign)
+    vmap ga <Plug>(EasyAlign)
 
     "Lsp Setup
     nnoremap ]q :LspNextDiagnostic<cr>
