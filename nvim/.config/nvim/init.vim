@@ -1,63 +1,69 @@
-call plug#begin()
+let has_plugin_manager = filereadable(expand("$HOME/.local/share/nvim/site/autoload/plug.vim"))
 
-"Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'jpalardy/vim-slime'
-Plug 'Shougo/unite.vim'
-Plug 'kshenoy/vim-signature'
-Plug 'junegunn/vim-peekaboo'
-Plug 'wesQ3/vim-windowswap'
+if (has_plugin_manager)
 
-"Commands
-Plug 'tpope/vim-eunuch'
+    call plug#begin()
 
-"Editor
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
-Plug 'vim-airline/vim-airline'
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-entire'
-Plug 'Julian/vim-textobj-variable-segment'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'morhetz/gruvbox'
-Plug 'luochen1990/rainbow'
-Plug 'sbdchd/neoformat'
+    "Navigation
+    Plug 'scrooloose/nerdtree' "file explorer
+    Plug 'majutsushi/tagbar' "tag explorer
+    Plug 'mbbill/undotree' "undo tree explorer
+    Plug 'christoomey/vim-tmux-navigator' "navigate seemlessly between vim windows and tmux panes
+    Plug 'jpalardy/vim-slime' "send text from vim to another tmux pane
+    Plug 'kshenoy/vim-signature' "marks explorer
+    Plug 'junegunn/vim-peekaboo' "registers explorer
+    Plug 'wesQ3/vim-windowswap' "swap easily the placement of two windows
 
-"Autocompletion and syntax linters
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'ms-jpq/coq_nvim'
+    "Commands
+    Plug 'tpope/vim-eunuch' "run a set of common unix commands from vim
 
-"Git
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-rhubarb'
+    "Editor
+    Plug 'tpope/vim-unimpaired' "useful pairings for easier next/previous navigation for text/lists
+    Plug 'tpope/vim-commentary' "quickly comment/uncomment, syntax aware
+    Plug 'tpope/vim-repeat' "make the dot operator behave as expected for more complex tasks
+    Plug 'tpope/vim-surround' "quiskly (un)surround a text object with parentheses, brackets...
+    Plug 'wellle/targets.vim' "add useful text objects
+    Plug 'jiangmiao/auto-pairs' "autoclose parentheses
+    Plug 'ntpeters/vim-better-whitespace' "remove unnecessary whitespace
+    Plug 'terryma/vim-multiple-cursors' "modify multiple instances of the same word in file
+    Plug 'godlygeek/tabular' "align things nicely
+    Plug 'vim-airline/vim-airline' "configurable status bar
+    Plug 'kana/vim-textobj-user' "create custom text objects
+    Plug 'kana/vim-textobj-line' "line text object
+    Plug 'kana/vim-textobj-entire' "entire buffer text object
+    Plug 'Julian/vim-textobj-variable-segment' "variable segment text object (between underscores or camelCase)
+    Plug 'michaeljsmith/vim-indent-object' "indent text object
+    Plug 'morhetz/gruvbox' "best coloscheme ever invented (objectively)
+    Plug 'luochen1990/rainbow' "multi colored brackets
 
-"Language specific
-Plug 'plasticboy/vim-markdown'
-Plug 'mattn/emmet-vim'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'amiorin/vim-textile'
+    "Autocompletion and syntax linters
+    Plug 'SirVer/ultisnips' "snippet triggerer
+    Plug 'honza/vim-snippets' "collection of snippets
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} "autocompletion
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} "autocompletion
 
-"Search and LSP
-Plug 'nvim-lua/plenary.nvim' "telescope prerequisite
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+    "Git
+    Plug 'tpope/vim-fugitive' "A Git wrapper so awesome, it should be illegal
+    Plug 'mhinz/vim-signify' "sign column to indicate modifications from version control system
+    Plug 'tpope/vim-rhubarb' "fugitive extension for github
 
-call plug#end()
+    "Language specific
+    Plug 'plasticboy/vim-markdown'
+    Plug 'mattn/emmet-vim'
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'amiorin/vim-textile'
+    Plug 'fatih/vim-go'
+
+    "Search and LSP
+    Plug 'nvim-lua/plenary.nvim' "telescope prerequisite
+    Plug 'nvim-telescope/telescope.nvim' "list manager/finder
+    Plug 'nvim-treesitter/nvim-treesitter' "asynchronous syntax awareness and highlighting
+    Plug 'neovim/nvim-lspconfig' "easily configure lsp on neovim
+    Plug 'williamboman/nvim-lsp-installer' "easily install lsp servers on neovim
+
+    call plug#end()
+
+endif
 
 "-----------------General Settings---------------
 
@@ -186,9 +192,9 @@ nnoremap <leader>fi :Telescope current_buffer_fuzzy_find<CR>
 nnoremap <leader>ft :Telescope tags<CR>
 nnoremap <leader>fh :Telescope help_tags<CR>
 nnoremap <leader>fg :Telescope git_files<CR>
+nnoremap <leader>fG :Telescope git_status<CR>
 nnoremap <leader>fm :Telescope marks<CR>
 nnoremap <leader>fb :Telescope buffers<CR>
-nnoremap <leader>b  :Unite buffer<CR>
 
 "Compiler shortcuts and bindings
 nnoremap <F8> <NOP>
