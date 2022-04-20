@@ -46,6 +46,7 @@ if (has_plugin_manager)
     Plug 'fatih/vim-go' "make vim behave like a go IDE
     Plug 'vim-python/python-syntax' "enhanced python syntax highlighting
     Plug 'tommcdo/vim-exchange' "easy text exchange operator
+    Plug 'ryanoasis/vim-devicons' "different icons by filetype for nerdtree and airline
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
