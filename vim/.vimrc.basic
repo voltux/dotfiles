@@ -111,3 +111,28 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=
 
+"----------------------Language----------------------
+
+nmap <leader>lg :set keymap=greek_utf-8<CR>
+nmap <leader>le :set keymap&<CR>
+nmap <leader>lcg :setlocal spell spelllang=el<CR>
+nmap <leader>lce :setlocal spell spelllang=en<CR>
+nmap <leader>lcf :setlocal spell spelllang=fr<CR>
+nmap <leader>ll  :set nospell<CR>
+
+inoremap ;a à
+inoremap ;z â
+inoremap ;b ä
+inoremap ;c ç
+inoremap ;w ê
+inoremap ;e é
+inoremap ;f ë
+inoremap ;r è
+inoremap ;i î
+inoremap ;j ï
+inoremap ;o ô
+inoremap ;p ö
+inoremap ;q «  »<Esc>hi
+inoremap ;u ù
+inoremap ;y û
+inoremap ;t ü
