@@ -47,6 +47,7 @@ if (has_plugin_manager)
     Plug 'vim-python/python-syntax' "enhanced python syntax highlighting
     Plug 'tommcdo/vim-exchange' "easy text exchange operator
     Plug 'ryanoasis/vim-devicons' "different icons by filetype for nerdtree and airline
+    Plug 'puremourning/vimspector' "graphical debugger
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
@@ -344,6 +345,9 @@ if (has_plugin_manager)
     "vim-easy-align
     nmap ga <Plug>(EasyAlign)
     vmap ga <Plug>(EasyAlign)
+
+    "vimspector
+    let g:vimspector_enable_mappings='HUMAN'
 
     "Lsp Setup
     nnoremap ]q :LspNextDiagnostic<cr>
