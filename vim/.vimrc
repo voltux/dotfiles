@@ -48,6 +48,7 @@ if (has_plugin_manager)
     Plug 'tommcdo/vim-exchange' "easy text exchange operator
     Plug 'ryanoasis/vim-devicons' "different icons by filetype for nerdtree and airline
     Plug 'puremourning/vimspector' "graphical debugger
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} "preview markdown in browser (using prebuilt edition to avoid nodejs and yarn)
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
@@ -289,6 +290,7 @@ if (has_plugin_manager)
     autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
     autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
     autocmd Filetype perl nmap <F8> :w <CR> :!perl %<CR>
+    autocmd Filetype md,markdown nmap <F8> :MarkdownPreviewToggle <CR>
 
     "Auto-pairs
     let g:AutoPairsShortcutToggle = '<leader>)'
