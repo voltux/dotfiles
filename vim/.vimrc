@@ -191,6 +191,10 @@ nnoremap <leader><Down> :resize -10 <CR>
 nnoremap <leader><Right> :vertical resize +10 <CR>
 nnoremap <leader><Left> :vertical resize -10 <CR>
 
+"Terminal
+nnoremap <leader>T :terminal ++curwin<CR>
+nnoremap <leader>t :terminal<CR>
+
 "----------------------Language----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
