@@ -270,6 +270,7 @@ if (has_plugin_manager)
     nnoremap <leader>ft :Vista finder<CR>
     nnoremap <leader>fw :Windows<CR>
     nnoremap <leader>fm :Marks<CR>
+    nnoremap <leader>fs :Snippets<CR>
 
     "Nerdtree
     nmap <leader>n :NERDTreeToggle<CR>
@@ -341,6 +342,8 @@ if (has_plugin_manager)
 
     "ultisnips
     let g:UltiSnipsExpandTrigger = "<tab>"
+    let g:UltiSnipsJumpForwardTrigger = '<tab>'
+    let g:UltiSnipsJumpBackwardTrigger = '<S-tab>'
 
     "vim-easy-align
     nmap ga <Plug>(EasyAlign)
