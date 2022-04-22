@@ -195,6 +195,9 @@ nnoremap <leader><Left> :vertical resize -10 <CR>
 nnoremap <leader>T :terminal ++curwin<CR>
 nnoremap <leader>t :terminal<CR>
 
+"Move between buffers
+nnoremap <leader>b :b#<CR>
+
 "----------------------Language----------------------
 
 nmap <leader>lg :set keymap=greek_utf-8<CR>
