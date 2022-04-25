@@ -355,6 +355,11 @@ if (has_plugin_manager)
     "vimspector
     let g:vimspector_enable_mappings='HUMAN'
 
+    "fugitive
+    nnoremap <leader>gd :Gdiff<cr>
+    nnoremap <leader>gb :G blame<cr>
+    nnoremap <leader>gg :G<cr>
+
     "Lsp Setup
     nnoremap ]q :LspNextDiagnostic<cr>
     nnoremap [q :LspPreviousDiagnostic<cr>
