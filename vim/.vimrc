@@ -48,7 +48,8 @@ if (has_plugin_manager)
     Plug 'tommcdo/vim-exchange' "easy text exchange operator
     Plug 'ryanoasis/vim-devicons' "different icons by filetype for nerdtree and airline
     Plug 'puremourning/vimspector' "graphical debugger
-	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} "preview markdown in browser (using prebuilt edition to avoid nodejs and yarn)
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} "preview markdown in browser (using prebuilt edition to avoid nodejs and yarn)
+    Plug 'sotte/presenting.vim' "create markdown presentations in vim
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
