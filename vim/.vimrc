@@ -50,6 +50,7 @@ if (has_plugin_manager)
     Plug 'puremourning/vimspector' "graphical debugger
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} "preview markdown in browser (using prebuilt edition to avoid nodejs and yarn)
     Plug 'sotte/presenting.vim' "create markdown presentations in vim
+    Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
