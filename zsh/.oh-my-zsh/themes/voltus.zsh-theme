@@ -2,6 +2,11 @@ local ret_status="%(?:%{$fg_bold[cyan]%}➜ :%{$fg_bold[red]%}➜ )"
 local user_host="%{$fg[magenta]%}%n%{$fg[blue]%}@%{$fg[green]%}%M "
 local current_dir="%{$fg[yellow]%}%~ %{$reset_color%}"
 local vcs_branch='$(git_prompt_info)$(hg_prompt_info)'
+
+function virtualenv_prompt_info {
+  [[ -n ${VIRTUAL_ENV} ]] || return
+  echo "${ZSH_THEME_VIRTUALENV_PREFIX:=[}${VIRTUAL_ENV:t}${ZSH_THEME_VIRTUALENV_SUFFIX:=]}"
+}
 local venv_prompt='$(virtualenv_prompt_info)'
 
 PROMPT="╭──${venv_prompt}${user_host}${current_dir}${vcs_branch}
