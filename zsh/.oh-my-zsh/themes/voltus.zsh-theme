@@ -9,7 +9,7 @@ function virtualenv_prompt_info {
 }
 local venv_prompt='$(virtualenv_prompt_info)'
 
-PROMPT="╭──${venv_prompt}${user_host}${current_dir}${vcs_branch}
+PROMPT="╭──${user_host}${current_dir}${vcs_branch}${venv_prompt}
 %{$reset_color%}╰${ret_status}%{$reset_color%}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
@@ -27,6 +27,7 @@ ZSH_THEME_HG_PROMPT_SUFFIX="$ZSH_THEME_GIT_PROMPT_SUFFIX"
 ZSH_THEME_HG_PROMPT_DIRTY="$ZSH_THEME_GIT_PROMPT_DIRTY"
 ZSH_THEME_HG_PROMPT_CLEAN="$ZSH_THEME_GIT_PROMPT_CLEAN"
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX="%{$fg[green]%}‹"
 ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="› %{$reset_color%}"
 ZSH_THEME_VIRTUALENV_PREFIX="$ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX"
