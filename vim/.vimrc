@@ -302,6 +302,7 @@ if (has_plugin_manager)
     "Whitespace
     highlight ExtraWhitespace ctermbg=4
     nmap <leader>wh :StripWhitespace<CR>
+    nmap <leader>wt :ToggleWhitespace<CR>
 
     "Undotree
     nnoremap <leader>u :UndotreeToggle<cr>
@@ -354,7 +355,34 @@ if (has_plugin_manager)
     vmap ga <Plug>(EasyAlign)
 
     "vimspector
+    " ======================================================================================================================================
+    " |    _Key_     |                   _Mapping_                   |                              _Function_                             |
+    " ======================================================================================================================================
+    " | 'F5'         | '<Plug>VimspectorContinue'                    | When debugging, continue. Otherwise start debugging.                |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F3'         | '<Plug>VimspectorStop'                        | Stop debugging.                                                     |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F4'         | '<Plug>VimspectorRestart'                     | Restart debugging with the same configuration.                      |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F6'         | '<Plug>VimspectorPause'                       | Pause debuggee.                                                     |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F9'         | '<Plug>VimspectorToggleBreakpoint'            | Toggle line breakpoint on the current line.                         |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | '<leader>F9' | '<Plug>VimspectorToggleConditionalBreakpoint' | Toggle conditional line breakpoint or logpoint on the current line. |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F8'         | '<Plug>VimspectorAddFunctionBreakpoint'       | Add a function breakpoint for the expression under cursor           |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | '<leader>F8' | '<Plug>VimspectorRunToCursor'                 | Run to Cursor                                                       |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F10'        | '<Plug>VimspectorStepOver'                    | Step Over                                                           |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F11'        | '<Plug>VimspectorStepInto'                    | Step Into                                                           |
+    " --------------------------------------------------------------------------------------------------------------------------------------
+    " | 'F12'        | '<Plug>VimspectorStepOut'                     | Step out of current function scope                                  |
+    " --------------------------------------------------------------------------------------------------------------------------------------
     let g:vimspector_enable_mappings='HUMAN'
+    let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
+
 
     "fugitive
     nnoremap <leader>gd :Gdiff<cr>
