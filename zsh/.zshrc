@@ -2,6 +2,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# zsh variable configuration
+PROMPT_EOL_MARK=''
+
 # oh-my-zsh variable configuration
 ZSH_THEME="voltus"
 HYPHEN_INSENSITIVE="true"
