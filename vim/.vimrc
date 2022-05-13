@@ -50,6 +50,7 @@ if (has_plugin_manager)
     Plug 'puremourning/vimspector' "graphical debugger
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} "preview markdown in browser (using prebuilt edition to avoid nodejs and yarn)
     Plug 'sotte/presenting.vim' "create markdown presentations in vim
+    Plug 'jeetsukumaran/vim-indentwise' "move indentwise in file
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
@@ -149,7 +150,7 @@ inoremap <C-j> <C-n>
 inoremap <C-k> <C-p>
 
 "change current dir to current file pwd
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>dd :cd %:p:h<CR>:pwd<CR>
 
 "copy paste between different programs/windows/tabs
 set nopaste "don't start in paste mode
@@ -187,6 +188,7 @@ let g:tex_flavor='latex'
 
 "Filetypes
 au BufNewFile,BufRead *.pri setf idlang
+autocmd Filetype yaml,yml set tabstop=2 shiftwidth=2
 
 "Resize
 nnoremap <leader><Up> :resize +10 <CR>
