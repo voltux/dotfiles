@@ -113,10 +113,11 @@ runtime! ftplugin/man.vim "man pages in vim
 set cursorline "show cursorline
 set signcolumn=yes "always show signcolumn
 
-"default terminal shell
+" Terminal
 if executable("zsh")
     set shell=zsh
 endif
+set termwinscroll=100000 "number of lines to see in vim terminal
 
 "colors
 set t_Co=256
