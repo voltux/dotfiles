@@ -199,7 +199,8 @@ nnoremap <leader><Left> :vertical resize -10 <CR>
 
 "Terminal
 nnoremap <leader>T :terminal ++curwin<CR>
-nnoremap <leader>t :terminal<CR>
+nnoremap <leader>tt :terminal<CR>
+nnoremap <leader>tT :vertical terminal<CR>
 
 "Move between buffers
 nnoremap <leader>b :b#<CR>
