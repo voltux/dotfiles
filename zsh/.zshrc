@@ -65,3 +65,5 @@ fi
 
 # alias & additional configuration
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+
+autoload zcalc
