@@ -296,6 +296,7 @@ if (has_plugin_manager)
     autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
     autocmd Filetype perl nmap <F8> :w <CR> :!perl %<CR>
     autocmd Filetype md,markdown nmap <F8> :MarkdownPreviewToggle <CR>
+    autocmd Filetype lua nmap <F8> :w <CR> :!lua % <CR>
 
     "Auto-pairs
     let g:AutoPairsShortcutToggle = '<leader>)'
