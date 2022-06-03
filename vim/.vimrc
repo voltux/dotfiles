@@ -118,6 +118,9 @@ if executable("zsh")
     set shell=zsh
 endif
 set termwinscroll=100000 "number of lines to see in vim terminal
+au TerminalWinOpen,BufWinEnter * if &buftype == 'terminal'
+       \ | setlocal nonumber norelativenumber signcolumn=no
+       \ | endif
 
 "colors
 set t_Co=256
