@@ -397,9 +397,15 @@ if (has_plugin_manager)
     nnoremap <leader>gb :G blame<cr>
     nnoremap <leader>gg :G<cr>
 
+    "signify
+    nmap ]n <plug>(signify-next-hunk)
+    nmap [n <plug>(signify-prev-hunk)
+    nmap ]N 9999]n
+    nmap [N 9999[n
+
     "Lsp Setup
-    nnoremap ]q :LspNextDiagnostic<cr>
-    nnoremap [q :LspPreviousDiagnostic<cr>
+    nnoremap ]w :LspNextDiagnostic<cr>
+    nnoremap [w :LspPreviousDiagnostic<cr>
     nnoremap <leader>cd :LspDefinition<cr>
     nnoremap <leader>cg :LspDeclaration<cr>
     nnoremap <leader>ce :LspDocumentDiagnostics<cr>
