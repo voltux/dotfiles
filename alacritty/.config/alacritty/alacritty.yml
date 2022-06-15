@@ -2,8 +2,8 @@ window:
   columns: 120
   lines: 30
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
   decorations: none
   opacity: 1.0
 scrolling:
