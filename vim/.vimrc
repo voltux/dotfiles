@@ -414,6 +414,7 @@ if (has_plugin_manager)
     nnoremap <leader>ca :LspCodeAction<cr>
     nnoremap <leader>ch :LspHover<cr>
     nnoremap <leader>cf :LspDocumentFormat<cr>
+    nnoremap <leader>cu :LspReferences<cr>
     nnoremap <leader>cc :pclose<cr>
 else
     "status line
