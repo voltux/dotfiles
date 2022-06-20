@@ -45,9 +45,24 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
 
 # add fzf to path
+# replace cat with bat if bat is installed
+export FZF_PREVIEWER="cat"
+if command -v bat &> /dev/null; then
+    alias bat="bat -pp --theme gruvbox-dark --color=always --theme gruvbox-dark --line-range :500 {}"
+    alias cat="bat"
+    export FZF_PREVIEWER="bat -pp --theme gruvbox-dark --color=always --theme gruvbox-dark --line-range :500 {}"
+fi
+
 [ -f ~/.fzf.zsh ] \
     && source ~/.fzf.zsh \
-    && export FZF_DEFAULT_OPTS="--multi --border --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+    && export FZF_DEFAULT_OPTS="--multi --border
+								--color=fg:#cbccc6,bg:#1f2430,hl:#707a8c
+								--color=fg+:#707a8c,bg+:#191e2a,hl+:#ffcc66
+								--color=info:#73d0ff,prompt:#707a8c,pointer:#cbccc6
+								--color=marker:#73d0ff,spinner:#73d0ff,header:#d4bfff
+                                --preview '$FZF_PREVIEWER'
+								--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
 fi

@@ -258,35 +258,34 @@ if (has_plugin_manager)
     command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
     "Find things with FZF
-    nnoremap <leader>fa :Rg<CR>
-    nnoremap <leader>fb :Buffers<CR>
+    nnoremap <leader>fa :Rg!<CR>
+    nnoremap <leader>fb :Buffers!<CR>
     nnoremap <leader>fd :BuffersDelete<CR>
-    nnoremap <leader>fC :BCommits<CR>
-    nnoremap <leader>fc :Commits<CR>
-    nnoremap <leader>f$ :Commands<CR>
-    nnoremap <leader>ff :FZF<CR>
-    nnoremap <leader>fg :GFiles<CR>
-    nnoremap <leader>fG :GFiles?<CR>
-    nnoremap <leader>fh :History<CR>
-    nnoremap <leader>f: :History:<CR>
-    nnoremap <leader>f/ :History/<CR>
-    nnoremap <leader>f? :Helptags<CR>
-    nnoremap <leader>fi :BLines<CR>
-    nnoremap <leader>fl :Lines<CR>
-    nnoremap <leader>fk :Maps<CR>
-    nnoremap <leader>fp :Colors<CR>
+    nnoremap <leader>fC :BCommits!<CR>
+    nnoremap <leader>fc :Commits!<CR>
+    nnoremap <leader>f$ :Commands!<CR>
+    nnoremap <leader>ff :FZF!<CR>
+    nnoremap <leader>fg :GFiles!<CR>
+    nnoremap <leader>fG :GFiles?!<CR>
+    nnoremap <leader>fh :History!<CR>
+    nnoremap <leader>f: :History:!<CR>
+    nnoremap <leader>f/ :History/!<CR>
+    nnoremap <leader>f? :Helptags!<CR>
+    nnoremap <leader>fi :BLines!<CR>
+    nnoremap <leader>fl :Lines!<CR>
+    nnoremap <leader>fk :Maps!<CR>
+    nnoremap <leader>fp :Colors!<CR>
     nnoremap <leader>fr :%s/
     nnoremap <leader>ft :Vista finder<CR>
-    nnoremap <leader>fw :Windows<CR>
-    nnoremap <leader>fm :Marks<CR>
-    nnoremap <leader>fs :Snippets<CR>
+    nnoremap <leader>fw :Windows!<CR>
+    nnoremap <leader>fm :Marks!<CR>
+    nnoremap <leader>fs :Snippets!<CR>
 
     "Nerdtree
     nmap <leader>n :NERDTreeToggle<CR>
 
     "Tagbar
     nmap <leader>m :Vista!!<CR>
-    let g:tagbar_autofocus=1
 
     "Run things easily
     nnoremap <F8> <NOP>
@@ -416,6 +415,10 @@ if (has_plugin_manager)
     nnoremap <leader>cf :LspDocumentFormat<cr>
     nnoremap <leader>cu :LspReferences<cr>
     nnoremap <leader>cc :pclose<cr>
+
+    "colorscheme and visualisation last touches
+    highlight LineNr     ctermbg=NONE guibg=NONE
+    highlight SignColumn ctermbg=NONE guibg=NONE
 else
     "status line
     function! GitBranch()
