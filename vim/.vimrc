@@ -262,7 +262,7 @@ if (has_plugin_manager)
     nnoremap <leader>f$ :Commands!<CR>
     nnoremap <leader>ff :FZF!<CR>
     nnoremap <leader>fg :GFiles!<CR>
-    nnoremap <leader>fG :GFiles?!<CR>
+    nnoremap <leader>fG :GFiles?<CR>
     nnoremap <leader>fh :History!<CR>
     nnoremap <leader>f: :History:!<CR>
     nnoremap <leader>f/ :History/!<CR>
