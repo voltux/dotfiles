@@ -51,6 +51,7 @@ if (has_plugin_manager)
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} "preview markdown in browser (using prebuilt edition to avoid nodejs and yarn)
     Plug 'sotte/presenting.vim' "create markdown presentations in vim
     Plug 'jeetsukumaran/vim-indentwise' "move indentwise in file
+    Plug 'bronson/vim-visual-star-search' "hit * and # to search for visual selection in file
 
     if executable("vifm")
         Plug 'vifm/vifm.vim' "terminal file manager with vim bindings
@@ -158,11 +159,6 @@ nnoremap <leader>dd :cd %:p:h<CR>:pwd<CR>
 
 "copy paste between different programs/windows/tabs
 set nopaste "don't start in paste mode
-
-"Basically you press * or # to search for the current selection
-vnoremap <silent> *  : call VisualSearch('f')<CR>
-vnoremap <silent> #  : call VisualSearch('b')<CR>
-vnoremap <silent> gv : call VisualSearch('gv')<CR>
 
 " Copy to system clipboard
 nnoremap <leader>y "+y
