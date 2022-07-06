@@ -28,14 +28,12 @@ return require('packer').startup(function()
     use 'luochen1990/rainbow'
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
-    use {
-        'ms-jpq/coq_nvim',
-        branch = 'coq'
-    }
-    use {
-        'ms-jpq/coq.artifacts',
-        branch = 'artifacts'
-    }
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'hrsh7th/nvim-cmp'
+    use 'quangnguyen30192/cmp-nvim-ultisnips'
     use 'tpope/vim-fugitive'
     use 'mhinz/vim-signify'
     use 'tpope/vim-rhubarb'
