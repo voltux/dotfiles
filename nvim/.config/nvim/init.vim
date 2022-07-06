@@ -214,7 +214,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
 
 "Search, find and replace things
-nnoremap <leader>fs :Telescope colorscheme<CR>
+nnoremap <leader>fq :Telescope colorscheme<CR>
 nnoremap <leader>ff :Telescope find_files<CR>
 nnoremap <leader>fc :Telescope commands<CR>
 nnoremap <leader>fk :Telescope keymaps<CR>
@@ -226,3 +226,4 @@ nnoremap <leader>fG :Telescope git_status<CR>
 nnoremap <leader>fm :Telescope marks<CR>
 nnoremap <leader>fb :Telescope buffers<CR>
 nnoremap <leader>fa :Telescope live_grep<CR>
+nnoremap <leader>fs :Telescope grep_string<CR>

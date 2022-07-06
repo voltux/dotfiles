@@ -1,8 +1,26 @@
 require('nvim-lsp-installer').setup {}
 local lsp = require('lspconfig')
 
+-- configure keymaps on attach to a lsp server
 local custom_attach = function(client, bufnr)
+
+    -- setup diagnostics toggle on and off
+	vim.g.diagnostics_visible = true
+	function _G.toggle_diagnostics()
+		if vim.g.diagnostics_visible then
+			vim.g.diagnostics_visible = false
+			vim.diagnostic.disable()
+		else
+			vim.g.diagnostics_visible = true
+			vim.diagnostic.enable()
+		end
+	end
+	vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>ct', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
+
+	-- setup global autocompletion
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+    -- keymaps
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set('n', ']w', vim.diagnostic.goto_next, bufopts)
 	vim.keymap.set('n', '[w', vim.diagnostic.goto_prev, bufopts)
@@ -20,6 +38,7 @@ local custom_attach = function(client, bufnr)
 	vim.keymap.set('x', '<leader>ca', vim.lsp.buf.range_code_action, bufopts)
 end
 
+-- configure autocompletion based on lsp
 local cmp = require 'cmp'
 
 cmp.setup({
@@ -83,19 +102,21 @@ cmp.setup.cmdline(':', {
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- setup servers for each programming language
 lsp.pylsp.setup {
-	on_attach = custom_attach,
+    on_attach = custom_attach,
     capabilities = capabilities,
 }
 lsp.sumneko_lua.setup {
-	on_attach = custom_attach,
+    on_attach = custom_attach,
     capabilities = capabilities,
 }
 lsp.vimls.setup {
-	on_attach = custom_attach,
+    on_attach = custom_attach,
     capabilities = capabilities,
 }
 lsp.perlnavigator.setup {
-	on_attach = custom_attach,
+    on_attach = custom_attach,
     capabilities = capabilities,
 }
