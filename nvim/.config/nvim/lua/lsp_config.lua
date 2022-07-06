@@ -1,9 +1,9 @@
-require('nvim-lsp-installer').setup{}
+require('nvim-lsp-installer').setup {}
 local lsp = require('lspconfig')
 
 local custom_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', ']c', vim.diagnostic.goto_next, bufopts)
     vim.keymap.set('n', '[c', vim.diagnostic.goto_prev, bufopts)
     vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover, bufopts)
@@ -20,12 +20,15 @@ local custom_attach = function(client, bufnr)
     vim.keymap.set('x', '<leader>ca', vim.lsp.buf.range_code_action, bufopts)
 end
 
-lsp.pylsp.setup{
+lsp.pylsp.setup {
     on_attach = custom_attach
 }
-lsp.sumneko_lua.setup{
+lsp.sumneko_lua.setup {
     on_attach = custom_attach
 }
-lsp.vimls.setup{
+lsp.vimls.setup {
+    on_attach = custom_attach
+}
+lsp.perlnavigator.setup {
     on_attach = custom_attach
 }
