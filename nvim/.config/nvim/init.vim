@@ -222,3 +222,4 @@ nnoremap <leader>fg :Telescope git_files<CR>
 nnoremap <leader>fG :Telescope git_status<CR>
 nnoremap <leader>fm :Telescope marks<CR>
 nnoremap <leader>fb :Telescope buffers<CR>
+nnoremap <leader>fa :Telescope live_grep<CR>
