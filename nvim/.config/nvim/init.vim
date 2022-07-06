@@ -92,6 +92,9 @@ nnoremap <C-h> <C-W>h
 :tnoremap <C-w><C-k> <C-\><C-n><C-w>k
 :tnoremap <C-w><C-l> <C-\><C-n><C-w>l
 :tnoremap <C-w><S-n> <C-\><C-n>
+nnoremap <leader>tt :split \| :terminal<CR>
+nnoremap <leader>tT :vsplit \| :terminal<CR>
+nnoremap <leader>T  :terminal<CR>
 
 "Basically you press * or # to search for the current selection
 vnoremap <silent> * y/<C-R>"<CR>
@@ -215,7 +218,7 @@ let g:airline#extensions#wordcount#formatter#default#fmt = '%s |'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|term://|undotree|vimfiler'
+let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
 
 "Search, find and replace things
 nnoremap <leader>fq :Telescope colorscheme<CR>
