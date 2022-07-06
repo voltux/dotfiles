@@ -193,6 +193,10 @@ let g:slime_python_ipython   = 0
 "Rainbow brackets
 let g:rainbow_active = 1
 
+"Easy align
+nmap ga <Plug>(EasyAlign)
+vmap ga <Plug>(EasyAlign)
+
 "Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
