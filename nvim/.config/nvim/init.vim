@@ -227,3 +227,4 @@ nnoremap <leader>fm :Telescope marks<CR>
 nnoremap <leader>fb :Telescope buffers<CR>
 nnoremap <leader>fa :Telescope live_grep<CR>
 nnoremap <leader>fs :Telescope grep_string<CR>
+nnoremap <leader>fd :Telescope diagnostics<CR>
