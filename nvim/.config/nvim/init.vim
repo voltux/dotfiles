@@ -1,6 +1,5 @@
 lua require('plugins')
-lua require('nvim-lsp-installer').setup{}
-lua require('lspconfig').pyright.setup{}
+lua require('lsp_config')
 
 "-----------------General Settings---------------
 "
