@@ -49,4 +49,5 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
+    use 'mfussenegger/nvim-dap'
 end)
