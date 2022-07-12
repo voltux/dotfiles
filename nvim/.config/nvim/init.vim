@@ -204,6 +204,9 @@ let g:rainbow_active = 1
 nmap ga <Plug>(EasyAlign)
 vmap ga <Plug>(EasyAlign)
 
+"IndentBlankLine
+nnoremap <leader>i :IndentBlanklineToggle<CR>
+
 "Airline
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
