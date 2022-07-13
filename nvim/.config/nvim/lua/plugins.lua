@@ -55,4 +55,6 @@ return require('packer').startup(function()
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+    use { 'dhruvasagar/vim-table-mode' }
+    use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup {} end }
 end)
