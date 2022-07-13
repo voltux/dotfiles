@@ -14,7 +14,6 @@ return require('packer').startup(function()
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
-    use 'jiangmiao/auto-pairs'
     use 'ntpeters/vim-better-whitespace'
     use 'terryma/vim-multiple-cursors'
     use 'junegunn/vim-easy-align'
@@ -52,4 +51,8 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 end)
