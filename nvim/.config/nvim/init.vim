@@ -101,6 +101,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
+"change current dir to current file pwd
+nnoremap <leader>gc :cd %:p:h<CR>:pwd<CR>
+
 "terminal mode
 :tnoremap <C-w>h <C-\><C-n><C-w>h
 :tnoremap <C-w>j <C-\><C-n><C-w>j
