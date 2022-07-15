@@ -114,6 +114,7 @@ nnoremap <leader>gc :cd %:p:h<CR>:pwd<CR>
 :tnoremap <C-k> <C-\><C-n><C-w>k
 :tnoremap <C-l> <C-\><C-n><C-w>l
 :tnoremap <C-w><S-n> <C-\><C-n>
+:tnoremap <expr> <C-w>" '<C-\><C-N>"'.nr2char(getchar()).'pi'
 nnoremap <leader>ss :split \| :terminal<CR>
 nnoremap <leader>sS :vsplit \| :terminal<CR>
 nnoremap <leader>S  :terminal<CR>
