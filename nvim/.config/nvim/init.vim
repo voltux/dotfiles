@@ -114,9 +114,9 @@ nnoremap <leader>gc :cd %:p:h<CR>:pwd<CR>
 :tnoremap <C-k> <C-\><C-n><C-w>k
 :tnoremap <C-l> <C-\><C-n><C-w>l
 :tnoremap <C-w><S-n> <C-\><C-n>
-nnoremap <leader>tt :split \| :terminal<CR>
-nnoremap <leader>tT :vsplit \| :terminal<CR>
-nnoremap <leader>T  :terminal<CR>
+nnoremap <leader>ss :split \| :terminal<CR>
+nnoremap <leader>sS :vsplit \| :terminal<CR>
+nnoremap <leader>S  :terminal<CR>
 
 "Basically you press * or # to search for the current selection
 vnoremap <silent> * y/<C-R>"<CR>
@@ -186,10 +186,6 @@ map! ;v ü
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 autocmd StdinReadPre * let s:std_in=1
 nmap <leader>n :NERDTreeToggle<CR>
-
-"Tagbar
-nmap <leader>m :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
 
 "Auto-pairs shortcuts
 let g:AutoPairsShortcutToggle = '<leader>)'
