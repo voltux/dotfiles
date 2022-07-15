@@ -35,7 +35,7 @@ local custom_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>cs', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<leader>cf', vim.lsp.buf.formatting, bufopts)
-    vim.keymap.set('n', '<leader>ce', vim.diagnostic.open_float, bufopts)
+    vim.keymap.set('n', '<leader>ce', vim.lsp.diagnostic.set_loclist, bufopts)
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('x', '<leader>ca', vim.lsp.buf.range_code_action, bufopts)
 end
