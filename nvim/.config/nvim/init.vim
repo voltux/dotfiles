@@ -243,17 +243,36 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#ignore_bufadd_pat = '!|defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
 
 "Search, find and replace things
-nnoremap <leader>fq :Telescope colorscheme<CR>
-nnoremap <leader>ff :Telescope find_files<CR>
-nnoremap <leader>fc :Telescope commands<CR>
-nnoremap <leader>fk :Telescope keymaps<CR>
-nnoremap <leader>fi :Telescope current_buffer_fuzzy_find<CR>
-nnoremap <leader>ft :Telescope tags<CR>
-nnoremap <leader>fh :Telescope help_tags<CR>
-nnoremap <leader>fg :Telescope git_files<CR>
-nnoremap <leader>fG :Telescope git_status<CR>
-nnoremap <leader>fm :Telescope marks<CR>
-nnoremap <leader>fb :Telescope buffers<CR>
-nnoremap <leader>fa :Telescope live_grep<CR>
-nnoremap <leader>fs :Telescope grep_string<CR>
-nnoremap <leader>fd :Telescope diagnostics<CR>
+nnoremap <leader>f% :Telescope oldfiles theme=ivy<CR>
+nnoremap <leader>f/ :Telescope search_history theme=ivy<CR>
+nnoremap <leader>fG :Telescope git_status theme=ivy<CR>
+nnoremap <leader>fa :Telescope live_grep theme=ivy<CR>
+nnoremap <leader>fb :Telescope buffers theme=ivy<CR>
+nnoremap <leader>fc :Telescope commands theme=ivy<CR>
+nnoremap <leader>fd :Telescope diagnostics theme=ivy<CR>
+nnoremap <leader>ff :Telescope find_files theme=ivy<CR>
+nnoremap <leader>fg :Telescope git_files theme=ivy<CR>
+nnoremap <leader>fh :Telescope help_tags theme=ivy<CR>
+nnoremap <leader>fi :Telescope current_buffer_fuzzy_find theme=ivy<CR>
+nnoremap <leader>fj :Telescope jumplist theme=ivy<CR>
+nnoremap <leader>fk :Telescope keymaps theme=ivy<CR>
+nnoremap <leader>fl :Telescope loclist theme=ivy<CR>
+nnoremap <leader>fm :Telescope marks theme=ivy<CR>
+nnoremap <leader>fo :Telescope vim_options theme=ivy<CR>
+nnoremap <leader>fq :Telescope quickfix theme=ivy<CR>
+nnoremap <leader>fr :Telescope registers theme=ivy<CR>
+nnoremap <leader>fs :Telescope grep_string theme=ivy<CR>
+nnoremap <leader>ft :Telescope tags theme=ivy<CR>
+nnoremap <leader>c/r :Telescope lsp_references theme=ivy<CR>
+nnoremap <leader>c/i :Telescope lsp_incoming_calls theme=ivy<CR>
+nnoremap <leader>c/o :Telescope lsp_outgoing_calls theme=ivy<CR>
+nnoremap <leader>c/b :Telescope lsp_document_symbols theme=ivy<CR>
+nnoremap <leader>c/w :Telescope lsp_workspace_symbols theme=ivy<CR>
+nnoremap <leader>c/d :Telescope lsp_definitions theme=ivy<CR>
+nnoremap <leader>c/D :Telescope lsp_implementations theme=ivy<CR>
+nnoremap <leader>c/T :Telescope lsp_type_definitions theme=ivy<CR>
+nnoremap <leader>c/t :Telescope treesitter theme=ivy<CR>
+nnoremap <leader>gc :Telescope git_commits theme=ivy<CR>
+nnoremap <leader>gb :Telescope git_branches theme=ivy<CR>
+nnoremap <leader>gs :Telescope git_status theme=ivy<CR>
+nnoremap <leader>gh :Telescope git_stash theme=ivy<CR>
