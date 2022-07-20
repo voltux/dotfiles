@@ -10,7 +10,6 @@ return require('packer').startup(function()
     use 'wesQ3/vim-windowswap'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-unimpaired'
-    use 'tpope/vim-commentary'
     use 'tpope/vim-repeat'
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
@@ -53,7 +52,15 @@ return require('packer').startup(function()
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
     }
     use { 'dhruvasagar/vim-table-mode' }
     use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup {} end }
