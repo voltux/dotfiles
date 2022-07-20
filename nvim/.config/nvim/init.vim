@@ -276,3 +276,4 @@ nnoremap <leader>gc :Telescope git_commits theme=ivy<CR>
 nnoremap <leader>gb :Telescope git_branches theme=ivy<CR>
 nnoremap <leader>gs :Telescope git_status theme=ivy<CR>
 nnoremap <leader>gh :Telescope git_stash theme=ivy<CR>
+nnoremap <leader>gb :Telescope git_bcommits theme=ivy<CR>
