@@ -64,4 +64,5 @@ return require('packer').startup(function()
     }
     use { 'dhruvasagar/vim-table-mode' }
     use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup {} end }
+    use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 end)
