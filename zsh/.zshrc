@@ -13,8 +13,8 @@ HIST_STAMPS="%d/%m/%y %T"
 plugins=(tmux common-aliases git vi-mode archlinux docker colored-man-pages kubectl ubuntu zsh-z)
 source $ZSH/oh-my-zsh.sh
 
-# Preferred editor for local and remote sessions
-export EDITOR='vim'
+# Preferred editor
+command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
 
 # custom script to update path environment variable
 [ -f $HOME/Scripts/bin/update_path ] && source $HOME/Scripts/bin/update_path
@@ -54,11 +54,7 @@ if command -v bat &> /dev/null; then
     export FZF_PREVIEWER="bat -pp --color=always --line-range :500 {}"
 fi
 
-[ -f ~/.fzf.zsh ] \
-    && source ~/.fzf.zsh \
-    && export FZF_DEFAULT_OPTS="--multi --border
-                                --preview '$FZF_PREVIEWER'
-								--bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+export FZF_DEFAULT_OPTS="--multi --border --preview '$FZF_PREVIEWER' --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
