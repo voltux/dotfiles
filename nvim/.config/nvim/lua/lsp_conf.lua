@@ -148,10 +148,3 @@ lsp.perlnavigator.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
-
--- setup telescope
-local telescope = require('telescope').setup{
-    defaults = {
-        file_ignore_patterns = {"venv/.*"}
-    }
-}

@@ -1,5 +1,6 @@
 lua require('plugins')
-lua require('lsp_config')
+lua require('lsp_conf')
+lua require('telescope_conf')
 lua << EOF
 
 -- Load custom tree-sitter grammar for org filetype
