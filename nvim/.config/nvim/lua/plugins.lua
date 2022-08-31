@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
     use 'jpalardy/vim-slime'
     use 'kshenoy/vim-signature'
     use 'junegunn/vim-peekaboo'
-    use 'wesQ3/vim-windowswap'
     use 'tpope/vim-eunuch'
     use 'tpope/vim-unimpaired'
     use 'tpope/vim-repeat'
@@ -43,6 +42,7 @@ return require('packer').startup(function(use)
     use 'ryanoasis/vim-devicons'
     use 'fatih/vim-go'
     use 'nvim-lua/plenary.nvim'
+    use 'nvim-orgmode/orgmode'
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'neovim/nvim-lspconfig'
@@ -50,19 +50,8 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-    use {
-        "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup {}
-        end
-    }
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
-    use { 'dhruvasagar/vim-table-mode' }
-    use { 'nvim-orgmode/orgmode', config = function() require('orgmode').setup {} end }
+    use "windwp/nvim-autopairs"
+    use 'numToStr/Comment.nvim'
+    use 'dhruvasagar/vim-table-mode'
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 end)
