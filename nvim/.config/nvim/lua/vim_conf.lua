@@ -51,6 +51,7 @@ vim.cmd [[ hi Folded ctermbg=016 ]]
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
 vim.g.mapleader = " " --mapleader
 vim.g.tex_flavor = 'latex' --latex flavor
+vim.g.do_filetype_lua = 1 --let lua handle filetypes and fall back to filetype.vim if it fails
 
 -- Colors
 vim.o.termguicolors = true
