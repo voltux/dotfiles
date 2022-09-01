@@ -1,6 +1,7 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'kyazdani42/nvim-tree.lua'
+    use 'kyazdani42/nvim-web-devicons'
     use 'mbbill/undotree'
     use 'christoomey/vim-tmux-navigator'
     use 'jpalardy/vim-slime'
@@ -38,9 +39,6 @@ return require('packer').startup(function(use)
     use 'neovimhaskell/haskell-vim'
     use 'amiorin/vim-textile'
     use 'tommcdo/vim-exchange'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'ryanoasis/vim-devicons'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'fatih/vim-go'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-orgmode/orgmode'
