@@ -49,6 +49,7 @@ vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
 vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
 vim.cmd [[ hi Folded ctermbg=016 ]]
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
+vim.g.mapleader = " " --mapleader
 
 -- Colors
 vim.o.termguicolors = true
@@ -57,9 +58,6 @@ vim.cmd [[ colorscheme gruvbox ]]
 vim.cmd [[ highlight Normal     ctermbg=NONE guibg=NONE ]]
 vim.cmd [[ highlight LineNr     ctermbg=NONE guibg=NONE ]]
 vim.cmd [[ highlight SignColumn ctermbg=NONE guibg=NONE ]]
-
--- Mapleader
-vim.g.mapleader = " " --mapleader
 
 -- Abbreviations for common typos
 vim.cmd [[
@@ -89,33 +87,25 @@ vim.cmd [[
     :tnoremap <C-l> <C-\><C-n><C-w>l
     :tnoremap <C-w><S-n> <C-\><C-n>
     :tnoremap <expr> <C-w>" '<C-\><C-N>"'.nr2char(getchar()).'pi'
-    nnoremap <leader>ss :split \| :terminal<CR>
-    nnoremap <leader>sS :vsplit \| :terminal<CR>
-    nnoremap <leader>S  :terminal<CR>
     if executable("zsh")
         set shell=zsh
     endif
 ]]
+vim.api.nvim_set_keymap('n', '<leader>ss', ':split | :terminal<CR>', { noremap = true, desc = 'New terminal horizontal' })
+vim.api.nvim_set_keymap('n', '<leader>sS', ':vsplit | :terminal<CR>', { noremap = true, desc = 'New terminal vertical' })
+vim.api.nvim_set_keymap('n', '<leader>S', ':terminal<CR>', { noremap = true, desc = 'New terminal window' })
 vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no ]]
 vim.cmd [[ autocmd TermOpen * startinsert ]]
 
 --Change current dir to current file pwd
-vim.cmd [[
-    nnoremap <leader>gc :cd %:p:h<CR>:pwd<CR>
-]]
+vim.api.nvim_set_keymap('n', '<leader>gc ', ':cd %:p:h<CR>:pwd<CR>',
+    { noremap = true, desc = 'Change current dir to current file pwd' })
 
 --Search, copy, paste
-vim.cmd [[
-    "Basically you press * or # to search for the current selection
-    vnoremap <silent> * y/<C-R>"<CR>
-
-    " Copy to system clipboard
-    nnoremap <leader>y "+y
-    vnoremap <leader>y "+y
-
-    " Paste from system clipboard
-    nnoremap <leader>p "+p
-]]
+vim.api.nvim_set_keymap('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, desc = 'Search current selection' })
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from system clipboard' })
 
 --Latex flavor
 vim.cmd [[
