@@ -1,7 +1,6 @@
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
-    use 'scrooloose/nerdtree'
-    use 'PhilRunninger/nerdtree-visual-selection'
+    use 'kyazdani42/nvim-tree.lua'
     use 'mbbill/undotree'
     use 'christoomey/vim-tmux-navigator'
     use 'jpalardy/vim-slime'

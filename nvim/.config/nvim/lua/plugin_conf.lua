@@ -29,12 +29,6 @@ require("nvim-autopairs").setup {}
 --Comment
 require('Comment').setup()
 
---Nerdtree
-vim.api.nvim_create_autocmd("bufenter",
-    { command = 'if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif' })
-vim.api.nvim_create_autocmd("StdinReadPre", { command = 'let s:std_in=1' })
-setkm('n', '<leader>n', ':NERDTreeToggle<CR>', { noremap = true, desc = 'NERDTree Toggle' })
-
 --Ultisnips
 vim.g.UltiSnipsExpandTrigger       = "<tab>"
 vim.g.UltiSnipsJumpForwardTrigger  = "<tab>"
@@ -119,3 +113,7 @@ setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>', { noremap = true, desc =
 require 'nvim-web-devicons'.setup {
     default = true;
 }
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+setkm('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle NvimTree file explorer'})
