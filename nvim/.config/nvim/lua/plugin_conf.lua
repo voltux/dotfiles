@@ -3,8 +3,6 @@ local setkm = vim.api.nvim_set_keymap
 
 --Treesitter
 require('orgmode').setup_ts_grammar()
-
--- Tree-sitter configuration
 require 'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
@@ -116,4 +114,4 @@ require 'nvim-web-devicons'.setup {
 
 -- empty setup using defaults
 require("nvim-tree").setup()
-setkm('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle NvimTree file explorer'})
+setkm('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle NvimTree file explorer' })
