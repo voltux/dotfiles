@@ -50,6 +50,7 @@ vim.cmd [[ set path+=** "search down into subfolders, provides tab completion fo
 vim.cmd [[ hi Folded ctermbg=016 ]]
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
 vim.g.mapleader = " " --mapleader
+vim.g.tex_flavor = 'latex' --latex flavor
 
 -- Colors
 vim.o.termguicolors = true
@@ -76,26 +77,26 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>j', { noremap = true, desc = 'Move t
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>j', { noremap = true, desc = 'Move to left window' })
 
 --Terminal
-vim.cmd [[
-    :tnoremap <C-w>h <C-\><C-n><C-w>h
-    :tnoremap <C-w>j <C-\><C-n><C-w>j
-    :tnoremap <C-w>k <C-\><C-n><C-w>k
-    :tnoremap <C-w>l <C-\><C-n><C-w>l
-    :tnoremap <C-h> <C-\><C-n><C-w>h
-    :tnoremap <C-j> <C-\><C-n><C-w>j
-    :tnoremap <C-k> <C-\><C-n><C-w>k
-    :tnoremap <C-l> <C-\><C-n><C-w>l
-    :tnoremap <C-w><S-n> <C-\><C-n>
-    :tnoremap <expr> <C-w>" '<C-\><C-N>"'.nr2char(getchar()).'pi'
-    if executable("zsh")
-        set shell=zsh
-    endif
-]]
 vim.api.nvim_set_keymap('n', '<leader>ss', ':split | :terminal<CR>', { noremap = true, desc = 'New terminal horizontal' })
 vim.api.nvim_set_keymap('n', '<leader>sS', ':vsplit | :terminal<CR>', { noremap = true, desc = 'New terminal vertical' })
 vim.api.nvim_set_keymap('n', '<leader>S', ':terminal<CR>', { noremap = true, desc = 'New terminal window' })
+vim.api.nvim_set_keymap('t', '<C-w>h', '<C-\\><C-n><C-w>h',
+    { noremap = true, desc = 'Move to left window from terminal' })
+vim.api.nvim_set_keymap('t', '<C-w>j', '<C-\\><C-n><C-w>j',
+    { noremap = true, desc = 'Move to lower window from terminal' })
+vim.api.nvim_set_keymap('t', '<C-w>k', '<C-\\><C-n><C-w>k',
+    { noremap = true, desc = 'Move to upper window from terminal' })
+vim.api.nvim_set_keymap('t', '<C-w>l', '<C-\\><C-n><C-w>l',
+    { noremap = true, desc = 'Move to right window from terminal' })
+vim.api.nvim_set_keymap('t', '<C-w><S-n>', '<C-\\><C-n>',
+    { noremap = true, desc = 'Switch from terminal mode to normal mode' })
+vim.api.nvim_set_keymap('t', '<expr> <C-w>"', '\'<C-\\><C-N>"\'.nr2char(getchar()).\'pi\'',
+    { noremap = true, desc = 'Paste from vim buffer in terminal mode' })
 vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no ]]
 vim.cmd [[ autocmd TermOpen * startinsert ]]
+if vim.fn.executable("zsh") then
+    vim.o.shell = "zsh"
+end
 
 --Change current dir to current file pwd
 vim.api.nvim_set_keymap('n', '<leader>gc ', ':cd %:p:h<CR>:pwd<CR>',
@@ -106,12 +107,6 @@ vim.api.nvim_set_keymap('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, des
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
 vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from system clipboard' })
-
---Latex flavor
-vim.cmd [[
-    "Recognizing latex files
-    let g:tex_flavor='latex'
-]]
 
 --Running stuff
 vim.cmd [[
@@ -124,7 +119,6 @@ vim.cmd [[
     autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
     autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
     autocmd Filetype perl nmap <F8> :w <CR> :!perl %<CR>
-    autocmd Filetype md,markdown nmap <F8> :MarkdownPreviewToggle <CR>
     autocmd Filetype lua nmap <F8> :w <CR> :!lua % <CR>
     au! BufRead,BufNewFile *.pde setfiletype arduino
 ]]
@@ -136,28 +130,29 @@ vim.api.nvim_set_keymap('n', '<S-Right>', ':vertical resize +2<CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<S-Left>', ':vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
 
 --Language
-vim.cmd [[
-    nmap <leader>lg  :set keymap=greek_utf-8<CR>
-    nmap <leader>le  :set keymap&<CR>
-    nmap <leader>lcg :setlocal spell spelllang=el<CR>
-    nmap <leader>lce :setlocal spell spelllang=en<CR>
-    nmap <leader>lcf :setlocal spell spelllang=fr<CR>
-    nmap <leader>ll  :set nospell<CR>
-
-    map! ;a à
-    map! ;z â
-    map! ;b ä
-    map! ;c ç
-    map! ;w ê
-    map! ;e é
-    map! ;f ë
-    map! ;r è
-    map! ;i î
-    map! ;j ï
-    map! ;o ô
-    map! ;p ö
-    imap ;q «  »<Esc>hi
-    map! ;t ù
-    map! ;u û
-    map! ;v ü
-]]
+vim.api.nvim_set_keymap('n', '<leader>lg', ':set keymap=greek_utf-8<CR>',
+    { noremap = true, desc = 'Change language greek' })
+vim.api.nvim_set_keymap('n', '<leader>le', ':set keymap&<CR>', { noremap = true, desc = 'Change language english' })
+vim.api.nvim_set_keymap('n', '<leader>lcg', ':setlocal spell spelllang=el<CR>',
+    { noremap = true, desc = 'Set spelling greek' })
+vim.api.nvim_set_keymap('n', '<leader>lce', ':setlocal spell spelllang=en<CR>',
+    { noremap = true, desc = 'Set spelling english' })
+vim.api.nvim_set_keymap('n', '<leader>lcf', ':setlocal spell spelllang=fr<CR>',
+    { noremap = true, desc = 'Set spelling french' })
+vim.api.nvim_set_keymap('n', '<leader>ll', ':set nospell<CR>', { noremap = true, desc = 'Set no spelling' })
+vim.api.nvim_set_keymap('!', ';a', 'à', { desc = 'insert special character à' })
+vim.api.nvim_set_keymap('!', ';z', 'â', { desc = 'insert special character â' })
+vim.api.nvim_set_keymap('!', ';b', 'ä', { desc = 'insert special character ä' })
+vim.api.nvim_set_keymap('!', ';c', 'ç', { desc = 'insert special character ç' })
+vim.api.nvim_set_keymap('!', ';w', 'ê', { desc = 'insert special character ê' })
+vim.api.nvim_set_keymap('!', ';e', 'é', { desc = 'insert special character é' })
+vim.api.nvim_set_keymap('!', ';f', 'ë', { desc = 'insert special character ë' })
+vim.api.nvim_set_keymap('!', ';r', 'è', { desc = 'insert special character è' })
+vim.api.nvim_set_keymap('!', ';i', 'î', { desc = 'insert special character î' })
+vim.api.nvim_set_keymap('!', ';j', 'ï', { desc = 'insert special character ï' })
+vim.api.nvim_set_keymap('!', ';o', 'ô', { desc = 'insert special character ô' })
+vim.api.nvim_set_keymap('!', ';p', 'ö', { desc = 'insert special character ö' })
+vim.api.nvim_set_keymap('!', ';t', 'ù', { desc = 'insert special character ù' })
+vim.api.nvim_set_keymap('!', ';u', 'û', { desc = 'insert special character û' })
+vim.api.nvim_set_keymap('!', ';v', 'ü', { desc = 'insert special character ü' })
+vim.api.nvim_set_keymap('i', ';q', '«»<Esc>i', { desc = 'insert special character «»' })
