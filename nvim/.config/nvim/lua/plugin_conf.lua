@@ -114,3 +114,8 @@ setkm('n', '<leader>fT', ':Telescope git_branches<CR>', { noremap = true, desc =
 setkm('n', '<leader>fs', ':Telescope git_status<CR>', { noremap = true, desc = 'Telescope find' })
 setkm('n', '<leader>fS', ':Telescope git_stash<CR>', { noremap = true, desc = 'Telescope find' })
 setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>', { noremap = true, desc = 'Telescope find' })
+
+--Web dev icons
+require 'nvim-web-devicons'.setup {
+    default = true;
+}
