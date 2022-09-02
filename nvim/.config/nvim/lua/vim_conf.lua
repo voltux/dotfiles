@@ -57,7 +57,6 @@ vim.g.do_filetype_lua = 1 --let lua handle filetypes and fall back to filetype.v
 vim.o.termguicolors = true
 vim.o.background = 'dark'
 vim.cmd [[ colorscheme gruvbox ]]
-vim.cmd [[ highlight Normal     ctermbg=NONE guibg=NONE ]]
 vim.cmd [[ highlight LineNr     ctermbg=NONE guibg=NONE ]]
 vim.cmd [[ highlight SignColumn ctermbg=NONE guibg=NONE ]]
 
