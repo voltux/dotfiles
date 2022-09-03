@@ -11,21 +11,21 @@ scrolling:
   multiplier: 3
 font:
   normal:
-    family: DejaVuSans Mono
+    family: Monaco for Powerline
     style: Regular
   bold:
-    family: DejaVuSans Mono
+    family: Monaco for Powerline
     style: Bold
   italic:
-    family: DejaVuSans Mono
+    family: Monaco for Powerline
     style: Italic
   bold_italic:
-    family: DejaVuSans Mono
+    family: Monaco for Powerline
     style: Bold Italic
   size: 7.5
   offset:
     x: 0
-    y: -2
+    y: 0
   glyph_offset:
     x: 0
     y: 0
