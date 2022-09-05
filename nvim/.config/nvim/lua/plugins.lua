@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
     use 'tpope/vim-surround'
     use 'wellle/targets.vim'
     use 'ntpeters/vim-better-whitespace'
-    use 'terryma/vim-multiple-cursors'
+    use 'mg979/vim-visual-multi'
     use 'junegunn/vim-easy-align'
     use 'vim-airline/vim-airline'
     use 'kana/vim-textobj-user'
