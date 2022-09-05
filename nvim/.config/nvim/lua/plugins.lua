@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
     use 'christoomey/vim-tmux-navigator'
     use 'jpalardy/vim-slime'
     use 'kshenoy/vim-signature'
-    use 'junegunn/vim-peekaboo'
+    use "tversteeg/registers.nvim"
     use 'tpope/vim-eunuch'
     use 'tpope/vim-unimpaired'
     use 'tpope/vim-repeat'
