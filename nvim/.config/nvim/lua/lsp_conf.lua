@@ -81,3 +81,15 @@ lsp.perlnavigator.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.bashls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
+lsp.ccls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
+lsp.yamlls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
