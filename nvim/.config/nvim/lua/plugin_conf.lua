@@ -142,22 +142,6 @@ setkm('v', 'ga', '<Plug>(EasyAlign)', { noremap = true, desc = 'EasyAlign activa
 --IndentBlankLine
 setkm('n', '<leader>i', ':IndentBlanklineToggle<CR>', { noremap = true, desc = 'IndentBlankLine Toggle' })
 
---Airline
-vim.g['airline_symbols.colnr'] = ':'
-vim.g['airline_symbols.crypt'] = '🔒'
-vim.g['airline_symbols.linenr'] = ' | '
-vim.g['airline_symbols.maxlinenr'] = ''
-vim.g['airline_symbols.branch'] = '⎇'
-vim.g['airline_symbols.paste'] = 'PASTE'
-vim.g['airline_symbols.spell'] = 'SPELL'
-vim.g['airline_symbols.notexists'] = 'Ɇ'
-vim.g['airline_symbols.whitespace'] = 'wh'
-vim.g['airline#extensions#wordcount#formatter#default#fmt'] = '%s |'
-vim.g['airline#extensions#tabline#enabled'] = 1
-vim.g['airline#extensions#tabline#show_tab_nr'] = 1
-vim.g['airline_powerline_fonts'] = 1
-vim.g['airline#extensions#tabline#ignore_bufadd_pat'] = '!|defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
-
 --Telescope
 setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
 setkm('n', '<leader>f/', ':Telescope search_history<CR>', { noremap = true, desc = 'Telescope find in search history' })
@@ -211,3 +195,13 @@ setkm('s', '<silent> <Tab>', '<cmd>lua require(\'luasnip\').jump(1)<Cr>', { nore
 setkm('s', '<silent> <S-Tab>', '<cmd>lua require\'luasnip\'.jump(-1)<Cr>', { noremap = true })
 setkm('i', '<silent><expr> <C-E>', 'luasnip#choice_active() ? \'<Plug>luasnip-next-choice\' : \'<C-E>\'', {})
 setkm('i', '<silent><expr> <C-E>', 'luasnip#choice_active() ? \'<Plug>luasnip-next-choice\' : \'<C-E>\'', {})
+
+--lualine
+require('lualine').setup {
+    options = {
+        theme = 'gruvbox'
+    }
+}
+
+--bufferline
+require('bufferline').setup()

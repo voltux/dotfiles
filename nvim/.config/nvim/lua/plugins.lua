@@ -15,7 +15,11 @@ return require('packer').startup(function(use)
     use 'ntpeters/vim-better-whitespace'
     use 'mg979/vim-visual-multi'
     use 'junegunn/vim-easy-align'
-    use 'vim-airline/vim-airline'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
     use 'kana/vim-textobj-user'
     use 'kana/vim-textobj-line'
     use 'kana/vim-textobj-entire'
