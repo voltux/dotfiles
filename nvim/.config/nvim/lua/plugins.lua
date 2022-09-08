@@ -15,10 +15,7 @@ return require('packer').startup(function(use)
     use 'ntpeters/vim-better-whitespace'
     use 'mg979/vim-visual-multi'
     use 'junegunn/vim-easy-align'
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
     use 'kana/vim-textobj-user'
     use 'kana/vim-textobj-line'
@@ -26,7 +23,7 @@ return require('packer').startup(function(use)
     use 'Julian/vim-textobj-variable-segment'
     use 'michaeljsmith/vim-indent-object'
     use 'gruvbox-community/gruvbox'
-    use 'luochen1990/rainbow'
+    use 'p00f/nvim-ts-rainbow'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'

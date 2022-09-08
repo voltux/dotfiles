@@ -8,6 +8,11 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
         additional_vim_regex_highlighting = { 'org' },
     },
+    rainbow = {
+        enable = true,
+        extended_mode = true,
+        max_file_lines = nil
+    },
     ensure_installed = { 'org' },
 }
 
