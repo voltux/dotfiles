@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     use 'kana/vim-textobj-entire'
     use 'Julian/vim-textobj-variable-segment'
     use 'michaeljsmith/vim-indent-object'
-    use 'morhetz/gruvbox'
+    use 'gruvbox-community/gruvbox'
     use 'luochen1990/rainbow'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
