@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
     use 'michaeljsmith/vim-indent-object'
     use 'gruvbox-community/gruvbox'
     use 'p00f/nvim-ts-rainbow'
+    use 'luochen1990/rainbow'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
