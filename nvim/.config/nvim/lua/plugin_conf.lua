@@ -229,6 +229,8 @@ setkm('n', '<leader>fs', ':Telescope git_status<CR>', { noremap = true, desc = '
 setkm('n', '<leader>fS', ':Telescope git_stash<CR>', { noremap = true, desc = 'Telescope find git stash' })
 setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>',
     { noremap = true, desc = 'Telescope find current buffer commit history' })
+setkm('n', '<leader>fz', ':Telescope spell_suggest<CR>',
+    { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
 
 --Web dev icons
 require 'nvim-web-devicons'.setup {
