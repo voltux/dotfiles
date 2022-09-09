@@ -6,9 +6,11 @@ window:
     y: 0
   decorations: none
   opacity: 1.0
+
 scrolling:
   history: 10000
   multiplier: 3
+
 font:
   normal:
     family: Monaco for Powerline
@@ -68,3 +70,5 @@ cursor:
   style: Block
 live_config_reload: true
 
+env:
+  TERM: xterm-256color
