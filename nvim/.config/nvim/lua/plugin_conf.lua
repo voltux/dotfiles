@@ -277,3 +277,14 @@ require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 --dap ui
 require("dapui").setup()
 setkm('n', '<F8>', '<Cmd>lua require("dapui").toggle()<CR>', { noremap = true })
+
+--firenvim
+local localSettingsFirenvim = {
+    [".*"] = {
+        cmdline = 'neovim',
+        takeover = 'never'
+    }
+}
+vim.g.firenvim_config = {
+    localSettings = localSettingsFirenvim
+}
