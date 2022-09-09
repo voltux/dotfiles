@@ -49,11 +49,13 @@ return require('packer').startup(function(use)
     use 'nvim-treesitter/nvim-treesitter'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
-    use 'mfussenegger/nvim-dap'
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use "windwp/nvim-autopairs"
     use 'numToStr/Comment.nvim'
     use 'dhruvasagar/vim-table-mode'
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+    use { 'mfussenegger/nvim-dap' }
+    use { 'mfussenegger/nvim-dap-python' }
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 end)

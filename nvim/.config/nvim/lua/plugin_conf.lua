@@ -210,3 +210,21 @@ require('lualine').setup {
 
 --bufferline
 require('bufferline').setup()
+
+--dap
+setkm('n', '<F9>', '<Cmd>lua require"dap".continue()<CR>', { noremap = true })
+setkm('n', '<F5>', '<Cmd>lua require"dap".toggle_breakpoint()<CR>', { noremap = true })
+setkm('n', '<F6>', '<Cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>',
+    { noremap = true })
+setkm('n', '<F7>', '<Cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input("Log point message: "))<CR>',
+    { noremap = true })
+setkm('n', '<F10>', '<Cmd>lua require"dap".step_over()<CR>', { noremap = true })
+setkm('n', '<F11>', '<Cmd>lua require"dap".step_into()<CR>', { noremap = true })
+setkm('n', '<F12>', '<Cmd>lua require"dap".step_out()<CR>', { noremap = true })
+
+--dap python
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+
+--dap ui
+require("dapui").setup()
+setkm('n', '<F8>', '<Cmd>lua require("dapui").toggle()<CR>', { noremap = true })

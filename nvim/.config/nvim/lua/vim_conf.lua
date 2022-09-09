@@ -16,7 +16,7 @@ vim.o.history = 1000 --undo levels
 vim.o.autoread = true --refresh file if it changes on disc
 vim.o.confirm = true --ask me if I try to leave the editor with an unsaved modified file in a buffer
 vim.o.swapfile = false --don't create swapfiles
-vim.o.pastetoggle = '<F7>'
+vim.o.pastetoggle = '<F4>'
 vim.o.mousemodel = "popup_setpos" --move mouse to click point
 vim.o.smartindent = true --do smart autoindenting when changing lines
 vim.o.expandtab = true --change tab to spaces
@@ -107,21 +107,6 @@ vim.api.nvim_set_keymap('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, des
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
 vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from system clipboard' })
-
---Running stuff
-vim.cmd [[
-    nnoremap <F8> <NOP>
-    autocmd Filetype zsh,bash,sh nmap <F8> :w <CR> :!source % <CR>
-    autocmd Filetype c,cpp nmap <F8> :w <CR> :!g++ -std=c++11 % -o %< && ./%< <CR>
-    autocmd Filetype python nmap <F8> :w <CR> :!python3 %<CR>
-    autocmd Filetype python vmap <F8> !python3<CR>
-    autocmd Filetype julia nmap <F8> :w <CR> :!julia % <CR>
-    autocmd Filetype haskell nmap <F8> :w <CR> :!runhaskell %< % <CR>
-    autocmd Filetype go nmap <F8> :w <CR> :!go run %<CR>
-    autocmd Filetype perl nmap <F8> :w <CR> :!perl %<CR>
-    autocmd Filetype lua nmap <F8> :w <CR> :!lua % <CR>
-    au! BufRead,BufNewFile *.pde setfiletype arduino
-]]
 
 --Resize
 vim.api.nvim_set_keymap('n', '<S-Up>', ':resize +2<CR>', { noremap = true, desc = 'Resize window up' })
