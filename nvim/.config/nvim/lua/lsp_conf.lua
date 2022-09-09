@@ -1,6 +1,7 @@
 require('nvim-lsp-installer').setup {}
 
 local lsp = require('lspconfig')
+local util = require('lspconfig.util')
 
 -- configure keymaps on attach to a lsp server
 local custom_attach = function(client, bufnr)
@@ -84,6 +85,7 @@ lsp.perlnavigator.setup {
 lsp.bashls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
+    root_dir = util.path.dirname
 }
 lsp.ccls.setup {
     on_attach = custom_attach,
