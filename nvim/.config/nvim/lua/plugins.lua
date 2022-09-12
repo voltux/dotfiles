@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     use 'kana/vim-textobj-entire'
     use 'Julian/vim-textobj-variable-segment'
     use 'michaeljsmith/vim-indent-object'
-    use 'gruvbox-community/gruvbox'
+    use 'ellisonleao/gruvbox.nvim'
     use 'p00f/nvim-ts-rainbow'
     use 'luochen1990/rainbow'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -58,5 +58,5 @@ return require('packer').startup(function(use)
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     use { 'mfussenegger/nvim-dap' }
     use { 'mfussenegger/nvim-dap-python' }
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 end)
