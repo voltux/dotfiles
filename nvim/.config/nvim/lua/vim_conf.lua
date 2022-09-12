@@ -53,13 +53,6 @@ vim.g.mapleader = " " --mapleader
 vim.g.tex_flavor = 'latex' --latex flavor
 vim.g.do_filetype_lua = 1 --let lua handle filetypes and fall back to filetype.vim if it fails
 
--- Colors
-vim.o.termguicolors = true
-vim.o.background = 'dark'
-vim.cmd [[ colorscheme gruvbox ]]
-vim.cmd [[ highlight LineNr     ctermbg=NONE guibg=NONE ]]
-vim.cmd [[ highlight SignColumn ctermbg=NONE guibg=NONE ]]
-
 -- Abbreviations for common typos
 vim.cmd [[
     cnoreabbrev   Q    q
