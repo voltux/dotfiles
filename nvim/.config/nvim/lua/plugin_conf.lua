@@ -304,7 +304,8 @@ require("gruvbox").setup({
     contrast = "hard", -- can be "hard", "soft" or empty string
     overrides = {
         SignColumn = { bg = 'NONE' },
-        LineNr = { bg = 'NONE' }
+        LineNr = { bg = 'NONE' },
+        Normal = { bg = 'NONE' }
     },
 })
 vim.cmd("colorscheme gruvbox")
