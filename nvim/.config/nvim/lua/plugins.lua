@@ -44,7 +44,8 @@ return require('packer').startup(function(use)
     use 'tommcdo/vim-exchange'
     use 'fatih/vim-go'
     use 'nvim-lua/plenary.nvim'
-    use 'nvim-orgmode/orgmode'
+    use { 'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim' }
+    use { 'nvim-neorg/neorg-telescope' }
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -52,11 +53,11 @@ return require('packer').startup(function(use)
     use 'williamboman/nvim-lsp-installer'
     use 'lukas-reineke/indent-blankline.nvim'
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-    use "windwp/nvim-autopairs"
+    use 'windwp/nvim-autopairs'
     use 'numToStr/Comment.nvim'
     use 'dhruvasagar/vim-table-mode'
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     use { 'mfussenegger/nvim-dap' }
     use { 'mfussenegger/nvim-dap-python' }
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
 end)
