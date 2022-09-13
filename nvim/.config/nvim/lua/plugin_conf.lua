@@ -181,6 +181,7 @@ setkm('v', 'ga', '<Plug>(EasyAlign)', { noremap = true, desc = 'EasyAlign activa
 setkm('n', '<leader>i', ':IndentBlanklineToggle<CR>', { noremap = true, desc = 'IndentBlankLine Toggle' })
 
 --Telescope
+require('telescope').load_extension('luasnip')
 setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
 setkm('n', '<leader>f/', ':Telescope search_history<CR>', { noremap = true, desc = 'Telescope find in search history' })
 setkm('n', '<leader>fG', ':Telescope git_status<CR>', { noremap = true, desc = 'Telescope find modified git files' })
@@ -218,12 +219,13 @@ setkm('n', '<leader>ft', ':Telescope lsp_type_definitions<CR>',
 setkm('n', '<leader>fv', ':Telescope treesitter<CR>', { noremap = true, desc = 'Telescope find treesitter symbol' })
 setkm('n', '<leader>fc', ':Telescope git_commits<CR>', { noremap = true, desc = 'Telescope find in commits' })
 setkm('n', '<leader>fT', ':Telescope git_branches<CR>', { noremap = true, desc = 'Telescope find in branches' })
-setkm('n', '<leader>fs', ':Telescope git_status<CR>', { noremap = true, desc = 'Telescope find modified git files' })
+setkm('n', '<leader>fs', ':Telescope luasnip<CR>', { noremap = true, desc = 'Telescope find snippet' })
 setkm('n', '<leader>fS', ':Telescope git_stash<CR>', { noremap = true, desc = 'Telescope find git stash' })
 setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>',
     { noremap = true, desc = 'Telescope find current buffer commit history' })
 setkm('n', '<leader>fz', ':Telescope spell_suggest<CR>',
     { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
+setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
 
 --Web dev icons
 require 'nvim-web-devicons'.setup {
