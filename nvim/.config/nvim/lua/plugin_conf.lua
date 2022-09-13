@@ -159,7 +159,10 @@ require('Comment').setup()
 
 --Whitespace
 vim.cmd [[ highlight ExtraWhitespace ctermbg=78 ]]
-setkm('n', '<leader>w', ':StripWhitespace<CR>', { noremap = true, desc = 'Strip whitespace' })
+setkm('n', '<leader>wh', ':StripWhitespace<CR>', { noremap = true, desc = 'Strip whitespace' })
+setkm('n', '<leader>wt', ':ToggleWhitespace<CR>', { noremap = true, desc = 'Strip whitespace' })
+vim.g.better_whitespace_enabled = 0
+vim.g.strip_whitespace_on_save = 0
 
 --Undotree
 setkm('n', '<leader>u', ':UndotreeToggle<CR>', { noremap = true, desc = 'Undotree Toggle' })
