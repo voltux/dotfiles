@@ -135,3 +135,11 @@ vim.api.nvim_set_keymap('!', ';t', 'ù', { desc = 'insert special character ù' 
 vim.api.nvim_set_keymap('!', ';u', 'û', { desc = 'insert special character û' })
 vim.api.nvim_set_keymap('!', ';v', 'ü', { desc = 'insert special character ü' })
 vim.api.nvim_set_keymap('i', ';q', '«»<Esc>i', { desc = 'insert special character «»' })
+
+--Gui
+vim.cmd [[
+    if exists('g:neovide')
+        set guifont=Monaco\ for\ Powerline:h9
+        let g:neovide_fullscreen=v:true
+    endif
+]]
