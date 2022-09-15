@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
+    use 'hrsh7th/cmp-nvim-lua'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'rcarriga/cmp-dap'
@@ -64,4 +65,5 @@ return require('packer').startup(function(use)
     use { 'mfussenegger/nvim-dap-python' }
     use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
     use { 'folke/trouble.nvim' }
+    use { "akinsho/toggleterm.nvim", tag = '*' }
 end)

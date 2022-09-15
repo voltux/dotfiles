@@ -121,7 +121,8 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
-        { name = 'nvim_lsp_signature_help' }
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lua' }
     }, {
         { name = 'buffer' },
     })
@@ -349,3 +350,7 @@ setkm("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", { silent
 setkm("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", { silent = true, noremap = true })
 setkm("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", { silent = true, noremap = true })
 setkm("n", "<leader>xu", "<cmd>TroubleToggle lsp_references<cr>", { silent = true, noremap = true })
+
+-- toggleterm
+require('toggleterm').setup {}
+setkm("n", "<leader>sf", "<cmd>ToggleTerm direction=float<cr>", { silent = true, noremap = true })
