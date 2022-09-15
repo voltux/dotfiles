@@ -86,6 +86,10 @@ vim.api.nvim_set_keymap('t', '<C-w><S-n>', '<C-\\><C-n>',
     { noremap = true, desc = 'Switch from terminal mode to normal mode' })
 vim.api.nvim_set_keymap('t', '<expr> <C-w>"', '\'<C-\\><C-N>"\'.nr2char(getchar()).\'pi\'',
     { noremap = true, desc = 'Paste from vim buffer in terminal mode' })
+vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { noremap = true, desc = 'Move to left window from terminal' })
+vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], { noremap = true, desc = 'Move to lower window from terminal' })
+vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], { noremap = true, desc = 'Move to right window from terminal' })
+vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], { noremap = true, desc = 'Move to right window from terminal' })
 vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no ]]
 vim.cmd [[ autocmd TermOpen * startinsert ]]
 if vim.fn.executable("zsh") then
