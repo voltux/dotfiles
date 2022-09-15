@@ -59,8 +59,14 @@ require 'nvim-treesitter.configs'.setup {
 require("telescope").setup {
     defaults = {
         file_ignore_patterns = { "venv/.*" }
+    },
+    extensions = {
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {}
+        }
     }
 }
+require("telescope").load_extension("ui-select")
 
 -- cmp
 local cmp = require('cmp')

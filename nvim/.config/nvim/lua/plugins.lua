@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     use 'mhinz/vim-signify'
     use 'tpope/vim-rhubarb'
     use { "benfowler/telescope-luasnip.nvim", requires = { 'L3MON4D3/LuaSnip' } }
+    use { 'nvim-telescope/telescope-ui-select.nvim' }
     use 'plasticboy/vim-markdown'
     use 'mattn/emmet-vim'
     use 'neovimhaskell/haskell-vim'
