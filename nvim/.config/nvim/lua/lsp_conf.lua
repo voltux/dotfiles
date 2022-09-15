@@ -12,9 +12,11 @@ local custom_attach = function(client, bufnr)
         if vim.g.diagnostics_visible then
             vim.g.diagnostics_visible = false
             vim.diagnostic.disable()
+            print("Diagnostics disabled")
         else
             vim.g.diagnostics_visible = true
             vim.diagnostic.enable()
+            print("Diagnostics enabled")
         end
     end
 
