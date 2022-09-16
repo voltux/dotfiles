@@ -353,4 +353,9 @@ setkm("n", "<leader>xu", "<cmd>TroubleToggle lsp_references<cr>", { silent = tru
 
 -- toggleterm
 require('toggleterm').setup {}
-setkm("n", "<leader>sf", "<cmd>ToggleTerm direction=float<cr>", { silent = true, noremap = true })
+setkm("n", "<leader>sf", "<cmd>ToggleTerm direction=float<cr>",
+    { silent = true, noremap = true, desc = 'Toggle floating terminal without showing it on a buffer' })
+setkm("n", "<leader>sv", "<cmd>ToggleTerm direction=vertical size=120<cr>",
+    { silent = true, noremap = true, desc = 'Toggle vertical terminal without showing it on a buffer' })
+setkm("n", "<leader>sh", "<cmd>ToggleTerm direction=horizontal size=40<cr>",
+    { silent = true, noremap = true, desc = 'Toggle vertical terminal without showing it on a buffer' })
