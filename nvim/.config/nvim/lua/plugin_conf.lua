@@ -63,10 +63,58 @@ require("telescope").setup {
     extensions = {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {}
-        }
+        },
+        file_browser = {}
     }
 }
 require("telescope").load_extension("ui-select")
+require('telescope').load_extension('luasnip')
+setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
+setkm('n', '<leader>f/', ':Telescope search_history<CR>', { noremap = true, desc = 'Telescope find in search history' })
+setkm('n', '<leader>fG', ':Telescope git_status<CR>', { noremap = true, desc = 'Telescope find modified git files' })
+setkm('n', '<leader>fa', ':Telescope live_grep<CR>', { noremap = true, desc = 'Telescope find pattern in all files' })
+setkm('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, desc = 'Telescope find buffer' })
+setkm('n', '<leader>f:', ':Telescope commands<CR>', { noremap = true, desc = 'Telescope find nvim command' })
+setkm('n', '<leader>fd', ':Telescope diagnostics<CR>', { noremap = true, desc = 'Telescope find diagnostic' })
+setkm('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, desc = 'Telescope find file' })
+setkm('n', '<leader>fg', ':Telescope git_files<CR>', { noremap = true, desc = 'Telescope find git files' })
+setkm('n', '<leader>fh', ':Telescope help_tags<CR>', { noremap = true, desc = 'Telescope find help tags' })
+setkm('n', '<leader>fi', ':Telescope current_buffer_fuzzy_find<CR>',
+    { noremap = true, desc = 'Telescope find in current buffer' })
+setkm('n', '<leader>fj', ':Telescope jumplist<CR>', { noremap = true, desc = 'Telescope find in jumplist' })
+setkm('n', '<leader>fk', ':Telescope keymaps<CR>', { noremap = true, desc = 'Telescope find keymap' })
+setkm('n', '<leader>fl', ':Telescope loclist<CR>', { noremap = true, desc = 'Telescope find in location list' })
+setkm('n', '<leader>f\'', ':Telescope marks<CR>', { noremap = true, desc = 'Telescope find marks' })
+setkm('n', '<leader>fo', ':Telescope vim_options<CR>', { noremap = true, desc = 'Telescope find vim option' })
+setkm('n', '<leader>fq', ':Telescope quickfix<CR>', { noremap = true, desc = 'Telescope find in quickfix list' })
+setkm('n', '<leader>f"', ':Telescope registers<CR>', { noremap = true, desc = 'Telescope find in registers' })
+setkm('n', '<leader>fw', ':Telescope grep_string<CR>', { noremap = true, desc = 'Telescope find string in path' })
+setkm('n', '<leader>ft', ':Telescope tags<CR>', { noremap = true, desc = 'Telescope find tag' })
+setkm('n', '<leader>fu', ':Telescope lsp_references<CR>', { noremap = true, desc = 'Telescope find lsp reference' })
+setkm('n', '<leader>f<', ':Telescope lsp_incoming_calls<CR>',
+    { noremap = true, desc = 'Telescope find lsp who am I calling' })
+setkm('n', '<leader>f>', ':Telescope lsp_outgoing_calls<CR>',
+    { noremap = true, desc = 'Telescope find lsp who is calling me' })
+setkm('n', '<leader>f$', ':Telescope lsp_document_symbols<CR>',
+    { noremap = true, desc = 'Telescope find in document functions, variables, expressions...' })
+setkm('n', '<leader>f^', ':Telescope lsp_workspace_symbols<CR>',
+    { noremap = true, desc = 'Telescope find in workspace functions, variables, expressions...' })
+setkm('n', '<leader>fD', ':Telescope lsp_definitions<CR>', { noremap = true, desc = 'Telescope find definition' })
+setkm('n', '<leader>fI', ':Telescope lsp_implementations<CR>', { noremap = true, desc = 'Telescope find implementation' })
+setkm('n', '<leader>ft', ':Telescope lsp_type_definitions<CR>',
+    { noremap = true, desc = 'Telescope find type definition' })
+setkm('n', '<leader>fv', ':Telescope treesitter<CR>', { noremap = true, desc = 'Telescope find treesitter symbol' })
+setkm('n', '<leader>fc', ':Telescope git_commits<CR>', { noremap = true, desc = 'Telescope find in commits' })
+setkm('n', '<leader>fT', ':Telescope git_branches<CR>', { noremap = true, desc = 'Telescope find in branches' })
+setkm('n', '<leader>fs', ':Telescope luasnip<CR>', { noremap = true, desc = 'Telescope find snippet' })
+setkm('n', '<leader>fS', ':Telescope git_stash<CR>', { noremap = true, desc = 'Telescope find git stash' })
+setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>',
+    { noremap = true, desc = 'Telescope find current buffer commit history' })
+setkm('n', '<leader>fz', ':Telescope spell_suggest<CR>',
+    { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
+setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
+setkm('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, desc = 'Telescope file browser' })
+
 
 -- cmp
 local cmp = require('cmp')
@@ -189,53 +237,6 @@ setkm('v', 'ga', '<Plug>(EasyAlign)', { noremap = true, desc = 'EasyAlign activa
 
 --IndentBlankLine
 setkm('n', '<leader>i', ':IndentBlanklineToggle<CR>', { noremap = true, desc = 'IndentBlankLine Toggle' })
-
---Telescope
-require('telescope').load_extension('luasnip')
-setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
-setkm('n', '<leader>f/', ':Telescope search_history<CR>', { noremap = true, desc = 'Telescope find in search history' })
-setkm('n', '<leader>fG', ':Telescope git_status<CR>', { noremap = true, desc = 'Telescope find modified git files' })
-setkm('n', '<leader>fa', ':Telescope live_grep<CR>', { noremap = true, desc = 'Telescope find pattern in all files' })
-setkm('n', '<leader>fb', ':Telescope buffers<CR>', { noremap = true, desc = 'Telescope find buffer' })
-setkm('n', '<leader>f:', ':Telescope commands<CR>', { noremap = true, desc = 'Telescope find nvim command' })
-setkm('n', '<leader>fd', ':Telescope diagnostics<CR>', { noremap = true, desc = 'Telescope find diagnostic' })
-setkm('n', '<leader>ff', ':Telescope find_files<CR>', { noremap = true, desc = 'Telescope find file' })
-setkm('n', '<leader>fg', ':Telescope git_files<CR>', { noremap = true, desc = 'Telescope find git files' })
-setkm('n', '<leader>fh', ':Telescope help_tags<CR>', { noremap = true, desc = 'Telescope find help tags' })
-setkm('n', '<leader>fi', ':Telescope current_buffer_fuzzy_find<CR>',
-    { noremap = true, desc = 'Telescope find in current buffer' })
-setkm('n', '<leader>fj', ':Telescope jumplist<CR>', { noremap = true, desc = 'Telescope find in jumplist' })
-setkm('n', '<leader>fk', ':Telescope keymaps<CR>', { noremap = true, desc = 'Telescope find keymap' })
-setkm('n', '<leader>fl', ':Telescope loclist<CR>', { noremap = true, desc = 'Telescope find in location list' })
-setkm('n', '<leader>f\'', ':Telescope marks<CR>', { noremap = true, desc = 'Telescope find marks' })
-setkm('n', '<leader>fo', ':Telescope vim_options<CR>', { noremap = true, desc = 'Telescope find vim option' })
-setkm('n', '<leader>fq', ':Telescope quickfix<CR>', { noremap = true, desc = 'Telescope find in quickfix list' })
-setkm('n', '<leader>f"', ':Telescope registers<CR>', { noremap = true, desc = 'Telescope find in registers' })
-setkm('n', '<leader>fw', ':Telescope grep_string<CR>', { noremap = true, desc = 'Telescope find string in path' })
-setkm('n', '<leader>ft', ':Telescope tags<CR>', { noremap = true, desc = 'Telescope find tag' })
-setkm('n', '<leader>fu', ':Telescope lsp_references<CR>', { noremap = true, desc = 'Telescope find lsp reference' })
-setkm('n', '<leader>f<', ':Telescope lsp_incoming_calls<CR>',
-    { noremap = true, desc = 'Telescope find lsp who am I calling' })
-setkm('n', '<leader>f>', ':Telescope lsp_outgoing_calls<CR>',
-    { noremap = true, desc = 'Telescope find lsp who is calling me' })
-setkm('n', '<leader>f$', ':Telescope lsp_document_symbols<CR>',
-    { noremap = true, desc = 'Telescope find in document functions, variables, expressions...' })
-setkm('n', '<leader>f^', ':Telescope lsp_workspace_symbols<CR>',
-    { noremap = true, desc = 'Telescope find in workspace functions, variables, expressions...' })
-setkm('n', '<leader>fD', ':Telescope lsp_definitions<CR>', { noremap = true, desc = 'Telescope find definition' })
-setkm('n', '<leader>fI', ':Telescope lsp_implementations<CR>', { noremap = true, desc = 'Telescope find implementation' })
-setkm('n', '<leader>ft', ':Telescope lsp_type_definitions<CR>',
-    { noremap = true, desc = 'Telescope find type definition' })
-setkm('n', '<leader>fv', ':Telescope treesitter<CR>', { noremap = true, desc = 'Telescope find treesitter symbol' })
-setkm('n', '<leader>fc', ':Telescope git_commits<CR>', { noremap = true, desc = 'Telescope find in commits' })
-setkm('n', '<leader>fT', ':Telescope git_branches<CR>', { noremap = true, desc = 'Telescope find in branches' })
-setkm('n', '<leader>fs', ':Telescope luasnip<CR>', { noremap = true, desc = 'Telescope find snippet' })
-setkm('n', '<leader>fS', ':Telescope git_stash<CR>', { noremap = true, desc = 'Telescope find git stash' })
-setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>',
-    { noremap = true, desc = 'Telescope find current buffer commit history' })
-setkm('n', '<leader>fz', ':Telescope spell_suggest<CR>',
-    { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
-setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
 
 --Web dev icons
 require 'nvim-web-devicons'.setup {
