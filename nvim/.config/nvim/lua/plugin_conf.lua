@@ -69,7 +69,6 @@ require("telescope").setup {
             base_dirs = {
                 -- Manually define your project root dirs here
             },
-            hidden_files = true,
             order_by = "asc"
         }
     }
