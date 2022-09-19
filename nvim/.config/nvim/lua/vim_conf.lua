@@ -100,10 +100,27 @@ vim.api.nvim_set_keymap('n', '<leader>gc ', ':cd %:p:h<CR>:pwd<CR>',
     { noremap = true, desc = 'Change current dir to current file pwd' })
 
 --Search, copy, paste
+local tmux_copy_mode_toggle = function()
+    -- function to toggle all options taking place on the screen when trying to copy/paste from tmux
+    -- especially handy for remote sessions
+    if vim.o.number then
+        vim.o.signcolumn = "no"
+        vim.o.number = false
+        vim.o.relativenumber = false
+        vim.cmd [[ IndentBlanklineDisable ]]
+    else
+        vim.o.signcolumn = "yes"
+        vim.o.number = true
+        vim.o.relativenumber = true
+        vim.cmd [[ IndentBlanklineEnable ]]
+    end
+end
+
 vim.api.nvim_set_keymap('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, desc = 'Search current selection' })
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
 vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from system clipboard' })
+vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })
 
 --Resize
 vim.api.nvim_set_keymap('n', '<S-Up>', ':resize +2<CR>', { noremap = true, desc = 'Resize window up' })
