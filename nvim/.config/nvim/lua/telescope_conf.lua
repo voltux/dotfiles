@@ -1,4 +1,17 @@
 --Telescope
+local telescope_project_base_dirs = {}
+local possible_base_dirs = {
+    os.getenv("HOME") .. "/workspace",
+    os.getenv("HOME") .. "/Projects",
+    "/manager",
+}
+
+for _, dirname in ipairs(possible_base_dirs) do
+    if vim.fn.isdirectory(dirname) ~= 0 then
+        table.insert(telescope_project_base_dirs, dirname)
+    end
+end
+
 require("telescope").setup {
     defaults = {
         file_ignore_patterns = { "venv/.*" }
@@ -10,7 +23,7 @@ require("telescope").setup {
         file_browser = {},
         project = {
             base_dirs = {
-                -- Manually define your project root dirs here
+                telescope_project_base_dirs
             },
             order_by = "asc"
         }
