@@ -11,7 +11,6 @@ require("telescope").setup {
         project = {
             base_dirs = {
                 -- Manually define your project root dirs here
-                { '$HOME/workspace' }
             },
             order_by = "asc"
         }
