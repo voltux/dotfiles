@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
     use { "benfowler/telescope-luasnip.nvim", requires = { 'L3MON4D3/LuaSnip' } }
     use { 'nvim-telescope/telescope-ui-select.nvim' }
     use { 'nvim-telescope/telescope-file-browser.nvim' }
+    use { 'nvim-telescope/telescope-project.nvim' }
     use 'plasticboy/vim-markdown'
     use 'mattn/emmet-vim'
     use 'neovimhaskell/haskell-vim'

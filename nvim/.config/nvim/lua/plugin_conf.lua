@@ -64,11 +64,19 @@ require("telescope").setup {
         ["ui-select"] = {
             require("telescope.themes").get_dropdown {}
         },
-        file_browser = {}
+        file_browser = {},
+        project = {
+            base_dirs = {
+                -- Manually define your project root dirs here
+            },
+            hidden_files = true,
+            order_by = "asc"
+        }
     }
 }
-require("telescope").load_extension("ui-select")
+require('telescope').load_extension('ui-select')
 require('telescope').load_extension('luasnip')
+require('telescope').load_extension('project')
 setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
 setkm('n', '<leader>f/', ':Telescope search_history<CR>', { noremap = true, desc = 'Telescope find in search history' })
 setkm('n', '<leader>fG', ':Telescope git_status<CR>', { noremap = true, desc = 'Telescope find modified git files' })
@@ -113,7 +121,10 @@ setkm('n', '<leader>fB', ':Telescope git_bcommits<CR>',
 setkm('n', '<leader>fz', ':Telescope spell_suggest<CR>',
     { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
 setkm('n', '<leader>f%', ':Telescope oldfiles<CR>', { noremap = true, desc = 'Telescope find recently open files' })
-setkm('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", { noremap = true, desc = 'Telescope file browser' })
+setkm('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
+    { noremap = true, desc = 'Telescope file browser' })
+setkm('n', '<leader>fp', "<cmd>lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>",
+    { noremap = true, silent = true, desc = 'Telescope find project' })
 
 
 -- cmp
