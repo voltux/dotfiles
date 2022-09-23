@@ -5,14 +5,12 @@ local setkm = vim.api.nvim_set_keymap
 require 'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { 'org' },
     },
     rainbow = {
         enable = true,
         extended_mode = true,
         max_file_lines = nil
     },
-    ensure_installed = { 'org' },
     textobjects = {
         select = {
             enable = true,
