@@ -1,9 +1,11 @@
 --Telescope
+local homepath = os.getenv("HOME")
 local telescope_project_base_dirs = {}
 local possible_base_dirs = {
-    os.getenv("HOME") .. "/workspace",
-    os.getenv("HOME") .. "/Projects",
-    os.getenv("HOME") .. "/sdev-legacy/workspace",
+    homepath .. "/workspace",
+    homepath .. "/Projects",
+    homepath .. "/Scripts",
+    homepath .. "/sdev-legacy/workspace",
     "/manager",
 }
 
