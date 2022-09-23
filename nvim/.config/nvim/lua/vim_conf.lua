@@ -82,7 +82,7 @@ vim.api.nvim_set_keymap('t', '<C-w>k', '<C-\\><C-n><C-w>k',
     { noremap = true, desc = 'Move to upper window from terminal' })
 vim.api.nvim_set_keymap('t', '<C-w>l', '<C-\\><C-n><C-w>l',
     { noremap = true, desc = 'Move to right window from terminal' })
-vim.api.nvim_set_keymap('t', '<C-w><S-n>', '<C-\\><C-n>',
+vim.api.nvim_set_keymap('t', '<C-Space>', '<C-\\><C-n>',
     { noremap = true, desc = 'Switch from terminal mode to normal mode' })
 vim.cmd [[tnoremap <expr> <C-W>" '<C-\><C-N>"'.nr2char(getchar()).'pi']]
 vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { noremap = true, desc = 'Move to left window from terminal' })
