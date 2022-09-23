@@ -25,7 +25,8 @@ vim.o.tabstop = 4 --number of spaces for a tab
 vim.o.shiftwidth = 4 --number of spaces for autoindent
 vim.o.hidden = true --hides unsaved files open in buffers instead of closing them, undo possible
 vim.o.title = true --set title of window to title of file
-vim.o.ttimeoutlen = 0 --timeout time for Esc to pass to normal mode -> instantaneous
+vim.o.ttimeoutlen = 0 --timeout time in ms for Esc to pass to normal mode -> instantaneous
+vim.o.timeoutlen = 0 --timeout time in ms for key code mapping to execute
 vim.o.hlsearch = false --do not highlight searched-for phrases
 vim.o.incsearch = true --but do highlight-as-I-type the search string
 vim.o.gdefault = true --this makes search/replace global by default"
@@ -71,9 +72,9 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>j', { noremap = true, desc = 'Move t
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>j', { noremap = true, desc = 'Move to left window' })
 
 --Terminal
-vim.api.nvim_set_keymap('n', '<leader>ss', ':split | :terminal<CR>', { noremap = true, desc = 'New terminal horizontal' })
-vim.api.nvim_set_keymap('n', '<leader>sS', ':vsplit | :terminal<CR>', { noremap = true, desc = 'New terminal vertical' })
-vim.api.nvim_set_keymap('n', '<leader>S', ':terminal<CR>', { noremap = true, desc = 'New terminal window' })
+vim.api.nvim_set_keymap('n', '<leader>ss', ':split | :terminal<CR>', { noremap = true, desc = 'New terminal buffer horizontal' })
+vim.api.nvim_set_keymap('n', '<leader>sS', ':vsplit | :terminal<CR>', { noremap = true, desc = 'New terminal buffer vertical' })
+vim.api.nvim_set_keymap('n', '<leader>s.', ':terminal<CR>', { noremap = true, desc = 'New terminal buffer' })
 vim.api.nvim_set_keymap('t', '<C-w>h', '<C-\\><C-n><C-w>h',
     { noremap = true, desc = 'Move to left window from terminal' })
 vim.api.nvim_set_keymap('t', '<C-w>j', '<C-\\><C-n><C-w>j',
@@ -96,8 +97,8 @@ if vim.fn.executable("zsh") then
 end
 
 --Change current dir to current file pwd
-vim.api.nvim_set_keymap('n', '<leader>gc ', ':cd %:p:h<CR>:pwd<CR>',
-    { noremap = true, desc = 'Change current dir to current file pwd' })
+vim.api.nvim_set_keymap('n', '<leader>cc', ':cd %:p:h<CR>:pwd<CR>',
+    { noremap = true, desc = 'Change dir to current file pwd' })
 
 --Search, copy, paste
 local tmux_copy_mode_toggle = function()
@@ -119,7 +120,6 @@ end
 vim.api.nvim_set_keymap('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, desc = 'Search current selection' })
 vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
-vim.api.nvim_set_keymap('n', '<leader>p', '"+p', { noremap = true, desc = 'Paste from system clipboard' })
 vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })
 
 --Resize

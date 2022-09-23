@@ -185,7 +185,7 @@ require 'nvim-web-devicons'.setup {
 
 --Nvim tree
 require("nvim-tree").setup()
-setkm('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, desc = 'Toggle NvimTree file explorer' })
+setkm('n', '<leader>n', ':NvimTreeToggle<CR>', { noremap = true, desc = 'NvimTree Toggle' })
 
 --Luasnip
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -294,13 +294,13 @@ setkm("n", "<leader>xu", "<cmd>TroubleToggle lsp_references<cr>", { silent = tru
 -- toggleterm
 require('toggleterm').setup {}
 setkm("n", "<leader>sf", "<cmd>ToggleTerm direction=float<cr>",
-    { silent = true, noremap = true, desc = 'Toggle floating terminal without showing it on a buffer' })
+    { silent = true, noremap = true, desc = 'Toggle floating terminal' })
 setkm("n", "<leader>sv", "<cmd>ToggleTerm direction=vertical size=120<cr>",
-    { silent = true, noremap = true, desc = 'Toggle vertical terminal without showing it on a buffer' })
+    { silent = true, noremap = true, desc = 'Toggle vertical terminal' })
 setkm("n", "<leader>sh", "<cmd>ToggleTerm direction=horizontal size=40<cr>",
-    { silent = true, noremap = true, desc = 'Toggle vertical terminal without showing it on a buffer' })
+    { silent = true, noremap = true, desc = 'Toggle vertical terminal' })
 setkm("n", "<leader>st", "<cmd>ToggleTerm<cr>",
-    { silent = true, noremap = true, desc = 'Toggle terminal without showing it on a buffer' })
+    { silent = true, noremap = true, desc = 'Toggle last terminal' })
 
 -- neovide (gui)
 if vim.fn.exists('g:neovide') then
@@ -321,3 +321,41 @@ if vim.fn.exists('g:neovide') then
     vim.cmd("colorscheme gruvbox")
     vim.o.guifont = "Monaco_for_Powerline:h9"
 end
+
+-- which-key
+local wk = require('which-key')
+wk.register({
+    f = {
+        name = "find"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    c = {
+        name = "code"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    l = {
+        name = "language"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    s = {
+        name = "shell"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    t = {
+        name = "table mode"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    w = {
+        name = "whitespace"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    x = {
+        name = "trouble"
+    }
+}, { prefix = "<leader>" })

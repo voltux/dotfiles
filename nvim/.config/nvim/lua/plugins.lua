@@ -83,6 +83,7 @@ return require('packer').startup(function(use)
 	use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
 	use { 'folke/trouble.nvim' }
 	use { "akinsho/toggleterm.nvim", tag = '*' }
+    use { "folke/which-key.nvim" }
 
 	if packer_bootstrap then
 		require('packer').sync()
