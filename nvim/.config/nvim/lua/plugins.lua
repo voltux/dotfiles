@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
 	use { 'folke/trouble.nvim' }
 	use { "akinsho/toggleterm.nvim", tag = '*' }
     use { "folke/which-key.nvim" }
+    use { "glepnir/dashboard-nvim" }
 
 	if packer_bootstrap then
 		require('packer').sync()
