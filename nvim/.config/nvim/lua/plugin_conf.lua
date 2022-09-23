@@ -301,6 +301,8 @@ setkm("n", "<leader>sv", "<cmd>ToggleTerm direction=vertical size=120<cr>",
     { silent = true, noremap = true, desc = 'Toggle vertical terminal without showing it on a buffer' })
 setkm("n", "<leader>sh", "<cmd>ToggleTerm direction=horizontal size=40<cr>",
     { silent = true, noremap = true, desc = 'Toggle vertical terminal without showing it on a buffer' })
+setkm("n", "<leader>st", "<cmd>ToggleTerm<cr>",
+    { silent = true, noremap = true, desc = 'Toggle terminal without showing it on a buffer' })
 
 -- neovide (gui)
 if vim.fn.exists('g:neovide') then
