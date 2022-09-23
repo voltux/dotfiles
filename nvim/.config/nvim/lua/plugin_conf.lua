@@ -153,6 +153,7 @@ require("nvim-autopairs").setup {}
 require('Comment').setup()
 
 --Whitespace
+vim.g.better_whitespace_filetypes_blacklist = "['dashboard']"
 vim.cmd [[ highlight ExtraWhitespace ctermbg=78 ]]
 setkm('n', '<leader>wh', ':StripWhitespace<CR>', { noremap = true, desc = 'Strip whitespace' })
 setkm('n', '<leader>wt', ':ToggleWhitespace<CR>', { noremap = true, desc = 'Strip whitespace' })
@@ -362,6 +363,11 @@ wk.register({
         name = "trouble"
     }
 }, { prefix = "<leader>" })
+wk.setup {
+    disable = {
+        filetypes = { 'TelescopePrompt', 'dashboard' }
+    }
+}
 
 -- dashboard
 local db = require('dashboard')
