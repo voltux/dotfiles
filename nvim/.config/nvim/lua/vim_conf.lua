@@ -72,8 +72,10 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>j', { noremap = true, desc = 'Move t
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>j', { noremap = true, desc = 'Move to left window' })
 
 --Terminal
-vim.api.nvim_set_keymap('n', '<leader>ss', ':split | :terminal<CR>', { noremap = true, desc = 'New terminal buffer horizontal' })
-vim.api.nvim_set_keymap('n', '<leader>sS', ':vsplit | :terminal<CR>', { noremap = true, desc = 'New terminal buffer vertical' })
+vim.api.nvim_set_keymap('n', '<leader>ss', ':split | :terminal<CR>',
+    { noremap = true, desc = 'New terminal buffer horizontal' })
+vim.api.nvim_set_keymap('n', '<leader>sS', ':vsplit | :terminal<CR>',
+    { noremap = true, desc = 'New terminal buffer vertical' })
 vim.api.nvim_set_keymap('n', '<leader>s.', ':terminal<CR>', { noremap = true, desc = 'New terminal buffer' })
 vim.api.nvim_set_keymap('t', '<C-w>h', '<C-\\><C-n><C-w>h',
     { noremap = true, desc = 'Move to left window from terminal' })
@@ -123,10 +125,10 @@ vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy 
 vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })
 
 --Resize
-vim.api.nvim_set_keymap('n', '<S-Up>', ':resize +2<CR>', { noremap = true, desc = 'Resize window up' })
-vim.api.nvim_set_keymap('n', '<S-Down>', ':resize -2<CR>', { noremap = true, desc = 'Resize window down' })
-vim.api.nvim_set_keymap('n', '<S-Right>', ':vertical resize +2<CR>', { noremap = true, desc = 'Resize window up' })
-vim.api.nvim_set_keymap('n', '<S-Left>', ':vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
+vim.api.nvim_set_keymap('n', '<M-j>', ':resize +2<CR>', { noremap = true, desc = 'Resize window up' })
+vim.api.nvim_set_keymap('n', '<M-k>', ':resize -2<CR>', { noremap = true, desc = 'Resize window down' })
+vim.api.nvim_set_keymap('n', '<M-l>', ':vertical resize +2<CR>', { noremap = true, desc = 'Resize window up' })
+vim.api.nvim_set_keymap('n', '<M-h>', ':vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
 
 --Language
 vim.api.nvim_set_keymap('n', '<leader>lg', ':set keymap=greek_utf-8<CR>',
