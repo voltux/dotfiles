@@ -110,3 +110,7 @@ lsp.yamlls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.gopls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
