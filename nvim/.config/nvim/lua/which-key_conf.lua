@@ -34,6 +34,16 @@ wk.register({
         name = "trouble"
     }
 }, { prefix = "<leader>" })
+wk.register({
+    g = {
+        name = "git"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    p = {
+        name = "plugin"
+    }
+}, { prefix = "<leader>" })
 wk.setup {
     disable = {
         filetypes = { 'TelescopePrompt', 'dashboard' }

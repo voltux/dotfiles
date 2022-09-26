@@ -12,6 +12,8 @@ end
 
 local packer_bootstrap = ensure_packer()
 
+vim.api.nvim_set_keymap('n', '<leader>ps', '<cmd>PackerSync<cr>', { noremap = true, desc = 'Packer synchronize plugins' })
+
 -- plugins
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
