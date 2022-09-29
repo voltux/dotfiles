@@ -15,6 +15,11 @@ wk.register({
     }
 }, { prefix = "<leader>" })
 wk.register({
+    c = {
+        name = "check spelling"
+    }
+}, { prefix = "<leader>l" })
+wk.register({
     s = {
         name = "shell"
     }
