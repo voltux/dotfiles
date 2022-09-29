@@ -13,18 +13,18 @@ scrolling:
 
 font:
   normal:
-    family: Monaco for Powerline
+    family: FantasqueSansMono Nerd Font Mono
     style: Regular
   bold:
-    family: Monaco for Powerline
+    family: FantasqueSansMono Nerd Font Mono
     style: Bold
   italic:
-    family: Monaco for Powerline
+    family: FantasqueSansMono Nerd Font Mono
     style: Italic
   bold_italic:
-    family: Monaco for Powerline
+    family: FantasqueSansMono Nerd Font Mono
     style: Bold Italic
-  size: 7.5
+  size: 10
   offset:
     x: 0
     y: 0
