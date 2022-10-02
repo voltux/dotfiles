@@ -9,7 +9,7 @@ vim.o.showcmd = true --show commands as they are typed
 vim.o.splitbelow = true --default split below
 vim.o.splitright = true --default split right
 vim.o.paste = false --just in case set paste is activated by default
-vim.o.laststatus = 2 --Always show statusline
+vim.o.laststatus = 3 --Always show statusline
 vim.o.ignorecase = true --ignore case on search
 vim.o.smartcase = true --but do not ignore it if I ask specifically for uppercase
 vim.o.history = 1000 --undo levels
@@ -54,6 +54,7 @@ vim.g.mapleader = " " --mapleader
 vim.g.tex_flavor = 'latex' --latex flavor
 vim.g.do_filetype_lua = 1 --let lua handle filetypes and fall back to filetype.vim if it fails
 vim.wo.fillchars = 'eob: ' --remove ~ tilde as character for lines after buffer end and leave empty
+vim.o.ch = 0 -- do not show empty command line by default, only when  a command is typed
 
 -- Abbreviations for common typos
 vim.cmd [[
