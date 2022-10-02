@@ -72,6 +72,7 @@ if command -v rg &> /dev/null; then
 fi
 
 # alias & additional configuration
+alias clear='clear -x'
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 autoload zcalc
