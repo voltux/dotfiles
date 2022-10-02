@@ -54,7 +54,6 @@ vim.g.mapleader = " " --mapleader
 vim.g.tex_flavor = 'latex' --latex flavor
 vim.g.do_filetype_lua = 1 --let lua handle filetypes and fall back to filetype.vim if it fails
 vim.wo.fillchars = 'eob: ' --remove ~ tilde as character for lines after buffer end and leave empty
-vim.o.ch = 0 -- do not show empty command line by default, only when  a command is typed
 
 -- Abbreviations for common typos
 vim.cmd [[
