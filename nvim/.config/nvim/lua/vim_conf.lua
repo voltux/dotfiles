@@ -72,14 +72,14 @@ vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>j', { noremap = true, desc = 'Move t
 vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>j', { noremap = true, desc = 'Move to left window' })
 
 --Terminal
-vim.api.nvim_set_keymap('n', '<leader>sj', ':split | :terminal<CR>',
+vim.api.nvim_set_keymap('n', '<leader>Sj', ':split | :terminal<CR>',
     { noremap = true, desc = 'New terminal buffer horizontal below' })
-vim.api.nvim_set_keymap('n', '<leader>sl', ':vsplit | :terminal<CR>',
+vim.api.nvim_set_keymap('n', '<leader>Sl', ':vsplit | :terminal<CR>',
     { noremap = true, desc = 'New terminal buffer vertical right' })
-vim.api.nvim_set_keymap('n', '<leader>ss', ':terminal<CR>', { noremap = true, desc = 'New terminal buffer' })
-vim.api.nvim_set_keymap('n', '<leader>sk', ':above split | :terminal<CR>',
+vim.api.nvim_set_keymap('n', '<leader>Ss', ':terminal<CR>', { noremap = true, desc = 'New terminal buffer' })
+vim.api.nvim_set_keymap('n', '<leader>Sk', ':above split | :terminal<CR>',
     { noremap = true, desc = 'New terminal buffer horizontal above' })
-vim.api.nvim_set_keymap('n', '<leader>sh', ':aboveleft vsplit | :terminal<CR>',
+vim.api.nvim_set_keymap('n', '<leader>Sh', ':aboveleft vsplit | :terminal<CR>',
     { noremap = true, desc = 'New terminal buffer vertical left' })
 vim.api.nvim_set_keymap('t', '<C-w>h', '<C-\\><C-n><C-w>h',
     { noremap = true, desc = 'Move to left window from terminal' })

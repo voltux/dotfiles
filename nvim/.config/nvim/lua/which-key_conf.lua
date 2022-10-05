@@ -21,7 +21,12 @@ wk.register({
 }, { prefix = "<leader>l" })
 wk.register({
     s = {
-        name = "shell"
+        name = "shell (toggleterm)"
+    }
+}, { prefix = "<leader>" })
+wk.register({
+    S = {
+        name = "shell (native)"
     }
 }, { prefix = "<leader>" })
 wk.register({
