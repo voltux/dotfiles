@@ -1,7 +1,40 @@
 require('neorg').setup {
     load = {
-        ["core.defaults"] = {},
-        ["core.integrations.telescope"] = {}, -- Enable the telescope module
+        ["core.defaults"]               = {},
+        ["core.integrations.telescope"] = {},
+        ["core.integrations.nvim-cmp"]  = {},
+        ["core.norg.dirman"]            = {
+            config = {
+                workspaces = {
+                    todo = os.getenv("HOME") .. "/Documents/todo"
+                },
+                index = "index.norg"
+            }
+        },
+        ["core.gtd.base"]               = {
+            config = {
+                workspace = "todo"
+            },
+        },
+        ["core.gtd.ui"]                 = {},
+        ["core.gtd.helpers"]            = {},
+        ["core.gtd.queries"]            = {},
+        ["core.norg.completion"]        = {
+            config = {
+                engine = "nvim-cmp"
+            }
+        },
+        ["core.norg.concealer"]         = {},
+        ["core.norg.journal"]           = {},
+        ["core.presenter"]              = {
+            config = {
+                zen_mode = "truezen"
+            }
+        },
+        ["core.export.markdown"]        = {},
+        ["core.norg.manoeuvre"]         = {},
+        ["core.export"]                 = {},
+
     }
 }
 local neorg_callbacks = require("neorg.callbacks")
