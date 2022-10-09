@@ -88,6 +88,7 @@ return require('packer').startup(function(use)
 	use { "folke/which-key.nvim" }
     use { "Pocco81/true-zen.nvim" }
     use { "folke/twilight.nvim" }
+    use { "rcarriga/nvim-notify" }
 
 	if packer_bootstrap then
 		require('packer').sync()

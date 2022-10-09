@@ -13,7 +13,6 @@ require("gruvbox").setup({
     overrides = {
         SignColumn = { bg = 'NONE' },
         LineNr = { bg = 'NONE' },
-        Normal = { bg = 'NONE' }
     },
 })
 vim.o.termguicolors = true

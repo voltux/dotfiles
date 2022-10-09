@@ -28,3 +28,4 @@ require('fugitive_conf')
 require('vim-go_conf')
 require('true-zen_conf')
 require('twilight_conf')
+require('notify').setup {}
