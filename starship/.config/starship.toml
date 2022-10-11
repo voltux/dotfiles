@@ -50,3 +50,6 @@ symbol = " "
 
 [git_branch]
 style = "bold cyan"
+
+[character]
+vimcmd_symbol = "[❮](bold cyan)"
