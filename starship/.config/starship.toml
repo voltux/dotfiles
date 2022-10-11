@@ -33,13 +33,20 @@ $character"""
 [directory]
 truncation_length = 0
 truncate_to_repo = false
+style = "bold yellow"
 
 [hostname]
 ssh_only = false
+format = "[$ssh_symbol$hostname]($style) "
 
 [username]
 show_always = true
+format = "[$user]($style)[@](blue)" 	
+style_user = "bold purple"
 
 [python]
 python_binary = ["python3", "python", "python2"]
 symbol = " "
+
+[git_branch]
+style = "bold cyan"
