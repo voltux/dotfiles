@@ -72,3 +72,6 @@ live_config_reload: true
 
 env:
   TERM: xterm-256color
+
+key_bindings:
+  - { key: F11, mods: Control, action: ToggleFullscreen }
