@@ -67,7 +67,7 @@ fi
 
 # alias & additional configuration
 alias clear='clear -x'
-[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+[ -f ~/.zsh_alias ] && source ~/.zsh_alias
 
 autoload zcalc
 
