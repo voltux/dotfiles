@@ -1,6 +1,7 @@
 format = """
 $username\
 $hostname\
+$container\
 $localip\
 $shlvl\
 $singularity\
@@ -26,7 +27,6 @@ $jobs\
 $battery\
 $time\
 $status\
-$container\
 $shell\
 $character"""
 
@@ -53,3 +53,6 @@ style = "bold cyan"
 
 [character]
 vimcmd_symbol = "[❮](bold cyan)"
+
+[container]
+style = "bold blue"
