@@ -13,13 +13,13 @@ format = "[$user]($style)[@](blue)"
 style_user = "bold purple"
 
 [git_branch]
-style = "bold cyan"
-
-[character]
-vimcmd_symbol = "[❮](bold cyan)"
+style = "bold blue"
 
 [container]
 style = "bold blue"
+
+[git_status]
+style = "bold cyan"
 
 [docker_context]
 disabled = true
