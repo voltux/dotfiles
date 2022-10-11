@@ -134,3 +134,6 @@ disabled = true
 
 [conda]
 disabled = true
+
+[cmd_duration]
+disabled = true
