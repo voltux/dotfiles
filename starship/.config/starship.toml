@@ -1,0 +1,13 @@
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[hostname]
+ssh_only = false
+
+[username]
+show_always = true
+
+[python]
+python_binary = ["python3", "python", "python2"]
+symbol = " "

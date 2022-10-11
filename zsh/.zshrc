@@ -23,12 +23,6 @@ command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
 set editing-mode vi
 bindkey -v
 
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[cyan]%} [% NORMAL]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}"
-    zle reset-prompt
-}
-
 # little zsh nuances
 zle -N zle-line-init
 zle -N zle-keymap-select
@@ -76,3 +70,8 @@ alias clear='clear -x'
 [ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
 
 autoload zcalc
+
+#Star Ship
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi
