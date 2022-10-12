@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
 	use 'rcarriga/cmp-dap'
 	use 'tpope/vim-fugitive'
 	use 'rafamadriz/friendly-snippets'
-	use 'mhinz/vim-signify'
+	use 'lewis6991/gitsigns.nvim'
 	use 'tpope/vim-rhubarb'
 	use { "benfowler/telescope-luasnip.nvim", requires = { 'L3MON4D3/LuaSnip' } }
 	use { 'nvim-telescope/telescope-ui-select.nvim' }

@@ -29,4 +29,4 @@ require('vim-go_conf')
 require('true-zen_conf')
 require('twilight_conf')
 require('notify').setup {}
-require("signify_conf")
+require("gitsigns_conf")
