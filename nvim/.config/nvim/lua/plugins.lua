@@ -78,7 +78,6 @@ return require('packer').startup(function(use)
 	use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 	use 'windwp/nvim-autopairs'
 	use 'numToStr/Comment.nvim'
-	use 'dhruvasagar/vim-table-mode'
 	use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 	use { 'mfussenegger/nvim-dap' }
 	use { 'mfussenegger/nvim-dap-python' }

@@ -30,11 +30,6 @@ wk.register({
     }
 }, { prefix = "<leader>" })
 wk.register({
-    t = {
-        name = "table mode"
-    }
-}, { prefix = "<leader>" })
-wk.register({
     w = {
         name = "whitespace"
     }
