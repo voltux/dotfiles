@@ -1,7 +1,7 @@
 require('treesitter_conf')
 require('telescope_conf')
 require('cmp_conf')
-require("nvim-autopairs").setup {}
+require('nvim-autopairs').setup {}
 require('Comment').setup()
 require('vim-better-whitespace_conf')
 require('undotree_conf')
@@ -29,4 +29,5 @@ require('vim-go_conf')
 require('true-zen_conf')
 require('twilight_conf')
 require('notify').setup {}
-require("gitsigns_conf")
+require('gitsigns_conf')
+require('null-ls_conf')
