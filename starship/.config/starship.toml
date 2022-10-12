@@ -83,16 +83,17 @@ style = "bold yellow"
 
 [hostname]
 ssh_only = false
-ssh_symbol = " 🌐"
+ssh_symbol = "🌐"
 trim_at = ""
 format = "[$ssh_symbol$hostname]($style) "
 
 [username]
 show_always = true
-format = "[$user]($style)[@](blue)" 	
+format = "[$user]($style) " 	
 style_user = "bold purple"
 
 [git_branch]
+format = "[$symbol$branch(:$remote_branch)]($style) "
 style = "bold blue"
 
 [container]
