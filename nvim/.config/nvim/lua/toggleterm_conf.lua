@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap("n", "<leader>ss", "<cmd>ToggleTerm<cr>",
 
 local lazygit = require('toggleterm.terminal').Terminal:new({
   cmd = "lazygit",
+  count = 5,
   dir = "git_dir",
   direction = "float",
   float_opts = {
