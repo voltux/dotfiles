@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 	use 'mbbill/undotree'
 	use 'christoomey/vim-tmux-navigator'
 	use 'jpalardy/vim-slime'
-	use 'kshenoy/vim-signature'
+	use 'chentoast/marks.nvim'
 	use "tversteeg/registers.nvim"
 	use 'tpope/vim-eunuch'
 	use 'tpope/vim-unimpaired'
