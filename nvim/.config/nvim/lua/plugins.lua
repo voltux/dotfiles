@@ -89,6 +89,7 @@ return require('packer').startup(function(use)
     use { "folke/twilight.nvim" }
     use { "rcarriga/nvim-notify" }
     use { "jose-elias-alvarez/null-ls.nvim" }
+    use { "simrat39/symbols-outline.nvim" }
 
 	if packer_bootstrap then
 		require('packer').sync()

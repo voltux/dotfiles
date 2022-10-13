@@ -3,7 +3,7 @@ require('nvim-lsp-installer').setup {}
 local lsp = require('lspconfig')
 local util = require('lspconfig.util')
 
--- configure keymaps on attach to a lsp server
+-- configure setup on attach to a lsp server
 local custom_attach = function(client, bufnr)
 
     -- setup diagnostics toggle on and off
