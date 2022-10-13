@@ -32,3 +32,4 @@ require('notify').setup {}
 require('gitsigns_conf')
 require('null-ls_conf')
 require('symbols-outline_conf')
+require('nvim-surround').setup {}

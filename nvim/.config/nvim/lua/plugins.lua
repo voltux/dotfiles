@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-eunuch'
 	use 'tpope/vim-unimpaired'
 	use 'tpope/vim-repeat'
-	use 'tpope/vim-surround'
+    use 'kylechui/nvim-surround'
 	use 'wellle/targets.vim'
 	use 'ntpeters/vim-better-whitespace'
 	use 'mg979/vim-visual-multi'
