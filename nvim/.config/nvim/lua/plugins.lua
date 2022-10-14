@@ -91,6 +91,7 @@ return require('packer').startup(function(use)
     use { "simrat39/symbols-outline.nvim" }
     use { "folke/neodev.nvim" }
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
+    use { "lewis6991/impatient.nvim" }
 
     if packer_bootstrap then
         require('packer').sync()
