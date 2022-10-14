@@ -89,6 +89,7 @@ return require('packer').startup(function(use)
     use { "folke/twilight.nvim" }
     use { "rcarriga/nvim-notify" }
     use { "simrat39/symbols-outline.nvim" }
+    use { "folke/neodev.nvim" }
 
     if packer_bootstrap then
         require('packer').sync()

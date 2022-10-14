@@ -1,4 +1,5 @@
 require('nvim-lsp-installer').setup {}
+require("neodev").setup({})
 
 local lsp = require('lspconfig')
 local util = require('lspconfig.util')
