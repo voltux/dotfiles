@@ -88,7 +88,6 @@ return require('packer').startup(function(use)
     use { "Pocco81/true-zen.nvim" }
     use { "folke/twilight.nvim" }
     use { "rcarriga/nvim-notify" }
-    use { "jose-elias-alvarez/null-ls.nvim" }
     use { "simrat39/symbols-outline.nvim" }
 
     if packer_bootstrap then

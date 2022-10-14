@@ -30,7 +30,6 @@ require('true-zen_conf')
 require('twilight_conf')
 require('notify').setup {}
 require('gitsigns_conf')
-require('null-ls_conf')
 require('symbols-outline_conf')
 require('nvim-surround').setup {}
 require('marks').setup {}
