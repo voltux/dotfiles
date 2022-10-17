@@ -83,15 +83,16 @@ return require('packer').startup(function(use)
     use { 'mfussenegger/nvim-dap-python' }
     use { 'rcarriga/nvim-dap-ui', requires = { 'mfussenegger/nvim-dap' } }
     use { 'folke/trouble.nvim' }
-    use { "akinsho/toggleterm.nvim", tag = '*' }
-    use { "folke/which-key.nvim" }
-    use { "Pocco81/true-zen.nvim" }
-    use { "folke/twilight.nvim" }
-    use { "rcarriga/nvim-notify" }
-    use { "simrat39/symbols-outline.nvim" }
-    use { "folke/neodev.nvim" }
-    use { "JoosepAlviste/nvim-ts-context-commentstring" }
-    use { "lewis6991/impatient.nvim" }
+    use { 'akinsho/toggleterm.nvim', tag = '*' }
+    use { 'folke/which-key.nvim' }
+    use { 'Pocco81/true-zen.nvim' }
+    use { 'folke/twilight.nvim' }
+    use { 'rcarriga/nvim-notify' }
+    use { 'simrat39/symbols-outline.nvim' }
+    use { 'folke/neodev.nvim' }
+    use { 'JoosepAlviste/nvim-ts-context-commentstring' }
+    use { 'lewis6991/impatient.nvim' }
+    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
     if packer_bootstrap then
         require('packer').sync()

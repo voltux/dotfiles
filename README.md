@@ -20,6 +20,7 @@ These configuration files clearly reflect my personal taste. I try to maintain t
 - ripgrep (grep replacement)                         -> https://github.com/BurntSushi/ripgrep
 - bat (cat replacement)                              -> https://github.com/sharkdp/bat
 - lazygit (git tui tool)                             -> https://github.com/jesseduffield/lazygit
+- deno (typescript and javascript runtime)           -> https://deno.land/
 
 ## Installation
 

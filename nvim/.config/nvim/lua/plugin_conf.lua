@@ -33,3 +33,4 @@ require('gitsigns_conf')
 require('symbols-outline_conf')
 require('nvim-surround').setup {}
 require('marks').setup {}
+require('peek_conf')
