@@ -1,5 +1,5 @@
 require('vim_conf')
-require('impatient')
+pcall(require, 'impatient')
 require('plugins')
 require('lsp_conf')
 require('plugin_conf')
