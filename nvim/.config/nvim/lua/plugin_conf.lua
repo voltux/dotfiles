@@ -34,3 +34,4 @@ require('symbols-outline_conf')
 require('nvim-surround').setup {}
 require('marks').setup {}
 require('peek_conf')
+require('boole_conf')

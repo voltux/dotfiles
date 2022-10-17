@@ -93,6 +93,7 @@ return require('packer').startup(function(use)
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
     use { 'lewis6991/impatient.nvim' }
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+    use { 'nat-418/boole.nvim'}
 
     if packer_bootstrap then
         require('packer').sync()
