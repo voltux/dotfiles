@@ -9,7 +9,7 @@ vim.o.showcmd = true --show commands as they are typed
 vim.o.splitbelow = true --default split below
 vim.o.splitright = true --default split right
 vim.o.paste = false --just in case set paste is activated by default
-vim.o.laststatus = 3 --Always show statusline
+vim.o.laststatus = 3 --Always show statusline in single statusline mode
 vim.o.ignorecase = true --ignore case on search
 vim.o.smartcase = true --but do not ignore it if I ask specifically for uppercase
 vim.o.history = 1000 --undo levels
@@ -48,7 +48,6 @@ vim.cmd [[ set tags=./tags;/ "use only local tags ]]
 vim.cmd [[ set wildignore+=.pyc,.swp "ignore certain filetypes in wildmenu ]]
 vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
 vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
-vim.cmd [[ hi Folded ctermbg=016 ]]
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
 vim.g.mapleader = " " --mapleader
 vim.g.tex_flavor = 'latex' --latex flavor
