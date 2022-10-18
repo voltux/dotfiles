@@ -36,3 +36,4 @@ require('marks').setup {}
 require('peek_conf')
 require('boole_conf')
 require('vifm_conf')
+require('zen_mode_conf')

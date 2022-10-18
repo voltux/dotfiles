@@ -64,12 +64,6 @@ vim.cmd [[
     cnoreabbrev   Qa   qa
 ]]
 
--- Moving between splits
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-W>j', { noremap = true, desc = 'Move to upper window' })
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-W>j', { noremap = true, desc = 'Move to lower window' })
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-W>j', { noremap = true, desc = 'Move to right window' })
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-W>j', { noremap = true, desc = 'Move to left window' })
-
 --Terminal
 vim.api.nvim_set_keymap('n', '<leader>Sj', ':split | :terminal<CR>',
     { noremap = true, desc = 'New terminal buffer horizontal below' })
@@ -91,10 +85,6 @@ vim.api.nvim_set_keymap('t', '<C-w>l', '<C-\\><C-n><C-w>l',
 vim.api.nvim_set_keymap('t', '<C-Space>', '<C-\\><C-n>',
     { noremap = true, desc = 'Switch from terminal mode to normal mode' })
 vim.cmd [[tnoremap <expr> <C-W>" '<C-\><C-N>"'.nr2char(getchar()).'pi']]
-vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], { noremap = true, desc = 'Move to left window from terminal' })
-vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], { noremap = true, desc = 'Move to lower window from terminal' })
-vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], { noremap = true, desc = 'Move to right window from terminal' })
-vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], { noremap = true, desc = 'Move to right window from terminal' })
 vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no ]]
 vim.cmd [[ autocmd TermOpen * startinsert ]]
 if vim.fn.executable("zsh") then

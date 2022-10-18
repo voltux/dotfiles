@@ -1,6 +1,6 @@
 -- helper functions
 --- Check if a file or directory exists in this path
-function exists(file)
+local function exists(file)
     local ok, err, code = os.rename(file, file)
     if not ok then
         if code == 13 then
@@ -12,7 +12,7 @@ function exists(file)
 end
 
 --- Check if a directory exists in this path
-function isdir(path)
+local function isdir(path)
     -- "/" works on both Unix and Windows
     return exists(path .. "/")
 end
@@ -38,7 +38,7 @@ local basic_load = {
     ["core.norg.journal"]           = {},
     ["core.presenter"]              = {
         config = {
-            zen_mode = "truezen"
+            zen_mode = "zen-mode"
         }
     },
     ["core.export.markdown"]        = {},
