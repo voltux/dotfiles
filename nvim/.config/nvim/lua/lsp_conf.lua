@@ -130,3 +130,11 @@ lsp.yamlls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.html.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
+lsp.marksman.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
