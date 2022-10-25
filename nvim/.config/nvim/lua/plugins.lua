@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip' -- autocompletion (luasnip snippets)
     use 'rcarriga/cmp-dap' -- autocompletion (debugger)
     use 'tpope/vim-fugitive' -- git handler
-    use 'rafamadriz/friendly-snippets' -- rich snippet collection
+    use 'honza/vim-snippets' -- rich snippet collection
     use 'lewis6991/gitsigns.nvim' -- git modifications explorer/handler
     use 'tpope/vim-rhubarb' -- open current git project on github
     use { "benfowler/telescope-luasnip.nvim", requires = { 'L3MON4D3/LuaSnip' } } -- telescope extension for luasnip snippets
