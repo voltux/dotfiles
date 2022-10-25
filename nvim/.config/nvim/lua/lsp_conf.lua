@@ -138,3 +138,7 @@ lsp.marksman.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.rust_analyzer.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
