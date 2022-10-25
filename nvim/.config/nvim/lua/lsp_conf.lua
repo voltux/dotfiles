@@ -101,7 +101,6 @@ lsp.perlnavigator.setup {
 lsp.bashls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
-    root_dir = util.path.dirname
 }
 lsp.ccls.setup {
     on_attach = custom_attach,
