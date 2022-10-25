@@ -122,3 +122,11 @@ lsp.dockerls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.jsonls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
+lsp.yamlls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
