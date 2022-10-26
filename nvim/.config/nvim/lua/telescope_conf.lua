@@ -28,7 +28,8 @@ require("telescope").setup {
             base_dirs = {
                 telescope_project_base_dirs
             },
-            order_by = "asc"
+            order_by = "asc",
+            sync_with_nvim_tree = true
         }
     }
 }
