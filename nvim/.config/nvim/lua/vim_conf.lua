@@ -87,8 +87,10 @@ vim.api.nvim_set_keymap('t', '<C-Space>', '<C-\\><C-n>',
 vim.cmd [[tnoremap <expr> <C-W>" '<C-\><C-N>"'.nr2char(getchar()).'pi']]
 vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no ]]
 vim.cmd [[ autocmd TermOpen * startinsert ]]
-if vim.fn.executable("zsh")>0 then
+if vim.fn.executable("zsh") > 0 then
     vim.o.shell = "zsh"
+elseif vim.fn.executable("bash") > 0 then
+    vim.o.shell = "bash"
 end
 
 --Change current dir to current file pwd
