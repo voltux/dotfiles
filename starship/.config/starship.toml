@@ -179,7 +179,8 @@ disabled = true
 disabled = true
 
 [python]
-disabled = true
+format = '[(\($virtualenv\) )]($style)'
+style = "bold green"
 
 [raku]
 disabled = true
