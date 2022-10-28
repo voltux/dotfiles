@@ -6,6 +6,7 @@ vim.o.wildmenu = true --show menu for options in command mode
 vim.o.wildignorecase = true --ignore case for wildmenu in command mode
 vim.o.errorbells = false --no error bells
 vim.o.showcmd = true --show commands as they are typed
+vim.o.showmode = false -- do not show insert mode in command line
 vim.o.splitbelow = true --default split below
 vim.o.splitright = true --default split right
 vim.o.paste = false --just in case set paste is activated by default
