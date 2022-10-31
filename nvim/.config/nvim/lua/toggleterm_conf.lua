@@ -1,4 +1,6 @@
-require('toggleterm').setup {}
+require('toggleterm').setup {
+    shade_terminals = false,
+}
 vim.api.nvim_set_keymap("n", "<leader>sf", "<cmd>ToggleTerm direction=float<cr>",
     { silent = true, noremap = true, desc = 'Toggle floating terminal' })
 vim.api.nvim_set_keymap("n", "<leader>sl", "<cmd>ToggleTerm direction=vertical size=120<cr>",
