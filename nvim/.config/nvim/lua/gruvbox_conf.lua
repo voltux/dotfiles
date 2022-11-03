@@ -14,7 +14,7 @@ require("gruvbox").setup({
         SignColumn = { bg = 'NONE' },
         LineNr = { bg = 'NONE' },
         Error = { bg = 'NONE' },
-        ErrorMsg = { bg = 'NONE', fg = '#cc241d' },
+        ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
     },
 })
 vim.o.termguicolors = true
