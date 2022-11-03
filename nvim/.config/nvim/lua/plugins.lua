@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
     use { 'nvim-neorg/neorg-telescope' } -- neorg integration with telescope
     use 'nvim-telescope/telescope.nvim' -- fuzzy finding anything anywhere
     use 'nvim-treesitter/nvim-treesitter' -- enhanced syntax by treesitter
-    use 'nvim-treesitter/nvim-treesitter-textobjects' -- extend default text objects with treesitter syntax awareness
+    use { 'nvim-treesitter/nvim-treesitter-textobjects', requires = 'nvim-treesitter/nvim-treesitter' } -- extend default text objects with treesitter syntax awareness
     use 'neovim/nvim-lspconfig' -- easily config neovim lsp
     use 'williamboman/nvim-lsp-installer' -- easily install/handle lsp servers directly from neovim
     use 'lukas-reineke/indent-blankline.nvim' -- indent lines
