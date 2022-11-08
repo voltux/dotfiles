@@ -96,6 +96,20 @@ return require('packer').startup(function(use)
     use { 'nat-418/boole.nvim' } -- enhance C-A, C-X
     use { 'vifm/vifm.vim' } -- vifm file manager inside neovim
     use { 'folke/zen-mode.nvim' } -- zen mode, enhanced window zooming, neorg presentation friendly
+    use({
+        "folke/noice.nvim",
+        config = function()
+            require("noice").setup()
+        end,
+        requires = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    })
 
     if packer_bootstrap then
         require('packer').sync()
