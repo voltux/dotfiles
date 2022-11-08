@@ -1,4 +1,4 @@
-if vim.fn.exists('g:neovide') then
+if vim.fn.exists('g:neovide') > 0 then
     require("gruvbox").setup({
         undercurl = true,
         underline = true,
