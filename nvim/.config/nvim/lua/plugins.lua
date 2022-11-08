@@ -101,15 +101,9 @@ return require('packer').startup(function(use)
         config = function()
             require("noice").setup()
         end,
-        requires = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim",
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-            "rcarriga/nvim-notify",
-        }
+        requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", }
     })
+    use {'glepnir/dashboard-nvim'}
 
     if packer_bootstrap then
         require('packer').sync()
