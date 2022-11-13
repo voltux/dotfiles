@@ -32,7 +32,7 @@ local custom_attach = function(client, bufnr)
         { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to next" })
     vim.keymap.set('n', '[w', vim.diagnostic.goto_prev,
         { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to previous" })
-    vim.keymap.set('n', '<leader>ch', vim.lsp.buf.hover,
+    vim.keymap.set('n', '<leader>ch', '<cmd>lua vim.lsp.buf.hover() vim.lsp.buf.hover()<cr>',
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP show hovering help" })
     vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP definition" })
