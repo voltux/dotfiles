@@ -67,7 +67,8 @@ return require('packer').startup(function(use)
     use 'tommcdo/vim-exchange' -- exchange mode for vim to swap texts between two text objects
     use 'fatih/vim-go' -- go filetype enhancements, commands and project handling
     use 'nvim-lua/plenary.nvim' -- lua module for asynchronous programming (dependancy lib)
-    use { 'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim' } -- org mode but for vimmers :)
+    use { 'nvim-neorg/neorg', requires = 'nvim-lua/plenary.nvim', ft = 'norg',
+        config = function() require('neorg_conf') end } -- org mode but for vimmers :)
     use { 'nvim-neorg/neorg-telescope' } -- neorg integration with telescope
     use 'nvim-telescope/telescope.nvim' -- fuzzy finding anything anywhere
     use 'nvim-treesitter/nvim-treesitter' -- enhanced syntax by treesitter
