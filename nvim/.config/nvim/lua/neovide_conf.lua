@@ -11,8 +11,14 @@ if vim.fn.exists('g:neovide') > 0 then
         invert_intend_guides = false,
         inverse = true, -- invert background for search, diffs, statuslines and errors
         contrast = "hard", -- can be "hard", "soft" or empty string
+        overrides = {
+            SignColumn = { bg = 'NONE' },
+            LineNr = { bg = 'NONE' },
+            Error = { bg = 'NONE' },
+            ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
+        },
     })
     vim.o.background = 'dark'
+    vim.o.guifont = "DejaVuSansMono_Nerd_Font_Mono:h9"
     vim.cmd("colorscheme gruvbox")
-    vim.o.guifont = "Monaco_for_Powerline:h9"
 end
