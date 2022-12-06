@@ -16,9 +16,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor
 command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
 
-# custom script to update path environment variable
-[ -f $HOME/Scripts/bin/update_path ] && source $HOME/Scripts/bin/update_path
-
 # vi mode
 set editing-mode vi
 bindkey -v
