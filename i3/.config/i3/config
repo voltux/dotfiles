@@ -153,6 +153,9 @@ bindsym $mod+p workspace prev
 bindsym $mod+Shift+n move workspace to output right
 bindsym $mod+Shift+p move workspace to output left
 
+# focus on window activation (clicking url brings the browser to front)
+focus_on_window_activation focus
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
