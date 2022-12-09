@@ -55,6 +55,8 @@ vim.g.tex_flavor = 'latex' --latex flavor
 vim.g.do_filetype_lua = 1 --let lua handle filetypes and fall back to filetype.vim if it fails
 vim.cmd [[ set fillchars+=eob:\ ]]--remove ~ tilde as character for lines after buffer end and leave empty
 vim.o.completeopt='menu,menuone,noselect' --autocompletion options
+vim.o.termguicolors = true
+vim.o.background = 'dark'
 
 -- Abbreviations for common typos
 vim.cmd [[

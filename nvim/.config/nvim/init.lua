@@ -1,5 +1,4 @@
 require('vim_conf')
 pcall(require, 'impatient')
 require('plugins')
-require('lsp_conf')
-require('plugin_conf')
+require('neovide_conf')

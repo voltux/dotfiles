@@ -1,11 +1,7 @@
-require('nvim-lsp-installer').setup {}
-require("neodev").setup({})
-
 local lsp = require('lspconfig')
-local util = require('lspconfig.util')
 
 -- configure setup on attach to a lsp server
-local custom_attach = function(client, bufnr)
+local custom_attach = function(_, bufnr)
 
     -- setup diagnostics toggle on and off
     vim.g.diagnostics_visible = true

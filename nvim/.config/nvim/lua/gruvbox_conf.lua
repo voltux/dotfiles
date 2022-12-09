@@ -17,6 +17,4 @@ require("gruvbox").setup({
         ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
     },
 })
-vim.o.termguicolors = true
-vim.o.background = 'dark'
 vim.cmd [[ colorscheme gruvbox ]] --keeping it here instead of vim_conf.lua because the plugin needs to be configured before the call
