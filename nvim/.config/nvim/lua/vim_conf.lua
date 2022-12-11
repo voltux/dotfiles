@@ -114,7 +114,6 @@ local tmux_copy_mode_toggle = function()
         vim.o.signcolumn = "yes"
         vim.o.number = true
         vim.o.relativenumber = true
-        vim.cmd [[ IndentBlanklineEnable ]]
     end
 end
 
