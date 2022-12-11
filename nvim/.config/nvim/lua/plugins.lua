@@ -92,7 +92,7 @@ return require('packer').startup(function(use)
     use { 'folke/which-key.nvim', config = function() require('which-key_conf') end } -- show available keymaps + description as you type them
     use { 'Pocco81/true-zen.nvim', config = function() require('true-zen_conf') end } -- zen mode, enhanced window zooming
     use { 'folke/twilight.nvim', config = function() require('twilight_conf') end } -- dim interactive portions of code you are editing
-    use { 'rcarriga/nvim-notify', config = function() require('notify').setup {} end } -- notification system
+    -- use { 'rcarriga/nvim-notify', config = function() require('notify').setup {} end } -- notification system
     use { 'simrat39/symbols-outline.nvim', config = function() require('symbols-outline_conf') end } -- minimap
     use { 'folke/neodev.nvim', config = function() require('neodev').setup({}) end } -- init.lua syntax awareness and completion
     use { 'JoosepAlviste/nvim-ts-context-commentstring' } -- set commentstring option based on the cursor location in the file.
