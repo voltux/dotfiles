@@ -3,3 +3,4 @@ vim.api.nvim_set_keymap('n', '<leader>pi', ':IndentBlanklineToggle<CR>',
 require('indent_blankline').setup {
     filetype_exclude = { 'dashboard' }
 }
+vim.g.indent_blankline_enabled = false
