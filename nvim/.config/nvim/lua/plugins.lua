@@ -128,12 +128,15 @@ return require('packer').startup(function(use)
     } -- enhanced syntax by treesitter
     use { 'nvim-treesitter/nvim-treesitter-textobjects', requires = 'nvim-treesitter/nvim-treesitter' } -- extend default text objects with treesitter syntax awareness
     use { 'neovim/nvim-lspconfig',
-        requires = { 'williamboman/nvim-lsp-installer' },
+        requires = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
         config = function() require('lsp_conf') end
     } -- easily config neovim lsp
-    use { 'williamboman/nvim-lsp-installer',
-        config = function() require('nvim-lsp-installer').setup {} end
-    } -- easily install/handle lsp servers directly from neovim
+    use { 'williamboman/mason.nvim',
+        config = function() require('mason').setup {} end
+    } -- easily install/update lsp servers directly from neovim
+    use { 'williamboman/mason-lspconfig',
+        config = function() require('mason-lspconfig').setup {} end
+    } -- bridge between mason and nvim-lspconfig
     use { 'lukas-reineke/indent-blankline.nvim',
         config = function() require('indent-blankline_conf') end
     } -- indent lines
