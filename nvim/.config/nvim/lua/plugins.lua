@@ -149,10 +149,6 @@ return require('packer').startup(function(use)
     use { 'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end
     } -- syntax aware commenting
-    use { 'glacambre/firenvim',
-        run = function() vim.fn['firenvim#install'](0) end,
-        config = function() require('firenvim_conf') end
-    } -- embed neovim on the browser
     use { 'mfussenegger/nvim-dap',
         config = function() require('dap_conf') end
     } -- debugger engine
