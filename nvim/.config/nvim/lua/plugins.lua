@@ -201,7 +201,6 @@ return require('packer').startup(function(use)
     use { 'folke/zen-mode.nvim',
         config = function() require('zen_mode_conf') end
     } -- zen mode, enhanced window zooming, neorg presentation friendly
-    use { 'ggandor/leap.nvim', config = function() require('leap').add_default_mappings() end } -- jump around quickly
 
     if packer_bootstrap then
         require('packer').sync()
