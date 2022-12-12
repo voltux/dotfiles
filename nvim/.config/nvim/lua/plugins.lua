@@ -132,7 +132,12 @@ return require('packer').startup(function(use)
         config = function() require('lsp_conf') end
     } -- easily config neovim lsp
     use { 'williamboman/mason.nvim',
-        config = function() require('mason').setup {} end
+        config = function()
+            require('mason').setup {
+                ensure_installed = { "sumneko_lua", "gopls" },
+                automatic_installation = true
+            }
+        end
     } -- easily install/update lsp servers directly from neovim
     use { 'williamboman/mason-lspconfig',
         config = function() require('mason-lspconfig').setup {} end
