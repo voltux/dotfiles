@@ -104,7 +104,6 @@ return require('packer').startup(function(use)
     } -- telescope extension for luasnip snippets
     use { 'nvim-telescope/telescope-ui-select.nvim' } -- telescope extension to use telescope as selection ui instead of vim command line
     use { 'nvim-telescope/telescope-file-browser.nvim' } -- telescope extension file browser
-    use { 'nvim-telescope/telescope-project.nvim' } -- telescope extension project finder
     use { 'plasticboy/vim-markdown' } -- markdown filetype enhancements
     use { 'mattn/emmet-vim' } -- html easy text generation
     use { 'neovimhaskell/haskell-vim' } -- haskell filetype enhancements
@@ -132,12 +131,7 @@ return require('packer').startup(function(use)
         config = function() require('lsp_conf') end
     } -- easily config neovim lsp
     use { 'williamboman/mason.nvim',
-        config = function()
-            require('mason').setup {
-                ensure_installed = { "sumneko_lua", "gopls" },
-                automatic_installation = true
-            }
-        end
+        config = function() require('mason').setup {} end
     } -- easily install/update lsp servers directly from neovim
     use { 'williamboman/mason-lspconfig',
         config = function() require('mason-lspconfig').setup {} end
@@ -178,9 +172,6 @@ return require('packer').startup(function(use)
     use { 'Pocco81/true-zen.nvim',
         config = function() require('true-zen_conf') end
     } -- zen mode, enhanced window zooming
-    use { 'folke/twilight.nvim',
-        config = function() require('twilight_conf') end
-    } -- dim interactive portions of code you are editing
     use { 'simrat39/symbols-outline.nvim',
         config = function() require('symbols-outline_conf') end
     } -- minimap
@@ -199,9 +190,6 @@ return require('packer').startup(function(use)
     use { 'vifm/vifm.vim',
         config = function() require('vifm_conf') end
     } -- vifm file manager inside neovim
-    use { 'folke/zen-mode.nvim',
-        config = function() require('zen_mode_conf') end
-    } -- zen mode, enhanced window zooming, neorg presentation friendly
 
     if packer_bootstrap then
         require('packer').sync()

@@ -1,20 +1,4 @@
 --Telescope
-local homepath = os.getenv("HOME")
-local telescope_project_base_dirs = {}
-local possible_base_dirs = {
-    homepath .. "/workspace",
-    homepath .. "/Projects",
-    homepath .. "/Scripts",
-    homepath .. "/sdev-legacy/workspace",
-    "/manager",
-}
-
-for _, dirname in ipairs(possible_base_dirs) do
-    if vim.fn.isdirectory(dirname) ~= 0 then
-        table.insert(telescope_project_base_dirs, dirname)
-    end
-end
-
 require("telescope").setup {
     defaults = {
         file_ignore_patterns = { "venv/.*" }
@@ -24,18 +8,10 @@ require("telescope").setup {
             require("telescope.themes").get_dropdown {}
         },
         file_browser = {},
-        project = {
-            base_dirs = {
-                telescope_project_base_dirs
-            },
-            order_by = "asc",
-            sync_with_nvim_tree = true
-        }
     }
 }
 require('telescope').load_extension('ui-select')
 require('telescope').load_extension('luasnip')
-require('telescope').load_extension('project')
 vim.api.nvim_set_keymap('n', '<leader>f%', ':Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
 vim.api.nvim_set_keymap('n', '<leader>f/', ':Telescope search_history<CR>',
@@ -104,6 +80,3 @@ vim.api.nvim_set_keymap('n', '<leader>f%', ':Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
 vim.api.nvim_set_keymap('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
     { noremap = true, desc = 'Telescope file browser' })
-vim.api.nvim_set_keymap('n', '<leader>fp',
-    "<cmd>lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>",
-    { noremap = true, silent = true, desc = 'Telescope find project' })
