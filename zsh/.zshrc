@@ -47,7 +47,6 @@ fi
 # replace cat with bat if bat is installed
 export FZF_PREVIEWER="cat"
 if command -v bat &> /dev/null; then
-    export BAT_THEME="gruvbox-dark"
     alias bat="bat -pp --color=always"
     alias cat="bat"
     export FZF_PREVIEWER="bat -pp --color=always --line-range :500 {}"
