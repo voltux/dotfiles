@@ -81,7 +81,6 @@ return require('packer').startup(function(use)
     use { 'hrsh7th/cmp-path' } -- autocompletion (filepath based)
     use { 'hrsh7th/cmp-cmdline' } -- autocompletion (command based)
     use { 'hrsh7th/nvim-cmp',
-        requires = { 'L3MON4D3/LuaSnip' },
         config = function() require('cmp_conf') end
     } -- autocompletion engine
     use { 'hrsh7th/cmp-nvim-lsp-signature-help' } -- autocompletion on lsp function/class signature
@@ -89,7 +88,9 @@ return require('packer').startup(function(use)
     use { 'L3MON4D3/LuaSnip',
         config = function() require('luasnip_conf') end
     } -- snippet engine
-    use { 'saadparwaiz1/cmp_luasnip' } -- autocompletion (luasnip snippets)
+    use { 'saadparwaiz1/cmp_luasnip',
+        requires = { 'hrsh7th/nvim-cmp' }
+    } -- autocompletion (luasnip snippets)
     use { 'tpope/vim-fugitive',
         config = function() require('fugitive_conf') end
     } -- git handler
