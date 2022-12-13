@@ -10,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="%d/%m/%y %T"
 
-plugins=(tmux common-aliases git vi-mode archlinux docker colored-man-pages kubectl ubuntu z)
+plugins=(tmux common-aliases git docker colored-man-pages kubectl ubuntu z)
 source $ZSH/oh-my-zsh.sh
 
 # Preferred editor
