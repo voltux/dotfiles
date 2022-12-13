@@ -30,18 +30,6 @@ command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
     && [ -f /usr/share/fzf/completion.zsh ]\
     && source /usr/share/fzf/completion.zsh
 
-# add fzf to path
-# replace cat with bat if bat is installed
-export FZF_PREVIEWER="cat"
-if command -v bat &> /dev/null; then
-    export BAT_THEME="gruvbox-dark"
-    alias bat="bat -pp --color=always"
-    alias cat="bat"
-    export FZF_PREVIEWER="bat -pp --color=always --line-range :500 {}"
-fi
-
-export FZF_DEFAULT_OPTS="--multi --border --preview '$FZF_PREVIEWER' --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
-
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
 fi
@@ -54,6 +42,18 @@ fi
 if [[ $PATH != *"$HOME/.local/bin"* ]]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
+
+# add fzf to path
+# replace cat with bat if bat is installed
+export FZF_PREVIEWER="cat"
+if command -v bat &> /dev/null; then
+    export BAT_THEME="gruvbox-dark"
+    alias bat="bat -pp --color=always"
+    alias cat="bat"
+    export FZF_PREVIEWER="bat -pp --color=always --line-range :500 {}"
+fi
+
+export FZF_DEFAULT_OPTS="--multi --border --preview '$FZF_PREVIEWER' --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 
 # check if rg is installed to modify default fzf mapping
 if command -v rg &> /dev/null; then
