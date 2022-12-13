@@ -16,26 +16,6 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor
 command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
 
-# vi mode
-set editing-mode vi
-bindkey -v
-
-# keyboard delay time
-if command -v xset &> /dev/null; then
-    xset r rate 200 50
-fi
-
-# little zsh nuances
-zle -N zle-line-init
-zle -N zle-keymap-select
-export KEYTIMEOUT=1
-
-# use the vi navigation keys in menu completion
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
 # fzf scripts
 [ -f $HOME/.fzf/shell/completion.zsh ]\
     && source $HOME/.fzf/shell/completion.zsh\
