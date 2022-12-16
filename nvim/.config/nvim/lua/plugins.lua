@@ -7,9 +7,7 @@ local ensure_packer = function()
         return true
     end
     return false
-end
-
-local packer_bootstrap = ensure_packer()
+end local packer_bootstrap = ensure_packer()
 
 vim.api.nvim_set_keymap('n', '<leader>pu', '<cmd>PackerSync<cr>', { noremap = true, desc = 'Packer synchronize plugins' })
 
@@ -180,8 +178,8 @@ return require('packer').startup(function(use)
     use { 'folke/twilight.nvim',
         config = function() require('twilight_conf') end
     } -- dim interactive portions of code you are editing
-    use { 'simrat39/symbols-outline.nvim',
-        config = function() require('symbols-outline_conf') end
+    use { 'stevearc/aerial.nvim',
+        config = function() require('aerial_conf') end
     } -- minimap
     use { 'folke/neodev.nvim',
         config = function() require('neodev').setup({}) end
