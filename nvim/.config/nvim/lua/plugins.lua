@@ -201,6 +201,7 @@ return require('packer').startup(function(use)
     use { 'folke/zen-mode.nvim',
         config = function() require('zen_mode_conf') end
     } -- zen mode, enhanced window zooming, neorg presentation friendly
+    use { 'kosayoda/nvim-lightbulb' }
 
     if packer_bootstrap then
         require('packer').sync()
