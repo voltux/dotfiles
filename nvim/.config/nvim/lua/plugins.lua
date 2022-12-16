@@ -7,7 +7,9 @@ local ensure_packer = function()
         return true
     end
     return false
-end local packer_bootstrap = ensure_packer()
+end
+
+local packer_bootstrap = ensure_packer()
 
 vim.api.nvim_set_keymap('n', '<leader>pu', '<cmd>PackerSync<cr>', { noremap = true, desc = 'Packer synchronize plugins' })
 
