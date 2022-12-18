@@ -203,6 +203,9 @@ return require('packer').startup(function(use)
         config = function() require('zen_mode_conf') end
     } -- zen mode, enhanced window zooming, neorg presentation friendly
     use { 'kosayoda/nvim-lightbulb' }
+    use { 'j-hui/fidget.nvim',
+        config = function() require('fidget').setup {} end
+    } -- lsp progress eye candy
 
     if packer_bootstrap then
         require('packer').sync()
