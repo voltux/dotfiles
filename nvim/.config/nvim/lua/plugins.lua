@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-eunuch' } -- add common shell commands to vim command mode
     use { 'tpope/vim-unimpaired' } -- mappings to move in all kinds of vim lists
     use { 'tpope/vim-repeat' } -- enhance the . operator for more complex tasks
+    use { 'tpope/vim-sleuth' } -- detect tabstop/shiftwidth
     use { 'kylechui/nvim-surround',
         config = function() require('nvim-surround').setup {} end
     } -- surround text objects with opening/closing symbols
