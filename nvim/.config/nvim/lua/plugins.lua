@@ -141,7 +141,8 @@ return require('packer').startup(function(use)
         config = function() require('indent-blankline_conf') end
     } -- indent lines
     use { 'sindrets/diffview.nvim',
-        requires = 'nvim-lua/plenary.nvim'
+        requires = 'nvim-lua/plenary.nvim',
+        config = function() require('diffview_conf') end
     } -- nice view for git diff
     use { 'windwp/nvim-autopairs',
         config = function() require('nvim-autopairs').setup {} end
