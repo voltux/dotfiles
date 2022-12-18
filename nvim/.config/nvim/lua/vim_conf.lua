@@ -42,6 +42,7 @@ vim.o.foldnestmax = 10 --maximum nested folds
 vim.o.cursorline = true --show cursorline
 vim.o.signcolumn = 'yes' --always show signcolumn
 vim.o.scrollback = 100000 --max lines for terminal scrollback
+vim.o.breakindent = true --maintain indentation when breaking long lines 
 vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
 vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
 vim.cmd [[ set formatoptions+=j "when joining lines join comments ]]
