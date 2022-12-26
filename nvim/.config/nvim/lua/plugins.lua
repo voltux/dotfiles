@@ -117,6 +117,7 @@ return require('packer').startup(function(use)
     use { 'nvim-neorg/neorg',
         requires = 'nvim-lua/plenary.nvim',
         ft = 'norg',
+        tag = '0.0.18',
         config = function() require('neorg_conf') end
     } -- org mode but for vimmers :)
     use { 'nvim-neorg/neorg-telescope' } -- neorg integration with telescope
