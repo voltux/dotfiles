@@ -208,6 +208,7 @@ return require('packer').startup(function(use)
     use { 'j-hui/fidget.nvim',
         config = function() require('fidget').setup {} end
     } -- lsp progress eye candy
+    use { 'eandrju/cellular-automaton.nvim' } -- make your code rain or play game of life :p
 
     if packer_bootstrap then
         require('packer').sync()
