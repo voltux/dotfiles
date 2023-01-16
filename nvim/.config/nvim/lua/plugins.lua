@@ -209,6 +209,13 @@ return require('packer').startup(function(use)
         config = function() require('fidget').setup {} end
     } -- lsp progress eye candy
     use { 'eandrju/cellular-automaton.nvim' } -- make your code rain or play game of life :p
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        requires = "nvim-treesitter/nvim-treesitter",
+    } -- manage annotations
 
     if packer_bootstrap then
         require('packer').sync()
