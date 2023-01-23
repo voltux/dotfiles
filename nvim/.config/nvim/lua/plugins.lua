@@ -25,7 +25,6 @@ return require('packer').startup(function(use)
     use { 'mbbill/undotree',
         config = function() require('undotree_conf') end
     } -- multilevel undo explorer
-    use { 'christoomey/vim-tmux-navigator' } -- easily move from between vim windows and tmux panes
     use { 'jpalardy/vim-slime',
         config = function() require('vim-slime_conf') end
     } -- send text to terminal
