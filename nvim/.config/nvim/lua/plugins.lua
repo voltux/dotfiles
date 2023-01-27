@@ -186,7 +186,9 @@ return require('packer').startup(function(use)
         config = function() require('aerial_conf') end
     } -- minimap
     use { 'folke/neodev.nvim',
-        config = function() require('neodev').setup({}) end
+        config = function() require('neodev').setup({
+            library = { plugins = { "nvim-dap-ui" }, types = true },
+        }) end
     } -- init.lua syntax awareness and completion
     use { 'JoosepAlviste/nvim-ts-context-commentstring' } -- set commentstring option based on the cursor location in the file.
     use { 'lewis6991/impatient.nvim' } -- caching init to improve starting time
