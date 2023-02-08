@@ -1,11 +1,11 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
         lazypath,
     })
 end
@@ -236,7 +236,7 @@ local lazy_setup_table = {
     {
         -- org mode but for vimmers :)
         'nvim-neorg/neorg',
-        cmd = "Neorg sync-parsers",
+        cmd = 'Neorg sync-parsers',
         dependencies = 'nvim-lua/plenary.nvim',
         ft = 'norg',
         tag = '0.0.18',
@@ -359,7 +359,7 @@ local lazy_setup_table = {
         'folke/neodev.nvim',
         config = function()
             require('neodev').setup({
-                library = { plugins = { "nvim-dap-ui" }, types = true },
+                library = { plugins = { 'nvim-dap-ui' }, types = true },
             })
         end
     },
@@ -407,17 +407,22 @@ local lazy_setup_table = {
     },
     {
         -- manage annotations
-        "danymat/neogen",
+        'danymat/neogen',
         config = function()
             require('neogen').setup {}
         end,
-        dependencies = "nvim-treesitter/nvim-treesitter",
+        dependencies = 'nvim-treesitter/nvim-treesitter',
     },
     {
         -- remove cursorline and cursorcolumn from incactive buffers
         'tummetott/reticle.nvim',
         config = function() require('reticle').setup {} end
     },
+    {
+        -- auto activate/deactivate hlsearch when in/out of search
+        'asiryk/auto-hlsearch.nvim',
+        config = function() require('auto-hlsearch').setup() end
+    }
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
