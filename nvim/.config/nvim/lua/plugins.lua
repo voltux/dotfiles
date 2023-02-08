@@ -15,12 +15,14 @@ local lazy_setup_table = {
     {
         -- file explorer
         'nvim-tree/nvim-tree.lua',
-        config = function() require('nvim-tree_conf') end
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        config = function() require('nvim-tree_conf') end,
     },
     {
         -- filetype icons
         'nvim-tree/nvim-web-devicons',
-        config = function() require('nvim-web-devicons_conf') end
+        lazy = true,
+        config = function() require('nvim-web-devicons_conf') end,
     },
     {
         -- multilevel undo explorer
@@ -30,6 +32,7 @@ local lazy_setup_table = {
     {
         -- send text to terminal
         'jpalardy/vim-slime',
+        lazy = true,
         config = function() require('vim-slime_conf') end
     },
     {
@@ -214,11 +217,8 @@ local lazy_setup_table = {
     },
     {
         -- haskell filetype enhancements
-        'neovimhaskell/haskell-vim'
-    },
-    {
-        -- textile filetype enhancements
-        'amiorin/vim-textile'
+        'neovimhaskell/haskell-vim',
+        ft = 'haskell',
     },
     {
         -- exchange mode for vim to swap texts between two text objects
@@ -227,6 +227,7 @@ local lazy_setup_table = {
     {
         -- go filetype enhancements, commands and project handling
         'fatih/vim-go',
+        ft = 'go',
         config = function() require('vim-go_conf') end
     },
     {
@@ -259,7 +260,8 @@ local lazy_setup_table = {
     {
         -- extend default text objects with treesitter syntax awareness
         'nvim-treesitter/nvim-treesitter-textobjects',
-        dependencies = 'nvim-treesitter/nvim-treesitter'
+        dependencies = 'nvim-treesitter/nvim-treesitter',
+        lazy = true,
     },
     {
         -- easily config neovim lsp
@@ -332,7 +334,8 @@ local lazy_setup_table = {
     {
         -- neovim terminal handler
         'akinsho/toggleterm.nvim',
-        config = function() require('toggleterm_conf') end
+        dependencies = 'jpalardy/vim-slime',
+        config = function() require('toggleterm_conf') end,
     },
     {
         -- show available keymaps + description as you type them
@@ -427,5 +430,5 @@ local lazy_setup_table = {
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
 
--- plugins
+-- load plugins
 return require('lazy').setup(lazy_setup_table)

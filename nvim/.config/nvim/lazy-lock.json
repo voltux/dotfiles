@@ -78,7 +78,6 @@
   "vim-sleuth": { "branch": "master", "commit": "1cc4557420f215d02c4d2645a748a816c220e99b" },
   "vim-slime": { "branch": "main", "commit": "5308556987857eb0fc5f1a774496b29d8dd70f34" },
   "vim-snippets": { "branch": "master", "commit": "8f9eead6c4dfdfee9052d4ea667c1c9d8a396f80" },
-  "vim-textile": { "branch": "master", "commit": "11c2a96af2f824a587814dc3f34f7f172a205347" },
   "vim-textobj-entire": { "branch": "master", "commit": "64a856c9dff3425ed8a863b9ec0a21dbaee6fb3a" },
   "vim-textobj-line": { "branch": "master", "commit": "1a6780d29adcf7e464e8ddbcd0be0a9df1a37339" },
   "vim-textobj-user": { "branch": "master", "commit": "41a675ddbeefd6a93664a4dc52f302fe3086a933" },
