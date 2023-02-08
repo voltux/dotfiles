@@ -12,10 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local lazy_setup_table = {
-    { 'kyazdani42/nvim-tree.lua',
+    { 'nvim-tree/nvim-tree.lua',
         config = function() require('nvim-tree_conf') end
     }, -- file explorer
-    { 'kyazdani42/nvim-web-devicons',
+    { 'nvim-tree/nvim-web-devicons',
         config = function() require('nvim-web-devicons_conf') end
     }, -- filetype icons
     { 'mbbill/undotree',
@@ -44,11 +44,11 @@ local lazy_setup_table = {
         config = function() require('vim-easy-align_conf') end
     }, -- easily align text
     { 'nvim-lualine/lualine.nvim',
-        dependencies = { 'kyazdani42/nvim-web-devicons', opt = true },
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('lualine_conf') end
     }, -- status line (bottom)
     { 'akinsho/bufferline.nvim',
-        dependencies = 'kyazdani42/nvim-web-devicons',
+        dependencies = 'nvim-tree/nvim-web-devicons',
         config = function() require('bufferline_conf') end
     }, -- buffer line (top)
     { 'kana/vim-textobj-user' }, -- extend default text objects
