@@ -110,6 +110,7 @@ local lazy_setup_table = {
     }, -- go filetype enhancements, commands and project handling
     { 'nvim-lua/plenary.nvim' }, -- lua module for asynchronous programming (dependancy lib)
     { 'nvim-neorg/neorg',
+        cmd = "Neorg sync-parsers",
         dependencies = 'nvim-lua/plenary.nvim',
         ft = 'norg',
         tag = '0.0.18',
@@ -216,7 +217,7 @@ local lazy_setup_table = {
 
 }
 
-vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open'})
+vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
 
 -- plugins
 return require('lazy').setup(lazy_setup_table)
