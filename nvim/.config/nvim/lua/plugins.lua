@@ -128,7 +128,7 @@ local lazy_setup_table = {
         config = function() require('lsp_conf') end
     }, -- easily config neovim lsp
     { 'williamboman/mason.nvim',
-        config = function() require('mason').setup {} end
+        config = function() require('mason_conf') end
     }, -- easily install/update lsp servers directly from neovim
     { 'williamboman/mason-lspconfig',
         config = function() require('mason-lspconfig').setup {} end
@@ -215,6 +215,8 @@ local lazy_setup_table = {
     }, -- manage annotations
 
 }
+
+vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open'})
 
 -- plugins
 return require('lazy').setup(lazy_setup_table)
