@@ -21,6 +21,11 @@ local basic_load = {
     ["core.defaults"]               = {},
     ["core.integrations.telescope"] = {},
     ["core.integrations.nvim-cmp"]  = {},
+    ["core.norg.news"]              = {
+        config = {
+            check_news = false,
+        }
+    },
     ["core.norg.dirman"]            = {
         config = {
             workspaces = {
@@ -75,7 +80,6 @@ neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, key
         n = { -- Bind keys in normal mode
             { "<leader>fnl", "core.integrations.telescope.find_linkable" },
         },
-
         i = { -- Bind in insert mode
             { "<C-l>", "core.integrations.telescope.insert_link" },
         },
