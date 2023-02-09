@@ -92,6 +92,7 @@ lsp.vimls.setup {
 lsp.perlnavigator.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
+    cmd = {"perlnavigator", "--stdio"}
 }
 lsp.bashls.setup {
     on_attach = custom_attach,
