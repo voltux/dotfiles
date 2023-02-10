@@ -425,7 +425,11 @@ local lazy_setup_table = {
         -- auto activate/deactivate hlsearch when in/out of search
         'asiryk/auto-hlsearch.nvim',
         config = function() require('auto-hlsearch').setup() end
-    }
+    },
+    {
+        -- helm chart syntax highlighter
+        'towolf/vim-helm',
+    },
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
