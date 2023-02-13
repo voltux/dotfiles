@@ -21,7 +21,6 @@ local lazy_setup_table = {
     {
         -- filetype icons
         'nvim-tree/nvim-web-devicons',
-        lazy = true,
         config = function() require('nvim-web-devicons_conf') end,
     },
     {
@@ -32,7 +31,6 @@ local lazy_setup_table = {
     {
         -- send text to terminal
         'jpalardy/vim-slime',
-        lazy = true,
         config = function() require('vim-slime_conf') end
     },
     {
