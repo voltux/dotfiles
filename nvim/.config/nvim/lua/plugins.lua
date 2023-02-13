@@ -419,7 +419,7 @@ local lazy_setup_table = {
     {
         -- remove cursorline and cursorcolumn from incactive buffers
         'tummetott/reticle.nvim',
-        config = function() require('reticle').setup {} end
+        config = function() require('reticle_conf') end
     },
     {
         -- auto activate/deactivate hlsearch when in/out of search
