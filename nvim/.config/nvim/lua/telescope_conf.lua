@@ -107,3 +107,5 @@ vim.api.nvim_set_keymap('n', '<leader>fF', "<cmd>lua require 'telescope'.extensi
 vim.api.nvim_set_keymap('n', '<leader>fp',
     "<cmd>lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>",
     { noremap = true, silent = true, desc = 'Telescope find project' })
+vim.api.nvim_set_keymap('n', '<leader>fC', "<cmd>Telescope cder<CR>",
+    { noremap = true, desc = 'Telescope cd change current directory' })

@@ -428,6 +428,11 @@ local lazy_setup_table = {
         -- helm chart syntax highlighter
         'towolf/vim-helm',
     },
+    {
+        'zane-/cder.nvim',
+        config = function() require('telescope').load_extension('cder') end,
+        dependencies = 'nvim-telescope/telescope.nvim',
+    },
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
