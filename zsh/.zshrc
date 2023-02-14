@@ -93,3 +93,11 @@ autoload zcalc
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
+
+# create alias for fd if it is installed (needed for debian based distributions)
+if command -v fdfind &> /dev/null ; then
+    alias fd >/dev/null 2>&1 && unalias fd
+    if [ ! -f "$HOME/.local/bin/fd" ] ; then
+        ln -s $(which fdfind) "$HOME"/.local/bin/fd
+    fi
+fi
