@@ -30,8 +30,11 @@ require("telescope").setup {
             },
             order_by = "asc",
             sync_with_nvim_tree = true
-        }
-    }
+        },
+        cder = {
+            previewer_command = 'tree -L 1 -C',
+        },
+    },
 }
 require('telescope').load_extension('ui-select')
 require('telescope').load_extension('luasnip')
