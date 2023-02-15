@@ -411,7 +411,8 @@ local lazy_setup_table = {
     },
     {
         -- show a lightbulb when code actions are available
-        'kosayoda/nvim-lightbulb'
+        'kosayoda/nvim-lightbulb',
+        config = function() require('nvim-lightbulb').setup({ autocmd = { enabled = true } }) end,
     },
     {
         -- lsp progress eye candy
