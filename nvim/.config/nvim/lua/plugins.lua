@@ -15,7 +15,7 @@ local lazy_setup_table = {
     {
         -- file explorer
         'nvim-tree/nvim-tree.lua',
-        dependencies = 'nvim-tree/nvim-web-devicons',
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('nvim-tree_conf') end,
     },
     {
@@ -90,7 +90,7 @@ local lazy_setup_table = {
     {
         -- buffer line (top)
         'akinsho/bufferline.nvim',
-        dependencies = 'nvim-tree/nvim-web-devicons',
+        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('bufferline_conf') end
     },
     {
@@ -128,43 +128,55 @@ local lazy_setup_table = {
         config = function() require('nvim-ts-rainbow_conf') end
     },
     {
+        -- change color on (), []... for better readability on any filetype
         'luochen1990/rainbow'
-    }, -- change color on (), []... for better readability on any filetype
+    },
     {
-        'hrsh7th/cmp-nvim-lsp'
-    }, -- autocompletion (lsp based)
+        -- autocompletion (lsp based)
+        'hrsh7th/cmp-nvim-lsp',
+        dependencies = 'hrsh7th/nvim-cmp',
+    },
     {
-        'hrsh7th/cmp-buffer'
-    }, -- autocompletion (buffer based)
+        -- autocompletion (buffer based)
+        'hrsh7th/cmp-buffer',
+        dependencies = 'hrsh7th/nvim-cmp',
+    },
     {
-        'hrsh7th/cmp-path'
-    }, -- autocompletion (filepath based)
+        -- autocompletion (filepath based)
+        'hrsh7th/cmp-path',
+        dependencies = 'hrsh7th/nvim-cmp',
+    },
     {
         -- autocompletion (command based)
-        'hrsh7th/cmp-cmdline'
+        'hrsh7th/cmp-cmdline',
+        dependencies = 'hrsh7th/nvim-cmp',
     },
     {
         -- autocompletion engine
         'hrsh7th/nvim-cmp',
-        dependencies = { 'L3MON4D3/LuaSnip' },
-        config = function() require('cmp_conf') end
+        config = function() require('cmp_conf') end,
     },
     {
         -- autocompletion on lsp function/class signature
-        'hrsh7th/cmp-nvim-lsp-signature-help'
+        'hrsh7th/cmp-nvim-lsp-signature-help',
+        dependencies = 'hrsh7th/nvim-cmp',
     },
     {
         -- autocompletion (lua)
-        'hrsh7th/cmp-nvim-lua'
+        'hrsh7th/cmp-nvim-lua',
+        dependencies = 'hrsh7th/nvim-cmp',
     },
     {
         -- snippet engine
-        'L3MON4D3/LuaSnip',
-        config = function() require('luasnip_conf') end
+        "L3MON4D3/LuaSnip",
+        build = "make install_jsregexp",
+        config = function() require('luasnip_conf') end,
+        dependencies = { 'hrsh7th/nvim-cmp', 'rafamadriz/friendly-snippets', 'honza/vim-snippets' },
     },
     {
         -- autocompletion (luasnip snippets)
-        'saadparwaiz1/cmp_luasnip'
+        'saadparwaiz1/cmp_luasnip',
+        dependencies = 'hrsh7th/nvim-cmp',
     },
     {
         -- git handler
@@ -177,7 +189,7 @@ local lazy_setup_table = {
     },
     {
         -- rich snippet collection
-        'rafamadriz/friendly-snippets'
+        'rafamadriz/friendly-snippets',
     },
     {
         -- git modifications explorer/handler
@@ -191,19 +203,22 @@ local lazy_setup_table = {
     {
         -- telescope extension for luasnip snippets
         'benfowler/telescope-luasnip.nvim',
-        dependencies = { 'L3MON4D3/LuaSnip' }
+        dependencies = { 'L3MON4D3/LuaSnip', 'nvim-telescope/telescope.nvim' },
     },
     {
         -- telescope extension to use telescope as selection ui instead of vim command line
-        'nvim-telescope/telescope-ui-select.nvim'
+        'nvim-telescope/telescope-ui-select.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
     },
     {
         -- telescope extension file browser
-        'nvim-telescope/telescope-file-browser.nvim'
+        'nvim-telescope/telescope-file-browser.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
     },
     {
         -- telescope extension project finder
-        'nvim-telescope/telescope-project.nvim'
+        'nvim-telescope/telescope-project.nvim',
+        dependencies = { 'nvim-telescope/telescope.nvim' },
     },
     {
         -- markdown filetype enhancements
@@ -243,7 +258,8 @@ local lazy_setup_table = {
     },
     {
         -- neorg integration with telescope
-        'nvim-neorg/neorg-telescope'
+        'nvim-neorg/neorg-telescope',
+        dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-neorg/neorg' },
     },
     {
         -- fuzzy finding anything anywhere
@@ -259,7 +275,6 @@ local lazy_setup_table = {
         -- extend default text objects with treesitter syntax awareness
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = 'nvim-treesitter/nvim-treesitter',
-        lazy = true,
     },
     {
         -- easily config neovim lsp
@@ -322,7 +337,8 @@ local lazy_setup_table = {
     },
     {
         -- autocompletion (debugger)
-        'rcarriga/cmp-dap'
+        'rcarriga/cmp-dap',
+        dependencies = 'hrsh7th/nvim-cmp',
     },
     {
         -- a pretty list for diagnostics
@@ -409,9 +425,7 @@ local lazy_setup_table = {
     {
         -- manage annotations
         'danymat/neogen',
-        config = function()
-            require('neogen').setup {}
-        end,
+        config = function() require('neogen').setup {} end,
         dependencies = 'nvim-treesitter/nvim-treesitter',
     },
     {
@@ -429,6 +443,7 @@ local lazy_setup_table = {
         'towolf/vim-helm',
     },
     {
+        -- telescope extension to change current directory
         'zane-/cder.nvim',
         config = function() require('telescope').load_extension('cder') end,
         dependencies = 'nvim-telescope/telescope.nvim',
