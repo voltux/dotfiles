@@ -20,9 +20,6 @@ require("telescope").setup {
         file_ignore_patterns = { "venv/.*" }
     },
     extensions = {
-        ["ui-select"] = {
-            require("telescope.themes").get_dropdown {}
-        },
         file_browser = {},
         project = {
             base_dirs = {
@@ -36,7 +33,6 @@ require("telescope").setup {
         },
     },
 }
-require('telescope').load_extension('ui-select')
 require('telescope').load_extension('luasnip')
 require('telescope').load_extension('project')
 vim.api.nvim_set_keymap('n', '<leader>f%', ':Telescope oldfiles<CR>',

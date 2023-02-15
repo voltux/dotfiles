@@ -206,11 +206,6 @@ local lazy_setup_table = {
         dependencies = { 'L3MON4D3/LuaSnip', 'nvim-telescope/telescope.nvim' },
     },
     {
-        -- telescope extension to use telescope as selection ui instead of vim command line
-        'nvim-telescope/telescope-ui-select.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
-    },
-    {
         -- telescope extension file browser
         'nvim-telescope/telescope-file-browser.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim' },
@@ -259,6 +254,7 @@ local lazy_setup_table = {
     {
         -- neorg integration with telescope
         'nvim-neorg/neorg-telescope',
+        ft = 'norg',
         dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-neorg/neorg' },
     },
     {
@@ -448,6 +444,11 @@ local lazy_setup_table = {
         'zane-/cder.nvim',
         config = function() require('telescope').load_extension('cder') end,
         dependencies = 'nvim-telescope/telescope.nvim',
+    },
+    {
+        -- improve default vim.ui interfaces
+        'stevearc/dressing.nvim',
+        config = function() require('dressing').setup() end,
     },
 }
 
