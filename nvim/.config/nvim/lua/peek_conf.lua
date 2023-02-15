@@ -12,5 +12,5 @@ local function peek_toggle()
 end
 
 vim.api.nvim_create_user_command('PeekToggle', peek_toggle, { desc = 'Toggle peek markdown preview' })
-vim.api.nvim_set_keymap('n', '<leader>pm', '<cmd>PeekToggle<cr>',
+vim.api.nvim_set_keymap('n', '<leader>cm', '<cmd>PeekToggle<cr>',
     { noremap = true, silent = true, desc = "Toggle peek markdown preview" })

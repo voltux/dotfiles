@@ -50,8 +50,6 @@ local custom_attach = function(_, bufnr)
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP show errors" })
     vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP code action" })
-    vim.keymap.set('x', '<leader>ca', vim.lsp.buf.range_code_action,
-        { noremap = true, silent = true, buffer = bufnr, desc = "LSP code action (visual)" })
 end
 
 -- Setup lspconfig.
@@ -62,7 +60,7 @@ lsp.pylsp.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
     settings = {
@@ -78,6 +76,7 @@ lsp.sumneko_lua.setup {
             workspace = {
                 -- Make the server aware of Neovim runtime files
                 library = vim.api.nvim_get_runtime_file("", true),
+                checkThirdParty = false,
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
@@ -93,6 +92,7 @@ lsp.vimls.setup {
 lsp.perlnavigator.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
+    cmd = {"perlnavigator", "--stdio"}
 }
 lsp.bashls.setup {
     on_attach = custom_attach,

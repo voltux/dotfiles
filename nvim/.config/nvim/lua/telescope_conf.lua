@@ -1,16 +1,17 @@
 --Telescope
+local homepath = os.getenv("HOME")
+
 require("telescope").setup {
     defaults = {
         file_ignore_patterns = { "venv/.*" }
     },
     extensions = {
-        ["ui-select"] = {
-            require("telescope.themes").get_dropdown {}
-        },
         file_browser = {},
-    }
+        cder = {
+            previewer_command = 'tree -L 1 -C',
+        },
+    },
 }
-require('telescope').load_extension('ui-select')
 require('telescope').load_extension('luasnip')
 vim.api.nvim_set_keymap('n', '<leader>f%', ':Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
@@ -80,3 +81,8 @@ vim.api.nvim_set_keymap('n', '<leader>f%', ':Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
 vim.api.nvim_set_keymap('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
     { noremap = true, desc = 'Telescope file browser' })
+vim.api.nvim_set_keymap('n', '<leader>fp',
+    "<cmd>lua require'telescope'.extensions.project.project{ display_type = 'full' }<CR>",
+    { noremap = true, silent = true, desc = 'Telescope find project' })
+vim.api.nvim_set_keymap('n', '<leader>fC', "<cmd>Telescope cder<CR>",
+    { noremap = true, desc = 'Telescope cd change current directory' })

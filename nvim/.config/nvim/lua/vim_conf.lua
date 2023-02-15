@@ -42,6 +42,7 @@ vim.o.foldnestmax = 10 --maximum nested folds
 vim.o.cursorline = true --show cursorline
 vim.o.signcolumn = 'yes' --always show signcolumn
 vim.o.scrollback = 100000 --max lines for terminal scrollback
+vim.o.breakindent = true --maintain indentation when breaking long lines 
 vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
 vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
 vim.cmd [[ set formatoptions+=j "when joining lines join comments ]]
@@ -118,6 +119,8 @@ local tmux_copy_mode_toggle = function()
 end
 
 vim.api.nvim_set_keymap('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, desc = 'Search current selection' })
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
 vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })
 
 --Resize
@@ -125,3 +128,31 @@ vim.api.nvim_set_keymap('n', '<M-j>', ':resize +2<CR>', { noremap = true, desc =
 vim.api.nvim_set_keymap('n', '<M-k>', ':resize -2<CR>', { noremap = true, desc = 'Resize window down' })
 vim.api.nvim_set_keymap('n', '<M-l>', ':vertical resize +2<CR>', { noremap = true, desc = 'Resize window up' })
 vim.api.nvim_set_keymap('n', '<M-h>', ':vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
+
+--Language
+vim.api.nvim_set_keymap('n', '<leader>lg', ':set keymap=greek_utf-8<CR>',
+    { noremap = true, desc = 'Change language greek' })
+vim.api.nvim_set_keymap('n', '<leader>le', ':set keymap&<CR>', { noremap = true, desc = 'Change language english' })
+vim.api.nvim_set_keymap('n', '<leader>lcg', ':setlocal spell spelllang=el<CR>',
+    { noremap = true, desc = 'Set spelling greek' })
+vim.api.nvim_set_keymap('n', '<leader>lce', ':setlocal spell spelllang=en<CR>',
+    { noremap = true, desc = 'Set spelling english' })
+vim.api.nvim_set_keymap('n', '<leader>lcf', ':setlocal spell spelllang=fr<CR>',
+    { noremap = true, desc = 'Set spelling french' })
+vim.api.nvim_set_keymap('n', '<leader>ll', ':set nospell<CR>', { noremap = true, desc = 'Set no spelling' })
+vim.api.nvim_set_keymap('!', ';a', 'à', { desc = 'insert special character à' })
+vim.api.nvim_set_keymap('!', ';z', 'â', { desc = 'insert special character â' })
+vim.api.nvim_set_keymap('!', ';b', 'ä', { desc = 'insert special character ä' })
+vim.api.nvim_set_keymap('!', ';c', 'ç', { desc = 'insert special character ç' })
+vim.api.nvim_set_keymap('!', ';w', 'ê', { desc = 'insert special character ê' })
+vim.api.nvim_set_keymap('!', ';e', 'é', { desc = 'insert special character é' })
+vim.api.nvim_set_keymap('!', ';f', 'ë', { desc = 'insert special character ë' })
+vim.api.nvim_set_keymap('!', ';r', 'è', { desc = 'insert special character è' })
+vim.api.nvim_set_keymap('!', ';i', 'î', { desc = 'insert special character î' })
+vim.api.nvim_set_keymap('!', ';j', 'ï', { desc = 'insert special character ï' })
+vim.api.nvim_set_keymap('!', ';o', 'ô', { desc = 'insert special character ô' })
+vim.api.nvim_set_keymap('!', ';p', 'ö', { desc = 'insert special character ö' })
+vim.api.nvim_set_keymap('!', ';t', 'ù', { desc = 'insert special character ù' })
+vim.api.nvim_set_keymap('!', ';u', 'û', { desc = 'insert special character û' })
+vim.api.nvim_set_keymap('!', ';v', 'ü', { desc = 'insert special character ü' })
+vim.api.nvim_set_keymap('i', ';q', '«»<Esc>i', { desc = 'insert special character «»' })
