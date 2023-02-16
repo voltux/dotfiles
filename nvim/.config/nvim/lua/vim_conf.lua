@@ -124,22 +124,22 @@ vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy 
 vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })
 
 --Resize
-vim.api.nvim_set_keymap('n', '<M-j>', ':resize +2<CR>', { noremap = true, desc = 'Resize window up' })
-vim.api.nvim_set_keymap('n', '<M-k>', ':resize -2<CR>', { noremap = true, desc = 'Resize window down' })
-vim.api.nvim_set_keymap('n', '<M-l>', ':vertical resize +2<CR>', { noremap = true, desc = 'Resize window up' })
-vim.api.nvim_set_keymap('n', '<M-h>', ':vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
+vim.api.nvim_set_keymap('n', '<M-j>', '<cmd>resize +2<CR>', { noremap = true, desc = 'Resize window up' })
+vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>resize -2<CR>', { noremap = true, desc = 'Resize window down' })
+vim.api.nvim_set_keymap('n', '<M-l>', '<cmd>vertical resize +2<CR>', { noremap = true, desc = 'Resize window up' })
+vim.api.nvim_set_keymap('n', '<M-h>', '<cmd>vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
 
 --Language
-vim.api.nvim_set_keymap('n', '<leader>lg', ':set keymap=greek_utf-8<CR>',
+vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>set keymap=greek_utf-8<CR>',
     { noremap = true, desc = 'Change language greek' })
-vim.api.nvim_set_keymap('n', '<leader>le', ':set keymap&<CR>', { noremap = true, desc = 'Change language english' })
-vim.api.nvim_set_keymap('n', '<leader>lcg', ':setlocal spell spelllang=el<CR>',
+vim.api.nvim_set_keymap('n', '<leader>le', '<cmd>set keymap&<CR>', { noremap = true, desc = 'Change language english' })
+vim.api.nvim_set_keymap('n', '<leader>lcg', '<cmd>setlocal spell spelllang=el<CR>',
     { noremap = true, desc = 'Set spelling greek' })
-vim.api.nvim_set_keymap('n', '<leader>lce', ':setlocal spell spelllang=en<CR>',
+vim.api.nvim_set_keymap('n', '<leader>lce', '<cmd>setlocal spell spelllang=en<CR>',
     { noremap = true, desc = 'Set spelling english' })
-vim.api.nvim_set_keymap('n', '<leader>lcf', ':setlocal spell spelllang=fr<CR>',
+vim.api.nvim_set_keymap('n', '<leader>lcf', '<cmd>setlocal spell spelllang=fr<CR>',
     { noremap = true, desc = 'Set spelling french' })
-vim.api.nvim_set_keymap('n', '<leader>ll', ':set nospell<CR>', { noremap = true, desc = 'Set no spelling' })
+vim.api.nvim_set_keymap('n', '<leader>ll', '<cmd>set nospell<CR>', { noremap = true, desc = 'Set no spelling' })
 vim.api.nvim_set_keymap('!', ';a', 'à', { desc = 'insert special character à' })
 vim.api.nvim_set_keymap('!', ';z', 'â', { desc = 'insert special character â' })
 vim.api.nvim_set_keymap('!', ';b', 'ä', { desc = 'insert special character ä' })
