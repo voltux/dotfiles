@@ -21,6 +21,7 @@ local lazy_setup_table = {
     {
         -- filetype icons
         'nvim-tree/nvim-web-devicons',
+        lazy = true,
         config = function() require('nvim-web-devicons_conf') end,
     },
     {
@@ -52,7 +53,8 @@ local lazy_setup_table = {
     },
     {
         -- enhance the . operator for more complex tasks
-        'tpope/vim-repeat'
+        'tpope/vim-repeat',
+        event = 'VeryLazy',
     },
     {
         -- detect tabstop/shiftwidth
@@ -84,12 +86,14 @@ local lazy_setup_table = {
     {
         -- status line (bottom)
         'nvim-lualine/lualine.nvim',
+        event = 'VeryLazy',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('lualine_conf') end
     },
     {
         -- buffer line (top)
         'akinsho/bufferline.nvim',
+        event = 'VeryLazy',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('bufferline_conf') end
     },
@@ -194,6 +198,7 @@ local lazy_setup_table = {
     {
         -- git modifications explorer/handler
         'lewis6991/gitsigns.nvim',
+        event = { "BufReadPre", "BufNewFile" },
         config = function() require('gitsigns_conf') end
     },
     {
@@ -240,7 +245,8 @@ local lazy_setup_table = {
     },
     {
         -- lua module for asynchronous programming (dependancy lib)
-        'nvim-lua/plenary.nvim'
+        'nvim-lua/plenary.nvim',
+        lazy = true,
     },
     {
         -- org mode but for vimmers :)
@@ -291,6 +297,7 @@ local lazy_setup_table = {
     {
         -- indent lines
         'lukas-reineke/indent-blankline.nvim',
+        event = { "BufReadPost", "BufNewFile" },
         config = function() require('indent-blankline_conf') end
     },
     {
@@ -302,6 +309,7 @@ local lazy_setup_table = {
     {
         -- autoclose pairs, (), []...
         'windwp/nvim-autopairs',
+        event = 'VeryLazy',
         config = function() require('nvim-autopairs').setup {} end
     },
     {
@@ -350,6 +358,7 @@ local lazy_setup_table = {
     {
         -- show available keymaps + description as you type them
         'folke/which-key.nvim',
+        event = 'VeryLazy',
         config = function() require('which-key_conf') end
     },
     {
@@ -378,7 +387,8 @@ local lazy_setup_table = {
     },
     {
         -- set commentstring option based on the cursor location in the file.
-        'JoosepAlviste/nvim-ts-context-commentstring'
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        lazy = true,
     },
     {
         -- caching init to improve starting time
@@ -449,6 +459,15 @@ local lazy_setup_table = {
         -- improve default vim.ui interfaces
         'stevearc/dressing.nvim',
         config = function() require('dressing').setup() end,
+    },
+    {
+        -- ui components
+        'MunifTanjim/nui.nvim',
+        lazy = true
+    },
+    {
+        'windwp/nvim-spectre',
+        config = function() require('spectre_conf') end,
     },
 }
 
