@@ -28,6 +28,8 @@ local custom_attach = function(_, bufnr)
         { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to next" })
     vim.keymap.set('n', '[w', vim.diagnostic.goto_prev,
         { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to previous" })
+    vim.keymap.set('n', '<leader>cw', vim.diagnostic.open_float,
+        { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic show message" })
     vim.keymap.set('n', '<leader>ch', '<cmd>lua vim.lsp.buf.hover() vim.lsp.buf.hover()<cr>',
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP show hovering help" })
     vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition,
@@ -98,7 +100,7 @@ lsp.bashls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
-lsp.ccls.setup {
+lsp.clangd.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
