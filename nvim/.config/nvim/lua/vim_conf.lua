@@ -58,6 +58,7 @@ vim.cmd [[ set fillchars+=eob:\ ]]--remove ~ tilde as character for lines after 
 vim.o.completeopt='menu,menuone,noselect' --autocompletion options
 vim.o.termguicolors = true
 vim.o.background = 'dark'
+vim.cmd [[ set shortmess=I ]] -- disable intro message
 
 -- Abbreviations for common typos
 vim.cmd [[
