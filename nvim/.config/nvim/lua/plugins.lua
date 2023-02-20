@@ -362,7 +362,6 @@ local lazy_setup_table = {
         -- embed neovim on the browser
         'glacambre/firenvim',
         build = function() vim.fn['firenvim#install'](0) end,
-        event = 'VeryLazy',
         config = function() require('firenvim_conf') end
     },
     {
