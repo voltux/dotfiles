@@ -529,9 +529,16 @@ local lazy_setup_table = {
         lazy = true
     },
     {
+        -- search and replace ui
         'windwp/nvim-spectre',
         event = 'VeryLazy',
         config = function() require('spectre_conf') end,
+    },
+    {
+        -- in text colorizer
+        'NvChad/nvim-colorizer.lua',
+        event = 'VeryLazy',
+        config = function() require 'colorizer'.setup { filetypes = { '*', } } end,
     },
 }
 
