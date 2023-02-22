@@ -17,7 +17,20 @@ end
 
 require("telescope").setup {
     defaults = {
-        file_ignore_patterns = { "venv/.*" }
+        selection_strategy = "reset",
+        sorting_strategy = "ascending",
+        layout_strategy = "horizontal",
+        layout_config = {
+            horizontal = {
+                prompt_position = "top",
+            },
+            vertical = {
+                mirror = false,
+            },
+        },
+        file_ignore_patterns = { "venv/.*" },
+        color_devicons = true,
+        set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
     },
     extensions = {
         file_browser = {},
@@ -43,12 +56,14 @@ vim.api.nvim_set_keymap('n', '<leader>fG', '<cmd>Telescope git_status<CR>',
     { noremap = true, desc = 'Telescope find modified git files' })
 vim.api.nvim_set_keymap('n', '<leader>fa', '<cmd>Telescope live_grep<CR>',
     { noremap = true, desc = 'Telescope find pattern in all files' })
-vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true, desc = 'Telescope find buffer' })
+vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>',
+    { noremap = true, desc = 'Telescope find buffer' })
 vim.api.nvim_set_keymap('n', '<leader>f:', '<cmd>Telescope commands<CR>',
     { noremap = true, desc = 'Telescope find nvim command' })
 vim.api.nvim_set_keymap('n', '<leader>fd', '<cmd>Telescope diagnostics<CR>',
     { noremap = true, desc = 'Telescope find diagnostic' })
-vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true, desc = 'Telescope find file' })
+vim.api.nvim_set_keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>',
+    { noremap = true, desc = 'Telescope find file' })
 vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope git_files<CR>',
     { noremap = true, desc = 'Telescope find git files' })
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<CR>',
@@ -57,7 +72,8 @@ vim.api.nvim_set_keymap('n', '<leader>fi', '<cmd>Telescope current_buffer_fuzzy_
     { noremap = true, desc = 'Telescope find in current buffer' })
 vim.api.nvim_set_keymap('n', '<leader>fj', '<cmd>Telescope jumplist<CR>',
     { noremap = true, desc = 'Telescope find in jumplist' })
-vim.api.nvim_set_keymap('n', '<leader>fk', '<cmd>Telescope keymaps<CR>', { noremap = true, desc = 'Telescope find keymap' })
+vim.api.nvim_set_keymap('n', '<leader>fk', '<cmd>Telescope keymaps<CR>',
+    { noremap = true, desc = 'Telescope find keymap' })
 vim.api.nvim_set_keymap('n', '<leader>fl', '<cmd>Telescope loclist<CR>',
     { noremap = true, desc = 'Telescope find in location list' })
 vim.api.nvim_set_keymap('n', '<leader>f\'', '<cmd>Telescope marks<CR>', { noremap = true, desc = 'Telescope find marks' })
@@ -92,7 +108,8 @@ vim.api.nvim_set_keymap('n', '<leader>fc', '<cmd>Telescope git_commits<CR>',
     { noremap = true, desc = 'Telescope find in commits' })
 vim.api.nvim_set_keymap('n', '<leader>fT', '<cmd>Telescope git_branches<CR>',
     { noremap = true, desc = 'Telescope find in branches' })
-vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>Telescope luasnip<CR>', { noremap = true, desc = 'Telescope find snippet' })
+vim.api.nvim_set_keymap('n', '<leader>fs', '<cmd>Telescope luasnip<CR>',
+    { noremap = true, desc = 'Telescope find snippet' })
 vim.api.nvim_set_keymap('n', '<leader>fS', '<cmd>Telescope git_stash<CR>',
     { noremap = true, desc = 'Telescope find git stash' })
 vim.api.nvim_set_keymap('n', '<leader>fB', '<cmd>Telescope git_bcommits<CR>',
