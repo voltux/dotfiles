@@ -346,10 +346,11 @@ local lazy_setup_table = {
         config = function() require('diffview_conf') end
     },
     {
-        -- autoclose pairs, (), []...
-        'windwp/nvim-autopairs',
-        event = 'VeryLazy',
-        config = function() require('nvim-autopairs').setup {} end,
+        -- autoclose pairs (), [], etc
+        'altermo/ultimate-autopair.nvim',
+        event = { 'InsertEnter', 'CmdlineEnter' },
+        config = function() require('ultimate-autopair').setup({})
+        end,
     },
     {
         -- syntax aware commenting
