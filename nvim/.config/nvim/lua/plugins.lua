@@ -197,6 +197,7 @@ local lazy_setup_table = {
         -- snippet engine
         "L3MON4D3/LuaSnip",
         config = function() require('luasnip_conf') end,
+        version = "1.*",
         dependencies = { 'hrsh7th/nvim-cmp', 'rafamadriz/friendly-snippets', 'honza/vim-snippets' },
         event = 'VeryLazy',
     },
