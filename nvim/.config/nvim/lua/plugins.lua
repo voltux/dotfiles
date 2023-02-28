@@ -350,8 +350,7 @@ local lazy_setup_table = {
         -- autoclose pairs (), [], etc
         'altermo/ultimate-autopair.nvim',
         event = { 'InsertEnter', 'CmdlineEnter' },
-        config = function() require('ultimate-autopair').setup({})
-        end,
+        config = function() require('ultimate-autopair').setup({}) end,
     },
     {
         -- syntax aware commenting
@@ -510,7 +509,7 @@ local lazy_setup_table = {
     {
         -- helm chart syntax highlighter
         'towolf/vim-helm',
-        ft = 'yaml',
+        ft = { 'yaml', 'helm' },
     },
     {
         -- telescope extension to change current directory
