@@ -124,12 +124,6 @@ vim.api.nvim_set_keymap('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy 
 vim.api.nvim_set_keymap('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
 vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })
 
---Resize
-vim.api.nvim_set_keymap('n', '<M-j>', '<cmd>resize +2<CR>', { noremap = true, desc = 'Resize window up' })
-vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>resize -2<CR>', { noremap = true, desc = 'Resize window down' })
-vim.api.nvim_set_keymap('n', '<M-l>', '<cmd>vertical resize +2<CR>', { noremap = true, desc = 'Resize window up' })
-vim.api.nvim_set_keymap('n', '<M-h>', '<cmd>vertical resize -2<CR>', { noremap = true, desc = 'Resize window left' })
-
 --Language
 vim.api.nvim_set_keymap('n', '<leader>lg', '<cmd>set keymap=greek_utf-8<CR>',
     { noremap = true, desc = 'Change language greek' })

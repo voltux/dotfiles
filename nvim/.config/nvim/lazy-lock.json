@@ -58,6 +58,7 @@
   "rainbow": { "branch": "master", "commit": "61f719aebe0dc5c3048330c50db72cfee1afdd34" },
   "registers.nvim": { "branch": "main", "commit": "2d08fffeb8533d3678bd796010c13c7fa2534263" },
   "reticle.nvim": { "branch": "main", "commit": "7290f2649684415a9d3da98957ea44f5421f4f2a" },
+  "smart-splits.nvim": { "branch": "master", "commit": "b38431f1f68bc43d6bf9d1edb21c2bcb06b1197c" },
   "targets.vim": { "branch": "master", "commit": "642d3a4ce306264b05ea3219920b13ea80931767" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "6eb6bb45b7a9bed94a464a3e1dadfe870459628c" },
   "telescope-luasnip.nvim": { "branch": "master", "commit": "849c4ee1951f34041a26744d2a88284545564ff0" },

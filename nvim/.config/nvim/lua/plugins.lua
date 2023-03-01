@@ -546,7 +546,11 @@ local lazy_setup_table = {
         'alanfortlink/blackjack.nvim',
         event = 'VeryLazy',
         dependencies = { 'nvim-lua/plenary.nvim' },
-    }
+    },
+    {
+        'mrjones2014/smart-splits.nvim',
+        config = function() require('smart-splits_conf') end,
+    },
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
