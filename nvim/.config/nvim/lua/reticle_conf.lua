@@ -8,7 +8,7 @@ require('reticle').setup {
     },
 
     -- Disable the cursorline and cursorcolumn in insert mode. Default is true
-    disable_in_insert = false,
+    disable_in_insert = true,
 
     -- By default, nvim highlights the cursorline number only when the cursorline setting is
     -- switched on. When enabling the following setting, the cursorline number

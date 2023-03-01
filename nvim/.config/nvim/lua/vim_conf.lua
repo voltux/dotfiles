@@ -91,8 +91,7 @@ vim.api.nvim_set_keymap('t', '<C-w>l', '<C-\\><C-n><C-w>l',
 vim.api.nvim_set_keymap('t', '<C-Space>', '<C-\\><C-n>',
     { noremap = true, desc = 'Switch from terminal mode to normal mode' })
 vim.cmd [[tnoremap <expr> <C-W>" '<C-\><C-N>"'.nr2char(getchar()).'pi']]
-vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber signcolumn=no ]]
-vim.cmd [[ autocmd TermOpen * startinsert ]]
+vim.cmd [[ autocmd TermOpen * setlocal nonumber norelativenumber nocursorline nocursorcolumn signcolumn=no ]]
 if vim.fn.executable("zsh") > 0 then
     vim.o.shell = "zsh"
 elseif vim.fn.executable("bash") > 0 then
