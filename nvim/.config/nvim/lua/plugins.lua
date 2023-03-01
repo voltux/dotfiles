@@ -541,6 +541,12 @@ local lazy_setup_table = {
         event = 'VeryLazy',
         config = function() require 'colorizer'.setup { filetypes = { '*', } } end,
     },
+    {
+        -- play some blackjack in neovim
+        'alanfortlink/blackjack.nvim',
+        event = 'VeryLazy',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    }
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
