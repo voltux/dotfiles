@@ -32,7 +32,7 @@
   "marks.nvim": { "branch": "master", "commit": "76aca5069c5ce5c0099e30168649e6393e494f26" },
   "mason-lspconfig": { "branch": "main", "commit": "08d074cd0c4d40e5b6033a67246f46072ecfe38e" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "08d074cd0c4d40e5b6033a67246f46072ecfe38e" },
-  "mason.nvim": { "branch": "main", "commit": "643206e3f299dc28fd8d2fc55746abd75dd64e36" },
+  "mason.nvim": { "branch": "main", "commit": "9d2e3c923ede9f5519a7ae2f82b4688cc8b1c9e9" },
   "neodev.nvim": { "branch": "main", "commit": "98c5330cc93df975da6f4bd6bd826b993c126057" },
   "neogen": { "branch": "main", "commit": "93d997dbddfe084e77ba4541c54a7b8bfd754fb1" },
   "neorg": { "branch": "main", "commit": "a0add5671c677ab8bbf1aa87c299fa74f104286c" },
