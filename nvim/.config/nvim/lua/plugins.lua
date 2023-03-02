@@ -336,7 +336,7 @@ local lazy_setup_table = {
     {
         -- indent lines
         'lukas-reineke/indent-blankline.nvim',
-        event = { "BufReadPost", "BufNewFile" },
+        event = 'VeryLazy',
         config = function() require('indent-blankline_conf') end
     },
     {
