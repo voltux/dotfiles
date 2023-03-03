@@ -18,9 +18,7 @@ require('reticle').setup {
     -- Define filetypes where the cursorline / cursorcolumn is always on,
     -- regardless of the global setting
     always = {
-        cursorline = {
-            'json',
-        },
+        cursorline = {},
         cursorcolumn = {},
     },
 
