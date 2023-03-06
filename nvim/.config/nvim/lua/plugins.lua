@@ -107,35 +107,6 @@ local lazy_setup_table = {
         config = function() require('bufferline_conf') end
     },
     {
-        -- extend default text objects
-        'kana/vim-textobj-user',
-        event = 'VeryLazy',
-    },
-    {
-        -- extend default text objects
-        'kana/vim-textobj-line',
-        dependencies = { 'kana/vim-textobj-user' },
-        event = 'VeryLazy',
-    },
-    {
-        -- extend default text objects
-        'kana/vim-textobj-entire',
-        dependencies = { 'kana/vim-textobj-user' },
-        event = 'VeryLazy',
-    },
-    {
-        -- extend default text objects
-        'Julian/vim-textobj-variable-segment',
-        dependencies = { 'kana/vim-textobj-user' },
-        event = 'VeryLazy',
-    },
-    {
-        -- extend default text objects
-        'michaeljsmith/vim-indent-object',
-        dependencies = { 'kana/vim-textobj-user' },
-        event = 'VeryLazy',
-    },
-    {
         -- colorscheme
         'ellisonleao/gruvbox.nvim',
         config = function() require('gruvbox_conf') end
@@ -548,9 +519,15 @@ local lazy_setup_table = {
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
     {
+        -- split smart and move between splits
         'mrjones2014/smart-splits.nvim',
         config = function() require('smart-splits_conf') end,
     },
+    {
+        -- add custom textobjects
+        "chrisgrieser/nvim-various-textobjs",
+        config = function() require("various-textobjs").setup({ useDefaultKeymaps = true }) end,
+     },
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
