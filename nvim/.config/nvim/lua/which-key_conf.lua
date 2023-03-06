@@ -45,11 +45,6 @@ wk.register({
     }
 }, { prefix = "<leader>" })
 wk.register({
-    r = {
-        name = "replace"
-    }
-}, { prefix = "<leader>" })
-wk.register({
     p = {
         name = "plugin"
     }

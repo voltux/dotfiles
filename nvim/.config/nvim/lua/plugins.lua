@@ -501,12 +501,6 @@ local lazy_setup_table = {
         lazy = true
     },
     {
-        -- search and replace ui
-        'windwp/nvim-spectre',
-        event = 'VeryLazy',
-        config = function() require('spectre_conf') end,
-    },
-    {
         -- in text colorizer
         'NvChad/nvim-colorizer.lua',
         event = 'VeryLazy',
@@ -526,6 +520,7 @@ local lazy_setup_table = {
     {
         -- add custom textobjects
         "chrisgrieser/nvim-various-textobjs",
+        event = 'VeryLazy',
         config = function() require("various-textobjs").setup({ useDefaultKeymaps = true }) end,
      },
 }
