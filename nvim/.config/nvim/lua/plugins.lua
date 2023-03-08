@@ -521,7 +521,14 @@ local lazy_setup_table = {
         "chrisgrieser/nvim-various-textobjs",
         event = 'VeryLazy',
         config = function() require("various-textobjs").setup({ useDefaultKeymaps = true }) end,
-     },
+    },
+    {
+        "debugloop/telescope-undo.nvim",
+        event = 'VeryLazy',
+        dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+        config = function()
+        end,
+    }
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })

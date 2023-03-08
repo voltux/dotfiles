@@ -44,10 +44,18 @@ require("telescope").setup {
         cder = {
             previewer_command = 'tree -L 1 -C',
         },
+        undo = {
+            side_by_side = true,
+            layout_strategy = "vertical",
+            layout_config = {
+                preview_height = 0.8,
+            },
+        },
     },
 }
 require('telescope').load_extension('luasnip')
 require('telescope').load_extension('project')
+require("telescope").load_extension("undo")
 vim.api.nvim_set_keymap('n', '<leader>f%', '<cmd>Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
 vim.api.nvim_set_keymap('n', '<leader>f/', '<cmd>Telescope search_history<CR>',
@@ -125,3 +133,4 @@ vim.api.nvim_set_keymap('n', '<leader>fp',
     { noremap = true, silent = true, desc = 'Telescope find project' })
 vim.api.nvim_set_keymap('n', '<leader>fC', "<cmd>Telescope cder<CR>",
     { noremap = true, desc = 'Telescope cd change current directory' })
+vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { noremap = true, desc = 'Telescope undo' })
