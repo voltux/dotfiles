@@ -54,10 +54,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # replace cat with bat if bat is installed
 export FZF_PREVIEWER="cat"
 if command -v bat &> /dev/null; then
-    export BAT_THEME="gruvbox-dark"
-    alias bat="bat -pp --color=always"
     alias cat="bat"
-    export FZF_PREVIEWER="bat -pp --color=always --line-range :500 {}"
+    export FZF_PREVIEWER="bat --line-range :500 {}"
 fi
 
 export FZF_DEFAULT_OPTS="--multi --border --preview '$FZF_PREVIEWER' --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
