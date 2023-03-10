@@ -113,7 +113,7 @@ local lazy_setup_table = {
     },
     {
         -- change color on (), []... for better readability when on treesitter aware syntax
-        'mrjones2014/nvim-ts-rainbow',
+        'HiPhish/nvim-ts-rainbow2',
         dependencies = { 'ellisonleao/gruvbox.nvim', opt = true },
         config = function() require('nvim-ts-rainbow_conf') end
     },
