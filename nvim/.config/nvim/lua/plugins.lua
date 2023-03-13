@@ -528,6 +528,11 @@ local lazy_setup_table = {
         dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
         config = function()
         end,
+    },
+    {
+        -- file explorer to edit filesystem like a normal buffer, vim-vinegar like
+        'stevearc/oil.nvim',
+        config = function() require('oil_conf') end,
     }
 }
 
