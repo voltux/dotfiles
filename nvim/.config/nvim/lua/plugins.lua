@@ -470,6 +470,12 @@ local lazy_setup_table = {
         -- file explorer to edit filesystem like a normal buffer, vim-vinegar like
         'stevearc/oil.nvim',
         config = function() require('oil_conf') end,
+    },
+    {
+        'willothy/flatten.nvim',
+        config = true,
+        lazy = false,
+        priority = 1001,
     }
 }
 
