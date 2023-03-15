@@ -80,6 +80,7 @@ $character"""
 truncation_length = 0
 truncate_to_repo = false
 style = "bold yellow"
+read_only = " "
 
 [hostname]
 ssh_only = false
@@ -95,6 +96,7 @@ style_user = "bold purple"
 [git_branch]
 format = "[$symbol$branch(:$remote_branch)]($style) "
 style = "bold blue"
+symbol = " "
 
 [container]
 style = "bold blue"
@@ -102,15 +104,55 @@ style = "bold blue"
 [git_status]
 style = "bold cyan"
 
-# Disabled modules
+# [os.symbols]
+# Alpine = " "
+# Amazon = " "
+# Android = " "
+# Arch = " "
+# CentOS = " "
+# Debian = " "
+# DragonFly = " "
+# Emscripten = " "
+# EndeavourOS = " "
+# Fedora = " "
+# FreeBSD = " "
+# Garuda = "﯑ "
+# Gentoo = " "
+# HardenedBSD = "ﲊ "
+# Illumos = " "
+# Linux = " "
+# Macos = " "
+# Manjaro = " "
+# Mariner = " "
+# MidnightBSD = " "
+# Mint = " "
+# NetBSD = " "
+# NixOS = " "
+# OpenBSD = " "
+# openSUSE = " "
+# OracleLinux = " "
+# Pop = " "
+# Raspbian = " "
+# Redhat = " "
+# RedHatEnterprise = " "
+# Redox = " "
+# Solus = "ﴱ "
+# SUSE = " "
+# Ubuntu = " "
+# Unknown = " "
+# Windows = " "
+#
 [docker_context]
 disabled = true
+symbol = " "
 
 [package]
 disabled = true
+symbol = " "
 
 [c]
 disabled = true
+symbol = " "
 
 [cmake]
 disabled = true
@@ -123,6 +165,7 @@ disabled = true
 
 [dart]
 disabled = true
+symbol = " "
 
 [deno]
 disabled = true
@@ -132,36 +175,44 @@ disabled = true
 
 [elixir]
 disabled = true
+symbol = " "
 
 [elm]
 disabled = true
+symbol = " "
 
 [erlang]
 disabled = true
 
 [golang]
 disabled = true
+symbol = " "
 
 [haskell]
 disabled = true
+symbol = " "
 
 [helm]
 disabled = true
 
 [java]
 disabled = true
+symbol = " "
 
 [julia]
 disabled = true
+symbol = " "
 
 [kotlin]
 disabled = true
 
 [lua]
 disabled = true
+symbol = " "
 
 [nodejs]
 disabled = true
+symbol = " "
 
 [ocaml]
 disabled = true
@@ -179,23 +230,30 @@ disabled = true
 disabled = true
 
 [python]
+disabled = false
 format = '[(\($virtualenv\) )]($style)'
 style = "bold green"
+symbol = " "
+python_binary = 'python3'
 
 [raku]
 disabled = true
 
 [rlang]
 disabled = true
+symbol = "ﳒ "
 
 [ruby]
 disabled = true
+symbol = " "
 
 [rust]
 disabled = true
+symbol = " "
 
 [scala]
 disabled = true
+symbol = " "
 
 [swift]
 disabled = true
@@ -214,9 +272,44 @@ disabled = true
 
 [nix_shell]
 disabled = true
+symbol = " "
 
 [conda]
 disabled = true
+symbol = " "
 
 [cmd_duration]
 disabled = true
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+# [[fossil_branch]
+# symbol = " "
+#
+# [guix_shell]
+# symbol = " "
+#
+# [haxe]
+# symbol = "⌘ "
+#
+[hg_branch]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+# [meson]
+# symbol = "喝 "
+#
+[nim]
+symbol = " "
+
+# [pijul_channel]
+# symbol = "🪺 "
+#
+[spack]
+symbol = "🅢 "
