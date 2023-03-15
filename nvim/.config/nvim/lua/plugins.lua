@@ -460,8 +460,7 @@ local lazy_setup_table = {
     {
         -- manage annotations
         'danymat/neogen',
-        config = function() require('neogen').setup {} end,
-        event = 'VeryLazy',
+        config = function() require('neogen_conf') end,
         dependencies = 'nvim-treesitter/nvim-treesitter',
     },
     {
