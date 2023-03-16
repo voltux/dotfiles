@@ -2,7 +2,6 @@ local lsp = require('lspconfig')
 
 -- configure setup on attach to a lsp server
 local custom_attach = function(_, bufnr)
-
     -- setup diagnostics toggle on and off
     vim.g.diagnostics_visible = true
     function _G.toggle_diagnostics()
@@ -17,8 +16,11 @@ local custom_attach = function(_, bufnr)
         end
     end
 
-    vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>ct', ':call v:lua.toggle_diagnostics()<CR>', { silent = true,
-        noremap = true, desc = "Diagnostics Toggle" })
+    vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>ct', ':call v:lua.toggle_diagnostics()<CR>', {
+        silent = true,
+        noremap = true,
+        desc = "Diagnostics Toggle"
+    })
 
     -- setup global autocompletion
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -103,7 +105,7 @@ lsp.vimls.setup {
 lsp.perlnavigator.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
-    cmd = {"perlnavigator", "--stdio"}
+    cmd = { "perlnavigator", "--stdio" }
 }
 lsp.bashls.setup {
     on_attach = custom_attach,
