@@ -231,7 +231,6 @@ local lazy_setup_table = {
         cmd = 'Neorg sync-parsers',
         dependencies = 'nvim-lua/plenary.nvim',
         ft = 'norg',
-        tag = '0.0.18',
         config = function() require('neorg_conf') end
     },
     {

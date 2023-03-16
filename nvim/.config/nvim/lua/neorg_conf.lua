@@ -51,23 +51,23 @@ local basic_load = {
     ["core.export"]                 = {},
 }
 
-local gtd_load = {
-    ["core.gtd.base"]    = {
-        config = {
-            workspace = "todo"
-        },
-    },
-    ["core.gtd.ui"]      = {},
-    ["core.gtd.helpers"] = {},
-    ["core.gtd.queries"] = {},
-}
+-- local gtd_load = {
+--     ["core.gtd.base"]    = {
+--         config = {
+--             workspace = "todo"
+--         },
+--     },
+--     ["core.gtd.ui"]      = {},
+--     ["core.gtd.helpers"] = {},
+--     ["core.gtd.queries"] = {},
+-- }
 
 local load = basic_load
-if isdir(os.getenv("HOME") .. "/Documents/todo") then
-    for k, v in pairs(gtd_load) do
-        load[k] = v
-    end
-end
+-- if isdir(os.getenv("HOME") .. "/Documents/todo") then
+--     for k, v in pairs(gtd_load) do
+--         load[k] = v
+--     end
+-- end
 
 require('neorg').setup {
     load = load
