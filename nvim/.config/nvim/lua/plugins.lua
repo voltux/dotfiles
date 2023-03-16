@@ -283,9 +283,8 @@ local lazy_setup_table = {
     },
     {
         -- autoclose pairs (), [], etc
-        'altermo/ultimate-autopair.nvim',
-        event = { 'InsertEnter', 'CmdlineEnter' },
-        config = function() require('ultimate-autopair').setup({}) end,
+        'windwp/nvim-autopairs',
+        config = function() require('nvim-autopairs').setup({}) end,
     },
     {
         -- syntax aware commenting
