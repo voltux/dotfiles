@@ -61,6 +61,15 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 lsp.pylsp.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    maxLineLength = 120
+                }
+            }
+        }
+    }
 }
 lsp.lua_ls.setup {
     on_attach = custom_attach,
