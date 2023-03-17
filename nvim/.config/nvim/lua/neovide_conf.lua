@@ -18,6 +18,7 @@ if vim.fn.exists('g:neovide') > 0 then
             ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
         },
     })
+    vim.g.neovide_hide_mouse_when_typing = true
     vim.o.background = 'dark'
     vim.o.guifont = "JetBrainsMono_Nerd_Font_Mono:h9" -- text below applies for VimScript
     vim.cmd("colorscheme gruvbox")
