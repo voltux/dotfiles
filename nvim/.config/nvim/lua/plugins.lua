@@ -215,12 +215,6 @@ local lazy_setup_table = {
         'tommcdo/vim-exchange',
     },
     {
-        -- go filetype enhancements, commands and project handling
-        'fatih/vim-go',
-        ft = 'go',
-        config = function() require('vim-go_conf') end
-    },
-    {
         -- lua module for asynchronous programming (dependancy lib)
         'nvim-lua/plenary.nvim',
         lazy = true,
