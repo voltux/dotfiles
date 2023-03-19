@@ -15,7 +15,13 @@ require("gruvbox").setup({
   invert_intend_guides = false,
   inverse = true, -- invert background for search, diffs, statuslines and errors
   contrast = "hard", -- can be "hard", "soft" or empty string
-  palette_overrides = {},
+  palette_overrides = {
+    -- overrinding greys in palette because deafaults are way too bright for hard contrast
+    dark1 = "#282828",
+    dark2 = "#32302f",
+    dark3 = "#3c3836",
+    dark4 = "#504945",
+  },
   overrides = {
     SignColumn = { bg = 'NONE' },
     LineNr = { bg = 'NONE' },
