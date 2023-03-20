@@ -40,10 +40,6 @@ local lazy_setup_table = {
         config = function() require('marks').setup() end
     },
     {
-        -- registers explorer
-        'tversteeg/registers.nvim',
-    },
-    {
         -- add common shell commands to vim command mode
         'tpope/vim-eunuch',
     },
