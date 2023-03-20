@@ -250,7 +250,7 @@ local lazy_setup_table = {
     {
         -- easily config neovim lsp
         'neovim/nvim-lspconfig',
-        dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim' },
+        dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', 'glepnir/lspsaga.nvim' },
         config = function() require('lsp_conf') end
     },
     {
@@ -338,11 +338,6 @@ local lazy_setup_table = {
         config = function() require('twilight_conf') end
     },
     {
-        -- minimap
-        'stevearc/aerial.nvim',
-        config = function() require('aerial_conf') end
-    },
-    {
         -- init.lua syntax awareness and completion
         'folke/neodev.nvim',
         config = function()
@@ -380,11 +375,6 @@ local lazy_setup_table = {
         -- zen mode, enhanced window zooming, neorg presentation friendly
         'folke/zen-mode.nvim',
         config = function() require('zen_mode_conf') end
-    },
-    {
-        -- show a lightbulb when code actions are available
-        'kosayoda/nvim-lightbulb',
-        config = function() require('nvim-lightbulb').setup({ autocmd = { enabled = true } }) end,
     },
     {
         -- lsp progress eye candy
@@ -464,11 +454,19 @@ local lazy_setup_table = {
         config = function() require('oil_conf') end,
     },
     {
+        -- open files in the parent nvim session when invoking neovim from a child terminal
         'willothy/flatten.nvim',
         config = true,
         lazy = false,
         priority = 1001,
-    }
+    },
+    {
+        -- ui for lsp features
+        "glepnir/lspsaga.nvim",
+        event = "BufRead",
+        config = function() require("lspsaga_conf") end,
+        dependencies = { "nvim-tree/nvim-web-devicons", "nvim-treesitter/nvim-treesitter" },
+    },
 }
 
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })

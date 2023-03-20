@@ -16,7 +16,7 @@ local custom_attach = function(_, bufnr)
         end
     end
 
-    vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>ct', ':call v:lua.toggle_diagnostics()<CR>', {
+    vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>c<leader>', ':call v:lua.toggle_diagnostics()<CR>', {
         silent = true,
         noremap = true,
         desc = "Diagnostics Toggle"
@@ -26,33 +26,33 @@ local custom_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     -- keymaps
-    vim.keymap.set('n', ']w', vim.diagnostic.goto_next,
-        { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to next" })
-    vim.keymap.set('n', '[w', vim.diagnostic.goto_prev,
-        { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to previous" })
-    vim.keymap.set('n', '<leader>cw', vim.diagnostic.open_float,
-        { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic show message" })
-    vim.keymap.set('n', '<leader>ch', '<cmd>lua vim.lsp.buf.hover() vim.lsp.buf.hover()<cr>',
-        { noremap = true, silent = true, buffer = bufnr, desc = "LSP show hovering help" })
+    -- vim.keymap.set('n', ']w', vim.diagnostic.goto_next,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to next" })
+    -- vim.keymap.set('n', '[w', vim.diagnostic.goto_prev,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic go to previous" })
+    -- vim.keymap.set('n', '<leader>cw', vim.diagnostic.open_float,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "Diagnostic show message" })
+    -- vim.keymap.set('n', '<leader>ch', '<cmd>lua vim.lsp.buf.hover() vim.lsp.buf.hover()<cr>',
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "LSP show hovering help" })
     vim.keymap.set('n', '<leader>cd', vim.lsp.buf.definition,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP definition" })
-    vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration,
-        { noremap = true, silent = true, buffer = bufnr, desc = "LSP declaration" })
-    vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation,
-        { noremap = true, silent = true, buffer = bufnr, desc = "LSP implementation" })
-    vim.keymap.set('n', '<leader>co', vim.lsp.buf.type_definition,
+    -- vim.keymap.set('n', '<leader>cD', vim.lsp.buf.declaration,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "LSP declaration" })
+    -- vim.keymap.set('n', '<leader>ci', vim.lsp.buf.implementation,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "LSP implementation" })
+    vim.keymap.set('n', '<leader>ct', vim.lsp.buf.type_definition,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP type definition" })
     vim.keymap.set('n', '<leader>cu', vim.lsp.buf.references,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP references" })
-    vim.keymap.set('n', '<leader>cs', vim.lsp.buf.signature_help,
-        { noremap = true, silent = true, buffer = bufnr, desc = "LSP signature help" })
+    -- vim.keymap.set('n', '<leader>cs', vim.lsp.buf.signature_help,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "LSP signature help" })
     vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP rename" })
     vim.keymap.set('n', '<leader>cf', '<cmd>lua vim.lsp.buf.format { async = true }<CR>',
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP format" })
-    vim.keymap.set('n', '<leader>ce', vim.diagnostic.setloclist,
-        { noremap = true, silent = true, buffer = bufnr, desc = "LSP show errors" })
-    vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,
+    -- vim.keymap.set('n', '<leader>ce', vim.diagnostic.setloclist,
+    --     { noremap = true, silent = true, buffer = bufnr, desc = "LSP show errors" })
+    vim.keymap.set('n', '<leader>cA', vim.lsp.buf.code_action,
         { noremap = true, silent = true, buffer = bufnr, desc = "LSP code action" })
 end
 
