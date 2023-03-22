@@ -187,11 +187,6 @@ local lazy_setup_table = {
         dependencies = { 'nvim-telescope/telescope.nvim' },
     },
     {
-        -- telescope extension project finder
-        'nvim-telescope/telescope-project.nvim',
-        dependencies = { 'nvim-telescope/telescope.nvim' },
-    },
-    {
         -- markdown filetype enhancements
         'plasticboy/vim-markdown',
         ft = 'markdown',
