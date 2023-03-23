@@ -268,6 +268,7 @@ local lazy_setup_table = {
     {
         -- autoclose pairs (), [], etc
         'windwp/nvim-autopairs',
+        event = 'InsertEnter',
         config = function() require('nvim-autopairs').setup({}) end,
     },
     {

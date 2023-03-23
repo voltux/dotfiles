@@ -20,7 +20,7 @@
   "emmet-vim": { "branch": "master", "commit": "def5d57a1ae5afb1b96ebe83c4652d1c03640f4d" },
   "fidget.nvim": { "branch": "main", "commit": "688b4fec4517650e29c3e63cfbb6e498b3112ba1" },
   "firenvim": { "branch": "master", "commit": "12003d9727bc5074ccb405b3d80e691c72d4859b" },
-  "flatten.nvim": { "branch": "main", "commit": "792a51936f40081153fb4150d5163253176c74fa" },
+  "flatten.nvim": { "branch": "main", "commit": "a5e0679035a154b2c3eab376c5e51141e07c6910" },
   "friendly-snippets": { "branch": "main", "commit": "25ddcd96540a2ce41d714bd7fea2e7f75fea8ead" },
   "gitsigns.nvim": { "branch": "main", "commit": "ca473e28382f1524aa3d2b6f04bcf54f2e6a64cb" },
   "gruvbox.nvim": { "branch": "main", "commit": "488acf89979463d3ab77f8a5d35a11a2c809ac19" },
