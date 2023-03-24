@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local lazy_setup_table = {
+local plugins = {
     {
         -- file explorer
         'nvim-tree/nvim-tree.lua',
@@ -461,7 +461,13 @@ local lazy_setup_table = {
     },
 }
 
+local opts = {
+    ui = {
+        border = "single",
+    },
+}
+
 vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
 
 -- load plugins
-return require('lazy').setup(lazy_setup_table)
+return require('lazy').setup(plugins, opts)

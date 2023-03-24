@@ -18,8 +18,8 @@ require("gruvbox").setup({
   palette_overrides = {
     -- overrinding greys in palette because deafaults are way too bright for hard contrast
     dark1 = "#282828",
-    dark2 = "#32302f",
-    dark3 = "#3c3836",
+    dark2 = "#282828",
+    dark3 = "#504945",
     dark4 = "#504945",
   },
   overrides = {
