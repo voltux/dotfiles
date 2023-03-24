@@ -1,4 +1,4 @@
-vim.api.nvim_set_keymap('n', '<leader>c"', '<cmd>Neogen<CR>',
+vim.keymap.set('n', '<leader>c"', '<cmd>Neogen<CR>',
   { noremap = true, desc = 'Neogen create documentation' })
 require('neogen').setup({
   enabled = true,

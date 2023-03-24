@@ -467,7 +467,7 @@ local opts = {
     },
 }
 
-vim.api.nvim_set_keymap('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
+vim.keymap.set('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
 
 -- load plugins
 return require('lazy').setup(plugins, opts)

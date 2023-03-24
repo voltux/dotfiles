@@ -4,15 +4,15 @@ require('toggleterm').setup {
         border = "curved",
     }
 }
-vim.api.nvim_set_keymap("n", "<leader>sf", "<cmd>ToggleTerm direction=float border=none<cr>",
+vim.keymap.set("n", "<leader>sf", "<cmd>ToggleTerm direction=float border=none<cr>",
     { silent = true, noremap = true, desc = 'Toggle floating terminal' })
-vim.api.nvim_set_keymap("n", "<leader>sl", "<cmd>ToggleTerm direction=vertical size=120<cr>",
+vim.keymap.set("n", "<leader>sl", "<cmd>ToggleTerm direction=vertical size=120<cr>",
     { silent = true, noremap = true, desc = 'Toggle vertical terminal' })
-vim.api.nvim_set_keymap("n", "<leader>sj", "<cmd>ToggleTerm direction=horizontal size=40<cr>",
+vim.keymap.set("n", "<leader>sj", "<cmd>ToggleTerm direction=horizontal size=40<cr>",
     { silent = true, noremap = true, desc = 'Toggle horizontal terminal' })
-vim.api.nvim_set_keymap("n", "<leader>st", "<cmd>ToggleTerm direction=tab<cr>",
+vim.keymap.set("n", "<leader>st", "<cmd>ToggleTerm direction=tab<cr>",
     { silent = true, noremap = true, desc = 'Toggle tab terminal' })
-vim.api.nvim_set_keymap("n", "<leader>ss", "<cmd>ToggleTerm<cr>",
+vim.keymap.set("n", "<leader>ss", "<cmd>ToggleTerm<cr>",
     { silent = true, noremap = true, desc = 'Toggle last terminal' })
 
 local lazygit = require('toggleterm.terminal').Terminal:new({
@@ -38,5 +38,5 @@ function LazygitToggle()
     lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua LazygitToggle()<CR>",
+vim.keymap.set("n", "<leader>gg", "<cmd>lua LazygitToggle()<CR>",
 { noremap = true, silent = true, desc = 'Toggle lazygit' })
