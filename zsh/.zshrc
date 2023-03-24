@@ -21,7 +21,9 @@ set editing-mode vi
 bindkey -v
 
 # keyboard delay time
-xset r rate 200 50 2>&1 /dev/null
+if command -v xset &> /dev/null; then
+    xset r rate 200 50
+fi
 
 # little zsh nuances
 zle -N zle-line-init
