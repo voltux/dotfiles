@@ -38,8 +38,8 @@ cmp.setup({
         ['<C-e>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<Tab>"] = cmp.mapping(function(fallback)
-            if luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
+            if luasnip.jumpable() then
+                luasnip.jump()
             elseif cmp.visible() then
                 cmp.select_next_item()
             elseif has_words_before() then
