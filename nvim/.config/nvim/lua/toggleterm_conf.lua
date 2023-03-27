@@ -1,10 +1,10 @@
 require('toggleterm').setup {
     shade_terminals = false,
     float_opts = {
-        border = "curved",
+        border = "rounded",
     }
 }
-vim.keymap.set("n", "<leader>sf", "<cmd>ToggleTerm direction=float border=none<cr>",
+vim.keymap.set("n", "<leader>sf", "<cmd>ToggleTerm direction=float border=rounded<cr>",
     { silent = true, noremap = true, desc = 'Toggle floating terminal' })
 vim.keymap.set("n", "<leader>sl", "<cmd>ToggleTerm direction=vertical size=120<cr>",
     { silent = true, noremap = true, desc = 'Toggle vertical terminal' })
@@ -21,7 +21,7 @@ local lazygit = require('toggleterm.terminal').Terminal:new({
     dir = "git_dir",
     direction = "float",
     float_opts = {
-        border = "curved",
+        border = "rounded",
     },
     -- function to run on opening the terminal
     on_open = function(term)

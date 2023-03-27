@@ -463,7 +463,7 @@ local plugins = {
 
 local opts = {
     ui = {
-        border = "single",
+        border = "rounded",
     },
 }
 
