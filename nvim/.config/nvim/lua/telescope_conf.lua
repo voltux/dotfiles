@@ -1,6 +1,3 @@
---Telescope
-local homepath = os.getenv("HOME")
-
 require("telescope").setup {
     defaults = {
         selection_strategy = "reset",
@@ -17,6 +14,7 @@ require("telescope").setup {
                 mirror = false,
             },
         },
+        prompt_prefix = "   ",
         file_ignore_patterns = { "venv/.*" },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,

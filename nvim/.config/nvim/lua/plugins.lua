@@ -464,6 +464,11 @@ local plugins = {
 local opts = {
     ui = {
         border = "rounded",
+        icons = {
+            lazy = "鈴 ",
+            loaded = "",
+            not_loaded = "",
+        },
     },
 }
 
