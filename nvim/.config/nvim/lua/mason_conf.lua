@@ -5,7 +5,7 @@ require('mason').setup({
         icons = {
             package_pending = " ",
             package_installed = " ",
-            package_uninstalled = "⨂ ",
+            package_uninstalled = " ",
         },
     },
 })
