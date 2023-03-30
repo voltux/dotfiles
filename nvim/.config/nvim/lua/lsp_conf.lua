@@ -1,3 +1,5 @@
+require('lspconfig.ui.windows').default_options.border = 'rounded'
+vim.cmd [[ hi LspInfoBorder cterm=NONE ]]
 local lsp = require('lspconfig')
 
 -- configure setup on attach to a lsp server
