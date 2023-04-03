@@ -263,7 +263,9 @@ local plugins = {
         -- nice view for git diff
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
-        config = function() require('diffview_conf') end
+        -- TODO remove commit when latest bug is fixed
+        commit = "ebcbe90",
+        config = function() require('diffview_conf') end,
     },
     {
         -- autoclose pairs (), [], etc
@@ -459,6 +461,12 @@ local plugins = {
         config = function() require("lspsaga_conf") end,
         dependencies = { "nvim-tree/nvim-web-devicons", "nvim-treesitter/nvim-treesitter" },
     },
+    {
+        "wintermute-cell/gitignore.nvim",
+        requires = {
+            "nvim-telescope/telescope.nvim"
+        }
+    }
 }
 
 local opts = {
