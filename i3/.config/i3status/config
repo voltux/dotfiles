@@ -1,9 +1,9 @@
 general {
-        colors = true
-        interval = 5
-        color_bad = "#cc241d"
-        color_good = "#98971a"
-        color_degraded = "#d79921"
+    colors = true
+    interval = 1
+    color_bad = "#cc241d"
+    color_good = "#98971a"
+    color_degraded = "#d79921"
 }
 
 order += "volume master"
@@ -11,46 +11,64 @@ order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
-order += "disk /"
+order += "disk /home"
 order += "load"
+order += "cpu_usage"
 order += "memory"
 order += "tztime local"
 
 volume master {
-	format = " ♪: %volume" 
-	device = "default"
-	mixer = "Master"
-	mixer_idx = 0
+    format = " %devicename %volume "
+    format_muted = " "
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 wireless _first_ {
-        format_up = "W: (%quality at %essid) %ip"
-        format_down = "W: down"
+    format_up = "W: (%quality at %essid) %ip"
+    format_down = "W: down"
 }
 
 ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
+    format_up = "E: %ip (%speed)"
+    format_down = "E: down"
 }
 
 battery all {
-        format = "⚡ %status %percentage %remaining"
+    format = "%status %percentage %remaining"
+    status_chr = " "
+    status_bat = " "
+    status_unk = " "
+    status_full = " "
+    last_full_capacity = true
+    integer_battery_capacity = true
+    low_threshold = 11
+    threshold_type = percentage
+    hide_seconds = true
 }
 
-disk "/" {
-        format = "💾 %avail"
+disk "/home" {
+    format = " %avail/%total"
+    prefix_type	= custom
+    low_threshold = 10
+    threshold_type = percentage_avail
 }
 
 load {
-        format = "LOAD: %1min"
+    format = " %1min"
 }
 
 memory {
-        format = "MEM: %used / %total"
-        threshold_degraded = "1G"
-        format_degraded = "MEMORY < %available"
+    format = "⚚ %used / %total"
+    threshold_degraded = "1G"
+    format_degraded = "MEMORY < %available"
 }
 
 tztime local {
-        format = "%d/%m/%Y %H:%M:%S"
+    format = "%d/%m/%Y %H:%M:%S"
+}
+
+cpu_usage {
+    format = " %usage"
 }
