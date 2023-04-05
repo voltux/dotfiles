@@ -13,6 +13,12 @@ HIST_STAMPS="%d/%m/%y %T"
 plugins=(tmux fzf fd aliases jira ripgrep common-aliases emoji git vi-mode archlinux docker colored-man-pages kubectl ubuntu zsh-z)
 source $ZSH/oh-my-zsh.sh
 
+# More history
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+setopt hist_ignore_all_dups
+
 # Preferred editor
 command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
 
