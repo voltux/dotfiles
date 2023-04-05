@@ -125,7 +125,7 @@ lsp.gopls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
-lsp.sqls.setup {
+lsp.sqlls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
