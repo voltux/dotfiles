@@ -20,7 +20,9 @@ require("telescope").setup {
         set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
     },
     extensions = {
-        file_browser = {},
+        file_browser = {
+            use_fd = false,
+        },
         cder = {
             previewer_command = 'tree -L 1 -C',
         },
