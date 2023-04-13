@@ -153,3 +153,7 @@ lsp.rust_analyzer.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.hls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
