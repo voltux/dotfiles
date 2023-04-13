@@ -18,7 +18,7 @@ order += "memory"
 order += "tztime local"
 
 volume master {
-    format = " %devicename %volume "
+    format = " %volume "
     format_muted = " "
     device = "default"
     mixer = "Master"
