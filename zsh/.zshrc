@@ -105,3 +105,6 @@ if command -v fdfind &> /dev/null ; then
         ln -s $(which fdfind) "$HOME"/.local/bin/fd
     fi
 fi
+
+# ghcup-env
+[ -f "/home/iarapis/.ghcup/env" ] && source "/home/iarapis/.ghcup/env"
