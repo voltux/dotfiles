@@ -263,8 +263,6 @@ local plugins = {
         -- nice view for git diff
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
-        -- TODO remove commit when latest bug is fixed
-        commit = "ebcbe90",
         config = function() require('diffview_conf') end,
     },
     {
