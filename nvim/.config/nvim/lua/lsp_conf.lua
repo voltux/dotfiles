@@ -140,6 +140,11 @@ lsp.jsonls.setup {
 lsp.yamlls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
+    settings = {
+        yaml = {
+            keyOrdering = false
+        }
+    }
 }
 lsp.html.setup {
     on_attach = custom_attach,
