@@ -1,4 +1,5 @@
 vim.g.slime_target = "neovim"
+vim.g.slime_python_ipython = 1
 
 -- autocmd to assign last entered terminal as slime target
 vim.api.nvim_create_autocmd('TermEnter', {
