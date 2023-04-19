@@ -1,32 +1,13 @@
--- helper functions
---- Check if a file or directory exists in this path
-local function exists(file)
-    local ok, err, code = os.rename(file, file)
-    if not ok then
-        if code == 13 then
-            -- Permission denied, but it exists
-            return true
-        end
-    end
-    return ok, err
-end
-
---- Check if a directory exists in this path
-local function isdir(path)
-    -- "/" works on both Unix and Windows
-    return exists(path .. "/")
-end
-
 local basic_load = {
     ["core.defaults"]               = {},
     ["core.integrations.telescope"] = {},
     ["core.integrations.nvim-cmp"]  = {},
-    ["core.norg.news"]              = {
+    ["core.news"]              = {
         config = {
             check_news = false,
         }
     },
-    ["core.norg.dirman"]            = {
+    ["core.dirman"]            = {
         config = {
             workspaces = {
                 todo = os.getenv("HOME") .. "/Documents/todo"
@@ -34,20 +15,20 @@ local basic_load = {
             index = "index.norg"
         }
     },
-    ["core.norg.completion"]        = {
+    ["core.completion"]        = {
         config = {
             engine = "nvim-cmp"
         }
     },
-    ["core.norg.concealer"]         = {},
-    ["core.norg.journal"]           = {},
+    ["core.concealer"]         = {},
+    ["core.journal"]           = {},
     ["core.presenter"]              = {
         config = {
             zen_mode = "zen-mode"
         }
     },
     ["core.export.markdown"]        = {},
-    ["core.norg.manoeuvre"]         = {},
+    ["core.manoeuvre"]         = {},
     ["core.export"]                 = {},
 }
 
