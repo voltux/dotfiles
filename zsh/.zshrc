@@ -107,4 +107,6 @@ if command -v fdfind &> /dev/null ; then
 fi
 
 # ghcup-env
-[ -f "/home/iarapis/.ghcup/env" ] && source "/home/iarapis/.ghcup/env"
+if [ -f "/home/iarapis/.ghcup/env" ]; then
+    source "/home/iarapis/.ghcup/env"
+fi
