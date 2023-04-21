@@ -98,6 +98,11 @@ if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
 fi
 
+#swap caps lock and escape if possible
+if command -v setxkbmap &> /dev/null; then
+    setxkbmap -option caps:escape
+fi
+
 # create alias for fd if it is installed (needed for debian based distributions)
 if command -v fdfind &> /dev/null ; then
     alias fd >/dev/null 2>&1 && unalias fd
