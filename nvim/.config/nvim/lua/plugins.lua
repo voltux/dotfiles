@@ -464,6 +464,10 @@ local plugins = {
         requires = {
             "nvim-telescope/telescope.nvim"
         }
+    },
+    {
+        'fedepujol/move.nvim',
+        config = function() require("move_conf") end,
     }
 }
 
