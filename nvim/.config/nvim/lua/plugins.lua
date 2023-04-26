@@ -35,7 +35,6 @@ local plugins = {
         -- send text to terminal
         'jpalardy/vim-slime',
         config = function() require('vim-slime_conf') end,
-        event = "VeryLazy"
     },
     {
         -- better marks support
@@ -284,7 +283,6 @@ local plugins = {
         -- indent lines
         'lukas-reineke/indent-blankline.nvim',
         config = function() require('indent-blankline_conf') end,
-        event = "VeryLazy"
     },
     {
         -- nice view for git diff
@@ -309,7 +307,6 @@ local plugins = {
         'glacambre/firenvim',
         build = function() vim.fn['firenvim#install'](0) end,
         config = function() require('firenvim_conf') end,
-        event = "VeryLazy"
     },
     {
         -- debugger engine
