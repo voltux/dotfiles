@@ -2,12 +2,7 @@ local basic_load = {
     ["core.defaults"]               = {},
     ["core.integrations.telescope"] = {},
     ["core.integrations.nvim-cmp"]  = {},
-    ["core.news"]              = {
-        config = {
-            check_news = false,
-        }
-    },
-    ["core.dirman"]            = {
+    ["core.dirman"]                 = {
         config = {
             workspaces = {
                 todo = os.getenv("HOME") .. "/Documents/todo"
@@ -15,20 +10,20 @@ local basic_load = {
             index = "index.norg"
         }
     },
-    ["core.completion"]        = {
+    ["core.completion"]             = {
         config = {
             engine = "nvim-cmp"
         }
     },
-    ["core.concealer"]         = {},
-    ["core.journal"]           = {},
+    ["core.concealer"]              = {},
+    ["core.journal"]                = {},
     ["core.presenter"]              = {
         config = {
             zen_mode = "zen-mode"
         }
     },
     ["core.export.markdown"]        = {},
-    ["core.manoeuvre"]         = {},
+    ["core.manoeuvre"]              = {},
     ["core.export"]                 = {},
 }
 
