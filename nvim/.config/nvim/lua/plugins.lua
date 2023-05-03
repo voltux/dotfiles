@@ -17,7 +17,6 @@ local plugins = {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('nvim-tree_conf') end,
-        event = "VeryLazy"
     },
     {
         -- filetype icons
@@ -45,22 +44,18 @@ local plugins = {
     {
         -- add common shell commands to vim command mode
         'tpope/vim-eunuch',
-        event = "VeryLazy"
     },
     {
         -- mappings to move in all kinds of vim lists
         'tpope/vim-unimpaired',
-        event = "VeryLazy"
     },
     {
         -- enhance the . operator for more complex tasks
         'tpope/vim-repeat',
-        event = "VeryLazy"
     },
     {
         -- detect tabstop/shiftwidth
         'tpope/vim-sleuth',
-        event = "VeryLazy"
     },
     {
         -- surround text objects with opening/closing symbols
