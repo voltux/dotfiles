@@ -200,6 +200,7 @@ local plugins = {
         -- telescope extension file browser
         'nvim-telescope/telescope-file-browser.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim' },
+        lazy = true,
     },
     {
         -- markdown filetype enhancements
@@ -479,8 +480,7 @@ local plugins = {
     {
         "debugloop/telescope-undo.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-        config = function()
-        end,
+        lazy = true
     },
     {
         -- file explorer to edit filesystem like a normal buffer, vim-vinegar like
@@ -503,12 +503,20 @@ local plugins = {
         lazy = true
     },
     {
+        -- create gitignore files automatically
         "wintermute-cell/gitignore.nvim",
-        dependencies = { "nvim-telescope/telescope.nvim" }
+        dependencies = { "nvim-telescope/telescope.nvim" },
+        event = "VeryLazy"
     },
     {
+        -- move blocks respecting indentation
         'fedepujol/move.nvim',
         config = function() require("move_conf") end,
+        event = "VeryLazy"
+    },
+    {
+        -- create nice tables
+        "dhruvasagar/vim-table-mode",
         event = "VeryLazy"
     }
 }
