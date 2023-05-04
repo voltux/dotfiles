@@ -405,7 +405,7 @@ local plugins = {
         -- lsp progress eye candy
         'j-hui/fidget.nvim',
         config = function() require('fidget').setup {} end,
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- make your code rain or play game of life :p
