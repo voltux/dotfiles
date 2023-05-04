@@ -518,6 +518,9 @@ local plugins = {
         -- create nice tables
         "dhruvasagar/vim-table-mode",
         event = "VeryLazy"
+    },
+    {
+        "xiyaowong/telescope-emoji.nvim",
     }
 }
 
