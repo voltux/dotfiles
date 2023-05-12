@@ -49,6 +49,11 @@ wk.register({
         name = "plugin"
     }
 }, { prefix = "<leader>" })
+wk.register({
+    t = {
+        name = "table mode"
+    }
+}, { prefix = "<leader>" })
 wk.setup {
     disable = {
         filetypes = { 'TelescopePrompt', 'dashboard' }
