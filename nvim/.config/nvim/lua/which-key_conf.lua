@@ -57,5 +57,8 @@ wk.register({
 wk.setup {
     disable = {
         filetypes = { 'TelescopePrompt', 'dashboard' }
+    },
+    window = {
+        border = "single"
     }
 }
