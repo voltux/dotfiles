@@ -22,6 +22,6 @@ require("gruvbox").setup({
     ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
   },
   dim_inactive = false,
-  transparent_mode = false,
+  transparent_mode = true,
 })
 vim.cmd [[ colorscheme gruvbox ]] --keeping it here instead of vim_conf.lua because the plugin needs to be configured before the call
