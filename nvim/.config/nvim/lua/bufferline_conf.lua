@@ -7,8 +7,8 @@ require('bufferline').setup {
             left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
             middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
             indicator = {
-                icon = '▎', -- this should be omitted if indicator style is not 'icon'
-                style = 'icon', -- | 'underline' | 'none',
+                -- icon = '| ', -- this should be omitted if indicator style is not 'icon'
+                style = 'none', -- 'icon' | 'underline' | 'none',
             },
             buffer_close_icon = '',
             modified_icon = '●',
@@ -78,7 +78,7 @@ require('bufferline').setup {
             persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
             -- can also be a table containing 2 custom separators
             -- [focused and unfocused]. eg: { '|', '|' }
-            separator_style = "slant", -- | "thick" | "thin" | { 'any', 'any' },
+            separator_style = {'|', '|'}, -- "slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
             enforce_regular_tabs = false, -- | true,
             always_show_bufferline = true, -- | false,
             -- hover = {
@@ -90,5 +90,10 @@ require('bufferline').setup {
             --     -- add custom logic
             --     return buffer_a.modified > buffer_b.modified
             -- end
+        },
+        highlights = {
+            buffer_selected = {
+                italic = false,
+            }
         }
 }
