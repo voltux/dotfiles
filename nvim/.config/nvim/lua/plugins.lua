@@ -233,7 +233,8 @@ local plugins = {
         cmd = 'Neorg sync-parsers',
         dependencies = 'nvim-lua/plenary.nvim',
         ft = 'norg',
-        config = function() require('neorg_conf') end
+        config = function() require('neorg_conf') end,
+        version = "v4.0.1",
     },
     {
         -- neorg integration with telescope
