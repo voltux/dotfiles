@@ -93,6 +93,7 @@ require('bufferline').setup {
         },
         highlights = {
             buffer_selected = {
+                fg = '#d79921',
                 italic = false,
             }
         }

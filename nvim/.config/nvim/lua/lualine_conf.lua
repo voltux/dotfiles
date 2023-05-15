@@ -7,21 +7,22 @@ local colors = {
   orange   = '#fe8019',
   gray     = '#a89984',
   darkgray = '#282828',
+  yellow   = "#d79921",
 }
 local gruvbox = {
   normal = {
+    a = { bg = colors.yellow, fg = colors.darkgray, gui = 'bold' },
+    b = { bg = colors.darkgray, fg = colors.yellow },
+    c = { bg = colors.darkgray, fg = colors.gray }
+  },
+  insert = {
     a = { bg = colors.blue, fg = colors.darkgray, gui = 'bold' },
     b = { bg = colors.darkgray, fg = colors.blue },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
-  insert = {
-    a = { bg = colors.aqua, fg = colors.darkgray, gui = 'bold' },
-    b = { bg = colors.darkgray, fg = colors.aqua },
-    c = { bg = colors.darkgray, fg = colors.gray }
-  },
   visual = {
-    a = { bg = colors.purple, fg = colors.darkgray, gui = 'bold' },
-    b = { bg = colors.darkgray, fg = colors.purple },
+    a = { bg = colors.orange, fg = colors.darkgray, gui = 'bold' },
+    b = { bg = colors.darkgray, fg = colors.orange },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   replace = {
@@ -30,8 +31,13 @@ local gruvbox = {
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   command = {
-    a = { bg = colors.orange, fg = colors.darkgray, gui = 'bold' },
-    b = { bg = colors.darkgray, fg = colors.orange },
+    a = { bg = colors.purple, fg = colors.darkgray, gui = 'bold' },
+    b = { bg = colors.darkgray, fg = colors.purple },
+    c = { bg = colors.darkgray, fg = colors.gray }
+  },
+  terminal = {
+    a = { bg = colors.green, fg = colors.darkgray, gui = 'bold' },
+    b = { bg = colors.darkgray, fg = colors.green },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   inactive = {
