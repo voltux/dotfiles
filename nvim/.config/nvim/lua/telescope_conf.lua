@@ -15,11 +15,38 @@ require("telescope").setup {
             },
         },
         prompt_prefix = "   ",
-        file_ignore_patterns = { "venv/.*" },
+        file_ignore_patterns = { "^venv/", "^.git/" },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
     },
     extensions = {
+        togglescope = {
+            find_files = {
+                ['<C-h>'] = {
+                    hidden = true,
+                    no_ignore = true,
+                    togglescope_title = "Find Files (hidden)"
+                }
+            },
+            live_grep = {
+                ['<C-h>'] = {
+                    additional_args = {
+                        '--hidden',
+                        '--no-ignore',
+                    },
+                    togglescope_title = "Live Grep (hidden)"
+                }
+            },
+            grep_string = {
+                ['<C-h>'] = {
+                    additional_args = {
+                        '--hidden',
+                        '--no-ignore',
+                    },
+                    togglescope_title = "Find Word (hidden)"
+                }
+            },
+        },
         file_browser = {
             use_fd = false,
         },
@@ -45,7 +72,7 @@ vim.keymap.set('n', '<leader>f/', '<cmd>Telescope search_history<CR>',
     { noremap = true, desc = 'Telescope find in search history' })
 vim.keymap.set('n', '<leader>fG', '<cmd>Telescope git_status<CR>',
     { noremap = true, desc = 'Telescope find modified git files' })
-vim.keymap.set('n', '<leader>fa', '<cmd>Telescope live_grep<CR>',
+vim.keymap.set('n', '<leader>fa', function() require('telescope').extensions.togglescope.live_grep()end,
     { noremap = true, desc = 'Telescope find pattern in all files' })
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>',
     { noremap = true, desc = 'Telescope find buffer' })
@@ -53,7 +80,7 @@ vim.keymap.set('n', '<leader>f:', '<cmd>Telescope commands<CR>',
     { noremap = true, desc = 'Telescope find nvim command' })
 vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<CR>',
     { noremap = true, desc = 'Telescope find diagnostic' })
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>',
+vim.keymap.set('n', '<leader>ff', "<cmd>lua require('telescope').extensions.togglescope.find_files()<CR>",
     { noremap = true, desc = 'Telescope find file' })
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope git_files<CR>',
     { silent = true, noremap = true, desc = 'Telescope find git files' })
@@ -74,7 +101,7 @@ vim.keymap.set('n', '<leader>fq', '<cmd>Telescope quickfix<CR>',
     { noremap = true, desc = 'Telescope find in quickfix list' })
 vim.keymap.set('n', '<leader>f"', '<cmd>Telescope registers<CR>',
     { noremap = true, desc = 'Telescope find in registers' })
-vim.keymap.set('n', '<leader>fw', '<cmd>Telescope grep_string<CR>',
+vim.keymap.set('n', '<leader>fw', function() require('telescope').extensions.togglescope.grep_string()end,
     { noremap = true, desc = 'Telescope find string in path' })
 vim.keymap.set('n', '<leader>ft', '<cmd>Telescope tags<CR>', { noremap = true, desc = 'Telescope find tag' })
 vim.keymap.set('n', '<leader>fu', '<cmd>Telescope lsp_references<CR>',

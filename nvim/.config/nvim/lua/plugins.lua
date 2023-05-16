@@ -522,9 +522,12 @@ local plugins = {
         config = function() require("table-mode_conf") end,
     },
     {
+        -- search emojis by name in telescope
         "xiyaowong/telescope-emoji.nvim",
+        event = "VeryLazy",
     },
     {
+        -- project & session management
         "aaditeynair/conduct.nvim",
         dependencies = "nvim-lua/plenary.nvim",
         cmd = {
@@ -540,6 +543,12 @@ local plugins = {
             "ConductProjectDeleteSession",
             "ConductProjectRenameSession",
         },
+        event = "VeryLazy",
+    },
+    {
+        -- change pickers on the fly for telescope (ex. include/ignore hidden files from search)
+        "Theo-Steiner/togglescope",
+        event = "VeryLazy",
     }
 }
 
