@@ -33,6 +33,9 @@ require("gruvbox").setup({
     TSRainbowGreen = { fg = colors.green },
     TSRainbowViolet = { fg = colors.purple },
     TSRainbowCyan = { fg = colors.aqua },
+
+    -- oil
+    OilDir = { fg = colors.blue }
   },
   dim_inactive = false,
   transparent_mode = false,
