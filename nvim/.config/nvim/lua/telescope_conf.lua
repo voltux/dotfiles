@@ -4,6 +4,8 @@ require("telescope").setup {
         sorting_strategy = "ascending",
         layout_strategy = "horizontal",
         layout_config = {
+            width = 0.99,
+            height = 0.99,
             horizontal = {
                 prompt_position = "top",
                 anchor = "SW",
@@ -11,7 +13,7 @@ require("telescope").setup {
                 preview_width = 0.5,
             },
             vertical = {
-                mirror = false,
+                mirror = true,
             },
         },
         prompt_prefix = "   ",
@@ -58,7 +60,6 @@ require("telescope").setup {
             layout_strategy = "vertical",
             layout_config = {
                 preview_height = 0.8,
-                mirror = true,
             },
         },
     },
