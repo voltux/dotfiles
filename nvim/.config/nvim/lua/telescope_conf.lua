@@ -58,6 +58,7 @@ require("telescope").setup {
             layout_strategy = "vertical",
             layout_config = {
                 preview_height = 0.8,
+                mirror = true,
             },
         },
     },
