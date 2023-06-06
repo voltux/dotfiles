@@ -61,3 +61,5 @@ require('lualine').setup {
     'toggleterm'
   }
 }
+
+vim.o.laststatus = 3
