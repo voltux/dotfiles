@@ -407,6 +407,7 @@ local plugins = {
         -- lsp progress eye candy
         'j-hui/fidget.nvim',
         config = function() require('fidget').setup {} end,
+        tag = 'legacy',
         event = "VeryLazy"
     },
     {
