@@ -150,3 +150,6 @@ vim.keymap.set('!', ';t', 'ù', { desc = 'insert special character ù' })
 vim.keymap.set('!', ';u', 'û', { desc = 'insert special character û' })
 vim.keymap.set('!', ';v', 'ü', { desc = 'insert special character ü' })
 vim.keymap.set('i', ';q', '«»<Esc>i', { desc = 'insert special character «»' })
+
+-- Navigation
+vim.keymap.set('n', '<leader>b', '<cmd>b#<CR>', { noremap = true, desc = 'Go to last buffer' })
