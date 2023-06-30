@@ -1,3 +1,4 @@
+vim.o.laststatus = 3
 local colors = {
   red      = '#fb4934',
   aqua     = '#8ec07c',
@@ -61,5 +62,3 @@ require('lualine').setup {
     'toggleterm'
   }
 }
-
-vim.o.laststatus = 3
