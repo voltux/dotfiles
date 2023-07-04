@@ -9,10 +9,10 @@ vim.keymap.set('n', '[e', '<cmd>Lspsaga diagnostic_jump_prev<CR>',
     { noremap = true, silent = true, desc = "Lspsaga diagnostic go to previous" })
 vim.keymap.set("n", "[E", function()
     require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-end)
+end, { noremap = true, silent = true, desc = "Lspsaga diagnostic go to previoue ERROR" })
 vim.keymap.set("n", "]E", function()
     require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
-end)
+end, { noremap = true, silent = true, desc = "Lspsaga diagnostic go to next ERROR" })
 vim.keymap.set('n', '<leader>ce', '<cmd>Lspsaga show_line_diagnostics<CR>',
     { noremap = true, silent = true, desc = "Lspsaga diagnostic show message" })
 vim.keymap.set('n', '<leader>ch', '<cmd>Lspsaga hover_doc<CR>',
