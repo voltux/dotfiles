@@ -550,6 +550,12 @@ local plugins = {
         -- change pickers on the fly for telescope (ex. include/ignore hidden files from search)
         "Theo-Steiner/togglescope",
         event = "VeryLazy",
+    },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function() require("todo-comment_conf") end,
+        event = "VeryLazy",
     }
 }
 
