@@ -110,13 +110,13 @@ bindsym $mod+q focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 | terminal"
-set $ws2 "2 | browser"
-set $ws3 "3 | chat"
-set $ws4 "4 | password"
-set $ws5 "5 | mail"
-set $ws6 "6 | media"
-set $ws7 "7 | vpn"
+set $ws1 "1 terminal"
+set $ws2 "2 browser"
+set $ws3 "3 chat"
+set $ws4 "4 password"
+set $ws5 "5 mail"
+set $ws6 "6 media"
+set $ws7 "7 vpn"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
@@ -196,13 +196,14 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-set $bg #282828
+set $bg #1d2021
+set $orange #d65d0e
 set $red #cc241d
 set $green #98971a
 set $yellow #d79921
 set $blue #458588
 set $purple #b16286
-set $aqua #689d68
+set $aqua #689d6a
 set $gray #a89984
 set $darkgray #1d2021
 set $lightgray #bdae93
@@ -214,18 +215,18 @@ bar {
     colors {
         background $bg
         statusline $lightgray
-        focused_workspace  $lightgray $lightgray $bg
-        inactive_workspace $darkgray  $darkgray  $lightgray
-        active_workspace   $darkgray  $darkgray  $lightgray
-        urgent_workspace   $red       $red $bg
+        focused_workspace  $darkgray  $lightgray $bg
+        inactive_workspace $lightgray $darkgray  $lightgray
+        active_workspace   $lightgray $darkgray  $lightgray
+        urgent_workspace   $red       $red       $bg
     }
 }
 
-# class                 border     backgr     text       indicator child_border
-client.focused          $lightgray $lightgray $bg        $purple   $darkgray
-client.focused_inactive $darkgray  $darkgray  $lightgray $purple   $darkgray
-client.unfocused        $darkgray  $darkgray  $lightgray $purple   $darkgray
-client.urgent           $red       $red       $white     $red      $red
+# class                 border      backgr     text       indicator child_border
+client.focused          $darkgray   $lightgray $bg        $purple   $darkgray
+client.focused_inactive $lightgray  $darkgray  $lightgray $purple   $darkgray
+client.unfocused        $lightgray  $darkgray  $lightgray $purple   $darkgray
+client.urgent           $red        $red       $white     $red      $red
 
 # hide/unhide i3status bar
 bindsym $mod+b bar mode toggle
