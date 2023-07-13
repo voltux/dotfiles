@@ -1,7 +1,7 @@
 require("lspsaga").setup({})
 
 -- keymaps
-vim.keymap.set("n", "<leader>cc", "<cmd>Lspsaga lsp_finder<CR>",
+vim.keymap.set("n", "<leader>cc", "<cmd>Lspsaga finder<CR>",
     { noremap = true, silent = true, desc = "Lspsaga definition and usage finder" })
 vim.keymap.set('n', ']e', '<cmd>Lspsaga diagnostic_jump_next<CR>',
     { noremap = true, silent = true, desc = "Lspsaga diagnostic go to next" })
