@@ -1,6 +1,6 @@
 local basic_load = {
     ["core.defaults"]               = {},
-    ["core.integrations.telescope"] = {},
+    -- ["core.integrations.telescope"] = {},
     ["core.integrations.nvim-cmp"]  = {},
     ["core.dirman"]                 = {
         config = {

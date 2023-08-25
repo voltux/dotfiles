@@ -236,11 +236,11 @@ local plugins = {
         config = function() require('neorg_conf') end,
         version = "v4.0.1",
     },
-    {
-        -- neorg integration with telescope
-        'nvim-neorg/neorg-telescope',
-        dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-neorg/neorg' },
-    },
+    -- {
+    --     -- neorg integration with telescope
+    --     'nvim-neorg/neorg-telescope',
+    --     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-neorg/neorg' },
+    -- },
     {
         -- fuzzy finding anything anywhere
         'nvim-telescope/telescope.nvim',
