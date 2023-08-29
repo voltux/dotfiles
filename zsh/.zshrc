@@ -60,7 +60,6 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # replace cat with bat if bat is installed
 export FZF_PREVIEWER="cat"
 if command -v bat &> /dev/null; then
-    alias cat="bat"
     export FZF_PREVIEWER="bat --line-range :500 {}"
 fi
 
