@@ -2,12 +2,12 @@ local colors = require("gruvbox.palette").get_base_colors(vim.o.background, "har
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
-  bold = false,
+  bold = true,
   italic = {
     strings = false,
     comments = false,
     operators = false,
-    folds = false,
+    folds = true,
   },
   strikethrough = true,
   invert_selection = false,
