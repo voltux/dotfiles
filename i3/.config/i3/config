@@ -209,14 +209,18 @@ set $darkgray #1d2021
 set $lightgray #bdae93
 
 bar {
-    status_command i3status
+    status_command bumblebee-status \
+                    -m pasink nic battery datetime layout \
+                    -t gruvbox-powerline \
+                    -p disk.path=$HOME datetime.format="%d/%m/%Y %H:%M:%S" \
+                    || i3status
     position bottom
 
     colors {
-        background $bg
-        statusline $lightgray
+        background         $bg
+        statusline         $lightgray
         focused_workspace  $darkgray  $lightgray $bg
-        inactive_workspace $lightgray $darkgray  $lightgray
+        inactive_workspace $darkgray  $darkgray  $lightgray
         active_workspace   $lightgray $darkgray  $lightgray
         urgent_workspace   $red       $red       $bg
     }
@@ -225,7 +229,7 @@ bar {
 # class                 border      backgr     text       indicator child_border
 client.focused          $darkgray   $lightgray $bg        $purple   $darkgray
 client.focused_inactive $lightgray  $darkgray  $lightgray $purple   $darkgray
-client.unfocused        $lightgray  $darkgray  $lightgray $purple   $darkgray
+client.unfocused        $darkgray   $darkgray  $lightgray $purple   $darkgray
 client.urgent           $red        $red       $white     $red      $red
 
 # hide/unhide i3status bar

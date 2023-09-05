@@ -11,15 +11,11 @@ order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery all"
-order += "disk /home"
-order += "load"
-order += "cpu_usage"
-order += "memory"
 order += "tztime local"
 
 volume master {
-    format = " %volume "
-    format_muted = " "
+    format = " %volume"
+    format_muted = " %volume"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
@@ -37,10 +33,10 @@ ethernet _first_ {
 
 battery all {
     format = "%status %percentage %remaining"
-    status_chr = " "
-    status_bat = " "
-    status_unk = " "
-    status_full = " "
+    status_chr = ""
+    status_bat = ""
+    status_unk = ""
+    status_full = ""
     last_full_capacity = true
     integer_battery_capacity = true
     low_threshold = 11
@@ -49,7 +45,7 @@ battery all {
 }
 
 disk "/home" {
-    format = " %avail/%total"
+    format = " %used/%total"
     prefix_type	= custom
     low_threshold = 10
     threshold_type = percentage_avail
