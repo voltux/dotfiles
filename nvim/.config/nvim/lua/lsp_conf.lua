@@ -116,6 +116,7 @@ lsp.bashls.setup {
 lsp.clangd.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
+    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", },
 }
 lsp.yamlls.setup {
     on_attach = custom_attach,
