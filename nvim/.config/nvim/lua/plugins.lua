@@ -550,7 +550,19 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" },
         config = function() require("todo-comment_conf") end,
         event = "VeryLazy",
-    }
+    },
+    {
+        -- Database explorer
+        "tpope/vim-dadbod",
+        dependencies = {
+            "kristijanhusak/vim-dadbod-ui",
+            "kristijanhusak/vim-dadbod-completion",
+        },
+        config = function()
+            require("dadbod_conf").setup()
+        end,
+        cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+    },
 }
 
 local opts = {
