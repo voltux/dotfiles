@@ -1,4 +1,4 @@
-local colors = require("gruvbox.palette").get_base_colors(vim.o.background, "hard")
+local colors = require("gruvbox.palette").get_base_colors({}, vim.o.background, "hard")
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
