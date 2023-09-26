@@ -1,3 +1,13 @@
+<!--toc:start-->
+- [Configuration files](#configuration-files)
+  - [Prerequisites](#prerequisites)
+    - [Required](#required)
+    - [Optional](#optional)
+  - [Installation](#installation)
+    - [Via stow (recommended)](#via-stow-recommended)
+    - [Manually](#manually)
+<!--toc:end-->
+
 # Configuration files
 
 These configuration files clearly reflect my personal taste. I try to maintain them in order to be easily reusable but they remain adapted to my personal needs.
