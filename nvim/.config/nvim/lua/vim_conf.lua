@@ -59,6 +59,8 @@ vim.cmd [[ set path+=** "search down into subfolders, provides tab completion fo
 vim.cmd [[ set undodir=$HOME/.local/share/nvim/undo ]] --where to save undo histories
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
 vim.cmd [[ colorscheme habamax ]]
+vim.cmd [[ set listchars=tab:>\ ,eol:⏎,trail:⋅ ]]
+vim.cmd [[ set nolist ]]
 
 -- Abbreviations for common typos
 vim.cmd [[
@@ -110,7 +112,7 @@ local tmux_copy_mode_toggle = function()
         vim.o.signcolumn = "no"
         vim.o.number = false
         vim.o.relativenumber = false
-        vim.cmd [[ IndentBlanklineDisable ]]
+        vim.cmd [[ IBLDisable ]]
     else
         vim.o.signcolumn = "yes"
         vim.o.number = true
