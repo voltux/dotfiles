@@ -19,7 +19,7 @@ vim.o.confirm = true                        -- ask me if I try to leave the edit
 vim.o.swapfile = false                      -- don't create swapfiles
 vim.o.mousemodel = "popup_setpos"           -- move mouse to click point
 vim.o.smartindent = true                    -- do smart autoindenting when changing lines
-vim.o.expandtab = true                      -- change tab to spaces
+vim.o.expandtab = false                     -- do not change tab to spaces
 vim.o.smarttab = true                       -- insert correct amount of spaces in begging of line
 vim.o.tabstop = 4                           -- number of spaces for a tab
 vim.o.shiftwidth = 4                        -- number of spaces for autoindent
@@ -58,9 +58,13 @@ vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
 vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
 vim.cmd [[ set undodir=$HOME/.local/share/nvim/undo ]] --where to save undo histories
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
-vim.cmd [[ colorscheme habamax ]]
-vim.cmd [[ set listchars=tab:>\ ,eol:⏎,trail:⋅ ]]
-vim.cmd [[ set nolist ]]
+vim.cmd [[ set listchars=tab:▷\ ,eol:⏎,trail:·,lead:·,extends:»,precedes:«,nbsp:○ ]]
+vim.o.list = true
+
+-- Colorscheme
+if vim.g.colors_name == nil then
+    vim.cmd [[ colorscheme habamax ]]
+end
 
 -- Abbreviations for common typos
 vim.cmd [[
