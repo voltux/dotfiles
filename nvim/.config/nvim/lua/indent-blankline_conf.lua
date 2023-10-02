@@ -1,9 +1,8 @@
 require('ibl').setup {
     enabled = false,
-    filetype_exclude = { 'help', 'alpha', 'dashboard', 'neo-tree', 'Trouble', 'lazy', 'NvimTree', 'norg' },
-    show_current_context = true,
+    exclude = { filetypes = { 'help', 'alpha', 'dashboard', 'neo-tree', 'Trouble', 'lazy', 'NvimTree', 'norg' } },
     whitespace = {
         remove_blankline_trail = false,
     },
 }
-vim.keymap.set('n', '<leader>pi', ':IBLToggle<CR>', { noremap = true, desc = 'IndentBlankLine Toggle' })
+vim.keymap.set('n', '<leader>pi', '<cmd>IBLToggle<CR>', { noremap = true, desc = 'IndentBlankLine Toggle' })

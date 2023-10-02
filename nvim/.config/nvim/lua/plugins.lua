@@ -452,7 +452,7 @@ local plugins = {
     {
         -- in text colorizer
         'NvChad/nvim-colorizer.lua',
-        config = function() require 'colorizer'.setup { filetypes = { '*', } } end,
+        config = function() require('colorizer_conf') end,
         event = "VeryLazy"
     },
     {

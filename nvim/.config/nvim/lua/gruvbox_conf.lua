@@ -1,4 +1,4 @@
-local colors = require("gruvbox.palette").get_base_colors({}, vim.o.background, "hard")
+local color_palette = require("gruvbox").palette
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
@@ -24,18 +24,18 @@ require("gruvbox").setup({
     LineNr = { bg = 'NONE' },
     Error = { bg = 'NONE' },
     ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
-    NormalFloat = { fg = colors.fg1, bg = colors.bg0 },
+    NormalFloat = { fg = color_palette.fg1, bg = color_palette.bg0 },
     -- nvim-ts-rainbow2 colors
-    TSRainbowRed = { fg = colors.neutral_red },
-    TSRainbowYellow = { fg = colors.yellow },
-    TSRainbowBlue = { fg = colors.blue },
-    TSRainbowOrange = { fg = colors.orange },
-    TSRainbowGreen = { fg = colors.green },
-    TSRainbowViolet = { fg = colors.purple },
-    TSRainbowCyan = { fg = colors.aqua },
+    TSRainbowRed = { fg = color_palette.neutral_red },
+    TSRainbowYellow = { fg = color_palette.yellow },
+    TSRainbowBlue = { fg = color_palette.blue },
+    TSRainbowOrange = { fg = color_palette.orange },
+    TSRainbowGreen = { fg = color_palette.green },
+    TSRainbowViolet = { fg = color_palette.purple },
+    TSRainbowCyan = { fg = color_palette.aqua },
 
     -- oil
-    OilDir = { fg = colors.blue }
+    OilDir = { fg = color_palette.blue }
   },
   dim_inactive = false,
   transparent_mode = false,
