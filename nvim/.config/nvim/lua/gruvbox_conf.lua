@@ -25,6 +25,7 @@ require("gruvbox").setup({
     Error = { bg = 'NONE' },
     ErrorMsg = { bg = 'NONE', fg = color_palette.neutral_red },
     NormalFloat = { bg = color_palette.dark0 },
+    FloatBorder = { fg = color_palette.neutral_yellow},
     -- nvim-ts-rainbow2 colors
     TSRainbowRed = { fg = color_palette.neutral_red },
     TSRainbowYellow = { fg = color_palette.neutral_yellow },
@@ -36,10 +37,10 @@ require("gruvbox").setup({
     -- telescope
     TelescopePromptBorder = { fg = color_palette.neutral_green },
     TelescopePromptTitle = { bg = color_palette.neutral_green, fg = color_palette.dark0 },
-    TelescopePreviewBorder = { fg = color_palette.neutral_yellow },
-    TelescopePreviewTitle = { bg = color_palette.neutral_yellow, fg = color_palette.dark0 },
-    TelescopeResultsBorder = { fg = color_palette.neutral_blue },
-    TelescopeResultsTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
+    TelescopeResultsBorder = { fg = color_palette.neutral_yellow },
+    TelescopeResultsTitle = { bg = color_palette.neutral_yellow, fg = color_palette.dark0 },
+    TelescopePreviewBorder = { fg = color_palette.neutral_blue },
+    TelescopePreviewTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
     -- oil
     OilDir = { fg = color_palette.blue }
   },

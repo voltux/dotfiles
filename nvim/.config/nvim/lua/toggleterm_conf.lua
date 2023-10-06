@@ -7,7 +7,7 @@ require('toggleterm').setup {
     },
     highlights = {
         FloatBorder = {
-            guifg = "#458588",
+            guifg = "#d79921",
         }
     }
 }
