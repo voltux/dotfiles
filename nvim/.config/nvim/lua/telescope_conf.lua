@@ -74,7 +74,7 @@ vim.keymap.set('n', '<leader>f/', '<cmd>Telescope search_history<CR>',
     { noremap = true, desc = 'Telescope find in search history' })
 vim.keymap.set('n', '<leader>fG', '<cmd>Telescope git_status<CR>',
     { noremap = true, desc = 'Telescope find modified git files' })
-vim.keymap.set('n', '<leader>fa', function() require('telescope').extensions.togglescope.live_grep()end,
+vim.keymap.set('n', '<leader>fa', function() require('telescope').extensions.togglescope.live_grep() end,
     { noremap = true, desc = 'Telescope find pattern in all files' })
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>',
     { noremap = true, desc = 'Telescope find buffer' })
@@ -103,7 +103,7 @@ vim.keymap.set('n', '<leader>fq', '<cmd>Telescope quickfix<CR>',
     { noremap = true, desc = 'Telescope find in quickfix list' })
 vim.keymap.set('n', '<leader>f"', '<cmd>Telescope registers<CR>',
     { noremap = true, desc = 'Telescope find in registers' })
-vim.keymap.set('n', '<leader>fw', function() require('telescope').extensions.togglescope.grep_string()end,
+vim.keymap.set('n', '<leader>fw', function() require('telescope').extensions.togglescope.grep_string() end,
     { noremap = true, desc = 'Telescope find string in path' })
 vim.keymap.set('n', '<leader>ft', '<cmd>Telescope tags<CR>', { noremap = true, desc = 'Telescope find tag' })
 vim.keymap.set('n', '<leader>fu', '<cmd>Telescope lsp_references<CR>',
@@ -145,6 +145,6 @@ vim.keymap.set('n', '<leader>fC', "<cmd>Telescope cder<CR>",
 vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { noremap = true, desc = 'Telescope undo' })
 vim.keymap.set("n", "<leader>fe", "<cmd>Telescope emoji<cr>", { noremap = true, desc = 'Telescope emoji' })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope conduct projects theme=dropdown<cr>",
-{ noremap = true, desc = 'Telescope find project' })
+    { noremap = true, desc = 'Telescope find project' })
 vim.keymap.set("n", "<leader>fP", "<cmd>Telescope conduct sessions theme = dropdown<cr>",
-{ noremap = true, desc = 'Telescope find session' })
+    { noremap = true, desc = 'Telescope find session' })

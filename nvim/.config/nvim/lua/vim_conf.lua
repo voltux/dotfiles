@@ -59,7 +59,7 @@ vim.cmd [[ set path+=** "search down into subfolders, provides tab completion fo
 vim.cmd [[ set undodir=$HOME/.local/share/nvim/undo ]] --where to save undo histories
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
 vim.cmd [[ set listchars=tab:▷\ ,eol:⏎,trail:·,lead:·,extends:»,precedes:«,nbsp:○ ]]
-vim.o.list = false                          -- do not show listchars
+vim.o.list = false -- do not show listchars
 
 -- Colorscheme
 if vim.g.colors_name == nil then

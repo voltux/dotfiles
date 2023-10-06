@@ -21,15 +21,15 @@ cmp.setup({
     },
     event = "InsertEnter",
     duplicates = {
-      nvim_lsp = 1,
-      luasnip = 1,
-      cmp_tabnine = 1,
-      buffer = 1,
-      path = 1,
+        nvim_lsp = 1,
+        luasnip = 1,
+        cmp_tabnine = 1,
+        buffer = 1,
+        path = 1,
     },
     window = {
-      completion = cmp.config.window.bordered(border_opts),
-      documentation = cmp.config.window.bordered(border_opts),
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -60,13 +60,13 @@ cmp.setup({
         end, { "i", "s" }),
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp', priority = 1000 },
-        { name = 'nvim_lua', priority = 1000 },
-        { name = 'neorg', priority = 1000 },
-        { name = 'luasnip', priority = 900 },
+        { name = 'nvim_lsp',                priority = 1000 },
+        { name = 'nvim_lua',                priority = 1000 },
+        { name = 'neorg',                   priority = 1000 },
+        { name = 'luasnip',                 priority = 900 },
         { name = 'nvim_lsp_signature_help', priority = 800 },
-        { name = 'buffer', priority = 700 },
-        { name = 'path', priority = 500 },
+        { name = 'buffer',                  priority = 700 },
+        { name = 'path',                    priority = 500 },
     })
 })
 

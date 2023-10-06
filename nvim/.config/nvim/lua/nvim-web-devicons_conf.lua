@@ -1,3 +1,3 @@
 require 'nvim-web-devicons'.setup {
-    default = true;
+    default = true,
 }
