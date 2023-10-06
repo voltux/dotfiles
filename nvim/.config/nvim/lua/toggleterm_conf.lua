@@ -4,6 +4,11 @@ require('toggleterm').setup {
         border = "rounded",
         height = vim.o.lines - 5,
         width = vim.o.columns,
+    },
+    highlights = {
+        FloatBorder = {
+            guifg = "#458588",
+        }
     }
 }
 vim.keymap.set("n", "<leader>sf", "<cmd>ToggleTerm direction=float<cr>",

@@ -4,8 +4,8 @@ require("gruvbox").setup({
   underline = true,
   bold = true,
   italic = {
-    strings = false,
-    comments = false,
+    strings = true,
+    comments = true,
     operators = false,
     folds = true,
   },
@@ -13,7 +13,7 @@ require("gruvbox").setup({
   invert_selection = false,
   invert_signs = false,
   invert_tabline = false,
-  invert_intend_guides = false,
+  invert_intend_guides = true,
   inverse = true,    -- invert background for search, diffs, statuslines and errors
   contrast = "hard", -- can be "hard", "soft" or empty string
   palette_overrides = {
@@ -23,17 +23,23 @@ require("gruvbox").setup({
     SignColumn = { bg = 'NONE' },
     LineNr = { bg = 'NONE' },
     Error = { bg = 'NONE' },
-    ErrorMsg = { bg = 'NONE', fg = '#fb4934' },
-    NormalFloat = { fg = color_palette.fg1, bg = color_palette.bg0 },
+    ErrorMsg = { bg = 'NONE', fg = color_palette.neutral_red },
+    NormalFloat = { bg = color_palette.dark0 },
     -- nvim-ts-rainbow2 colors
     TSRainbowRed = { fg = color_palette.neutral_red },
-    TSRainbowYellow = { fg = color_palette.yellow },
-    TSRainbowBlue = { fg = color_palette.blue },
-    TSRainbowOrange = { fg = color_palette.orange },
-    TSRainbowGreen = { fg = color_palette.green },
-    TSRainbowViolet = { fg = color_palette.purple },
-    TSRainbowCyan = { fg = color_palette.aqua },
-
+    TSRainbowYellow = { fg = color_palette.neutral_yellow },
+    TSRainbowBlue = { fg = color_palette.neutral_blue },
+    TSRainbowOrange = { fg = color_palette.neutral_orange },
+    TSRainbowGreen = { fg = color_palette.neutral_green },
+    TSRainbowViolet = { fg = color_palette.neutral_purple },
+    TSRainbowCyan = { fg = color_palette.neutral_aqua },
+    -- telescope
+    TelescopePromptBorder = { fg = color_palette.neutral_green },
+    TelescopePromptTitle = { bg = color_palette.neutral_green, fg = color_palette.dark0 },
+    TelescopePreviewBorder = { fg = color_palette.neutral_yellow },
+    TelescopePreviewTitle = { bg = color_palette.neutral_yellow, fg = color_palette.dark0 },
+    TelescopeResultsBorder = { fg = color_palette.neutral_blue },
+    TelescopeResultsTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
     -- oil
     OilDir = { fg = color_palette.blue }
   },
