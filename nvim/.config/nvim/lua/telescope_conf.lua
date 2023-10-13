@@ -1,5 +1,13 @@
 require("telescope").setup {
     defaults = {
+        mappings = {
+            i = {
+                ["<C-o>"] = function(p_bufnr)
+                    require("telescope.actions").send_selected_to_qflist(p_bufnr)
+                    vim.cmd.cfdo("edit")
+                end,
+            },
+        },
         selection_strategy = "reset",
         sorting_strategy = "ascending",
         layout_strategy = "horizontal",
