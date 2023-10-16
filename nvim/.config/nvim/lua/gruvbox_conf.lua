@@ -37,8 +37,8 @@ require("gruvbox").setup({
     -- telescope
     TelescopePromptBorder = { fg = color_palette.neutral_green },
     TelescopePromptTitle = { bg = color_palette.neutral_green, fg = color_palette.dark0 },
-    TelescopeResultsBorder = { fg = color_palette.neutral_yellow },
-    TelescopeResultsTitle = { bg = color_palette.neutral_yellow, fg = color_palette.dark0 },
+    TelescopeResultsBorder = { fg = color_palette.neutral_red },
+    TelescopeResultsTitle = { bg = color_palette.neutral_red, fg = color_palette.dark0 },
     TelescopePreviewBorder = { fg = color_palette.neutral_blue },
     TelescopePreviewTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
     -- oil
