@@ -35,12 +35,12 @@ require("gruvbox").setup({
     TSRainbowViolet = { fg = color_palette.neutral_purple },
     TSRainbowCyan = { fg = color_palette.neutral_aqua },
     -- telescope
-    TelescopePromptBorder = { fg = color_palette.neutral_green },
-    TelescopePromptTitle = { bg = color_palette.neutral_green, fg = color_palette.dark0 },
-    TelescopeResultsBorder = { fg = color_palette.neutral_red },
-    TelescopeResultsTitle = { bg = color_palette.neutral_red, fg = color_palette.dark0 },
-    TelescopePreviewBorder = { fg = color_palette.neutral_blue },
-    TelescopePreviewTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
+    TelescopePromptBorder = { fg = color_palette.neutral_blue },
+    TelescopePromptTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
+    TelescopeResultsBorder = { fg = color_palette.neutral_yellow },
+    TelescopeResultsTitle = { bg = color_palette.neutral_yellow, fg = color_palette.dark0 },
+    TelescopePreviewBorder = { fg = color_palette.neutral_aqua },
+    TelescopePreviewTitle = { bg = color_palette.neutral_aqua, fg = color_palette.dark0 },
     -- oil
     OilDir = { fg = color_palette.blue }
   },
