@@ -1,4 +1,8 @@
 require('reticle').setup {
+    on_startup = {
+        cursorline = true,
+        cursorcolumn = false,
+    },
     -- Make the cursorline and cursorcolumn follow your active window. This
     -- only works if the cursorline and cursorcolumn setting is switched on
     -- globaly like explained in 'Usage'. Default is true for both values
@@ -26,8 +30,7 @@ require('reticle').setup {
     -- the window is focused, regardless of the global setting
     on_focus = {
         cursorline = {
-            'help',
-            'NvimTree',
+            '*',
         },
         cursorcolumn = {},
     },
