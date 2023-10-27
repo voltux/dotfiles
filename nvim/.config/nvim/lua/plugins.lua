@@ -522,22 +522,9 @@ local plugins = {
         event = "VeryLazy",
     },
     {
-        -- project & session management
-        "aaditeynair/conduct.nvim",
-        dependencies = "nvim-lua/plenary.nvim",
-        cmd = {
-            "ConductNewProject",
-            "ConductLoadProject",
-            "ConductLoadLastProject",
-            "ConductLoadProjectConfig",
-            "ConductReloadProjectConfig",
-            "ConductDeleteProject",
-            "ConductRenameProject",
-            "ConductProjectNewSession",
-            "ConductProjectLoadSession",
-            "ConductProjectDeleteSession",
-            "ConductProjectRenameSession",
-        },
+        -- project management
+        "ahmedkhalf/project.nvim",
+        config = function() require("project_nvim").setup {} end,
         event = "VeryLazy",
     },
     {
@@ -558,9 +545,7 @@ local plugins = {
             "kristijanhusak/vim-dadbod-ui",
             "kristijanhusak/vim-dadbod-completion",
         },
-        config = function()
-            require("dadbod_conf").setup()
-        end,
+        config = function() require("dadbod_conf").setup() end,
         cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
     },
     {

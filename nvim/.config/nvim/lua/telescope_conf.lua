@@ -75,7 +75,6 @@ require("telescope").setup {
 require('telescope').load_extension('luasnip')
 require("telescope").load_extension("undo")
 require("telescope").load_extension("emoji")
-require("telescope").load_extension("conduct")
 vim.keymap.set('n', '<leader>f%', '<cmd>Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
 vim.keymap.set('n', '<leader>f/', '<cmd>Telescope search_history<CR>',
@@ -152,7 +151,5 @@ vim.keymap.set('n', '<leader>fC', "<cmd>Telescope cder<CR>",
     { noremap = true, desc = 'Telescope cd change current directory' })
 vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { noremap = true, desc = 'Telescope undo' })
 vim.keymap.set("n", "<leader>fe", "<cmd>Telescope emoji<cr>", { noremap = true, desc = 'Telescope emoji' })
-vim.keymap.set("n", "<leader>fp", "<cmd>Telescope conduct projects theme=dropdown<cr>",
+vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<cr>",
     { noremap = true, desc = 'Telescope find project' })
-vim.keymap.set("n", "<leader>fP", "<cmd>Telescope conduct sessions theme = dropdown<cr>",
-    { noremap = true, desc = 'Telescope find session' })
