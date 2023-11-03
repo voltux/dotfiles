@@ -49,7 +49,6 @@ hi Folded ctermbg=016
 runtime! ftplugin/man.vim "man pages in vim
 set t_Co=256 "termcolors
 set background=dark "background color
-colorscheme pablo
 
 "netrw
 let g:netrw_liststyle=3
