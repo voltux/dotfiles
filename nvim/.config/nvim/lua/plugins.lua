@@ -366,7 +366,6 @@ local plugins = {
     {
         -- set commentstring option based on the cursor location in the file.
         'JoosepAlviste/nvim-ts-context-commentstring',
-        config = function() require('ts_context_commentstring').setup{} end,
         dependencies = 'nvim-treesitter/nvim-treesitter',
         event = 'VeryLazy'
     },
