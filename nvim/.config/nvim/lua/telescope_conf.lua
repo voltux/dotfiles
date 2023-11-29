@@ -153,3 +153,4 @@ vim.keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>", { noremap = true, d
 vim.keymap.set("n", "<leader>fe", "<cmd>Telescope emoji<cr>", { noremap = true, desc = 'Telescope emoji' })
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<cr>",
     { noremap = true, desc = 'Telescope find project' })
+vim.keymap.set("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { noremap = true, desc = 'Telescope highlights' })

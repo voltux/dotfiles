@@ -1,4 +1,5 @@
 local color_palette = require("gruvbox").palette
+
 require("gruvbox").setup({
   undercurl = true,
   underline = true,
@@ -25,24 +26,26 @@ require("gruvbox").setup({
     Error = { bg = 'NONE' },
     ErrorMsg = { bg = 'NONE', fg = color_palette.neutral_red },
     NormalFloat = { bg = color_palette.dark0 },
-    FloatBorder = { fg = color_palette.neutral_yellow},
+    FloatBorder = { fg = color_palette.faded_yellow },
     -- nvim-ts-rainbow2 colors
-    TSRainbowRed = { fg = color_palette.neutral_red },
-    TSRainbowYellow = { fg = color_palette.neutral_yellow },
-    TSRainbowBlue = { fg = color_palette.neutral_blue },
-    TSRainbowOrange = { fg = color_palette.neutral_orange },
-    TSRainbowGreen = { fg = color_palette.neutral_green },
-    TSRainbowViolet = { fg = color_palette.neutral_purple },
-    TSRainbowCyan = { fg = color_palette.neutral_aqua },
+    TSRainbowRed = { fg = color_palette.faded_red },
+    TSRainbowYellow = { fg = color_palette.faded_yellow },
+    TSRainbowBlue = { fg = color_palette.faded_blue },
+    TSRainbowOrange = { fg = color_palette.faded_orange },
+    TSRainbowGreen = { fg = color_palette.faded_green },
+    TSRainbowViolet = { fg = color_palette.faded_purple },
+    TSRainbowCyan = { fg = color_palette.faded_aqua },
     -- telescope
-    TelescopePromptBorder = { fg = color_palette.neutral_blue },
-    TelescopePromptTitle = { bg = color_palette.neutral_blue, fg = color_palette.dark0 },
-    TelescopeResultsBorder = { fg = color_palette.neutral_yellow },
-    TelescopeResultsTitle = { bg = color_palette.neutral_yellow, fg = color_palette.dark0 },
-    TelescopePreviewBorder = { fg = color_palette.neutral_aqua },
-    TelescopePreviewTitle = { bg = color_palette.neutral_aqua, fg = color_palette.dark0 },
+    TelescopePromptBorder = { fg = color_palette.faded_blue },
+    TelescopePromptTitle = { bg = color_palette.faded_blue, fg = color_palette.dark0 },
+    TelescopeResultsBorder = { fg = color_palette.faded_yellow },
+    TelescopeResultsTitle = { bg = color_palette.faded_yellow, fg = color_palette.dark0 },
+    TelescopePreviewBorder = { fg = color_palette.faded_aqua },
+    TelescopePreviewTitle = { bg = color_palette.faded_aqua, fg = color_palette.dark0 },
     -- oil
-    OilDir = { fg = color_palette.blue }
+    OilDir = { fg = color_palette.blue },
+    IncSearch = { bg = 'NONE', fg = color_palette.neutral_yellow },
+    Search = { bg = 'NONE', fg = color_palette.faded_aqua },
   },
   dim_inactive = false,
   transparent_mode = false,
