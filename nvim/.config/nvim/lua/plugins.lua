@@ -291,7 +291,7 @@ local plugins = {
         -- syntax aware commenting
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end,
-        event = "VeryLazy"
+        event = { "BufReadPre", "BufNewFile" },
     },
     {
         -- embed neovim on the browser
