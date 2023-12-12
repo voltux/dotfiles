@@ -1,5 +1,15 @@
 require("telescope").setup {
     defaults = {
+        vimgrep_arguments = {
+            "rg",
+            "-L",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+        },
         mappings = {
             i = {
                 ["<C-o>"] = function(p_bufnr)
@@ -7,6 +17,7 @@ require("telescope").setup {
                     vim.cmd.cfdo("edit")
                 end,
             },
+            n = { ["q"] = require("telescope.actions").close },
         },
         selection_strategy = "reset",
         sorting_strategy = "ascending",
@@ -28,6 +39,7 @@ require("telescope").setup {
         file_ignore_patterns = { "^venv/", "^.git/" },
         color_devicons = true,
         set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+        path_display = { "truncate" },
     },
     extensions = {
         togglescope = {
@@ -72,6 +84,7 @@ require("telescope").setup {
         },
     },
 }
+
 require('telescope').load_extension('luasnip')
 require("telescope").load_extension("undo")
 require("telescope").load_extension("emoji")
