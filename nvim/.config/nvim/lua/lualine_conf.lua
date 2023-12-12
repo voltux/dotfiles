@@ -17,12 +17,12 @@ local gruvbox = {
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   insert = {
-    a = { bg = colors.blue, fg = colors.darkgray, gui = 'bold' },
+    a = { bg = colors.green, fg = colors.darkgray, gui = 'bold' },
     b = { bg = colors.darkgray, fg = colors.blue },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   visual = {
-    a = { bg = colors.orange, fg = colors.darkgray, gui = 'bold' },
+    a = { bg = colors.purple, fg = colors.darkgray, gui = 'bold' },
     b = { bg = colors.darkgray, fg = colors.orange },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
@@ -32,7 +32,7 @@ local gruvbox = {
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   command = {
-    a = { bg = colors.purple, fg = colors.darkgray, gui = 'bold' },
+    a = { bg = colors.blue, fg = colors.darkgray, gui = 'bold' },
     b = { bg = colors.darkgray, fg = colors.purple },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
