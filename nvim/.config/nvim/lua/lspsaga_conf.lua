@@ -1,4 +1,8 @@
-require("lspsaga").setup({})
+require("lspsaga").setup({
+    ui = {
+        code_action = '', -- don't show lightbulbs
+    }
+})
 
 -- keymaps
 vim.keymap.set("n", "<leader>cc", "<cmd>Lspsaga finder<CR>",
