@@ -18,12 +18,12 @@ local gruvbox = {
   },
   insert = {
     a = { bg = colors.green, fg = colors.darkgray, gui = 'bold' },
-    b = { bg = colors.darkgray, fg = colors.blue },
+    b = { bg = colors.darkgray, fg = colors.green },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   visual = {
     a = { bg = colors.purple, fg = colors.darkgray, gui = 'bold' },
-    b = { bg = colors.darkgray, fg = colors.orange },
+    b = { bg = colors.darkgray, fg = colors.purple },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   replace = {
@@ -33,7 +33,7 @@ local gruvbox = {
   },
   command = {
     a = { bg = colors.blue, fg = colors.darkgray, gui = 'bold' },
-    b = { bg = colors.darkgray, fg = colors.purple },
+    b = { bg = colors.darkgray, fg = colors.blue },
     c = { bg = colors.darkgray, fg = colors.gray }
   },
   terminal = {
