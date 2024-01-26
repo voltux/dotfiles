@@ -203,11 +203,6 @@ local plugins = {
         lazy = true,
     },
     {
-        -- markdown filetype enhancements
-        'plasticboy/vim-markdown',
-        ft = 'markdown',
-    },
-    {
         -- html easy text generation
         'mattn/emmet-vim',
         ft = 'html',
