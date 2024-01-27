@@ -1,5 +1,10 @@
 --Treesitter
 require 'nvim-treesitter.configs'.setup {
+    modules = {},
+    ensure_installed = {},
+    sync_install = false,
+    ignore_install = {},
+    auto_install = false,
     highlight = {
         enable = true,
     },
