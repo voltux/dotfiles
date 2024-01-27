@@ -5,8 +5,9 @@ require('neorg').setup {
         ["core.dirman"]                = {
             config = {
                 workspaces = {
-                    todo = os.getenv("HOME") .. "/Documents/todo"
+                    todo = os.getenv("HOME") .. "/Documents/todo",
                 },
+                default_workspace = "todo",
                 index = "index.norg"
             }
         },
