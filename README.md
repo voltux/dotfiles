@@ -1,13 +1,3 @@
-<!--toc:start-->
-- [Configuration files](#configuration-files)
-  - [Prerequisites](#prerequisites)
-    - [Required](#required)
-    - [Optional](#optional)
-  - [Installation](#installation)
-    - [Via stow (recommended)](#via-stow-recommended)
-    - [Manually](#manually)
-<!--toc:end-->
-
 # Configuration files
 
 These configuration files clearly reflect my personal taste. I try to maintain them in order to be easily reusable but they remain adapted to my personal needs.
@@ -39,12 +29,12 @@ Clone the repository
 ### Via stow (recommended)
 
 From the cloned repo and having stow installed you can simply:
-```sh
-`stow -t $HOME <app>`
+```bash
+stow -t $HOME <app>
 ```
   Example of installing vim and tmux configs for user voltux:
-```sh
-`stow -t /home/voltux vim tmux`
+```bash
+stow -t /home/voltux vim tmux
 ```
 
 ### Manually

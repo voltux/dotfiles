@@ -19,12 +19,12 @@ These configuration files clearly reflect my personal taste. I try to maintain t
    Clone the repository
 *** Via stow (recommended)
     From the cloned repo and having stow installed you can simply:
-    @code sh
-    `stow -t $HOME <app>`
+    @code bash
+    stow -t $HOME <app>
     @end
     Example of installing vim and tmux configs for user voltux:
-    @code sh
-    `stow -t /home/voltux vim tmux`
+    @code bash
+    stow -t /home/voltux vim tmux
     @end
 *** Manually
     Copy (if you are happy with the current version) or symlink (if you want to stay up to date with the repo) everything contained in the root of every package config to the desired user's $HOME directory.
