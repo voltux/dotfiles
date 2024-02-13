@@ -1,7 +1,7 @@
 -- General settings
 vim.o.backspace = "indent,eol,start"        -- sane backspace behaviour
 vim.o.number = true                         -- show line number
-vim.o.relativenumber = true                 -- show line number relative to current
+vim.o.relativenumber = false                 -- show line number relative to current
 vim.o.wildmenu = true                       -- show menu for options in command mode
 vim.o.wildignorecase = true                 -- ignore case for wildmenu in command mode
 vim.o.errorbells = false                    -- no error bells
