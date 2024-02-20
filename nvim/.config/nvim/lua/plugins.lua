@@ -461,6 +461,7 @@ local plugins = {
         -- split smart and move between splits
         'mrjones2014/smart-splits.nvim',
         config = function() require('smart-splits_conf') end,
+        version = "v1.3.0", -- latest version 1.3.1 broke inegration with tmux inside container, core dumped on exiting nvim
         event = "VeryLazy"
     },
     {
