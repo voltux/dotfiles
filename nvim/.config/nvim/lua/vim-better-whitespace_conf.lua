@@ -1,4 +1,4 @@
-vim.g.better_whitespace_filetypes_blacklist = "['dashboard']"
+vim.g.better_whitespace_filetypes_blacklist = {'dashboard'}
 vim.cmd [[ highlight ExtraWhitespace ctermbg=78 ]]
 vim.keymap.set('n', '<leader>pw', '<cmd>StripWhitespace<CR>', { noremap = true, desc = 'Strip whitespace' })
 vim.keymap.set('n', '<leader>pW', '<cmd>ToggleWhitespace<CR>', { noremap = true, desc = 'Toggle whitespace' })
