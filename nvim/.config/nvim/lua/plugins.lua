@@ -569,9 +569,11 @@ local plugins = {
         "zeioth/garbage-day.nvim",
         dependencies = "neovim/nvim-lspconfig",
         event = "VeryLazy",
-        opts = {
-            -- your options here
-        }
+    },
+    {
+        -- provide prompts to IA models served via ollama
+        "David-Kunz/gen.nvim",
+        config = function() require('gen_conf') end or nil,
     },
 }
 
