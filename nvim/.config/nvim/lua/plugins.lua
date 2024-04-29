@@ -229,7 +229,8 @@ local plugins = {
         dependencies = 'nvim-lua/plenary.nvim',
         ft = 'norg',
         config = function() require('neorg_conf') end,
-        version = 'v7.0.0'
+        version = 'v7.0.0',
+        lazy = false
     },
     {
         -- fuzzy finding anything anywhere
