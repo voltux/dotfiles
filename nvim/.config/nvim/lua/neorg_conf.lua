@@ -49,3 +49,5 @@ vim.keymap.set("n", "<leader>fnt", "<cmd>Telescope neorg find_context_tasks<cr>"
     { noremap = true, desc = 'Telescope neorg find context tasks' })
 vim.keymap.set("n", "<leader>fnw", "<cmd>Telescope neorg switch_workspace<cr>",
     { noremap = true, desc = 'Telescope neorg switch workspace' })
+vim.keymap.set("n", "<leader>i", "<cmd>Neorg index<cr>",
+    { noremap = true, desc = 'Neorg go to index' })
