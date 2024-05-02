@@ -1,8 +1,9 @@
 require('neorg').setup {
     load = {
-        ["core.defaults"]              = {},
-        ["core.integrations.nvim-cmp"] = {},
-        ["core.dirman"]                = {
+        ["core.defaults"]               = {},
+        ["core.integrations.nvim-cmp"]  = {},
+        ["core.integrations.telescope"] = {},
+        ["core.dirman"]                 = {
             config = {
                 workspaces = {
                     todo = os.getenv("HOME") .. "/Documents/todo",
@@ -11,21 +12,21 @@ require('neorg').setup {
                 index = "index.norg"
             }
         },
-        ["core.completion"]            = {
+        ["core.completion"]             = {
             config = {
                 engine = "nvim-cmp"
             }
         },
-        ["core.concealer"]             = {},
-        ["core.journal"]               = {},
-        ["core.presenter"]             = {
+        ["core.concealer"]              = {},
+        ["core.journal"]                = {},
+        ["core.presenter"]              = {
             config = {
                 zen_mode = "zen-mode"
             }
         },
-        ["core.export.markdown"]       = {},
-        ["core.manoeuvre"]             = {},
-        ["core.export"]                = {
+        ["core.export.markdown"]        = {},
+        ["core.manoeuvre"]              = {},
+        ["core.export"]                 = {
             config = {
                 extensions = "all"
             }

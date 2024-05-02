@@ -226,7 +226,7 @@ local plugins = {
         -- org mode but for vimmers :)
         'nvim-neorg/neorg',
         cmd = 'Neorg sync-parsers',
-        dependencies = 'nvim-lua/plenary.nvim',
+        dependencies = {'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope' },
         ft = 'norg',
         config = function() require('neorg_conf') end,
         version = 'v7.0.0',
