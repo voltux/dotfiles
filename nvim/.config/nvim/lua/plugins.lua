@@ -223,13 +223,17 @@ local plugins = {
         lazy = true,
     },
     {
+        "vhyrro/luarocks.nvim",
+        priority = 1000, -- We'd like this plugin to load first out of the rest
+        config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
+    },
+    {
         -- org mode but for vimmers :)
         'nvim-neorg/neorg',
         cmd = 'Neorg sync-parsers',
-        dependencies = {'nvim-lua/plenary.nvim', 'nvim-neorg/neorg-telescope' },
+        dependencies = { 'luarocks.nvim', 'nvim-neorg/neorg-telescope' },
         ft = 'norg',
         config = function() require('neorg_conf') end,
-        version = 'v7.0.0',
         lazy = false
     },
     {
