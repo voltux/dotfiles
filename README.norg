@@ -1,20 +1,16 @@
 * Configuration files
-These configuration files clearly reflect my personal taste. I try to maintain them in order to be easily reusable but they remain adapted to my personal needs.
+  These configuration files clearly reflect my personal taste. I try to maintain them in order to be easily reusable but they remain adapted to my personal needs.
 ** Prerequisites
-*** Required
-    - Zsh    -> configuration framework: https://github.com/robbyrussell/oh-my-zsh
-    - Tmux   -> plugins installed via tpm: https://github.com/tmux-plugins/tpm
-    - Vim    -> plugins loaded with vim-plug: https://github.com/junegunn/vim-plug
-    - Neovim -> plugins loaded with Packer: https://github.com/wbthomason/packer.nvim
-*** Optional
-    - stow (easily install dotfiles)                     -> distro package
-    - fzf (zsh, vim fuzzy find)                          -> distro package or https://github.com/junegunn/fzf
-    - zsh-z plugin (zsh easily move between directories) -> https://github.com/agkozak/zsh-z
-    - starship (shell prompt)                            -> https://starship.rs/
-    - ripgrep (grep replacement)                         -> https://github.com/BurntSushi/ripgrep
-    - bat (cat replacement)                              -> https://github.com/sharkdp/bat
-    - lazygit (git tui tool)                             -> https://github.com/jesseduffield/lazygit
-    - deno (typescript and javascript runtime)           -> https://deno.land/
+   - Zsh                             -> configuration framework: https://github.com/robbyrussell/oh-my-zsh
+   -- stow (easily install dotfiles) -> distro package
+   -- fzf (zsh, vim fuzzy find)      -> distro package or https://github.com/junegunn/fzf
+   -- starship (shell prompt)        -> https://starship.rs/
+   - Neovim                          -> plugins loaded with Lazy: https://github.com/folke/lazy.nvim
+   -- fd (find replacement)          -> https://github.com/sharkdp/fd
+   -- ripgrep (grep replacement)     -> https://github.com/BurntSushi/ripgrep
+   -- bat (cat replacement)          -> https://github.com/sharkdp/bat
+   - Tmux                            -> plugins installed via tpm: https://github.com/tmux-plugins/tpm
+   - Vim                             -> plugins loaded with vim-plug: https://github.com/junegunn/vim-plug
 ** Installation
    Clone the repository
 *** Via stow (recommended)
