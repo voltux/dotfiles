@@ -9,6 +9,7 @@ These configuration files clearly reflect my personal taste. I try to maintain t
     - fzf (zsh, vim fuzzy find)      -> distro package or https://github.com/junegunn/fzf
     - starship (shell prompt)        -> https://starship.rs/
 - Neovim                          -> plugins loaded with Lazy: https://github.com/folke/lazy.nvim
+    - luajit or lua 5.1.0
     - fd (find replacement)          -> https://github.com/sharkdp/fd
     - ripgrep (grep replacement)     -> https://github.com/BurntSushi/ripgrep
     - bat (cat replacement)          -> https://github.com/sharkdp/bat
