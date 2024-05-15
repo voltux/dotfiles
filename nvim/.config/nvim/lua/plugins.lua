@@ -471,12 +471,6 @@ local plugins = {
         event = "VeryLazy"
     },
     {
-        -- add custom textobjects
-        "chrisgrieser/nvim-various-textobjs",
-        config = function() require("various-textobjs").setup({ useDefaultKeymaps = true }) end,
-        event = "VeryLazy"
-    },
-    {
         "debugloop/telescope-undo.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
         lazy = true
