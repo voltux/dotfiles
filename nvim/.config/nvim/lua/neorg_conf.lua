@@ -34,21 +34,21 @@ require('neorg').setup {
     }
 }
 
-vim.keymap.set("n", "<leader>fnh", "<cmd>Telescope neorg search_headings<cr>",
+vim.keymap.set("n", "<leader>foh", "<cmd>Telescope neorg search_headings<cr>",
     { noremap = true, desc = 'Telescope neorg search headings' })
-vim.keymap.set("n", "<leader>fnL", "<cmd>Telescope neorg insert_link<cr>",
+vim.keymap.set("n", "<leader>foL", "<cmd>Telescope neorg insert_link<cr>",
     { noremap = true, desc = 'Telescope neorg insert link' })
-vim.keymap.set("n", "<leader>fnl", "<cmd>Telescope neorg find_linkable<cr>",
+vim.keymap.set("n", "<leader>fol", "<cmd>Telescope neorg find_linkable<cr>",
     { noremap = true, desc = 'Telescope neorg find linkable' })
-vim.keymap.set("n", "<leader>fnf", "<cmd>Telescope neorg find_norg_files<cr>",
+vim.keymap.set("n", "<leader>fof", "<cmd>Telescope neorg find_norg_files<cr>",
     { noremap = true, desc = 'Telescope neorg find linkable' })
-vim.keymap.set("n", "<leader>fnF", "<cmd>Telescope neorg insert_file_link<cr>",
+vim.keymap.set("n", "<leader>foF", "<cmd>Telescope neorg insert_file_link<cr>",
     { noremap = true, desc = 'Telescope neorg insert link' })
-vim.keymap.set("n", "<leader>fnp", "<cmd>Telescope neorg find_project_tasks<cr>",
+vim.keymap.set("n", "<leader>fop", "<cmd>Telescope neorg find_project_tasks<cr>",
     { noremap = true, desc = 'Telescope neorg find project tasks' })
-vim.keymap.set("n", "<leader>fnt", "<cmd>Telescope neorg find_context_tasks<cr>",
+vim.keymap.set("n", "<leader>fot", "<cmd>Telescope neorg find_context_tasks<cr>",
     { noremap = true, desc = 'Telescope neorg find context tasks' })
-vim.keymap.set("n", "<leader>fnw", "<cmd>Telescope neorg switch_workspace<cr>",
+vim.keymap.set("n", "<leader>fow", "<cmd>Telescope neorg switch_workspace<cr>",
     { noremap = true, desc = 'Telescope neorg switch workspace' })
-vim.keymap.set("n", "<leader>i", "<cmd>Neorg index<cr>",
-    { noremap = true, desc = 'Neorg go to index' })
+vim.keymap.set("n", "<leader>op", "<cmd>Neorg presenter start<cr>",
+    { noremap = true, desc = 'Neorg presenter start' })
