@@ -62,7 +62,6 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp',                priority = 1000 },
         { name = 'nvim_lua',                priority = 1000 },
-        { name = 'neorg',                   priority = 1000 },
         { name = 'luasnip',                 priority = 900 },
         { name = 'nvim_lsp_signature_help', priority = 800 },
         { name = 'buffer',                  priority = 700 },
@@ -74,15 +73,18 @@ cmp.setup({
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources(
         {
-            { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-        },
-        {
             { name = 'buffer' },
         }
     )
 })
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources(
+        {
+            { name = 'neorg' }, -- You can specify the `cmp_git` source if you were installed it.
+        }
+    )
+})
+-- `/` cmdline setup.
 cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
@@ -90,11 +92,17 @@ cmp.setup.cmdline('/', {
     }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+-- `:` cmdline setup.
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
-        { name = 'path' },
-        { name = 'cmdline' }
+        { name = 'path' }
+    }, {
+        {
+            name = 'cmdline',
+            option = {
+                ignore_cmds = { 'Man', '!' }
+            }
+        }
     })
 })
