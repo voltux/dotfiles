@@ -74,10 +74,11 @@ cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources(
         {
             { name = 'buffer' },
+            { name = 'path' },
         }
     )
 })
-cmp.setup.filetype('gitcommit', {
+cmp.setup.filetype('norg', {
     sources = cmp.config.sources(
         {
             { name = 'neorg' }, -- You can specify the `cmp_git` source if you were installed it.
