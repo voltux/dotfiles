@@ -1,15 +1,15 @@
 # K9s Gruvbox Dark Skin Contributed by [@indiebrain](https://github.com/indiebrain)
 foreground: &foreground "#ebdbb2"
-background: &background "#272727"
+background: &background "#1d2021"
 current_line: &current_line "#ebdbb2"
-selection: &selection "#3c3735"
-comment: &comment "#bdad93"
-cyan: &cyan "#689d69"
-green: &green "#989719"
-orange: &orange "#d79920"
-magenta: &magenta "#b16185"
-blue: &blue "#448488"
-red: &red "#cc231c"
+selection: &selection "#3c3836"
+comment: &comment "#bdae93"
+cyan: &cyan "#689d6a"
+green: &green "#98971a"
+orange: &orange "#d65d0e"
+magenta: &magenta "#b16286"
+blue: &blue "#458588"
+red: &red "#cc241d"
 k9s:
   body:
     fgColor: *foreground
