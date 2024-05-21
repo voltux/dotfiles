@@ -104,10 +104,9 @@ local plugins = {
     },
     {
         -- change color on (), []... for better readability when on treesitter aware syntax
-        'HiPhish/nvim-ts-rainbow2',
+        'HiPhish/rainbow-delimiters.nvim',
         dependencies = { 'ellisonleao/gruvbox.nvim', opt = true },
-        config = function() require('nvim-ts-rainbow_conf') end,
-        event = "VeryLazy"
+        config = function() require('rainbow-delimiters_conf') end,
     },
     {
         -- change color on (), []... for better readability on any filetype
