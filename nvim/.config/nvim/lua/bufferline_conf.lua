@@ -91,10 +91,4 @@ require('bufferline').setup {
         --     return buffer_a.modified > buffer_b.modified
         -- end
     },
-    highlights = {
-        buffer_selected = {
-            fg = '#d79921',
-            italic = false,
-        }
-    }
 }
