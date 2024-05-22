@@ -71,6 +71,12 @@ require("gruvbox").setup({
     -- which-key
     WhichKeyGroup = { bg = "NONE", fg = color_palette.bright_blue, bold = true },
     WhichKeyDesc = { bg = "NONE", fg = color_palette.bright_orange, bold = false },
+    -- bufferline
+    BufferLineGroupLabel = { link = "BufferLineBackground" },
+    BufferLineBufferSelected = { fg = color_palette.bright_yellow, italic = false, bold = true},
+    BufferLineDuplicate = { link = "BufferLineBackground" },
+    BufferLineDuplicateVisible = { link = "BufferLineBackground" },
+    BufferLineDuplicateSelected = { link = "BufferLineBufferSelected" },
   },
   dim_inactive = false,
   transparent_mode = false,
