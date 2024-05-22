@@ -54,6 +54,14 @@ wk.register({
         name = "table mode"
     }
 }, { prefix = "<leader>" })
+wk.register({
+    o = {
+        name = "Neorg",
+        f = {
+            name = "find"
+        }
+    }
+}, { prefix = "<leader>" })
 wk.setup {
     disable = {
         filetypes = { 'TelescopePrompt', 'dashboard' }
