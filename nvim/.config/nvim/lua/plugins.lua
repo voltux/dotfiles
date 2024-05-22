@@ -584,14 +584,6 @@ local plugins = {
         "David-Kunz/gen.nvim",
         config = function() require('gen_conf') end or nil,
     },
-    {
-        'MeanderingProgrammer/markdown.nvim',
-        name = 'render-markdown',
-        dependencies = { 'nvim-treesitter/nvim-treesitter' },
-        config = function()
-            require('render-markdown').setup({})
-        end,
-    }
 }
 
 local opts = {

@@ -66,7 +66,6 @@
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "rainbow": { "branch": "master", "commit": "61f719aebe0dc5c3048330c50db72cfee1afdd34" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "5d0d30b201566ce1fe31415f41fe2a7bdf56f4a7" },
-  "render-markdown": { "branch": "main", "commit": "49f45978fbb8fcf874f3b6967db4a6ea647df04b" },
   "reticle.nvim": { "branch": "main", "commit": "e90aa929b989c093df1de1780afe25e48553f5ce" },
   "smart-splits.nvim": { "branch": "master", "commit": "36bfe63246386fc5ae2679aa9b17a7746b7403d5" },
   "targets.vim": { "branch": "master", "commit": "642d3a4ce306264b05ea3219920b13ea80931767" },
