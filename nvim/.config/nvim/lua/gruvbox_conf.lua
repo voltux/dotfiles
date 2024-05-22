@@ -68,6 +68,9 @@ require("gruvbox").setup({
     ["@neorg.headings.4.prefix"] = { bg = "NONE", fg = color_palette.neutral_purple, bold = true },
     ["@neorg.headings.5.prefix"] = { bg = "NONE", fg = color_palette.neutral_blue, bold = true },
     ["@neorg.headings.6.prefix"] = { bg = "NONE", fg = color_palette.neutral_orange, bold = true },
+    -- which-key
+    WhichKeyGroup = { bg = "NONE", fg = color_palette.bright_blue, bold = true },
+    WhichKeyDesc = { bg = "NONE", fg = color_palette.bright_orange, bold = false },
   },
   dim_inactive = false,
   transparent_mode = false,

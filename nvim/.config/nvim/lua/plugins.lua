@@ -115,40 +115,46 @@ local plugins = {
         event = "VeryLazy"
     },
     {
-        -- autocompletion (lsp based)
-        'hrsh7th/cmp-nvim-lsp',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (buffer based)
-        'hrsh7th/cmp-buffer',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (filepath based)
-        'hrsh7th/cmp-path',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (command based)
-        'hrsh7th/cmp-cmdline',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
         -- autocompletion engine
         'hrsh7th/nvim-cmp',
         config = function() require('cmp_conf') end,
         lazy = true
     },
     {
+        -- autocompletion (lsp based)
+        'hrsh7th/cmp-nvim-lsp',
+        dependencies = 'hrsh7th/nvim-cmp',
+        event = "VeryLazy"
+    },
+    {
+        -- autocompletion (buffer based)
+        'hrsh7th/cmp-buffer',
+        dependencies = 'hrsh7th/nvim-cmp',
+        event = "VeryLazy"
+    },
+    {
+        -- autocompletion (filepath based)
+        'hrsh7th/cmp-path',
+        dependencies = 'hrsh7th/nvim-cmp',
+        event = "VeryLazy"
+    },
+    {
+        -- autocompletion (command based)
+        'hrsh7th/cmp-cmdline',
+        dependencies = 'hrsh7th/nvim-cmp',
+        event = "VeryLazy"
+    },
+    {
         -- autocompletion on lsp function/class signature
         'hrsh7th/cmp-nvim-lsp-signature-help',
         dependencies = 'hrsh7th/nvim-cmp',
+        event = "VeryLazy"
     },
     {
         -- autocompletion (lua)
         'hrsh7th/cmp-nvim-lua',
         dependencies = 'hrsh7th/nvim-cmp',
+        event = "VeryLazy"
     },
     {
         -- snippet engine
@@ -234,6 +240,11 @@ local plugins = {
         ft = 'norg',
         config = function() require('neorg_conf') end,
         lazy = false
+    },
+    {
+        'nvim-neorg/neorg-telescope',
+        dependencies = { 'nvim-neorg/neorg', 'nvim-telescope/telescope.nvim' },
+        lazy = true
     },
     {
         -- fuzzy finding anything anywhere
@@ -573,6 +584,14 @@ local plugins = {
         "David-Kunz/gen.nvim",
         config = function() require('gen_conf') end or nil,
     },
+    {
+        'MeanderingProgrammer/markdown.nvim',
+        name = 'render-markdown',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('render-markdown').setup({})
+        end,
+    }
 }
 
 local opts = {
