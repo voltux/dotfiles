@@ -70,10 +70,11 @@ require("gruvbox").setup({
     ["@neorg.headings.6.prefix"] = { bg = "NONE", fg = color_palette.neutral_orange, bold = true },
     -- which-key
     WhichKeyGroup = { bg = "NONE", fg = color_palette.bright_blue, bold = true },
-    WhichKeyDesc = { bg = "NONE", fg = color_palette.bright_orange, bold = false },
+    WhichKeyDesc = { bg = "NONE", fg = color_palette.bright_green, bold = false },
+    WhichKey = {  bg = "NONE", fg = color_palette.bright_orange, bold = true },
     -- bufferline
     BufferLineGroupLabel = { link = "BufferLineBackground" },
-    BufferLineBufferSelected = { fg = color_palette.bright_yellow, italic = false, bold = true},
+    BufferLineBufferSelected = { fg = color_palette.neutral_yellow, italic = false, bold = true},
     BufferLineDuplicate = { link = "BufferLineBackground" },
     BufferLineDuplicateVisible = { link = "BufferLineBackground" },
     BufferLineDuplicateSelected = { link = "BufferLineBufferSelected" },
