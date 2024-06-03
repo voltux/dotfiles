@@ -233,20 +233,6 @@ local plugins = {
         config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
     },
     {
-        -- org mode but for vimmers :)
-        'nvim-neorg/neorg',
-        cmd = 'Neorg sync-parsers',
-        dependencies = { 'luarocks.nvim', 'nvim-neorg/neorg-telescope' },
-        ft = 'norg',
-        config = function() require('neorg_conf') end,
-        lazy = false
-    },
-    {
-        'nvim-neorg/neorg-telescope',
-        dependencies = { 'nvim-neorg/neorg', 'nvim-telescope/telescope.nvim' },
-        lazy = true
-    },
-    {
         -- fuzzy finding anything anywhere
         'nvim-telescope/telescope.nvim',
         config = function() require('telescope_conf') end,
@@ -279,7 +265,11 @@ local plugins = {
         -- bridge between mason and nvim-lspconfig
         'williamboman/mason-lspconfig',
         dependencies = { "williamboman/mason.nvim" },
-        config = function() require('mason-lspconfig').setup {} end
+        config = function()
+            require('mason-lspconfig').setup {
+                ensure_installed = { 'vimls', 'perlnavigator', 'bashls', 'yamlls', 'gopls', 'sqlls', 'dockerls', 'jsonls', 'html', 'marksman', 'puppet' }
+            }
+        end
     },
     {
         -- indent lines

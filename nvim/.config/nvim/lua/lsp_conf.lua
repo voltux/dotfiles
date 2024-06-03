@@ -167,3 +167,7 @@ lsp.bufls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.puppet.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+}
