@@ -385,13 +385,6 @@ local plugins = {
         'lewis6991/impatient.nvim'
     },
     {
-        -- markdown preview plugin based on deno
-        'toppair/peek.nvim',
-        build = 'deno task --quiet build:fast',
-        ft = "markdown",
-        config = function() require('peek_conf') end,
-    },
-    {
         -- enhance C-A, C-X
         'nat-418/boole.nvim',
         config = function() require('boole_conf') end,
