@@ -10,7 +10,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="%d/%m/%y %T"
 
-plugins=(tmux fzf fd aliases jira ripgrep common-aliases emoji git vi-mode archlinux docker colored-man-pages kubectl ubuntu z)
+plugins=(tmux fzf aliases jira common-aliases emoji git vi-mode archlinux docker colored-man-pages kubectl ubuntu z)
 source $ZSH/oh-my-zsh.sh
 
 # More history
