@@ -1,12 +1,19 @@
 require('gen').setup({
-    model = os.getenv("LLM_MODEL"),                                    -- The default model to use.
-    host = os.getenv("LLM_HOST"),        -- The host running the Ollama service.
-    quit_map = "q",                                                         -- set keymap for close the response window
-    retry_map = "<c-r>",                                                    -- set keymap to re-send the current prompt
+    model = os.getenv("LLM_MODEL") or "",         -- The default model to use.
+    host = os.getenv("LLM_HOST") or "",           -- The host running the Ollama service.
+    token = os.getenv("LLM_TOKEN") or "",         -- The api token
+    api_route = os.getenv("LLM_API_ROUTE") or "", -- The api route to call
+    quit_map = "q",                               -- set keymap for close the response window
+    retry_map = "<c-r>",                          -- set keymap to re-send the current prompt
     command = function(options)
         local body = { model = options.model, stream = true }
         return
-            'curl -H "Content-Type: application/json" -H "Authorization: Bearer ' .. os.getenv("LLM_TOKEN") .. '" --no-buffer -X POST https://' .. options.host .. "/api/openai_compat/v1/chat/completions -d $body"
+            'curl -H "Content-Type: application/json" -H "Authorization: Bearer ' ..
+            options.token ..
+            '" --no-buffer -X POST https://' ..
+            options.host ..
+            options.api_route ..
+            " -d $body"
     end,
     -- The command for the Ollama service. You can use placeholders $prompt, $model and $body (shellescaped).
     -- This can also be a command string.
