@@ -584,6 +584,11 @@ local plugins = {
                 -- edit config here (see "Customize default settings" in wiki)
             })
         end
+    },
+    {
+        'MeanderingProgrammer/render-markdown.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        config = function() require('render_markdown_conf') end or nil,
     }
 }
 
