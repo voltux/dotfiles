@@ -80,6 +80,13 @@ require("gruvbox").setup({
     BufferLineDuplicateSelected = { link = "BufferLineBufferSelected" },
     -- NvimTree
     Directory = { link = "GruvboxBlueBold" },
+    -- RenderMarkdown
+    RenderMarkdownH1Bg = { bg = color_palette.faded_blue },
+    RenderMarkdownH2Bg = { bg = color_palette.faded_blue },
+    RenderMarkdownH3Bg = { bg = color_palette.faded_blue },
+    RenderMarkdownH4Bg = { bg = color_palette.faded_blue },
+    RenderMarkdownH5Bg = { bg = color_palette.faded_blue },
+    RenderMarkdownH6Bg = { bg = color_palette.faded_blue },
   },
   dim_inactive = false,
   transparent_mode = false,
