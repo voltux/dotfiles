@@ -577,6 +577,14 @@ local plugins = {
         "David-Kunz/gen.nvim",
         config = function() require('gen_conf') end or nil,
     },
+    {
+        'martineausimon/nvim-lilypond-suite',
+        config = function()
+            require('nvls').setup({
+                -- edit config here (see "Customize default settings" in wiki)
+            })
+        end
+    }
 }
 
 local opts = {
