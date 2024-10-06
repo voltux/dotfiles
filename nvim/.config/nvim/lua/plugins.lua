@@ -558,10 +558,7 @@ local plugins = {
     {
         -- search nerd font glyphs
         '2kabhishek/nerdy.nvim',
-        dependencies = {
-            'stevearc/dressing.nvim',
-            'nvim-telescope/telescope.nvim',
-        },
+        dependencies = { 'stevearc/dressing.nvim', 'nvim-telescope/telescope.nvim', },
         cmd = 'Nerdy',
         config = function() require("nerdy_conf") end,
         event = "VeryLazy",
@@ -578,6 +575,7 @@ local plugins = {
         config = function() require('gen_conf') end or nil,
     },
     {
+        -- suite to write music sheets charts with lilypond
         'martineausimon/nvim-lilypond-suite',
         config = function()
             require('nvls').setup({
@@ -586,6 +584,7 @@ local plugins = {
         end
     },
     {
+        -- render markdown nicely
         'MeanderingProgrammer/render-markdown.nvim',
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
         config = function() require('render_markdown_conf') end or nil,
