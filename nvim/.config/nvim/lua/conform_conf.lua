@@ -8,6 +8,7 @@ require("conform").setup({
 		bash = { "beautysh" },
 		zsh = { "beautysh" },
 		markdown = { "prettier" },
+		json = { "jq" },
 	},
 })
 
