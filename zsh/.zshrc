@@ -42,6 +42,11 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
+# add nvim mason installed binaries to path
+if [[ $PATH != *"$HOME/.local/share/nvim/mason/bin"* ]]; then
+    export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
+fi
+
 # fzf scripts
 [ -f $HOME/.fzf/shell/completion.zsh ]\
     && source $HOME/.fzf/shell/completion.zsh\
