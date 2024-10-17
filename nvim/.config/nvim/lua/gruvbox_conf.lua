@@ -21,6 +21,7 @@ require("gruvbox").setup({
     dark0 = "#1d2021"
   },
   overrides = {
+    WinSeparator = { link = "GruvboxYellowBold" },
     SignColumn = { bg = 'NONE' },
     LineNr = { bg = 'NONE' },
     Error = { bg = 'NONE' },
