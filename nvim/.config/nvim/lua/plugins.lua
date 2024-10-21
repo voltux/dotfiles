@@ -17,12 +17,13 @@ local plugins = {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('nvim-tree_conf') end,
+        event = "VeryLazy"
     },
     {
         -- filetype icons
         'nvim-tree/nvim-web-devicons',
         config = function() require('nvim-web-devicons_conf') end,
-        lazy = true,
+        event = "VeryLazy"
     },
     {
         -- multilevel undo explorer
@@ -34,6 +35,7 @@ local plugins = {
         -- send text to terminal
         'jpalardy/vim-slime',
         config = function() require('vim-slime_conf') end,
+        event = "VeryLazy"
     },
     {
         -- better marks support
@@ -44,18 +46,22 @@ local plugins = {
     {
         -- add common shell commands to vim command mode
         'tpope/vim-eunuch',
+        event = "VeryLazy"
     },
     {
         -- mappings to move in all kinds of vim lists
         'tpope/vim-unimpaired',
+        event = "VeryLazy"
     },
     {
         -- enhance the . operator for more complex tasks
         'tpope/vim-repeat',
+        event = "VeryLazy"
     },
     {
         -- detect tabstop/shiftwidth
         'tpope/vim-sleuth',
+        event = "VeryLazy"
     },
     {
         -- surround text objects with opening/closing symbols
@@ -107,6 +113,7 @@ local plugins = {
         'HiPhish/rainbow-delimiters.nvim',
         dependencies = { 'ellisonleao/gruvbox.nvim', opt = true },
         config = function() require('rainbow-delimiters_conf') end,
+        event = "VeryLazy"
     },
     {
         -- change color on (), []... for better readability on any filetype
@@ -118,7 +125,7 @@ local plugins = {
         -- autocompletion engine
         'hrsh7th/nvim-cmp',
         config = function() require('cmp_conf') end,
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- autocompletion (lsp based)
@@ -162,12 +169,13 @@ local plugins = {
         config = function() require('luasnip_conf') end,
         version = "1.*",
         dependencies = { 'hrsh7th/nvim-cmp', 'rafamadriz/friendly-snippets', 'honza/vim-snippets' },
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- autocompletion (luasnip snippets)
         'saadparwaiz1/cmp_luasnip',
         dependencies = { "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip", 'honza/vim-snippets', 'rafamadriz/friendly-snippets' },
+        event = "VeryLazy"
     },
     {
         -- git handler
@@ -178,12 +186,12 @@ local plugins = {
     {
         -- rich snippet collection
         'honza/vim-snippets',
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- rich snippet collection
         'rafamadriz/friendly-snippets',
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- git modifications explorer/handler
@@ -200,22 +208,25 @@ local plugins = {
         -- telescope extension for luasnip snippets
         'benfowler/telescope-luasnip.nvim',
         dependencies = { 'L3MON4D3/LuaSnip', 'nvim-telescope/telescope.nvim' },
+        event = "VeryLazy"
     },
     {
         -- telescope extension file browser
         'nvim-telescope/telescope-file-browser.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim' },
-        lazy = true,
+        event = "VeryLazy"
     },
     {
         -- html easy text generation
         'mattn/emmet-vim',
         ft = 'html',
+        event = "VeryLazy"
     },
     {
         -- haskell filetype enhancements
         'neovimhaskell/haskell-vim',
         ft = 'haskell',
+        event = "VeryLazy"
     },
     {
         -- exchange mode for vim to swap texts between two text objects
@@ -225,7 +236,7 @@ local plugins = {
     {
         -- lua module for asynchronous programming (dependancy lib)
         'nvim-lua/plenary.nvim',
-        lazy = true,
+        event = "VeryLazy"
     },
     {
         "vhyrro/luarocks.nvim",
@@ -239,58 +250,63 @@ local plugins = {
         dependencies = { 'luarocks.nvim', 'nvim-neorg/neorg-telescope' },
         ft = 'norg',
         config = function() require('neorg_conf') end,
-        lazy = false
+        event = "VeryLazy"
     },
     {
         'nvim-neorg/neorg-telescope',
         dependencies = { 'nvim-neorg/neorg', 'nvim-telescope/telescope.nvim' },
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- fuzzy finding anything anywhere
         'nvim-telescope/telescope.nvim',
         config = function() require('telescope_conf') end,
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- enhanced syntax by treesitter
         'nvim-treesitter/nvim-treesitter',
         config = function() require('treesitter_conf') end,
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- extend default text objects with treesitter syntax awareness
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = 'nvim-treesitter/nvim-treesitter',
+        event = "VeryLazy"
     },
     {
         -- easily config neovim lsp
         'neovim/nvim-lspconfig',
         dependencies = { 'williamboman/mason-lspconfig.nvim', 'glepnir/lspsaga.nvim' },
         config = function() require('lsp_conf') end,
+        event = "VeryLazy"
     },
     {
         -- easily install/update lsp servers directly from neovim
         'williamboman/mason.nvim',
         config = function() require('mason_conf') end,
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- bridge between mason and nvim-lspconfig
         'williamboman/mason-lspconfig',
         dependencies = { "williamboman/mason.nvim" },
-        config = function() require('mason-lspconfig').setup {} end
+        config = function() require('mason-lspconfig').setup {} end,
+        event = "VeryLazy"
     },
     {
         -- indent lines
         'lukas-reineke/indent-blankline.nvim',
         config = function() require('indent-blankline_conf') end,
+        event = "VeryLazy"
     },
     {
         -- nice view for git diff
         'sindrets/diffview.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
         config = function() require('diffview_conf') end,
+        event = "VeryLazy"
     },
     {
         -- autoclose pairs (), [], etc
@@ -309,35 +325,40 @@ local plugins = {
         'glacambre/firenvim',
         build = function() vim.fn['firenvim#install'](0) end,
         config = function() require('firenvim_conf') end,
+        event = "VeryLazy"
     },
     {
         -- debugger engine
         'mfussenegger/nvim-dap',
         config = function() require('dap_conf') end,
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- dap python debugger
         'mfussenegger/nvim-dap-python',
         dependencies = { "mfussenegger/nvim-dap" },
-        config = function() require('dap-python_conf') end
+        config = function() require('dap-python_conf') end,
+        event = "VeryLazy"
     },
     {
         -- dap ui
         'rcarriga/nvim-dap-ui',
         dependencies = { 'mfussenegger/nvim-dap', "nvim-neotest/nvim-nio" },
         config = function() require('dap-ui_conf') end,
+        event = "VeryLazy"
     },
     {
         -- autocompletion (debugger)
         "rcarriga/cmp-dap",
         dependencies = { "hrsh7th/nvim-cmp", "mfussenegger/nvim-dap" },
+        event = "VeryLazy"
     },
     {
         -- a pretty list for diagnostics
         'folke/trouble.nvim',
         dependencies = { 'neovim/nvim-lspconfig' },
-        config = function() require('trouble_conf') end
+        config = function() require('trouble_conf') end,
+        event = "VeryLazy"
     },
     {
         -- neovim terminal handler
@@ -373,6 +394,7 @@ local plugins = {
                 library = { plugins = { 'nvim-dap-ui' }, types = true },
             })
         end,
+        event = "VeryLazy"
     },
     {
         -- set commentstring option based on the cursor location in the file.
@@ -437,22 +459,25 @@ local plugins = {
         -- helm chart syntax highlighter
         'towolf/vim-helm',
         ft = { 'yaml', 'helm' },
+        event = "VeryLazy"
     },
     {
         -- telescope extension to change current directory
         'zane-/cder.nvim',
         dependencies = 'nvim-telescope/telescope.nvim',
         config = function() require('telescope').load_extension('cder') end,
+        event = "VeryLazy"
     },
     {
         -- improve default vim.ui interfaces
         'stevearc/dressing.nvim',
         config = function() require('dressing').setup() end,
+        event = "VeryLazy"
     },
     {
         -- ui components
         'MunifTanjim/nui.nvim',
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- in text colorizer
@@ -476,7 +501,7 @@ local plugins = {
     {
         "debugloop/telescope-undo.nvim",
         dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- file explorer to edit filesystem like a normal buffer, vim-vinegar like
@@ -488,15 +513,14 @@ local plugins = {
         -- open files in the parent nvim session when invoking neovim from a child terminal
         'willothy/flatten.nvim',
         config = true,
-        lazy = false,
-        priority = 1001,
+        event = "VeryLazy"
     },
     {
         -- ui for lsp features
         "glepnir/lspsaga.nvim",
         config = function() require("lspsaga_conf") end,
         dependencies = { "nvim-tree/nvim-web-devicons", "nvim-treesitter/nvim-treesitter" },
-        lazy = true
+        event = "VeryLazy"
     },
     {
         -- create gitignore files automatically
@@ -515,6 +539,7 @@ local plugins = {
         "dhruvasagar/vim-table-mode",
         event = "VeryLazy",
         config = function() require("table-mode_conf") end,
+        event = "VeryLazy"
     },
     {
         -- search emojis by name in telescope
@@ -547,6 +572,7 @@ local plugins = {
         },
         config = function() require("dadbod_conf").setup() end,
         cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+        event = "VeryLazy"
     },
     {
         -- markdown preview
@@ -554,6 +580,7 @@ local plugins = {
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
+        event = "VeryLazy"
     },
     {
         -- search nerd font glyphs
@@ -573,6 +600,7 @@ local plugins = {
         -- provide prompts to IA models served via ollama
         "David-Kunz/gen.nvim",
         config = function() require('gen_conf') end or nil,
+        event = "VeryLazy"
     },
     {
         -- suite to write music sheets charts with lilypond
@@ -581,18 +609,21 @@ local plugins = {
             require('nvls').setup({
                 -- edit config here (see "Customize default settings" in wiki)
             })
-        end
+        end,
+        event = "VeryLazy"
     },
     {
         -- render markdown nicely
         'MeanderingProgrammer/render-markdown.nvim',
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
         config = function() require('render_markdown_conf') end,
+        event = "VeryLazy"
     },
     {
         'stevearc/conform.nvim',
         opts = {},
         config = function() require('conform_conf') end,
+        event = "VeryLazy"
     },
 }
 
