@@ -616,8 +616,8 @@ local plugins = {
         -- render markdown nicely
         'MeanderingProgrammer/render-markdown.nvim',
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+        ft = "markdown",
         config = function() require('render_markdown_conf') end,
-        event = "VeryLazy"
     },
     {
         'stevearc/conform.nvim',
