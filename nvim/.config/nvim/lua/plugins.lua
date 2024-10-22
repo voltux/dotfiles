@@ -625,6 +625,12 @@ local plugins = {
         config = function() require('conform_conf') end,
         event = "VeryLazy"
     },
+    {
+        'nvim-pack/nvim-spectre',
+        config = function() require('spectre_conf') end,
+        dependencies = { "nvim-lua/plenary.nvim" },
+        event = "VeryLazy"
+    },
 }
 
 local opts = {
