@@ -51,3 +51,5 @@ vim.keymap.set("n", "<leader>ofw", "<cmd>Telescope neorg switch_workspace<cr>",
     { noremap = true, desc = 'Telescope neorg switch workspace' })
 vim.keymap.set("n", "<leader>op", "<cmd>Neorg presenter start<cr>",
     { noremap = true, desc = 'Neorg presenter start' })
+vim.keymap.set("n", "<leader>oi", "<cmd>Neorg index<cr>",
+    { noremap = true, desc = 'Neorg index' })
