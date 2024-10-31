@@ -513,7 +513,6 @@ local plugins = {
         -- open files in the parent nvim session when invoking neovim from a child terminal
         'willothy/flatten.nvim',
         config = true,
-        event = "VeryLazy"
     },
     {
         -- ui for lsp features
