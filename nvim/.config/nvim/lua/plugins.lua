@@ -548,7 +548,9 @@ local plugins = {
     {
         -- project management
         "ahmedkhalf/project.nvim",
-        config = function() require("project_nvim").setup {} end,
+        config = function() require("project_nvim").setup {
+            show_hidden = true
+        } end,
         event = "VeryLazy",
     },
     {
