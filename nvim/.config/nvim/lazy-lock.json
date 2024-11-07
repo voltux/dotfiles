@@ -24,7 +24,7 @@
   "flatten.nvim": { "branch": "main", "commit": "9f0ce3cb13764cd57887cddc652b1a42c4f60828" },
   "friendly-snippets": { "branch": "main", "commit": "de8fce94985873666bd9712ea3e49ee17aadb1ed" },
   "garbage-day.nvim": { "branch": "main", "commit": "750ef08ae6031ee3683014c5349144340c08ead6" },
-  "gen.nvim": { "branch": "main", "commit": "83f1d6b6ffa6a6f32f6a93a33adc853f27541a94" },
+  "gen.nvim": { "branch": "main", "commit": "c9dd401ec4d9e98a4f06d5c090464e126129a3b2" },
   "gitignore.nvim": { "branch": "master", "commit": "2455191ec94da8ed222806a4fe3aa358eac1e558" },
   "gitsigns.nvim": { "branch": "main", "commit": "0b04035bb7b3c83e999b9676e2fb46fd0aa9f910" },
   "gruvbox.nvim": { "branch": "main", "commit": "61b0b3be2f0cfd521667403a0367298144d6c165" },
