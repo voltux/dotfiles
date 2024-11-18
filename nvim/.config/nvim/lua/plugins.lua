@@ -488,12 +488,13 @@ local plugins = {
         'MunifTanjim/nui.nvim',
         version = "*",
     },
-    {
-        -- in text colorizer
-        'NvChad/nvim-colorizer.lua',
-        config = function() require('colorizer_conf') end,
-        version = "*",
-    },
+    -- TODO: reactivate when it is stable again, for the moment it creates errors on start
+    -- {
+    --     -- in text colorizer
+    --     'NvChad/nvim-colorizer.lua',
+    --     config = function() require('colorizer_conf') end,
+    --     version = "*",
+    -- },
     {
         -- play some blackjack in neovim
         'alanfortlink/blackjack.nvim',
