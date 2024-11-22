@@ -556,9 +556,11 @@ local plugins = {
     {
         -- project management
         "ahmedkhalf/project.nvim",
-        config = function() require("project_nvim").setup {
-            show_hidden = true
-        } end,
+        config = function()
+            require("project_nvim").setup {
+                show_hidden = true
+            }
+        end,
         version = "*",
     },
     {
@@ -641,6 +643,16 @@ local plugins = {
         dependencies = { "nvim-lua/plenary.nvim" },
         version = "*",
     },
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        config = true
+    }
+
 }
 
 local opts = {
