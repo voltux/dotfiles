@@ -66,8 +66,3 @@ local htop = require('toggleterm.terminal').Terminal:new({
 function HtopToggle()
     htop:toggle()
 end
-
-vim.keymap.set("n", "<leader>gg", "<cmd>lua LazygitToggle()<CR>",
-    { noremap = true, silent = true, desc = 'Toggle lazygit' })
-vim.keymap.set("n", "<leader>gh", "<cmd>lua HtopToggle()<CR>",
-    { noremap = true, silent = true, desc = 'Toggle htop' })

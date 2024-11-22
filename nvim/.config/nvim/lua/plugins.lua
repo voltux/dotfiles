@@ -650,7 +650,7 @@ local plugins = {
             "sindrets/diffview.nvim",
             "nvim-telescope/telescope.nvim",
         },
-        config = true
+        config = function() require('neogit_conf') end,
     }
 
 }
