@@ -651,6 +651,7 @@ local plugins = {
             "nvim-telescope/telescope.nvim",
         },
         config = function() require('neogit_conf') end,
+        version = "*"
     }
 
 }
