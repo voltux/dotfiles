@@ -28,6 +28,7 @@ require("gruvbox").setup({
     ErrorMsg = { bg = 'NONE', fg = color_palette.neutral_red },
     NormalFloat = { bg = color_palette.dark0 },
     FloatBorder = { fg = color_palette.neutral_yellow },
+    DiffText = { bg = color_palette.faded_blue },
     -- nvim-ts-rainbow2 colors
     TSRainbowRed = { fg = color_palette.bright_red },
     TSRainbowYellow = { fg = color_palette.bright_yellow },
