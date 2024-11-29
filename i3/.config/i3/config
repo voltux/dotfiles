@@ -247,4 +247,4 @@ exec --no-startup-id feh --bg-scale "$HOME/Pictures/manjaro-cat.png"
 exec --no-startup-id compton -b -f
 
 # activate touchpad
-exec xinput set-prop "SYNA30D1:00 06CB:CE07 Touchpad" "libinput Tapping Enabled" 1
+exec_always xinput set-prop "SYNA30D1:00 06CB:CE07 Touchpad" "libinput Tapping Enabled" 1
