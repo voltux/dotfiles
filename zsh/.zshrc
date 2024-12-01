@@ -62,7 +62,23 @@ fi
     && source /usr/share/fzf/completion.zsh
 
 # add fzf to path
-export FZF_DEFAULT_OPTS="--multi --border --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+
+# configure fzf
+FZF_THEME="
+--color=bg:#1d2021 
+--color=hl:#689d6a    
+--color=hl+:#689d6a  
+--color=gutter:#1d2021 
+--color=info:#458588  
+--color=border:#504945 
+--color=label:#d79921 
+--color=prompt:#98971a 
+--color=spinner:#d79921 
+--color=pointer:bold:#d79921  
+--color=marker:#cc241d 
+--color=header:#fe8019 
+"
+export FZF_DEFAULT_OPTS="$FZF_THEME --multi --border --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
 
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
