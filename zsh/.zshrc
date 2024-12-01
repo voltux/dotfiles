@@ -97,7 +97,7 @@ if command -v starship &> /dev/null; then
 fi
 
 #swap caps lock and escape if possible
-if command -v setxkbmap &> /dev/null; then
+if command -v setxkbmap &> /dev/null && [ "$XDG_SESSION_TYPE" = "x11" ]; then
     setxkbmap -option caps:escape
 fi
 
