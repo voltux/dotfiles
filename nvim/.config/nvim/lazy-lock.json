@@ -32,7 +32,7 @@
   "impatient.nvim": { "branch": "main", "commit": "969f2c5c90457612c09cf2a13fee1adaa986d350" },
   "indent-blankline.nvim": { "branch": "master", "commit": "7871a88056f7144defca9c931e311a3134c5d509" },
   "lazy.nvim": { "branch": "main", "commit": "56ead98e05bb37a4ec28930a54d836d033cf00f2" },
-  "lspsaga.nvim": { "branch": "main", "commit": "e39c210c5f19a01a627e1d25544e5aca52efb522" },
+  "lspsaga.nvim": { "branch": "main", "commit": "d027f8b9c7c55e26cf4030c8657a2fc8222ed762" },
   "lua-utils.nvim": { "branch": "main", "commit": "e565749421f4bbb5d2e85e37c3cef9d56553d8bd" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
   "luarocks.nvim": { "branch": "main", "commit": "1db9093915eb16ba2473cfb8d343ace5ee04130a" },

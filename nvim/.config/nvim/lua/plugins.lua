@@ -283,7 +283,7 @@ local plugins = {
     {
         -- easily config neovim lsp
         'neovim/nvim-lspconfig',
-        dependencies = { 'williamboman/mason-lspconfig.nvim', 'glepnir/lspsaga.nvim' },
+        dependencies = { 'williamboman/mason-lspconfig.nvim', 'nvimdev/lspsaga.nvim' },
         config = function() require('lsp_conf') end,
         version = "*",
     },
@@ -525,7 +525,7 @@ local plugins = {
     },
     {
         -- ui for lsp features
-        "glepnir/lspsaga.nvim",
+        "nvimdev/lspsaga.nvim",
         config = function() require("lspsaga_conf") end,
         dependencies = { "nvim-tree/nvim-web-devicons", "nvim-treesitter/nvim-treesitter" },
         version = "*",
