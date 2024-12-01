@@ -27,7 +27,7 @@ set editing-mode vi
 bindkey -v
 
 # keyboard delay time
-if command -v xset &> /dev/null; then
+if command -v xset &> /dev/null && [ "$XDG_SESSION_TYPE" = "x11" ]; then
     xset r rate 200 50
 fi
 
