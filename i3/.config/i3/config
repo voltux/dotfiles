@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetBrainsMono NFM 9
+font pango:JetBrainsMono NFM 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -219,10 +219,10 @@ bar {
     colors {
         background         $bg
         statusline         $lightgray
-        focused_workspace  $darkgray  $yellow   $darkgray
-        inactive_workspace $yellow    $darkgray $yellow
-        active_workspace   $yellow    $darkgray $yellow
-        urgent_workspace   $red       $red      $bg
+        focused_workspace  $darkgray  $lightgray $darkgray
+        inactive_workspace $lightgray $darkgray  $lightgray
+        active_workspace   $lightgray $darkgray  $lightgray
+        urgent_workspace   $red       $red       $bg
     }
 }
 
