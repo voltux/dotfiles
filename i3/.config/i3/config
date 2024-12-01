@@ -220,8 +220,8 @@ bar {
         background         $bg
         statusline         $lightgray
         focused_workspace  $darkgray  $yellow   $darkgray
-        inactive_workspace $darkgray  $darkgray $yellow
-        active_workspace   $darkgray  $darkgray $yellow
+        inactive_workspace $yellow    $darkgray $yellow
+        active_workspace   $yellow    $darkgray $yellow
         urgent_workspace   $red       $red      $bg
     }
 }
