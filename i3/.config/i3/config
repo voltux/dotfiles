@@ -210,7 +210,7 @@ set $lightgray #bdae93
 
 bar {
     status_command bumblebee-status \
-                    -m pasink cpu memory nic battery datetime layout \
+                    -m pasink nic battery datetime layout \
                     -p disk.path=$HOME datetime.format="%d/%m/%Y %H:%M:%S" \
                     -t night-powerline \
                     || i3status
