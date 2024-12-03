@@ -219,10 +219,10 @@ bar {
     colors {
         background         $bg
         statusline         $lightgray
-        focused_workspace  $darkgray  $yellow   $darkgray
-        inactive_workspace $yellow    $darkgray $yellow
-        active_workspace   $yellow    $darkgray $yellow
-        urgent_workspace   $red       $red      $bg
+        focused_workspace  $darkgray  $lightgray $darkgray
+        inactive_workspace $lightgray $darkgray  $lightgray
+        active_workspace   $lightgray $darkgray  $lightgray
+        urgent_workspace   $red       $red       $bg
     }
 }
 
