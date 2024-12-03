@@ -14,40 +14,40 @@ order += "battery all"
 order += "tztime local"
 
 volume master {
-    format = " %volume"
+    format       = " %volume"
     format_muted = " %volume"
-    device = "default"
-    mixer = "Master"
-    mixer_idx = 0
+    device       = "default"
+    mixer        = "Master"
+    mixer_idx    = 0
 }
 
 wireless _first_ {
-    format_up = "W: (%quality at %essid) %ip"
+    format_up   = "W: (%quality at %essid) %ip"
     format_down = "W: down"
 }
 
 ethernet _first_ {
-    format_up = "E: %ip (%speed)"
+    format_up   = "E: %ip (%speed)"
     format_down = "E: down"
 }
 
 battery all {
-    format = "%status %percentage %remaining"
-    status_chr = ""
-    status_bat = ""
-    status_unk = ""
-    status_full = ""
-    last_full_capacity = true
+    format                   = "%status %percentage %remaining"
+    status_chr               = ""
+    status_bat               = ""
+    status_unk               = ""
+    status_full              = ""
+    last_full_capacity       = true
     integer_battery_capacity = true
-    low_threshold = 11
-    threshold_type = percentage
-    hide_seconds = true
+    low_threshold            = 20
+    threshold_type           = percentage
+    hide_seconds             = true
 }
 
 disk "/home" {
-    format = " %used/%total"
-    prefix_type	= custom
-    low_threshold = 10
+    format         = " %used/%total"
+    prefix_type    = custom
+    low_threshold  = 10
     threshold_type = percentage_avail
 }
 
@@ -56,9 +56,9 @@ load {
 }
 
 memory {
-    format = "⚚ %used / %total"
+    format             = "⚚ %used / %total"
     threshold_degraded = "1G"
-    format_degraded = "MEMORY < %available"
+    format_degraded    = "MEMORY < %available"
 }
 
 tztime local {
