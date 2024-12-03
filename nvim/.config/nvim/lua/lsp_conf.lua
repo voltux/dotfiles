@@ -163,7 +163,7 @@ lsp.hls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
-lsp.bufls.setup {
+lsp.buf_ls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
