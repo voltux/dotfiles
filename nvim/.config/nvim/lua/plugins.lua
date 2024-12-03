@@ -551,6 +551,10 @@ local plugins = {
             "nvim-telescope/telescope.nvim",
         },
         config = function() require('neogit_conf') end,
+    },
+    {
+        "Vigemus/iron.nvim",
+        config = function() require('iron_conf') end,
     }
 
 }
