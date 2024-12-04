@@ -83,12 +83,12 @@ require("gruvbox").setup({
     -- NvimTree
     Directory = { link = "GruvboxBlueBold" },
     -- RenderMarkdown
-    RenderMarkdownH1Bg = { bg = color_palette.faded_blue },
-    RenderMarkdownH2Bg = { bg = color_palette.faded_blue },
-    RenderMarkdownH3Bg = { bg = color_palette.faded_blue },
-    RenderMarkdownH4Bg = { bg = color_palette.faded_blue },
-    RenderMarkdownH5Bg = { bg = color_palette.faded_blue },
-    RenderMarkdownH6Bg = { bg = color_palette.faded_blue },
+    RenderMarkdownH1Bg = { bg = color_palette.dark2 },
+    RenderMarkdownH2Bg = { bg = color_palette.dark2 },
+    RenderMarkdownH3Bg = { bg = color_palette.dark2 },
+    RenderMarkdownH4Bg = { bg = color_palette.dark2 },
+    RenderMarkdownH5Bg = { bg = color_palette.dark2 },
+    RenderMarkdownH6Bg = { bg = color_palette.dark3 },
   },
   dim_inactive = false,
   transparent_mode = false,
