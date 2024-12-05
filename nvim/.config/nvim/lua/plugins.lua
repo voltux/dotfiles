@@ -504,7 +504,6 @@ local plugins = {
         -- search nerd font glyphs
         '2kabhishek/nerdy.nvim',
         dependencies = { 'stevearc/dressing.nvim', 'nvim-telescope/telescope.nvim', },
-        cmd = 'Nerdy',
         config = function() require("nerdy_conf") end,
     },
     {
