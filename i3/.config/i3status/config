@@ -1,38 +1,50 @@
+### General Settings 
 general {
-    colors = true
+    colors = false
     interval = 1
     color_bad = "#cc241d"
     color_good = "#98971a"
     color_degraded = "#d79921"
+    separator = ""
+    markup = pango
 }
 
 order += "volume master"
-order += "ipv6"
+order += "cpu_usage"
+order += "memory"
+order += "battery all"
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery all"
 order += "tztime local"
 
-volume master {
-    format       = " %volume"
-    format_muted = " %volume"
-    device       = "default"
-    mixer        = "Master"
-    mixer_idx    = 0
+### Widget Settings
+cpu_usage {
+    format = "<span foreground='#98971a'></span><span foreground='#1d2021' background='#98971a'> %usage</span><span foreground='#98971a' background='#1d2021'></span>"
+}
+memory {
+    format = "<span foreground='#b16286'></span><span foreground='#1d2021' background='#b16286'> %percentage_used</span><span foreground='#b16286' background='#1d2021'></span>"
 }
 
 wireless _first_ {
-    format_up   = "W: (%quality at %essid) %ip"
-    format_down = "W: down"
+    format_up = "<span foreground='#458588'></span><span foreground='#1d2021' background='#458588'> %quality %essid</span><span foreground='#458588' background='#1d2021'></span>"
+    format_down = "<span foreground='#458588'></span><span foreground='#1d2021' background='#458588'>󰣼</span><span foreground='#458588' background='#1d2021'></span>"
 }
 
 ethernet _first_ {
-    format_up   = "E: %ip (%speed)"
-    format_down = "E: down"
+    format_up = "<span foreground='#d65d0e'></span><span foreground='#1d2021' background='#d65d0e'>󰈁</span><span foreground='#d65d0e' background='#1d2021'></span>"
+    format_down = "<span foreground='#d65d0e'></span><span foreground='#1d2021' background='#d65d0e'>󰈂</span><span foreground='#d65d0e' background='#1d2021'></span>"
+}
+
+volume master {
+    format = "<span foreground='#d79921'></span><span foreground='#1d2021' background='#d79921'> %volume</span><span foreground='#d79921' background='#1d2021'></span>"
+    format_muted = "<span foreground='#98971a'></span><span background='#98971a'> muted</span><span foreground='#282828' background='#98971a'></span>"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
 
 battery all {
-    format                   = "%status %percentage %remaining"
+    format = "<span foreground='#689d6a'></span><span foreground='#1d2021' background='#689d6a'> %status %percentage %remaining </span><span foreground='#689d6a' background='#1d2021'></span>"
     status_chr               = ""
     status_bat               = ""
     status_unk               = ""
@@ -44,27 +56,6 @@ battery all {
     hide_seconds             = true
 }
 
-disk "/home" {
-    format         = " %used/%total"
-    prefix_type    = custom
-    low_threshold  = 10
-    threshold_type = percentage_avail
-}
-
-load {
-    format = " %1min"
-}
-
-memory {
-    format             = "⚚ %used / %total"
-    threshold_degraded = "1G"
-    format_degraded    = "MEMORY < %available"
-}
-
 tztime local {
     format = "%d/%m/%Y %H:%M:%S"
-}
-
-cpu_usage {
-    format = " %usage"
 }
