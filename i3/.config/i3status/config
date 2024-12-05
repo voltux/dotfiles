@@ -44,7 +44,7 @@ volume master {
 }
 
 battery all {
-    format = "<span foreground='#689d6a'></span><span foreground='#1d2021' background='#689d6a'> %status %percentage %remaining </span><span foreground='#689d6a' background='#1d2021'></span>"
+    format = "<span foreground='#689d6a'></span><span foreground='#1d2021' background='#689d6a'>%status %percentage %remaining</span><span foreground='#689d6a' background='#1d2021'></span>"
     status_chr               = ""
     status_bat               = ""
     status_unk               = ""
