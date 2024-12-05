@@ -206,7 +206,7 @@ set $purple #b16286
 set $aqua #689d6a
 set $gray #a89984
 set $darkgray #1d2021
-set $lightgray #928374
+set $lightgray #bdae93
 
 bar {
     status_command i3status
