@@ -52,7 +52,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -i -nb '#1d2021' -nf '#d79921' -sb '#504945' -sf '#d79921' -fn 'JetBrainsMono NFM:bold:pixelsize=12' 
+bindsym $mod+d exec dmenu_run -i -nb '#1d2021' -nf '#d79921' -sb '#d79921' -sf '#1d2021' -fn 'JetBrainsMono NFM:bold:pixelsize=12' 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
