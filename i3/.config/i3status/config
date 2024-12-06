@@ -26,7 +26,7 @@ memory {
 }
 
 wireless _first_ {
-    format_up = "<span foreground='#458588'></span><span foreground='#1d2021' background='#458588'> %quality %essid</span><span foreground='#458588' background='#1d2021'></span>"
+    format_up = "<span foreground='#458588'></span><span foreground='#1d2021' background='#458588'> %essid%quality</span><span foreground='#458588' background='#1d2021'></span>"
     format_down = "<span foreground='#458588'></span><span foreground='#1d2021' background='#458588'>󰣼</span><span foreground='#458588' background='#1d2021'></span>"
 }
 
