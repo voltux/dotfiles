@@ -1,7 +1,7 @@
 -- General settings
 vim.o.backspace = "indent,eol,start"        -- sane backspace behaviour
 vim.o.number = true                         -- show line number
-vim.o.relativenumber = false                 -- show line number relative to current
+vim.o.relativenumber = false                -- show line number relative to current
 vim.o.wildmenu = true                       -- show menu for options in command mode
 vim.o.wildignorecase = true                 -- ignore case for wildmenu in command mode
 vim.o.errorbells = false                    -- no error bells
@@ -47,6 +47,7 @@ vim.g.do_filetype_lua = 1                   -- let lua handle filetypes and fall
 vim.o.completeopt = 'menu,menuone,noselect' -- autocompletion options
 vim.o.termguicolors = true                  -- show all my terminal colors please
 vim.o.background = 'dark'                   -- always on dark background
+vim.o.wrap = false                          -- set nowrap by default
 vim.cmd [[ set fillchars+=eob:\ ]]          -- remove ~ tilde as character for lines after buffer end and leave empty
 vim.cmd [[ set shortmess=I ]]               -- disable intro message
 vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
