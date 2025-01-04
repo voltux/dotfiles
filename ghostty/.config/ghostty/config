@@ -2,6 +2,10 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+mouse-hide-while-typing = true
+
+fullscreen = true
+
 font-size = 10
 font-family = JetBrainsMono NFM
 font-style-bold = Bold
