@@ -19,6 +19,7 @@ cmp.setup({
             -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
+    preselect = "none",
     event = "InsertEnter",
     duplicates = {
         nvim_lsp = 1,
