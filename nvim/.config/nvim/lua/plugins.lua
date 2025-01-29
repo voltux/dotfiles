@@ -554,8 +554,13 @@ local plugins = {
     {
         "Vigemus/iron.nvim",
         config = function() require('iron_conf') end,
-    }
-
+    },
+    {
+        "vinnymeller/swagger-preview.nvim",
+        cmd = { "SwaggerPreview", "SwaggerPreviewStop", "SwaggerPreviewToggle" },
+        build = "npm i",
+        config = true,
+    },
 }
 
 local opts = {
