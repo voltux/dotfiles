@@ -114,3 +114,13 @@ fi
 if [ -f "/home/iarapis/.ghcup/env" ]; then
     source "/home/iarapis/.ghcup/env"
 fi
+
+# ldgote
+if command -v ldgote &> /dev/null ; then
+    eval "$( ldgote completion zsh )"
+fi
+
+# restish
+if command -v ldgote &> /dev/null ; then
+    eval "$( restish completion zsh )"
+fi
