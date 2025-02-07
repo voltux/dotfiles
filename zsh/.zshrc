@@ -47,6 +47,9 @@ if [[ $PATH != *"$HOME/.local/share/nvim/mason/bin"* ]]; then
     export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 fi
 
+# gpg
+export GPG_TTY=$(tty)
+
 # fzf scripts
 [ -f $HOME/.fzf/shell/completion.zsh ]\
     && source $HOME/.fzf/shell/completion.zsh\
