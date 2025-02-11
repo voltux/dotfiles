@@ -23,3 +23,6 @@ require("codecompanion").setup({
     },
   },
 })
+
+vim.keymap.set('n', '<leader>aa', '<cmd>CodeCompanionChat Toggle<CR>',
+    { noremap = true, desc = 'Codecompanion chat toggle' })
