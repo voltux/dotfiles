@@ -61,10 +61,11 @@ cmp.setup({
         end, { "i", "s" }),
     }),
     sources = cmp.config.sources({
-        { name = 'nvim_lsp',                priority = 1000 },
+        { name = 'luasnip',                 priority = 1000 },
         { name = 'nvim_lua',                priority = 1000 },
-        { name = 'luasnip',                 priority = 900 },
-        { name = 'nvim_lsp_signature_help', priority = 800 },
+        { name = 'nvim_lsp_signature_help', priority = 900 },
+        { name = 'nvim_lsp',                priority = 800 },
+        { name = 'codecompanion',           priority = 800 },
         { name = 'buffer',                  priority = 700 },
         { name = 'path',                    priority = 500 },
     })
@@ -82,8 +83,10 @@ cmp.setup.filetype('gitcommit', {
 cmp.setup.filetype('norg', {
     sources = cmp.config.sources(
         {
-            { name = 'neorg' }, -- You can specify the `cmp_git` source if you were installed it.
-            { name = 'luasnip'},
+            { name = 'neorg' },
+            { name = 'buffer' },
+            { name = 'path' },
+            { name = 'luasnip' },
         }
     )
 })
