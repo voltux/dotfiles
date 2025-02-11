@@ -24,7 +24,11 @@ require('neorg').setup {
                 zen_mode = "zen-mode"
             }
         },
-        ["core.export.markdown"]        = {},
+        ["core.export.markdown"]        = {
+            config = {
+                extensions = "all"
+            }
+        },
         ["core.export"]                 = {
             config = {
                 extensions = "all"
