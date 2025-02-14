@@ -67,6 +67,13 @@ export GPG_TTY=$(tty)
 # add fzf to path
 
 export FZF_DEFAULT_OPTS="--multi --border --bind ctrl-a:select-all,ctrl-d:deselect-all,ctrl-t:toggle-all"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:#d0d0d0,fg+:#d0d0d0,bg:#1d2021,bg+:#3c3836
+  --color=hl:#689d6a,hl+:#d79921,info:#458588,marker:#d79921
+  --color=prompt:#b8bb26,spinner:#b16286,pointer:#d65d0e,header:#d3869b
+  --color=border:#d79921,label:#d65d0e,query:#d9d9d9
+  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
 
 if [[ $PATH != *"$HOME/.bin"* ]]; then
     export PATH="$PATH:$HOME/.bin"
