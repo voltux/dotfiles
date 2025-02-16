@@ -36,8 +36,8 @@ ethernet _first_ {
 }
 
 volume master {
-    format = "<span foreground='#d79921'></span><span foreground='#1d2021' background='#d79921'> %volume</span><span foreground='#d79921' background='#1d2021'></span>"
-    format_muted = "<span foreground='#98971a'></span><span background='#98971a'> muted</span><span foreground='#282828' background='#98971a'></span>"
+    format = "<span foreground='#d79921'></span><span foreground='#1d2021' background='#d79921'> %volume</span><span foreground='#d79921' background='#1d2021'></span>"
+    format_muted = "<span foreground='#d79921'></span><span foreground='#1d2021' background='#d79921'> mute</span><span foreground='#d79921' background='#1d2021'></span>"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
@@ -45,7 +45,7 @@ volume master {
 
 battery all {
     format = "<span foreground='#689d6a'></span><span foreground='#1d2021' background='#689d6a'>%status %percentage %remaining</span><span foreground='#689d6a' background='#1d2021'></span>"
-    status_chr               = ""
+    status_chr               = ""
     status_bat               = ""
     status_unk               = ""
     status_full              = ""
