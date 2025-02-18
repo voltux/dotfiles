@@ -131,6 +131,6 @@ if command -v ldgote &> /dev/null ; then
 fi
 
 # restish
-if command -v ldgote &> /dev/null ; then
+if command -v restish &> /dev/null ; then
     eval "$( restish completion zsh )"
 fi
