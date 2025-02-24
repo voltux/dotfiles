@@ -17,7 +17,10 @@ require("telescope").setup {
                     vim.cmd.cfdo("edit")
                 end,
             },
-            n = { ["q"] = require("telescope.actions").close },
+            n = {
+                ["q"] = require("telescope.actions").close,
+                ["dd"] = require("telescope.actions").delete_buffer,
+            },
         },
         selection_strategy = "reset",
         sorting_strategy = "ascending",
