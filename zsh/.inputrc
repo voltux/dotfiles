@@ -1,1 +1,7 @@
+# autocompletion options
+set completion-ignore-case on
+set show-all-if-ambiguous on
+
+# editing mode
 set editing-mode vi
+
