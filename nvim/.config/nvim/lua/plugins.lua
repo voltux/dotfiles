@@ -533,16 +533,19 @@ local plugins = {
         config = function() require('render_markdown_conf') end,
     },
     {
+        -- formatter integration
         'stevearc/conform.nvim',
         opts = {},
         config = function() require('conform_conf') end,
     },
     {
+        -- search panel
         'nvim-pack/nvim-spectre',
         config = function() require('spectre_conf') end,
         dependencies = { "nvim-lua/plenary.nvim" },
     },
     {
+        -- git integration
         "NeogitOrg/neogit",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -556,12 +559,14 @@ local plugins = {
         config = function() require('iron_conf') end,
     },
     {
+        -- swagger http server to preview
         "vinnymeller/swagger-preview.nvim",
         cmd = { "SwaggerPreview", "SwaggerPreviewStop", "SwaggerPreviewToggle" },
         build = "npm i",
         config = true,
     },
     {
+        -- AI integration
         "olimorris/codecompanion.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
