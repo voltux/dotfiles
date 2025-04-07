@@ -3,7 +3,6 @@
 set nocompatible "sane defaults
 set backspace=indent,eol,start "sane backspace behaviour
 set number "show line number
-set relativenumber "show line number relative to current
 set wildmenu "show menu for options in command mode
 set wildignorecase "ignore case for wildmenu in command mode
 set wildignore+=.pyc,.swp "ignore certain filetypes in wildmenu
