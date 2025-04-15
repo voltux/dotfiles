@@ -163,3 +163,8 @@ lsp.hls.setup {
     on_attach = custom_attach,
     capabilities = capabilities,
 }
+lsp.terraformls.setup {
+    on_attach = custom_attach,
+    capabilities = capabilities,
+    filetypes = { "tf" },
+}
