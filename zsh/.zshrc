@@ -134,3 +134,11 @@ fi
 if command -v restish &> /dev/null ; then
     eval "$( restish completion zsh )"
 fi
+
+# paas-sdev
+if command -v paas-sdev &> /dev/null ; then
+    export PAAS_SDEV_ROOT=${HOME}/.paas-sdev
+    export PAAS_SDEV_SRC=${PAAS_SDEV_ROOT}/src
+    source <(paas-sdev env)
+    eval "$( paas-sdev completion zsh )"
+fi
