@@ -1,4 +1,5 @@
 local color_palette = require("gruvbox").palette
+vim.o.laststatus = 3 -- show only one statusline
 
 require("gruvbox").setup({
   undercurl = true,

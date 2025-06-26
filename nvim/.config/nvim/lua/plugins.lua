@@ -17,6 +17,7 @@ local plugins = {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('nvim-tree_conf') end,
+        version = "v1.13.0"
     },
     {
         -- filetype icons
@@ -574,6 +575,71 @@ local plugins = {
         },
         config = function() require('codecompanion_conf') end,
     },
+    {
+        -- AI integration
+        "yetone/avante.nvim",
+        -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+        -- ⚠️ must add this setting! ! !
+        build = function()
+            -- conditionally use the correct build system for the current OS
+            if vim.fn.has("win32") == 1 then
+                return "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+            else
+                return "make"
+            end
+        end,
+        event = "VeryLazy",
+        version = false, -- Never set this value to "*"! Never!
+        ---@module 'avante'
+        ---@type avante.Config
+        opts = {
+            -- add any opts here
+            -- for example
+            provider = "qianwen",
+            providers = {
+                qianwen = {
+                    __inherited_from = 'openai',
+                    endpoint =
+                    "https://qwen-2-5-coder-32b-instruct.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1/",
+                    model = "Qwen2.5-Coder-32B-Instruct",
+                    api_key_name = "LLM_TOKEN",
+                },
+                deepseek = {
+                    __inherited_from = 'openai',
+                    endpoint =
+                    "https://deepseek-r1-distill-llama-70b.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1/",
+                    model = "DeepSeek-R1-Distill-Llama-70B",
+                    api_key_name = "LLM_TOKEN",
+                },
+            },
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+            "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
+            "stevearc/dressing.nvim",        -- for input provider dressing
+            "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
+            'MeanderingProgrammer/render-markdown.nvim',
+            {
+                -- support for image pasting
+                "HakonHarnes/img-clip.nvim",
+                event = "VeryLazy",
+                opts = {
+                    -- recommended settings
+                    default = {
+                        embed_image_as_base64 = false,
+                        prompt_for_file_name = false,
+                        drag_and_drop = {
+                            insert_mode = true,
+                        },
+                        -- required for Windows users
+                        use_absolute_path = true,
+                    },
+                },
+            },
+        },
+    }
 }
 
 local opts = {
