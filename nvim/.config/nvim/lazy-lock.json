@@ -48,7 +48,7 @@
   "move.nvim": { "branch": "main", "commit": "599b14047b82e92874b9a408e4df228b965c3a1d" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
   "neogen": { "branch": "main", "commit": "d7f9461727751fb07f82011051338a9aba07581d" },
-  "neogit": { "branch": "master", "commit": "802f387b7a44731db2b5f3c0b605ae388b883f1d" },
+  "neogit": { "branch": "master", "commit": "f664d58c88abb258ecda5c347839a476f160eea8" },
   "neorg": { "branch": "main", "commit": "790b0444c0c654131a722817dc893332e06c72b9" },
   "neorg-telescope": { "branch": "main", "commit": "7fb6ca6a632c3c095601d379a664c0c1f802dc6c" },
   "nerdy.nvim": { "branch": "main", "commit": "a8e3f70dc0232e956adfb12c647b7e9e2b2e6c89" },
