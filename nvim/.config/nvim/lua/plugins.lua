@@ -639,26 +639,32 @@ local plugins = {
                 },
             },
         },
-        {
-            'nvim-orgmode/orgmode',
-            event = 'VeryLazy',
-            ft = { 'org' },
-            config = function()
-                -- Setup orgmode
-                require('orgmode').setup({
-                    org_agenda_files = '~/orgfiles/**/*',
-                    org_default_notes_file = '~/orgfiles/refile.org',
-                })
+    },
+    {
+        'nvim-orgmode/orgmode',
+        event = 'VeryLazy',
+        ft = { 'org' },
+        config = function()
+            -- Setup orgmode
+            require('orgmode').setup({
+                org_agenda_files = '~/orgfiles/**/*',
+                org_default_notes_file = '~/orgfiles/refile.org',
+            })
 
-                -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-                -- add ~org~ to ignore_install
-                -- require('nvim-treesitter.configs').setup({
-                --   ensure_installed = 'all',
-                --   ignore_install = { 'org' },
-                -- })
-            end,
-        }
-    }
+            -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+            -- add ~org~ to ignore_install
+            -- require('nvim-treesitter.configs').setup({
+            --   ensure_installed = 'all',
+            --   ignore_install = { 'org' },
+            -- })
+        end,
+    },
+    {
+        -- dap python debugger
+        'leoluz/nvim-dap-go',
+        dependencies = { "leoluz/nvim-dap-go" },
+        config = function() require('dap-go').setup() end,
+    },
 }
 
 local opts = {
