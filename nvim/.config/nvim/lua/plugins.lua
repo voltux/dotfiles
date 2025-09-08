@@ -663,7 +663,7 @@ local plugins = {
         -- dap python debugger
         'leoluz/nvim-dap-go',
         dependencies = { "leoluz/nvim-dap-go" },
-        config = function() require('dap-go').setup() end,
+        config = function() require('dap-go_conf') end,
     },
 }
 
