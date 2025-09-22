@@ -1,6 +1,4 @@
-require('lspconfig.ui.windows').default_options.border = 'rounded'
 vim.cmd [[ hi LspInfoBorder cterm=NONE ]]
-local lsp = require('lspconfig')
 
 -- configure setup on attach to a lsp server
 local custom_attach = function(_, bufnr)
@@ -9,7 +7,7 @@ local custom_attach = function(_, bufnr)
     function _G.toggle_diagnostics()
         if vim.g.diagnostics_visible then
             vim.g.diagnostics_visible = false
-            vim.diagnostic.disable()
+            vim.diagnostic.enable(false)
             print("Diagnostics disabled")
         else
             vim.g.diagnostics_visible = true
@@ -25,7 +23,7 @@ local custom_attach = function(_, bufnr)
     })
 
     -- setup global autocompletion
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', {buf = bufnr})
 
     -- keymaps
     -- vim.keymap.set('n', ']w', vim.diagnostic.goto_next,
@@ -61,110 +59,176 @@ end
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- setup servers for each programming language
-lsp.pylsp.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    settings = {
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    maxLineLength = 120
+vim.lsp.enable('pylsp')
+vim.lsp.config('pylsp',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+        settings = {
+            pylsp = {
+                plugins = {
+                    pycodestyle = {
+                        maxLineLength = 120
+                    }
                 }
             }
         }
     }
-}
-lsp.lua_ls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT',
-            },
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { 'vim' },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-                checkThirdParty = false,
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
+)
+
+vim.lsp.enable('lua_ls')
+vim.lsp.config('lua_ls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+        settings = {
+            Lua = {
+                runtime = {
+                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                    version = 'LuaJIT',
+                },
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { 'vim' },
+                },
+                workspace = {
+                    -- Make the server aware of Neovim runtime files
+                    library = vim.api.nvim_get_runtime_file("", true),
+                    checkThirdParty = false,
+                },
+                -- Do not send telemetry data containing a randomized but unique identifier
+                telemetry = {
+                    enable = false,
+                },
             },
         },
-    },
-}
-lsp.vimls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.perlnavigator.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    cmd = { "perlnavigator", "--stdio" }
-}
-lsp.bashls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.clangd.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    filetypes = { "c", "cpp", "objc", "objcpp", "cuda", },
-}
-lsp.yamlls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.gopls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.sqlls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.dockerls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.jsonls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.yamlls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    settings = {
-        yaml = {
-            keyOrdering = false
+    }
+)
+
+vim.lsp.enable('vimls')
+vim.lsp.config('vimls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('perlnavigator')
+vim.lsp.config('perlnavigator',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+        cmd = { "perlnavigator", "--stdio" }
+    }
+)
+
+vim.lsp.enable('bashls')
+vim.lsp.config('bashls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('clangd')
+vim.lsp.config('clangd',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+        filetypes = { "c", "cpp", "objc", "objcpp", "cuda", },
+    }
+)
+
+vim.lsp.enable('yamlls')
+vim.lsp.config('yamlls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('gopls')
+vim.lsp.config('gopls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('sqlls')
+vim.lsp.config('sqlls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('dockerls')
+vim.lsp.config('dockerls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('jsonls')
+vim.lsp.config('jsonls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('yamlls')
+vim.lsp.config('yamlls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+        settings = {
+            yaml = {
+                keyOrdering = false
+            }
         }
     }
-}
-lsp.html.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.marksman.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.rust_analyzer.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.hls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-}
-lsp.terraformls.setup {
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    filetypes = { "tf" },
-}
+)
+
+vim.lsp.enable('html')
+vim.lsp.config('html',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('marksman')
+vim.lsp.config('marksman',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('rust_analyzer')
+vim.lsp.config('rust_analyzer',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('hls')
+vim.lsp.config('hls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+    }
+)
+
+vim.lsp.enable('terraformls')
+vim.lsp.config('terraformls',
+    {
+        on_attach = custom_attach,
+        capabilities = capabilities,
+        filetypes = { "tf" },
+    }
+)
