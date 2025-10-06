@@ -213,8 +213,9 @@ local plugins = {
         -- org mode but for vimmers :)
         'nvim-neorg/neorg',
         cmd = 'Neorg sync-parsers',
-        dependencies = { 'luarocks.nvim', 'nvim-neorg/neorg-telescope' },
+        dependencies = { 'luarocks.nvim', 'nvim-neorg/lua-utils.nvim', 'pysan3/pathlib.nvim' },
         ft = 'norg',
+        version = '*',
         config = function() require('neorg_conf') end,
     },
     {
@@ -664,6 +665,9 @@ local opts = {
             not_loaded = "",
         },
     },
+    rocks = {
+        enabled = false
+    }
 }
 
 vim.keymap.set('n', '<leader>pl', '<Cmd>Lazy<CR>', { noremap = true, desc = 'Lazy Open' })
