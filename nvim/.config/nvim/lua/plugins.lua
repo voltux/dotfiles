@@ -292,6 +292,7 @@ local plugins = {
         'mfussenegger/nvim-dap-python',
         dependencies = { "mfussenegger/nvim-dap" },
         config = function() require('dap-python_conf') end,
+        commit = 'bfe572e4458e0ac876b9539a1e9f301c72db8ea0', -- FIXME: breaks after that
     },
     {
         -- dap ui
