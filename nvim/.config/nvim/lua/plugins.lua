@@ -654,6 +654,13 @@ local plugins = {
         dependencies = { "leoluz/nvim-dap-go" },
         config = function() require('dap-go_conf') end,
     },
+    {
+        "rmagatti/auto-session",
+        lazy = false,
+        opts = {
+            suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+        },
+    }
 }
 
 local opts = {

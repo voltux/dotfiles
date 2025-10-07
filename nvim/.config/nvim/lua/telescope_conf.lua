@@ -151,7 +151,7 @@ vim.keymap.set('n', '<leader>fc', '<cmd>Telescope git_commits<CR>',
     { noremap = true, desc = 'Telescope find in commits' })
 vim.keymap.set('n', '<leader>fT', '<cmd>Telescope git_branches<CR>',
     { noremap = true, desc = 'Telescope find in branches' })
-vim.keymap.set('n', '<leader>fs', '<cmd>Telescope luasnip<CR>',
+vim.keymap.set('n', '<leader>fs', '<cmd>Telescope session-lens<CR>',
     { noremap = true, desc = 'Telescope find snippet' })
 vim.keymap.set('n', '<leader>fS', '<cmd>Telescope git_stash<CR>',
     { noremap = true, desc = 'Telescope find git stash' })
