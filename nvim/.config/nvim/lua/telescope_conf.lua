@@ -95,8 +95,6 @@ vim.keymap.set('n', '<leader>f%', '<cmd>Telescope oldfiles<CR>',
     { noremap = true, desc = 'Telescope find recently open files' })
 vim.keymap.set('n', '<leader>f/', '<cmd>Telescope search_history<CR>',
     { noremap = true, desc = 'Telescope find in search history' })
-vim.keymap.set('n', '<leader>fG', '<cmd>Telescope git_status<CR>',
-    { noremap = true, desc = 'Telescope find modified git files' })
 vim.keymap.set('n', '<leader>fa', function() require('telescope').extensions.togglescope.live_grep() end,
     { noremap = true, desc = 'Telescope find pattern in all files' })
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<CR>',
@@ -107,8 +105,6 @@ vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<CR>',
     { noremap = true, desc = 'Telescope find diagnostic' })
 vim.keymap.set('n', '<leader>ff', "<cmd>lua require('telescope').extensions.togglescope.find_files()<CR>",
     { noremap = true, desc = 'Telescope find file' })
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope git_files<CR>',
-    { silent = true, noremap = true, desc = 'Telescope find git files' })
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<CR>',
     { noremap = true, desc = 'Telescope find help tags' })
 vim.keymap.set('n', '<leader>fi', '<cmd>Telescope current_buffer_fuzzy_find<CR>',
@@ -147,20 +143,14 @@ vim.keymap.set('n', '<leader>ft', '<cmd>Telescope lsp_type_definitions<CR>',
     { noremap = true, desc = 'Telescope find type definition' })
 vim.keymap.set('n', '<leader>fv', '<cmd>Telescope treesitter<CR>',
     { noremap = true, desc = 'Telescope find treesitter symbol' })
-vim.keymap.set('n', '<leader>fc', '<cmd>Telescope git_commits<CR>',
-    { noremap = true, desc = 'Telescope find in commits' })
-vim.keymap.set('n', '<leader>fT', '<cmd>Telescope git_branches<CR>',
-    { noremap = true, desc = 'Telescope find in branches' })
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope session-lens<CR>',
     { noremap = true, desc = 'Telescope find snippet' })
-vim.keymap.set('n', '<leader>fS', '<cmd>Telescope git_stash<CR>',
-    { noremap = true, desc = 'Telescope find git stash' })
-vim.keymap.set('n', '<leader>fB', '<cmd>Telescope git_bcommits<CR>',
-    { noremap = true, desc = 'Telescope find current buffer commit history' })
+vim.keymap.set('n', '<leader>fS', '<cmd>Telescope luasnip<CR>',
+    { noremap = true, desc = 'Telescope find snippet' })
 vim.keymap.set('n', '<leader>fz', '<cmd>Telescope spell_suggest<CR>',
     { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
 vim.keymap.set('n', '<leader>f%', '<cmd>Telescope oldfiles<CR>',
-    { noremap = true, desc = 'Telescope find recently open files' })
+    { noremap = true, desc = 'Telescope find recently opened files' })
 vim.keymap.set('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
     { noremap = true, desc = 'Telescope file browser' })
 vim.keymap.set('n', '<leader>fC', "<cmd>Telescope cder<CR>",
@@ -170,3 +160,17 @@ vim.keymap.set("n", "<leader>fe", "<cmd>Telescope emoji<cr>", { noremap = true, 
 vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<cr>",
     { noremap = true, desc = 'Telescope find project' })
 vim.keymap.set("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { noremap = true, desc = 'Telescope highlights' })
+
+-- Git
+vim.keymap.set('n', '<leader>fgf', '<cmd>Telescope git_status<CR>',
+    { noremap = true, desc = 'Telescope find modified git files' })
+vim.keymap.set('n', '<leader>fgg', '<cmd>Telescope git_files<CR>',
+    { silent = true, noremap = true, desc = 'Telescope find git files' })
+vim.keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>',
+    { noremap = true, desc = 'Telescope find in commits' })
+vim.keymap.set('n', '<leader>fgb', '<cmd>Telescope git_branches<CR>',
+    { noremap = true, desc = 'Telescope find in branches' })
+vim.keymap.set('n', '<leader>fgs', '<cmd>Telescope git_stash<CR>',
+    { noremap = true, desc = 'Telescope find git_stash' })
+vim.keymap.set('n', '<leader>fgb', '<cmd>Telescope git_bcommits<CR>',
+    { noremap = true, desc = 'Telescope find current buffer commit history' })
