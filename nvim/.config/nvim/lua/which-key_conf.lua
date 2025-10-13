@@ -1,7 +1,6 @@
 local wk = require('which-key')
 wk.add({
     { "<leader>f",  group = "find",               mode = "n" },
-    { "<leader>fg", group = "git",                mode = "n" },
     { "<leader>c",  group = "code",               mode = "n" },
     { "<leader>l",  group = "language",           mode = "n" },
     { "<leader>c",  group = "check spelling",     mode = "n" },

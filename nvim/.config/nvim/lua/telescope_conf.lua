@@ -162,15 +162,15 @@ vim.keymap.set("n", "<leader>fp", "<cmd>Telescope projects theme=dropdown<cr>",
 vim.keymap.set("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { noremap = true, desc = 'Telescope highlights' })
 
 -- Git
-vim.keymap.set('n', '<leader>fgf', '<cmd>Telescope git_status<CR>',
+vim.keymap.set('n', '<leader>fG', '<cmd>Telescope git_status<CR>',
     { noremap = true, desc = 'Telescope find modified git files' })
-vim.keymap.set('n', '<leader>fgg', '<cmd>Telescope git_files<CR>',
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope git_files<CR>',
     { silent = true, noremap = true, desc = 'Telescope find git files' })
-vim.keymap.set('n', '<leader>fgc', '<cmd>Telescope git_commits<CR>',
+vim.keymap.set('n', '<leader>fc', '<cmd>Telescope git_commits<CR>',
     { noremap = true, desc = 'Telescope find in commits' })
-vim.keymap.set('n', '<leader>fgb', '<cmd>Telescope git_branches<CR>',
+vim.keymap.set('n', '<leader>f|', '<cmd>Telescope git_branches<CR>',
     { noremap = true, desc = 'Telescope find in branches' })
-vim.keymap.set('n', '<leader>fgs', '<cmd>Telescope git_stash<CR>',
+vim.keymap.set('n', '<leader>f\\', '<cmd>Telescope git_stash<CR>',
     { noremap = true, desc = 'Telescope find git_stash' })
-vim.keymap.set('n', '<leader>fgb', '<cmd>Telescope git_bcommits<CR>',
+vim.keymap.set('n', '<leader>fB', '<cmd>Telescope git_bcommits<CR>',
     { noremap = true, desc = 'Telescope find current buffer commit history' })
