@@ -142,3 +142,8 @@ if command -v paas-sdev &> /dev/null ; then
     source <(paas-sdev env)
     eval "$( paas-sdev completion zsh )"
 fi
+
+# uv
+if command -v uv &> /dev/null ; then
+    eval "$(uv generate-shell-completion zsh)"
+fi
