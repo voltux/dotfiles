@@ -17,7 +17,6 @@ local plugins = {
         'nvim-tree/nvim-tree.lua',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require('nvim-tree_conf') end,
-        version = "v1.13.0"
     },
     {
         -- filetype icons
@@ -145,7 +144,6 @@ local plugins = {
         -- snippet engine
         "L3MON4D3/LuaSnip",
         config = function() require('luasnip_conf') end,
-        version = "1.*",
         dependencies = { 'hrsh7th/nvim-cmp', 'rafamadriz/friendly-snippets', 'honza/vim-snippets' },
     },
     {
