@@ -30,11 +30,6 @@ local plugins = {
         config = function() require('undotree_conf') end,
     },
     {
-        -- send text to terminal
-        'jpalardy/vim-slime',
-        config = function() require('vim-slime_conf') end,
-    },
-    {
         -- better marks support
         'chentoast/marks.nvim',
         config = function() require('marks').setup() end,
@@ -314,7 +309,6 @@ local plugins = {
     {
         -- neovim terminal handler
         'akinsho/toggleterm.nvim',
-        dependencies = 'jpalardy/vim-slime',
         config = function() require('toggleterm_conf') end,
     },
     {
@@ -351,11 +345,6 @@ local plugins = {
     {
         -- caching init to improve starting time
         'lewis6991/impatient.nvim',
-    },
-    {
-        -- enhance C-A, C-X
-        'nat-418/boole.nvim',
-        config = function() require('boole_conf') end,
     },
     {
         -- vifm file manager inside neovim
@@ -555,10 +544,6 @@ local plugins = {
             "nvim-telescope/telescope.nvim",
         },
         config = function() require('neogit_conf') end,
-    },
-    {
-        "Vigemus/iron.nvim",
-        config = function() require('iron_conf') end,
     },
     {
         -- swagger http server to preview
