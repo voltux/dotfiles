@@ -29,11 +29,6 @@ local plugins = {
         config = function() require('undotree_conf') end,
     },
     {
-        -- send text to terminal
-        'jpalardy/vim-slime',
-        config = function() require('vim-slime_conf') end,
-    },
-    {
         -- better marks support
         'chentoast/marks.nvim',
         config = function() require('marks').setup() end,
@@ -171,10 +166,6 @@ local plugins = {
         config = function() require('gitsigns_conf') end,
     },
     {
-        -- open current git project on github
-        'tpope/vim-rhubarb',
-    },
-    {
         -- telescope extension for luasnip snippets
         'benfowler/telescope-luasnip.nvim',
         dependencies = { 'L3MON4D3/LuaSnip', 'nvim-telescope/telescope.nvim' },
@@ -185,40 +176,8 @@ local plugins = {
         dependencies = { 'nvim-telescope/telescope.nvim' },
     },
     {
-        -- html easy text generation
-        'mattn/emmet-vim',
-        ft = 'html',
-    },
-    {
-        -- haskell filetype enhancements
-        'neovimhaskell/haskell-vim',
-        ft = 'haskell',
-    },
-    {
-        -- exchange mode for vim to swap texts between two text objects
-        'tommcdo/vim-exchange',
-    },
-    {
         -- lua module for asynchronous programming (dependancy lib)
         'nvim-lua/plenary.nvim',
-    },
-    {
-        "vhyrro/luarocks.nvim",
-        priority = 1000, -- We'd like this plugin to load first out of the rest
-        config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
-    },
-    {
-        -- org mode but for vimmers :)
-        'nvim-neorg/neorg',
-        cmd = 'Neorg sync-parsers',
-        dependencies = { 'luarocks.nvim', 'nvim-neorg/lua-utils.nvim', 'pysan3/pathlib.nvim' },
-        ft = 'norg',
-        version = '*',
-        config = function() require('neorg_conf') end,
-    },
-    {
-        'nvim-neorg/neorg-telescope',
-        dependencies = { 'nvim-neorg/neorg', 'nvim-telescope/telescope.nvim' },
     },
     {
         -- fuzzy finding anything anywhere
@@ -274,12 +233,6 @@ local plugins = {
         'numToStr/Comment.nvim',
         config = function() require('Comment').setup() end,
         event = { "BufReadPre", "BufNewFile" },
-    },
-    {
-        -- embed neovim on the browser
-        'glacambre/firenvim',
-        build = function() vim.fn['firenvim#install'](0) end,
-        config = function() require('firenvim_conf') end,
     },
     {
         -- debugger engine
@@ -351,16 +304,6 @@ local plugins = {
         'lewis6991/impatient.nvim',
     },
     {
-        -- enhance C-A, C-X
-        'nat-418/boole.nvim',
-        config = function() require('boole_conf') end,
-    },
-    {
-        -- vifm file manager inside neovim
-        'vifm/vifm.vim',
-        config = function() require('vifm_conf') end,
-    },
-    {
         -- zen mode, enhanced window zooming, neorg presentation friendly
         'folke/zen-mode.nvim',
         config = function() require('zen_mode_conf') end,
@@ -382,7 +325,7 @@ local plugins = {
         dependencies = 'nvim-treesitter/nvim-treesitter',
     },
     {
-        -- remove cursorline and cursorcolumn from incactive buffers
+        -- remove cursorline and cursorcolumn from inactive buffers
         'tummetott/reticle.nvim',
         config = function() require('reticle_conf') end,
     },
@@ -553,10 +496,6 @@ local plugins = {
             "nvim-telescope/telescope.nvim",
         },
         config = function() require('neogit_conf') end,
-    },
-    {
-        "Vigemus/iron.nvim",
-        config = function() require('iron_conf') end,
     },
     {
         -- swagger http server to preview
