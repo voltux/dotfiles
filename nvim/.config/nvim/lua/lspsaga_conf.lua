@@ -1,6 +1,9 @@
 require("lspsaga").setup({
     ui = {
         code_action = '', -- don't show lightbulbs
+    },
+    symbol_in_winbar = {
+        enable = false,
     }
 })
 
