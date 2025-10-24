@@ -622,7 +622,6 @@ local plugins = {
         dependencies = { 'rafamadriz/friendly-snippets' },
         version = '1.*',
         config = function() require('blink_cmp_conf') end,
-
     }
 }
 

@@ -29,7 +29,9 @@ require("gruvbox").setup({
     ErrorMsg = { bg = 'NONE', fg = color_palette.neutral_red },
     NormalFloat = { bg = color_palette.dark0 },
     FloatBorder = { fg = color_palette.neutral_yellow },
-    DiffText = { bg = color_palette.faded_blue },
+    DiffText = { bg = color_palette.neutral_blue },
+    DiffAdd = { bg = color_palette.dark_aqua_hard },
+    DiffDelete = { bg = color_palette.dark_red_hard },
     -- nvim-ts-rainbow2 colors
     TSRainbowRed = { fg = color_palette.bright_red },
     TSRainbowYellow = { fg = color_palette.bright_yellow },
@@ -83,7 +85,7 @@ require("gruvbox").setup({
     WhichKey = { bg = "NONE", fg = color_palette.bright_orange, bold = true },
     -- bufferline
     BufferLineGroupLabel = { link = "BufferLineBackground" },
-    BufferLineBufferSelected = { fg=color_palette.neutral_yellow, bg=color_palette.dark0_hard, bold = true },
+    BufferLineBufferSelected = { fg = color_palette.neutral_yellow, bg = color_palette.dark0_hard, bold = true },
     BufferLineDuplicate = { link = "BufferLineBackground" },
     BufferLineDuplicateVisible = { link = "BufferLineBackground" },
     BufferLineDuplicateSelected = { link = "BufferLineBufferSelected" },
