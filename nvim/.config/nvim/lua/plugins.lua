@@ -101,41 +101,6 @@ local plugins = {
         dependencies = { 'ellisonleao/gruvbox.nvim', opt = true },
     },
     {
-        -- autocompletion engine
-        'hrsh7th/nvim-cmp',
-        config = function() require('cmp_conf') end,
-    },
-    {
-        -- autocompletion (lsp based)
-        'hrsh7th/cmp-nvim-lsp',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (buffer based)
-        'hrsh7th/cmp-buffer',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (filepath based)
-        'hrsh7th/cmp-path',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (command based)
-        'hrsh7th/cmp-cmdline',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion on lsp function/class signature
-        'hrsh7th/cmp-nvim-lsp-signature-help',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
-        -- autocompletion (lua)
-        'hrsh7th/cmp-nvim-lua',
-        dependencies = 'hrsh7th/nvim-cmp',
-    },
-    {
         -- snippet engine
         "L3MON4D3/LuaSnip",
         config = function() require('luasnip_conf') end,
@@ -597,6 +562,13 @@ local plugins = {
         opts = {
             suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
         },
+    },
+    {
+        'saghen/blink.cmp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        version = '1.*',
+        config = function() require('blink_cmp_conf') end,
+
     }
 }
 

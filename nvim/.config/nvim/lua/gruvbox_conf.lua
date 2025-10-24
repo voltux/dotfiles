@@ -51,6 +51,9 @@ require("gruvbox").setup({
     OilDir = { fg = color_palette.blue },
     IncSearch = { bg = 'NONE', fg = color_palette.neutral_yellow },
     Search = { bg = 'NONE', fg = color_palette.neutral_aqua },
+    -- blink
+    BlinkCmpMenu = { link = "NormalFloat" },
+    BlinkCmpMenuBorder = { link = "FLoatBorder" },
     -- markdown
     ["@markup.heading.1.markdown"] = { bg = "NONE", fg = color_palette.neutral_green, bold = true },
     ["@markup.heading.2.markdown"] = { bg = "NONE", fg = color_palette.neutral_yellow, bold = true },
