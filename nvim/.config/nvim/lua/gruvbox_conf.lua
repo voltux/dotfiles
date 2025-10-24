@@ -54,6 +54,9 @@ require("gruvbox").setup({
     -- neotree
     NeoTreeDirectoryIcon = { link = "GruvboxBlue" },
     NeoTreeDirectoryName = { link = "GruvboxBlueBold" },
+    -- blink
+    BlinkCmpMenu = { link = "NormalFloat" },
+    BlinkCmpMenuBorder = { link = "FLoatBorder" },
     -- markdown
     ["@markup.heading.1.markdown"] = { bg = "NONE", fg = color_palette.neutral_green, bold = true },
     ["@markup.heading.2.markdown"] = { bg = "NONE", fg = color_palette.neutral_yellow, bold = true },
