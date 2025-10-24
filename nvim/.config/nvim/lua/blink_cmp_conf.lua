@@ -1,7 +1,7 @@
 require("blink.cmp").setup({
     enabled = function()
         -- Disable for some filetypes
-        return not vim.tbl_contains({ "markdown", "neo-tree", "NvimTree" }, vim.bo.filetype)
+        return not vim.tbl_contains({ "neo-tree", "NvimTree" }, vim.bo.filetype)
             and vim.bo.buftype ~= "prompt"
             and vim.b.completion ~= false
     end,
