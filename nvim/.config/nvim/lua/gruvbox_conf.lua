@@ -59,6 +59,9 @@ require("gruvbox").setup({
     -- blink
     BlinkCmpMenu = { link = "NormalFloat" },
     BlinkCmpMenuBorder = { link = "FLoatBorder" },
+    BlinkCmpLabelMatch = { link = "GruvboxOrangeBold" },
+    PmenuThumb = { bg = color_palette.neutral_grey },
+    PmenuSel = { fg = color_palette.dark0, bg = color_palette.bright_blue, bold = true },
     -- markdown
     ["@markup.heading.1.markdown"] = { bg = "NONE", fg = color_palette.neutral_green, bold = true },
     ["@markup.heading.2.markdown"] = { bg = "NONE", fg = color_palette.neutral_yellow, bold = true },
