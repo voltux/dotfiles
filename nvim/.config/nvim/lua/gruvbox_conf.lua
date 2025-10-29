@@ -49,6 +49,8 @@ require("gruvbox").setup({
     TelescopePreviewTitle = { fg = color_palette.neutral_blue },
     TelescopePromptPrefix = { fg = color_palette.neutral_green },
     TelescopeResultsOperator = { fg = color_palette.neutral_yellow },
+    TelescopeSelection = { fg = color_palette.dark0, bg = color_palette.bright_blue, bold = true },
+    TelescopeMatching = { link = "GruvboxOrangeBold" },
     -- oil
     OilDir = { fg = color_palette.blue },
     IncSearch = { bg = 'NONE', fg = color_palette.neutral_yellow },
@@ -61,7 +63,8 @@ require("gruvbox").setup({
     BlinkCmpMenuBorder = { link = "FLoatBorder" },
     BlinkCmpLabelMatch = { link = "GruvboxOrangeBold" },
     PmenuThumb = { bg = color_palette.neutral_grey },
-    PmenuSel = { fg = color_palette.dark0, bg = color_palette.bright_blue, bold = true },
+    PmenuSel = { link = "TelescopeSelection" },
+    PmenuMatch = { link = "TelescopeMatching" },
     -- markdown
     ["@markup.heading.1.markdown"] = { bg = "NONE", fg = color_palette.neutral_green, bold = true },
     ["@markup.heading.2.markdown"] = { bg = "NONE", fg = color_palette.neutral_yellow, bold = true },
