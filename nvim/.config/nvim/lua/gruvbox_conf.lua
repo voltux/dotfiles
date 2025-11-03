@@ -54,7 +54,7 @@ require("gruvbox").setup({
     -- oil
     OilDir = { fg = color_palette.blue },
     IncSearch = { bg = 'NONE', fg = color_palette.neutral_yellow },
-    Search = { bg = 'NONE', fg = color_palette.neutral_aqua },
+    Search = { bg = 'NONE', fg = color_palette.dark4 },
     -- neotree
     NeoTreeDirectoryIcon = { link = "GruvboxBlue" },
     NeoTreeDirectoryName = { link = "GruvboxBlueBold" },
