@@ -121,7 +121,7 @@ local tmux_copy_mode_toggle = function()
     else
         vim.o.signcolumn = "yes"
         vim.o.number = true
-        vim.o.relativenumber = true
+        vim.o.relativenumber = false
     end
 end
 
