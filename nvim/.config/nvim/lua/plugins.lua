@@ -488,13 +488,6 @@ local plugins = {
         end,
     },
     {
-        -- render markdown nicely
-        'MeanderingProgrammer/render-markdown.nvim',
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
-        ft = "markdown",
-        config = function() require('render_markdown_conf') end,
-    },
-    {
         -- formatter integration
         'stevearc/conform.nvim',
         opts = {},
@@ -554,7 +547,7 @@ local plugins = {
             'saghen/blink.cmp',              -- autocompletion
             "stevearc/dressing.nvim",        -- for input provider dressing
             "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
-            'MeanderingProgrammer/render-markdown.nvim',
+            "OXY2DEV/markview.nvim",         -- markdown preview
             {
                 -- support for image pasting
                 "HakonHarnes/img-clip.nvim",
@@ -605,10 +598,16 @@ local plugins = {
         '0xferrous/ansi.nvim',
         config = function()
             require('ansi').setup({
-                auto_enable = false, -- Auto-enable for configured filetypes
+                auto_enable = false,           -- Auto-enable for configured filetypes
                 filetypes = { 'log', 'ansi' }, -- Filetypes to auto-enable
             })
         end
+    },
+    {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
+        branch = "main",
+        config = function() require('markview_conf') end,
     }
 }
 
