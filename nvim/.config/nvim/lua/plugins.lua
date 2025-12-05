@@ -524,6 +524,7 @@ local plugins = {
             "nvim-treesitter/nvim-treesitter",
         },
         config = function() require('codecompanion_conf') end,
+        version = '17.33.0'
     },
     {
         -- AI integration
