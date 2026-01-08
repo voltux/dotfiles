@@ -414,11 +414,6 @@ local plugins = {
         dependencies = { "nvim-telescope/telescope.nvim" },
     },
     {
-        -- move blocks respecting indentation
-        'fedepujol/move.nvim',
-        config = function() require("move_conf") end,
-    },
-    {
         -- create nice tables
         "dhruvasagar/vim-table-mode",
         config = function() require("table-mode_conf") end,
