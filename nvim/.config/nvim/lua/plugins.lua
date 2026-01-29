@@ -517,9 +517,9 @@ local plugins = {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
+            "ravitemer/mcphub.nvim",
         },
         config = function() require('codecompanion_conf') end,
-        version = '17.33.0'
     },
     {
         -- AI integration

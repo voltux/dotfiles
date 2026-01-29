@@ -1,32 +1,43 @@
 require("codecompanion").setup({
+  strategies = {
+    chat = { adapter = "ovhcloud" },
+    inline = { adapter = "ovhcloud" },
+    cmd = { adapter = "ovhcloud" },
+  },
   adapters = {
+    acp = { show_defaults = false },
     http = {
-      ollama = function()
+      opts = { show_defaults = false, show_model_choices = true },
+      ovhcloud = function()
         return require("codecompanion.adapters").extend("openai_compatible", {
           env = {
-            url = os.getenv("LLM_URL"),
-            api_key = os.getenv("LLM_TOKEN"),
-            chat_url = "/v1/chat/completions",
+            url = "OPENAI_BASE_URL",        -- envvar
+            api_key = "OPENAI_API_KEY",     -- envvar
+            chat_url = "/chat/completions",
+            models_endpoint = "/models",
           },
-          headers = {
-            ["Content-Type"] = "application/json",
-            ["Authorization"] = "Bearer " .. os.getenv("LLM_TOKEN"),
+          schema = {
+            model = {
+              default = "code_completion@latest",
+            },
           },
         })
       end,
     },
   },
-  strategies = {
-    chat = {
-      adapter = "ollama",
-    },
-    inline = {
-      adapter = "ollama",
-    },
-  },
+  extensions = {
+    mcphub = {
+      callback = "mcphub.extensions.codecompanion",
+      opts = {
+        make_vars = true,
+        make_slash_commands = true,
+        show_result_in_chat = true
+      }
+    }
+  }
 })
 
-vim.keymap.set('n', '<leader>aa', '<cmd>CodeCompanionChat Toggle<CR>',
-  { noremap = true, desc = 'Codecompanion chat toggle' })
-vim.keymap.set('n', '<leader>ac', '<cmd>CodeCompanionActions<CR>',
-  { noremap = true, desc = 'Codecompanion actions' })
+-- vim.keymap.set('n', '<leader>aa', '<cmd>CodeCompanionChat Toggle<CR>',
+--   { noremap = true, desc = 'Codecompanion chat toggle' })
+-- vim.keymap.set('n', '<leader>ac', '<cmd>CodeCompanionActions<CR>',
+--   { noremap = true, desc = 'Codecompanion actions' })
