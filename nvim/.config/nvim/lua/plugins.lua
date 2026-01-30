@@ -469,11 +469,6 @@ local plugins = {
         dependencies = "neovim/nvim-lspconfig",
     },
     {
-        -- provide prompts to IA models served via ollama
-        "David-Kunz/gen.nvim",
-        config = function() require('gen_conf') end or nil,
-    },
-    {
         -- suite to write music sheets charts with lilypond
         'martineausimon/nvim-lilypond-suite',
         config = function()
