@@ -248,3 +248,4 @@ exec --no-startup-id compton -b -f
 
 # activate touchpad
 exec_always xinput set-prop "SYNA30D1:00 06CB:CE07 Touchpad" "libinput Tapping Enabled" 1
+exec_always xinput set-prop "ELAN0121:00 04F3:331F Touchpad" "libinput Tapping Enabled" 1
