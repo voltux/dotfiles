@@ -196,12 +196,13 @@ local plugins = {
     {
         -- enhanced syntax by treesitter
         'nvim-treesitter/nvim-treesitter',
-        config = function() require('treesitter_conf') end,
+        branch = 'main',
     },
     {
         -- extend default text objects with treesitter syntax awareness
         'nvim-treesitter/nvim-treesitter-textobjects',
         dependencies = 'nvim-treesitter/nvim-treesitter',
+        branch = 'main',
     },
     {
         -- easily config neovim lsp
@@ -626,12 +627,12 @@ local plugins = {
             })
         end
     },
-    -- {
-    --     "OXY2DEV/markview.nvim", TODO: uncomment it when it becomes compatible with nvim 0.12.x
-    --     lazy = false,
-    --     branch = "main",
-    --     config = function() require('markview_conf') end,
-    -- }
+    {
+        "OXY2DEV/markview.nvim", -- TODO: uncomment it when it becomes compatible with nvim 0.12.x
+        lazy = false,
+        branch = "main",
+        config = function() require('markview_conf') end,
+    }
 }
 
 local opts = {
