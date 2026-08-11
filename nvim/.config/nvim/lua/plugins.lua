@@ -176,19 +176,6 @@ local plugins = {
         config = true,   -- This automatically runs `require("luarocks-nvim").setup()`
     },
     {
-        -- org mode but for vimmers :)
-        'nvim-neorg/neorg',
-        cmd = 'Neorg sync-parsers',
-        dependencies = { 'luarocks.nvim', 'nvim-neorg/lua-utils.nvim', 'pysan3/pathlib.nvim' },
-        ft = 'norg',
-        version = '*',
-        config = function() require('neorg_conf') end,
-    },
-    {
-        'nvim-neorg/neorg-telescope',
-        dependencies = { 'nvim-neorg/neorg', 'nvim-telescope/telescope.nvim' },
-    },
-    {
         -- fuzzy finding anything anywhere
         'nvim-telescope/telescope.nvim',
         config = function() require('telescope_conf') end,
@@ -356,7 +343,7 @@ local plugins = {
         config = function() require('vifm_conf') end,
     },
     {
-        -- zen mode, enhanced window zooming, neorg presentation friendly
+        -- zen mode, enhanced window zooming
         'folke/zen-mode.nvim',
         config = function() require('zen_mode_conf') end,
     },
