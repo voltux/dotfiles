@@ -26,10 +26,49 @@ command -v nvim &>/dev/null && export EDITOR='nvim' || export EDITOR='vim'
 set editing-mode vi
 bindkey -v
 
-# keyboard delay time
-if command -v xset &> /dev/null && [ "$XDG_SESSION_TYPE" = "x11" ]; then
-    xset r rate 200 50
+# Which display server is this shell talking to? $XDG_SESSION_TYPE is set by
+# logind, but fall back to the sockets for the sessions where it is not
+# (sway started straight from a tty, startx, ssh with forwarding, ...).
+if [ -n "$WAYLAND_DISPLAY" ] || [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    DISPLAY_SERVER=wayland
+elif [ -n "$DISPLAY" ] || [ "$XDG_SESSION_TYPE" = "x11" ]; then
+    DISPLAY_SERVER=x11
+else
+    DISPLAY_SERVER=tty
 fi
+
+# Keyboard repeat rate, screen blanking and caps-lock-as-escape.
+# Only X11 needs them here; see the wayland branch below.
+case $DISPLAY_SERVER in
+    x11)
+        # $DISPLAY can point at XWayland even when the environment says x11 --
+        # a tmux server started under an X11 session keeps handing its panes
+        # DISPLAY=:0 and no WAYLAND_DISPLAY long after you log into sway.
+        # XWayland has no DPMS extension and ignores setxkbmap, so ask the
+        # server what it supports instead of letting these print errors.
+        if command -v xset &> /dev/null; then
+            # keyboard delay time
+            xset r rate 200 50
+            # never blank / power down the screen (needs the DPMS extension)
+            if xset q 2>/dev/null | grep -q "^DPMS"; then
+                xset -dpms
+            fi
+        fi
+        # swap caps lock and escape if possible -- skipped under XWayland,
+        # where the compositor owns the keymap (see ~/.config/sway/config)
+        if command -v setxkbmap &> /dev/null \
+            && ! xdpyinfo -queryExtensions 2>/dev/null | grep -q XWAYLAND; then
+            setxkbmap -option caps:escape
+        fi
+        ;;
+    wayland)
+        # Nothing to do: the compositor owns the input devices, so the
+        # equivalents live in ~/.config/sway/config instead -- repeat_delay /
+        # repeat_rate and caps:escape in its "input type:keyboard" block, set
+        # once at login rather than from every shell. (xset -dpms has no
+        # counterpart: sway has no DPMS timer of its own.)
+        ;;
+esac
 
 # little zsh nuances
 zle -N zle-line-init
@@ -105,11 +144,6 @@ autoload zcalc
 #Star Ship
 if command -v starship &> /dev/null; then
     eval "$(starship init zsh)"
-fi
-
-#swap caps lock and escape if possible
-if command -v setxkbmap &> /dev/null && [ "$XDG_SESSION_TYPE" = "x11" ]; then
-    setxkbmap -option caps:escape
 fi
 
 # create alias for fd if it is installed (needed for debian based distributions)
