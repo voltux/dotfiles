@@ -13,6 +13,11 @@ These configuration files clearly reflect my personal taste. I try to maintain t
     - fd (find replacement)          -> https://github.com/sharkdp/fd
     - ripgrep (grep replacement)     -> https://github.com/BurntSushi/ripgrep
     - bat (cat replacement)          -> https://github.com/sharkdp/bat
+- Sway                            -> Wayland twin of the i3 config: https://swaywm.org/
+    - i3status (status bar)          -> distro package, reuses ~/.config/sway/i3status.conf
+    - swaylock / swayidle / swaynag  -> distro package
+    - bemenu (dmenu replacement)     -> distro package
+    - grim + slurp + wl-clipboard    -> distro package (screenshots)
 - Tmux                            -> plugins installed via tpm: https://github.com/tmux-plugins/tpm
 - Vim                             -> plugins loaded with vim-plug: https://github.com/junegunn/vim-plug
 

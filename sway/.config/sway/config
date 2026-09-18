@@ -55,8 +55,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 2%- # decre
 
 # player keymaps
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPrevious exec --no-startup-id playerctl previous
-bindsym XF86Audionext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod normal
@@ -257,6 +257,12 @@ client.focused_inactive $lightgray  $darkgray  $lightgray $purple   $darkgray
 client.unfocused        $darkgray   $darkgray  $lightgray $purple   $darkgray
 client.urgent           $red        $red       $white     $red      $red
 
+# kitty sets hide_window_decorations in kitty.conf; on X11 i3 honoured that
+# through _MOTIF_WM_HINTS, so kitty never got a title bar. Sway draws its own
+# server-side titlebars and ignores those hints, so ask for a plain border here.
+# was: nothing -- i3 picked this up from kitty itself
+for_window [app_id="kitty"] border pixel 2
+
 # hide/unhide the status bar
 bindsym $mod+b bar mode toggle
 
@@ -264,8 +270,13 @@ bindsym $mod+b bar mode toggle
 # was: setxkbmap -option 'grp:alt_shift_toggle' -layout us,fr,gr / numlockx on
 input type:keyboard {
     xkb_layout "us,fr,gr"
-    xkb_options "grp:alt_shift_toggle"
+    # was (~/.zshrc, X11 only): setxkbmap -option caps:escape
+    xkb_options "grp:alt_shift_toggle,caps:escape"
     xkb_numlock enabled
+    # was (~/.zshrc, X11 only): xset r rate 200 50
+    # delay in ms before the repeat starts, then repeats per second
+    repeat_delay 200
+    repeat_rate 50
 }
 
 # background image
