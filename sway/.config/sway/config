@@ -1,0 +1,284 @@
+# Sway config file
+#
+# Wayland counterpart of ~/.config/i3/config -- same keybindings, same layout,
+# same bar. Everything that was X11 specific has been replaced by its Wayland
+# equivalent (see the comments marked "was: ...").
+#
+# Please see https://github.com/swaywm/sway/wiki for a complete reference!
+
+set $mod Mod4
+
+# Your preferred terminal emulator
+set $term kitty
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:JetBrainsMono NFM 10
+
+# Keep XWayland around for the X-only clients that are still in use
+# (nm-applet tray icon, jetbrains, ...)
+xwayland enable
+
+# Make the user session / D-Bus aware of the Wayland socket so that portals,
+# screen sharing and systemd user units work. (On X11 this came for free.)
+exec_always --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+exec_always --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+
+# Screen locking.
+# was: xss-lock --transfer-sleep-lock -- i3lock --nofork
+set $lock swaylock -f -i "$HOME/Pictures/manjaro-cat.png" -s tile
+exec --no-startup-id swayidle -w before-sleep '$lock'
+bindsym $mod+Shift+q exec $lock
+
+# Uncomment to also lock/blank on idle:
+#exec --no-startup-id swayidle -w \
+#    timeout 300 '$lock' \
+#    timeout 600 'swaymsg "output * power off"' \
+#         resume 'swaymsg "output * power on"' \
+#    before-sleep '$lock'
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+# --indicator forces the SNI/AppIndicator tray protocol swaybar speaks.
+exec --no-startup-id nm-applet --indicator
+
+# volume keymaps
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# brightness keymaps
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +2% # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 2%- # decrease screen brightness
+
+# player keymaps
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPrevious exec --no-startup-id playerctl previous
+bindsym XF86Audionext exec --no-startup-id playerctl next
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod normal
+
+# start a terminal
+bindsym $mod+Return exec $term
+
+# kill focused window
+bindsym $mod+Shift+w kill
+
+# start bemenu (a program launcher)
+# was: dmenu_run -- bemenu is the Wayland dmenu clone and takes the same colours.
+# Note: bemenu's --fn is a pango description (points), 9pt ~= dmenu's pixelsize=12.
+set $menu bemenu-run -i \
+    --fn 'JetBrainsMono NFM Bold 9' \
+    --nb '#1d2021' --nf '#d79921' \
+    --fb '#1d2021' --ff '#d79921' \
+    --tb '#d79921' --tf '#1d2021' \
+    --hb '#d79921' --hf '#1d2021' \
+    --sb '#d79921' --sf '#1d2021'
+bindsym $mod+d exec $menu
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+z split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+q focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1 "
+set $ws2 "2 "
+set $ws3 "3 󰻞"
+set $ws4 "4 󰟵"
+set $ws5 "5 "
+set $ws6 "6 "
+set $ws7 "7 󰖂"
+set $ws8 "8 "
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move to next workspace
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
+
+# move workspace to another screen
+bindsym $mod+Shift+n move workspace to output right
+bindsym $mod+Shift+p move workspace to output left
+
+# focus on window activation (clicking url brings the browser to front)
+focus_on_window_activation focus
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# sway has no "restart": reloading the config is the equivalent and it already
+# preserves your layout/session.
+bindsym $mod+Shift+r reload
+# exit sway (logs you out of your Wayland session)
+# was: i3-nagbar / i3-msg exit
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+
+# print screen
+# was: flameshot gui -- flameshot cannot grab a Wayland screen, grim+slurp can.
+bindsym Print exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Shift+Print exec grim - | wl-copy
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 2 px or 2 ppt
+    bindsym j resize grow height 2 px or 2 ppt
+    bindsym k resize shrink height 2 px or 2 ppt
+    bindsym l resize grow width 2 px or 2 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 2 px or 2 ppt
+    bindsym Down resize grow height 2 px or 2 ppt
+    bindsym Up resize shrink height 2 px or 2 ppt
+    bindsym Right resize grow width 2 px or 2 ppt
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Start swaybar to display a workspace bar (plus the system information i3status
+# finds out, if available). swaybar speaks the same protocol as i3bar, so the
+# very same i3status config is reused verbatim -- it lives next to this file so
+# that the i3 and sway stow packages do not collide.
+
+set $bg #1d2021
+set $orange #d65d0e
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d6a
+set $gray #a89984
+set $darkgray #1d2021
+set $lightgray #bdae93
+set $white #ebdbb2
+
+bar {
+    status_command i3status -c ~/.config/sway/i3status.conf
+    position bottom
+    font pango:JetBrainsMono NFM 10
+
+    colors {
+        background         $bg
+        statusline         $lightgray
+        focused_workspace  $darkgray  $lightgray $darkgray
+        inactive_workspace $lightgray $darkgray  $lightgray
+        active_workspace   $lightgray $darkgray  $lightgray
+        urgent_workspace   $red       $red       $bg
+    }
+}
+
+# class                 border      backgr     text       indicator child_border
+client.focused          $darkgray   $lightgray $bg        $purple   $darkgray
+client.focused_inactive $lightgray  $darkgray  $lightgray $purple   $darkgray
+client.unfocused        $darkgray   $darkgray  $lightgray $purple   $darkgray
+client.urgent           $red        $red       $white     $red      $red
+
+# hide/unhide the status bar
+bindsym $mod+b bar mode toggle
+
+# language + numlock
+# was: setxkbmap -option 'grp:alt_shift_toggle' -layout us,fr,gr / numlockx on
+input type:keyboard {
+    xkb_layout "us,fr,gr"
+    xkb_options "grp:alt_shift_toggle"
+    xkb_numlock enabled
+}
+
+# background image
+# was: feh --bg-scale (scale, aspect ratio not preserved) == sway's "stretch"
+output * bg "$HOME/Pictures/manjaro-cat.png" stretch
+
+# no compositor to start: sway is its own compositor (was: compton -b -f)
+
+# activate touchpad
+# was: xinput set-prop "<device>" "libinput Tapping Enabled" 1
+input type:touchpad {
+    tap enabled
+    natural_scroll disabled
+}
+
+include /etc/sway/config.d/*
