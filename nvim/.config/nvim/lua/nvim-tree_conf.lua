@@ -2,6 +2,7 @@ require("nvim-tree").setup {
   hijack_netrw = true,
   view = {
     adaptive_size = true,
+    signcolumn = 'no',
   },
   renderer = {
     indent_markers = {
@@ -10,7 +11,7 @@ require("nvim-tree").setup {
   },
   update_focused_file = {
     enable = true,
-    update_cwd = false,
+    update_root = false,
   },
   git = {
     enable = true,
@@ -20,6 +21,4 @@ require("nvim-tree").setup {
   sync_root_with_cwd = true,
 }
 
-require('nvim-tree.view').View.winopts.signcolumn = 'no'
 vim.keymap.set('n', '<leader>n', '<cmd>NvimTreeToggle<CR>', { noremap = true, desc = 'NvimTree Toggle' })
-vim.g.nvim_tree_respect_buf_cwd = 1

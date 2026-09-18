@@ -1,3 +1,5 @@
+local theme = require('theme')
+
 require('toggleterm').setup {
     shade_terminals = false,
     float_opts = {
@@ -7,7 +9,8 @@ require('toggleterm').setup {
     },
     highlights = {
         FloatBorder = {
-            guifg = "#d79921",
+            -- from theme.lua so that it follows :ThemeLight / :ThemeDark
+            guifg = theme.colors().neutral_yellow,
         }
     }
 }

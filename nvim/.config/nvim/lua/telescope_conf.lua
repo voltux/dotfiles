@@ -124,8 +124,8 @@ vim.keymap.set('n', '<leader>f"', '<cmd>Telescope registers<CR>',
     { noremap = true, desc = 'Telescope find in registers' })
 vim.keymap.set('n', '<leader>fw', function() require('telescope').extensions.togglescope.grep_string() end,
     { noremap = true, desc = 'Telescope find string in path' })
-vim.keymap.set('n', '<leader>ft', '<cmd>Telescope tags<CR>', { noremap = true, desc = 'Telescope find tag' })
-vim.keymap.set('n', '<leader>fu', '<cmd>Telescope lsp_references<CR>',
+vim.keymap.set('n', '<leader>fT', '<cmd>Telescope tags<CR>', { noremap = true, desc = 'Telescope find tag' })
+vim.keymap.set('n', '<leader>fR', '<cmd>Telescope lsp_references<CR>',
     { noremap = true, desc = 'Telescope find lsp reference' })
 vim.keymap.set('n', '<leader>f<', '<cmd>Telescope lsp_incoming_calls<CR>',
     { noremap = true, desc = 'Telescope find lsp who am I calling' })
@@ -139,18 +139,16 @@ vim.keymap.set('n', '<leader>fD', '<cmd>Telescope lsp_definitions<CR>',
     { noremap = true, desc = 'Telescope find definition' })
 vim.keymap.set('n', '<leader>fI', '<cmd>Telescope lsp_implementations<CR>',
     { noremap = true, desc = 'Telescope find implementation' })
-vim.keymap.set('n', '<leader>ft', '<cmd>Telescope lsp_type_definitions<CR>',
+vim.keymap.set('n', '<leader>fy', '<cmd>Telescope lsp_type_definitions<CR>',
     { noremap = true, desc = 'Telescope find type definition' })
 vim.keymap.set('n', '<leader>fv', '<cmd>Telescope treesitter<CR>',
     { noremap = true, desc = 'Telescope find treesitter symbol' })
 vim.keymap.set('n', '<leader>fs', '<cmd>Telescope session-lens<CR>',
-    { noremap = true, desc = 'Telescope find snippet' })
+    { noremap = true, desc = 'Telescope find session' })
 vim.keymap.set('n', '<leader>fS', '<cmd>Telescope luasnip<CR>',
     { noremap = true, desc = 'Telescope find snippet' })
 vim.keymap.set('n', '<leader>fz', '<cmd>Telescope spell_suggest<CR>',
     { noremap = true, desc = 'Telescope find spelling suggestions for current word under cursor' })
-vim.keymap.set('n', '<leader>f%', '<cmd>Telescope oldfiles<CR>',
-    { noremap = true, desc = 'Telescope find recently opened files' })
 vim.keymap.set('n', '<leader>fF', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>",
     { noremap = true, desc = 'Telescope file browser' })
 vim.keymap.set('n', '<leader>fC', "<cmd>Telescope cder<CR>",

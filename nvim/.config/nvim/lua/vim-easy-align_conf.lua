@@ -1,2 +1,2 @@
-vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', { noremap = true, desc = 'EasyAlign activate' })
-vim.keymap.set('v', 'ga', '<Plug>(EasyAlign)', { noremap = true, desc = 'EasyAlign activate' })
+-- <Plug> mappings must be remapped: with noremap the rhs is never resolved
+vim.keymap.set({ 'n', 'x' }, 'ga', '<Plug>(EasyAlign)', { remap = true, desc = 'EasyAlign activate' })

@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
     vim.fn.system({
         'git',
         'clone',
@@ -15,19 +15,8 @@ local plugins = {
     {
         -- file explorer
         'nvim-tree/nvim-tree.lua',
-        dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
         config = function() require('nvim-tree_conf') end,
-        version = "v1.13.0"
-    },
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-            "nvim-tree/nvim-web-devicons",
-        },
-        lazy = false,
     },
     {
         -- filetype icons
@@ -86,13 +75,13 @@ local plugins = {
     {
         -- status line (bottom)
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'ellisonleao/gruvbox.nvim', 'nvim-tree/nvim-web-devicons', opt = true },
+        dependencies = { 'ellisonleao/gruvbox.nvim', 'nvim-tree/nvim-web-devicons' },
         config = function() require('lualine_conf') end,
     },
     {
         -- buffer line (top)
         'akinsho/bufferline.nvim',
-        dependencies = { 'ellisonleao/gruvbox.nvim', 'nvim-tree/nvim-web-devicons', opt = true },
+        dependencies = { 'ellisonleao/gruvbox.nvim', 'nvim-tree/nvim-web-devicons' },
         config = function() require('bufferline_conf') end,
     },
     {
@@ -103,25 +92,15 @@ local plugins = {
     {
         -- change color on (), []... for better readability when on treesitter aware syntax
         'HiPhish/rainbow-delimiters.nvim',
-        dependencies = { 'ellisonleao/gruvbox.nvim', opt = true },
+        dependencies = { 'ellisonleao/gruvbox.nvim' },
         config = function() require('rainbow-delimiters_conf') end,
-    },
-    {
-        -- change color on (), []... for better readability on any filetype
-        'luochen1990/rainbow',
-        dependencies = { 'ellisonleao/gruvbox.nvim', opt = true },
     },
     {
         -- snippet engine
         "L3MON4D3/LuaSnip",
         config = function() require('luasnip_conf') end,
-        version = "1.*",
-        dependencies = { 'hrsh7th/nvim-cmp', 'rafamadriz/friendly-snippets' },
-    },
-    {
-        -- autocompletion (luasnip snippets)
-        'saadparwaiz1/cmp_luasnip',
-        dependencies = { "hrsh7th/nvim-cmp", "L3MON4D3/LuaSnip", 'rafamadriz/friendly-snippets' },
+        version = "2.*",
+        dependencies = { 'rafamadriz/friendly-snippets' },
     },
     {
         -- git handler
@@ -189,18 +168,18 @@ local plugins = {
     {
         -- easily config neovim lsp
         'neovim/nvim-lspconfig',
-        dependencies = { 'williamboman/mason-lspconfig.nvim', 'nvimdev/lspsaga.nvim' },
+        dependencies = { 'mason-org/mason-lspconfig.nvim', 'nvimdev/lspsaga.nvim' },
         config = function() require('lsp_conf') end,
     },
     {
         -- easily install/update lsp servers directly from neovim
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
         config = function() require('mason_conf') end,
     },
     {
         -- bridge between mason and nvim-lspconfig
-        'williamboman/mason-lspconfig',
-        dependencies = { "williamboman/mason.nvim" },
+        'mason-org/mason-lspconfig.nvim',
+        dependencies = { "mason-org/mason.nvim" },
         config = function() require('mason-lspconfig').setup({ ensure_installed = {}, automatic_enable = false }) end,
     },
     {
@@ -250,11 +229,6 @@ local plugins = {
         config = function() require('dap-ui_conf') end,
     },
     {
-        -- autocompletion (debugger)
-        "rcarriga/cmp-dap",
-        dependencies = { "hrsh7th/nvim-cmp", "mfussenegger/nvim-dap" },
-    },
-    {
         -- a pretty list for diagnostics
         "folke/trouble.nvim",
         opts = {},
@@ -271,12 +245,12 @@ local plugins = {
                 desc = "Buffer Diagnostics (Trouble)",
             },
             {
-                "<leader>cs",
+                "<leader>xs",
                 "<cmd>Trouble symbols toggle focus=false<cr>",
                 desc = "Symbols (Trouble)",
             },
             {
-                "<leader>cl",
+                "<leader>xl",
                 "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
                 desc = "LSP Definitions / references / ... (Trouble)",
             },
@@ -303,34 +277,26 @@ local plugins = {
         config = function() require('which-key_conf') end,
     },
     {
-        -- zen mode, enhanced window zooming
-        'Pocco81/true-zen.nvim',
-        config = function() require('true-zen_conf') end,
-    },
-    {
         -- dim interactive portions of code you are editing
         'folke/twilight.nvim',
         config = function() require('twilight_conf') end,
     },
     {
         -- init.lua syntax awareness and completion
-        'folke/neodev.nvim',
+        'folke/lazydev.nvim',
         ft = "lua",
-        config = function()
-            require('neodev').setup({
-                library = { plugins = { 'nvim-dap-ui' }, types = true },
-            })
-        end,
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                "nvim-dap-ui",
+            },
+        },
     },
     {
         -- set commentstring option based on the cursor location in the file.
         'JoosepAlviste/nvim-ts-context-commentstring',
         dependencies = 'nvim-treesitter/nvim-treesitter',
         event = 'VeryLazy',
-    },
-    {
-        -- caching init to improve starting time
-        'lewis6991/impatient.nvim',
     },
     {
         -- vifm file manager inside neovim
@@ -346,7 +312,6 @@ local plugins = {
         -- lsp progress eye candy
         'j-hui/fidget.nvim',
         config = function() require('fidget').setup {} end,
-        tag = 'legacy',
     },
     {
         -- make your code rain or play game of life :p
@@ -438,10 +403,13 @@ local plugins = {
         "xiyaowong/telescope-emoji.nvim",
     },
     {
-        -- project management
-        "ahmedkhalf/project.nvim",
+        -- project management. maintained fork of ahmedkhalf/project.nvim, whose
+        -- last commit is from 2023; the telescope extension is still called
+        -- 'projects' and the history still lives in stdpath('data')/project_nvim,
+        -- only the module name changed (project_nvim -> project)
+        "DrKJeff16/project.nvim",
         config = function()
-            require("project_nvim").setup {
+            require("project").setup {
                 show_hidden = true
             }
         end,
@@ -524,6 +492,7 @@ local plugins = {
     {
         -- AI integration
         "olimorris/codecompanion.nvim",
+        cmd = { "CodeCompanion", "CodeCompanionChat", "CodeCompanionActions", "CodeCompanionCmd" },
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
@@ -584,7 +553,7 @@ local plugins = {
     {
         -- dap python debugger
         'leoluz/nvim-dap-go',
-        dependencies = { "leoluz/nvim-dap-go" },
+        dependencies = { "mfussenegger/nvim-dap" },
         config = function() require('dap-go_conf') end,
     },
     {

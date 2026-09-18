@@ -43,10 +43,11 @@ vim.o.scrollback = 100000                   -- max lines for terminal scrollback
 vim.o.breakindent = true                    -- maintain indentation when breaking long lines
 vim.g.mapleader = " "                       -- mapleader
 vim.g.tex_flavor = 'latex'                  -- latex flavor
-vim.g.do_filetype_lua = 1                   -- let lua handle filetypes and fall back to filetype.vim if it fails
 vim.o.completeopt = 'menu,menuone,noselect' -- autocompletion options
 vim.o.termguicolors = true                  -- show all my terminal colors please
-vim.o.background = 'dark'                   -- always on dark background
+-- 'background' is deliberately NOT set here: neovim asks the terminal for its
+-- background colour (OSC 11) on startup and setting the option would disable
+-- that detection. See theme.lua for the dark/light switch.
 vim.o.wrap = false                          -- set nowrap by default
 vim.cmd [[ set fillchars+=eob:\ ]]          -- remove ~ tilde as character for lines after buffer end and leave empty
 vim.cmd [[ set shortmess=I ]]               -- disable intro message
@@ -54,9 +55,7 @@ vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
 vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
 vim.cmd [[ set formatoptions+=j "when joining lines join comments ]]
 vim.cmd [[ set tags=./tags;/ "use only local tags ]]
-vim.cmd [[ set wildignore+=.pyc,.swp "ignore certain filetypes in wildmenu ]]
-vim.cmd [[ set kp= "keywordprg, how will 'K' react (default is man) ]]
-vim.cmd [[ set path+=** "search down into subfolders, provides tab completion for all related tasks ]]
+vim.cmd [[ set wildignore+=*.pyc,*.swp "ignore certain filetypes in wildmenu ]]
 vim.cmd [[ set undodir=$HOME/.local/share/nvim/undo ]] --where to save undo histories
 vim.cmd [[ runtime! ftplugin/man.vim "man pages in vim ]]
 vim.cmd [[ set listchars=tab:▷\ ,eol:⏎,trail:·,lead:·,extends:»,precedes:«,nbsp:○ ]]
@@ -106,7 +105,7 @@ elseif vim.fn.executable("bash") > 0 then
 end
 
 --Change current dir to current file pwd
-vim.keymap.set('n', '<leader>cc', ':cd %:p:h<CR>:pwd<CR>',
+vim.keymap.set('n', '<leader>cC', ':cd %:p:h<CR>:pwd<CR>',
     { noremap = true, desc = 'Change dir to current file pwd' })
 
 --Search, copy, paste
@@ -122,10 +121,11 @@ local tmux_copy_mode_toggle = function()
         vim.o.signcolumn = "yes"
         vim.o.number = true
         vim.o.relativenumber = false
+        vim.cmd [[ IBLEnable ]]
     end
 end
 
-vim.keymap.set('v', '<silent> *', 'y/<C-R>"<CR>', { noremap = true, desc = 'Search current selection' })
+vim.keymap.set('x', '*', 'y/<C-R>"<CR>', { noremap = true, silent = true, desc = 'Search current selection' })
 vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, desc = 'Copy to system clipboard' })
 vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, desc = 'Copy selection to system clipboard' })
 vim.keymap.set('n', '<leader>sc', tmux_copy_mode_toggle, { noremap = true, desc = 'Set to paste mode for tmux' })

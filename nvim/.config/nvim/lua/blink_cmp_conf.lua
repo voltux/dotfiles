@@ -70,6 +70,16 @@ require("blink.cmp").setup({
 
     sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
+        -- vim-dadbod-completion ships its own blink source; see dadbod_conf.lua
+        per_filetype = {
+            sql = { 'dadbod', 'snippets', 'buffer' },
+            mysql = { 'dadbod', 'snippets', 'buffer' },
+            plsql = { 'dadbod', 'snippets', 'buffer' },
+            sqlite = { 'dadbod', 'snippets', 'buffer' },
+        },
+        providers = {
+            dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
+        },
     },
     keymap = {
         ["<C-p>"] = { "select_prev", "fallback" },
