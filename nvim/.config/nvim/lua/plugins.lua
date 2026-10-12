@@ -394,8 +394,8 @@ local plugins = {
         dependencies = { "nvim-telescope/telescope.nvim" },
     },
     {
-        -- create nice tables
-        "dhruvasagar/vim-table-mode",
+        -- create nice tables: local lua port of dhruvasagar/vim-table-mode
+        "voltux/table-mode.nvim",
         config = function() require("table-mode_conf") end,
     },
     {
