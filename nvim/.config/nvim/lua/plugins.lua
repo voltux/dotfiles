@@ -522,6 +522,7 @@ local plugins = {
             'saghen/blink.cmp',              -- autocompletion
             "stevearc/dressing.nvim",        -- for input provider dressing
             "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
+            { "ColinKennedy/mega.cmdparse", dependencies = { "ColinKennedy/mega.logging" } }, -- :Avante command parsing
             -- "OXY2DEV/markview.nvim",         -- markdown preview TODO: uncomment it when it becomes compatible with nvim 0.12.x
             -- {
             --     -- support for image pasting
