@@ -158,6 +158,7 @@ local plugins = {
         -- enhanced syntax by treesitter
         'nvim-treesitter/nvim-treesitter',
         branch = 'main',
+        config = function() require('treesitter_conf') end,
     },
     {
         -- extend default text objects with treesitter syntax awareness
