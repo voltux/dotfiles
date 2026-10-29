@@ -1,1 +1,1 @@
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+require('dap-python').setup('~/.local/share/nvim/mason/bin/debugpy-adapter')
